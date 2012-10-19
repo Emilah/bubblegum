@@ -15,7 +15,7 @@ import com.jagex.io.AbstractFileLoader;
 import com.jagex.awt.events.JMouseListener;
 import com.jagex.awt.JApplet;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.utils.SubNode;
@@ -180,7 +180,7 @@ public class Class65 {
         if (class39_sub5_sub5 != null) {
             return class39_sub5_sub5;
         }
-        byte[] is = Bzip2Block.aClass9_1072.lookupFile(5, i_17_);
+        byte[] is = Bzip2Entry.aClass9_1072.lookupFile(5, i_17_);
         class39_sub5_sub5 = new Class39_Sub5_Sub5();
         if (is != null) {
             class39_sub5_sub5.method572(new Buffer(is), (byte) 24);

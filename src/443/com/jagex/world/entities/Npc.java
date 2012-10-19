@@ -8,7 +8,7 @@ import com.jagex.audio.Effect;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.io.BufferedFile;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.awt.JCanvas;
 import unpackaged.Class1;
 import unpackaged.Class26;
@@ -296,7 +296,7 @@ public class Npc extends Mob
 			      (Cache.localPlayer
 			       .queueY[0]),
 			      i_13_);
-	Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+	Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
 	Class4.crossMode = 2;
 	Class26.crossFrameNum = 0;
 	AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;

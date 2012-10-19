@@ -112,9 +112,9 @@ public class ISAAC {
                     }
                     if (Timer.anInt887 == 1
                             && Class39_Sub4.mouseClickPositionX >= i_15_
-                            && Bzip2Block.mouseClickPositionY >= i_13_
+                            && Bzip2Entry.mouseClickPositionY >= i_13_
                             && i_14_ > Class39_Sub4.mouseClickPositionX
-                            && Bzip2Block.mouseClickPositionY < i_16_) {
+                            && Bzip2Entry.mouseClickPositionY < i_16_) {
                         bool_18_ = true;
                     }
                     if (bool_18_ && NpcDefinition.aClass39_Sub5_Sub17_1864 == null
@@ -139,7 +139,7 @@ public class ISAAC {
                             ScriptExecutor.executeClientScript(0, widget.anObjectArray2035, null,
                                     125, -i_9_ + Class39_Sub4.mouseClickPositionX,
                                     widget,
-                                    Bzip2Block.mouseClickPositionY - i_10_);
+                                    Bzip2Entry.mouseClickPositionY - i_10_);
                         }
                     }
                     if (widget.aBoolean2106 && bool

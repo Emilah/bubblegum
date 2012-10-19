@@ -8,7 +8,7 @@ import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
 import com.jagex.awt.JApplet;
 import com.jagex.io.CacheIO;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;

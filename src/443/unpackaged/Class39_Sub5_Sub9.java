@@ -5,7 +5,7 @@ import com.jagex.world.entities.player.PlayerApperance;
 import com.jagex.config.Widget;
 import com.jagex.sign.Signlink;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.utils.Huffman;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.world.entities.Projectile;
@@ -185,8 +185,8 @@ public class Class39_Sub5_Sub9 extends SubNode
 	}
 	i_20_ += 8;
 	int i_23_ = Class39_Sub5_Sub11.actionOffset * 15 + 21;
-	if (Class39_Sub4.mouseClickPositionX > 4 && Bzip2Block.mouseClickPositionY > 4
-	    && Class39_Sub4.mouseClickPositionX < 516 && Bzip2Block.mouseClickPositionY < 338) {
+	if (Class39_Sub4.mouseClickPositionX > 4 && Bzip2Entry.mouseClickPositionY > 4
+	    && Class39_Sub4.mouseClickPositionX < 516 && Bzip2Entry.mouseClickPositionY < 338) {
 	    Class37.anInt653 = 0;
 	    Huffman.anInt757 = Class39_Sub5_Sub11.actionOffset * 15 + 22;
 	    Class39_Sub12.aBoolean1493 = true;
@@ -194,7 +194,7 @@ public class Class39_Sub5_Sub9 extends SubNode
 	    int i_24_ = -(i_20_ / 2) + Class39_Sub4.mouseClickPositionX - 4;
 	    if (i_24_ + i_20_ > 512)
 		i_24_ = -i_20_ + 512;
-	    int i_25_ = Bzip2Block.mouseClickPositionY - 4;
+	    int i_25_ = Bzip2Entry.mouseClickPositionY - 4;
 	    if (i_25_ + i_23_ > 334)
 		i_25_ = -i_23_ + 334;
 	    if (i_25_ < 0)
@@ -204,13 +204,13 @@ public class Class39_Sub5_Sub9 extends SubNode
 	    Widget.anInt2063 = i_24_;
 	    Class39_Sub5_Sub7.anInt1784 = i_25_;
 	}
-	if (Class39_Sub4.mouseClickPositionX > 553 && Bzip2Block.mouseClickPositionY > 205
-	    && Class39_Sub4.mouseClickPositionX < 743 && Bzip2Block.mouseClickPositionY < 466) {
+	if (Class39_Sub4.mouseClickPositionX > 553 && Bzip2Entry.mouseClickPositionY > 205
+	    && Class39_Sub4.mouseClickPositionX < 743 && Bzip2Entry.mouseClickPositionY < 466) {
 	    Huffman.anInt757 = Class39_Sub5_Sub11.actionOffset * 15 + 22;
 	    Class37.anInt653 = 1;
 	    Class39_Sub12.aBoolean1493 = true;
 	    int i_26_ = -(i_20_ / 2) + Class39_Sub4.mouseClickPositionX - 553;
-	    int i_27_ = Bzip2Block.mouseClickPositionY - 205;
+	    int i_27_ = Bzip2Entry.mouseClickPositionY - 205;
 	    Class14.anInt227 = i_20_;
 	    if (i_27_ < 0)
 		i_27_ = 0;
@@ -223,14 +223,14 @@ public class Class39_Sub5_Sub9 extends SubNode
 		i_26_ = -i_20_ + 190;
 	    Widget.anInt2063 = i_26_;
 	}
-	if (Class39_Sub4.mouseClickPositionX > 17 && Bzip2Block.mouseClickPositionY > 357
-	    && Class39_Sub4.mouseClickPositionX < 496 && Bzip2Block.mouseClickPositionY < 453) {
+	if (Class39_Sub4.mouseClickPositionX > 17 && Bzip2Entry.mouseClickPositionY > 357
+	    && Class39_Sub4.mouseClickPositionX < 496 && Bzip2Entry.mouseClickPositionY < 453) {
 	    Class37.anInt653 = 2;
 	    Class39_Sub12.aBoolean1493 = true;
 	    Class14.anInt227 = i_20_;
 	    Huffman.anInt757 = Class39_Sub5_Sub11.actionOffset * 15 + 22;
 	    int i_28_ = Class39_Sub4.mouseClickPositionX - 17 - i_20_ / 2;
-	    int i_29_ = Bzip2Block.mouseClickPositionY - 357;
+	    int i_29_ = Bzip2Entry.mouseClickPositionY - 357;
 	    if (i_29_ >= 0) {
 		if (i_23_ + i_29_ > 96)
 		    i_29_ = -i_23_ + 96;

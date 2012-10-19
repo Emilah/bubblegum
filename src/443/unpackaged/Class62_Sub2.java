@@ -30,7 +30,7 @@ import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.io.FileOnDisk;
 import com.jagex.utils.HashTable;
@@ -436,7 +436,7 @@ public class Class62_Sub2 extends AudioHandler {
                                     }
                                 }
                                 if (!bool_43_) {
-                                    Bzip2Block.method1033(i_40_, i_42_ * 8, true,
+                                    Bzip2Entry.method1033(i_40_, i_42_ * 8, true,
                                             i_41_ * 8);
                                 }
                             }

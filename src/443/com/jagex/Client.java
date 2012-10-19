@@ -8,7 +8,7 @@ import com.jagex.awt.JApplet;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Decompressor;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.io.BufferedFile;
 import com.jagex.graphics.DrawingArea;
@@ -122,7 +122,7 @@ import com.jagex.config.VarbitDefinition;
 import com.jagex.config.Widget;
 import com.jagex.od.OndemandHandler;
 import com.jagex.sign.Resource;
-import com.jagex.utils.LangUtils;
+import com.jagex.utils.LanguageUtils;
 import java.io.IOException;
 
 public class Client extends JApplet {
@@ -379,7 +379,7 @@ public class Client extends JApplet {
                         if (ArchiveRequest.loginAttempts < 1) {
                             loginStage = 0;
                             if (Entity.anInt1732 == HashTable.anInt363) {
-                                HashTable.anInt363 = Bzip2Block.anInt1078;
+                                HashTable.anInt363 = Bzip2Entry.anInt1078;
                             } else {
                                 HashTable.anInt363 = Entity.anInt1732;
                             }
@@ -395,7 +395,7 @@ public class Client extends JApplet {
                 ArchiveRequest.loginAttempts++;
                 loginStage = 0;
                 if (Entity.anInt1732 == HashTable.anInt363) {
-                    HashTable.anInt363 = Bzip2Block.anInt1078;
+                    HashTable.anInt363 = Bzip2Entry.anInt1078;
                 } else {
                     HashTable.anInt363 = Entity.anInt1732;
                 }
@@ -681,7 +681,7 @@ public class Client extends JApplet {
         Class51.method977();
         Class39_Sub12.method871(15003);
         Bzip2Decompressor.method266();
-        Bzip2Block.method1031(83);
+        Bzip2Entry.method1031(83);
         ArchiveRequest.method859(false);
         AudioHandler.method1058(-43);
         Class39_Sub5_Sub7.method587(-57);
@@ -753,7 +753,7 @@ public class Client extends JApplet {
             }
             String langStr = this.getParameter("lang");
             if (langStr != null && langStr.equals("1")) {
-                LangUtils.setGermanMessages();
+                LanguageUtils.setMessagesToGerman();
                 HashTable.languageId = 1;
             }
             this.initialize(48, 503, AbstractFileLoader.modeWhat + 32, 443, 765);
@@ -847,7 +847,7 @@ public class Client extends JApplet {
             } else if (!args[5].equals("german")) {
                 JString.printArgsUsage();
             } else {
-                LangUtils.setGermanMessages();
+                LanguageUtils.setMessagesToGerman();
                 HashTable.languageId = 1;
             }
             TextureLoaderImpl.audioHandler = new MidiHandler();
@@ -861,7 +861,7 @@ public class Client extends JApplet {
     public void method20(boolean bool) {
         if (!bool) {
             Entity.anInt1732 = (Class39_Sub5_Sub6.modeWhere != 0 ? 43594 : BufferedFile.worldId + 40000);
-            Bzip2Block.anInt1078 = (Class39_Sub5_Sub6.modeWhere != 0 ? BufferedFile.worldId + 50000 : 443);
+            Bzip2Entry.anInt1078 = (Class39_Sub5_Sub6.modeWhere != 0 ? BufferedFile.worldId + 50000 : 443);
             HashTable.anInt363 = Entity.anInt1732;
             Huffman.method882(116);
             Class13.method188((byte) -95, Class41.canvas);
@@ -979,7 +979,7 @@ public class Client extends JApplet {
     
     public void handleOdError(int opcode) {
         if (Entity.anInt1732 == HashTable.anInt363) {
-            HashTable.anInt363 = Bzip2Block.anInt1078;
+            HashTable.anInt363 = Bzip2Entry.anInt1078;
         } else {
             HashTable.anInt363 = Entity.anInt1732;
         }

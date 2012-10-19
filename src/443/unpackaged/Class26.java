@@ -17,7 +17,7 @@ import com.jagex.config.ItemDefinition;
 import com.jagex.awt.events.JKeyListener;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.AbstractImage;
@@ -383,7 +383,7 @@ public class Class26 {
             CacheIO.method127(17);
             Class62_Sub2.method1079(8);
             Class66.method1104(false);
-            ArchiveWorker.method1119(Cache.anInt118, Bzip2Block.anInt1051,
+            ArchiveWorker.method1119(Cache.anInt118, Bzip2Entry.anInt1051,
                     (Class39_Sub5_Sub14.p12fullFont),
                     41, NameTable.anInt177);
             VarpDefinition.method748(Class39_Sub5_Sub14.tabWidgetIds,

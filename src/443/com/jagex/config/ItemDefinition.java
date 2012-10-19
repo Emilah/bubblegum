@@ -6,7 +6,7 @@ import com.jagex.awt.events.JKeyListener;
 import com.jagex.Client;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.graphics.JImage;
 import com.jagex.world.entities.StillGraphic;
@@ -451,8 +451,8 @@ public class ItemDefinition extends SubNode
 		    && class3.beginsWith(Class53.crown2Jstr))
 		    class3 = class3.substring(5);
 		if ((type == 1 || type == 2)
-		    && (type == 1 || Bzip2Block.anInt1051 == 0
-			|| (Bzip2Block.anInt1051 == 1
+		    && (type == 1 || Bzip2Entry.anInt1051 == 0
+			|| (Bzip2Entry.anInt1051 == 1
 			    && JString.method60(i ^ ~0x53dc, class3)))) {
 		    i_24_++;
 		    if (i_26_ - 14 < i_22_ && i_26_ >= i_22_

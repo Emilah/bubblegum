@@ -6,7 +6,7 @@ package com.jagex.io;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.awt.JCanvas;
 import com.jagex.io.CacheIO;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.world.entities.GroundItem;
@@ -121,7 +121,7 @@ public class ArchiveRequest extends Node
 						    int i_1_) {
 	if (!TraversalMap.method310(class9, i_1_, 84))
 	    return null;
-	return Bzip2Block.method1036(false);
+	return Bzip2Entry.method1036(false);
     }
     
     public static int method861(byte i, AbstractFileLoader class9) {
@@ -133,7 +133,7 @@ public class ArchiveRequest extends Node
 	    i_2_++;
 	if (class9.method152(22411, Class30.aClass3_533, Class34.aClass3_609))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, Bzip2Block.aClass3_1056))
+	if (class9.method152(22411, Class30.aClass3_533, Bzip2Entry.aClass3_1056))
 	    i_2_++;
 	if (class9.method152(22411, Class30.aClass3_533, Class30.aClass3_545))
 	    i_2_++;

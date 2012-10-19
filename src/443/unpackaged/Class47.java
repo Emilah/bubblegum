@@ -4,7 +4,7 @@ import com.jagex.utils.Timer;
 import com.jagex.config.VarbitDefinition;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.utils.Node;
@@ -57,98 +57,98 @@ public class Class47
     public static void method948(int i) {
 	if (Timer.anInt887 == 1) {
 	    if (Class39_Sub4.mouseClickPositionX >= 539 && Class39_Sub4.mouseClickPositionX <= 573
-		&& Bzip2Block.mouseClickPositionY >= 169 && Bzip2Block.mouseClickPositionY < 205
+		&& Bzip2Entry.mouseClickPositionY >= 169 && Bzip2Entry.mouseClickPositionY < 205
 		&& Class39_Sub5_Sub14.tabWidgetIds[0] != -1) {
 		Node.currentTabId = 0;
 		ISAAC.aBoolean1089 = true;
 		Class39_Sub14.updateTab = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 569 && Class39_Sub4.mouseClickPositionX <= 599
-		&& Bzip2Block.mouseClickPositionY >= 168 && Bzip2Block.mouseClickPositionY < 205
+		&& Bzip2Entry.mouseClickPositionY >= 168 && Bzip2Entry.mouseClickPositionY < 205
 		&& Class39_Sub5_Sub14.tabWidgetIds[1] != -1) {
 		Node.currentTabId = 1;
 		ISAAC.aBoolean1089 = true;
 		Class39_Sub14.updateTab = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 597 && Class39_Sub4.mouseClickPositionX <= 627
-		&& Bzip2Block.mouseClickPositionY >= 168 && Bzip2Block.mouseClickPositionY < 205
+		&& Bzip2Entry.mouseClickPositionY >= 168 && Bzip2Entry.mouseClickPositionY < 205
 		&& Class39_Sub5_Sub14.tabWidgetIds[2] != -1) {
 		Class39_Sub14.updateTab = true;
 		Node.currentTabId = 2;
 		ISAAC.aBoolean1089 = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 625 && Class39_Sub4.mouseClickPositionX <= 669
-		&& Bzip2Block.mouseClickPositionY >= 168 && Bzip2Block.mouseClickPositionY < 203
+		&& Bzip2Entry.mouseClickPositionY >= 168 && Bzip2Entry.mouseClickPositionY < 203
 		&& Class39_Sub5_Sub14.tabWidgetIds[3] != -1) {
 		Class39_Sub14.updateTab = true;
 		Node.currentTabId = 3;
 		ISAAC.aBoolean1089 = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 666 && Class39_Sub4.mouseClickPositionX <= 696
-		&& Bzip2Block.mouseClickPositionY >= 168 && Bzip2Block.mouseClickPositionY < 205
+		&& Bzip2Entry.mouseClickPositionY >= 168 && Bzip2Entry.mouseClickPositionY < 205
 		&& Class39_Sub5_Sub14.tabWidgetIds[4] != -1) {
 		Class39_Sub14.updateTab = true;
 		ISAAC.aBoolean1089 = true;
 		Node.currentTabId = 4;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 694 && Class39_Sub4.mouseClickPositionX <= 724
-		&& Bzip2Block.mouseClickPositionY >= 168 && Bzip2Block.mouseClickPositionY < 205
+		&& Bzip2Entry.mouseClickPositionY >= 168 && Bzip2Entry.mouseClickPositionY < 205
 		&& Class39_Sub5_Sub14.tabWidgetIds[5] != -1) {
 		ISAAC.aBoolean1089 = true;
 		Node.currentTabId = 5;
 		Class39_Sub14.updateTab = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 722 && Class39_Sub4.mouseClickPositionX <= 756
-		&& Bzip2Block.mouseClickPositionY >= 169 && Bzip2Block.mouseClickPositionY < 205
+		&& Bzip2Entry.mouseClickPositionY >= 169 && Bzip2Entry.mouseClickPositionY < 205
 		&& Class39_Sub5_Sub14.tabWidgetIds[6] != -1) {
 		Class39_Sub14.updateTab = true;
 		Node.currentTabId = 6;
 		ISAAC.aBoolean1089 = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 540 && Class39_Sub4.mouseClickPositionX <= 574
-		&& Bzip2Block.mouseClickPositionY >= 466 && Bzip2Block.mouseClickPositionY < 502
+		&& Bzip2Entry.mouseClickPositionY >= 466 && Bzip2Entry.mouseClickPositionY < 502
 		&& Class39_Sub5_Sub14.tabWidgetIds[7] != -1) {
 		Class39_Sub14.updateTab = true;
 		Node.currentTabId = 7;
 		ISAAC.aBoolean1089 = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 572 && Class39_Sub4.mouseClickPositionX <= 602
-		&& Bzip2Block.mouseClickPositionY >= 466 && Bzip2Block.mouseClickPositionY < 503
+		&& Bzip2Entry.mouseClickPositionY >= 466 && Bzip2Entry.mouseClickPositionY < 503
 		&& Class39_Sub5_Sub14.tabWidgetIds[8] != -1) {
 		Node.currentTabId = 8;
 		Class39_Sub14.updateTab = true;
 		ISAAC.aBoolean1089 = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 599 && Class39_Sub4.mouseClickPositionX <= 629
-		&& Bzip2Block.mouseClickPositionY >= 466 && Bzip2Block.mouseClickPositionY < 503
+		&& Bzip2Entry.mouseClickPositionY >= 466 && Bzip2Entry.mouseClickPositionY < 503
 		&& Class39_Sub5_Sub14.tabWidgetIds[9] != -1) {
 		Node.currentTabId = 9;
 		Class39_Sub14.updateTab = true;
 		ISAAC.aBoolean1089 = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 627 && Class39_Sub4.mouseClickPositionX <= 671
-		&& Bzip2Block.mouseClickPositionY >= 467 && Bzip2Block.mouseClickPositionY < 502
+		&& Bzip2Entry.mouseClickPositionY >= 467 && Bzip2Entry.mouseClickPositionY < 502
 		&& Class39_Sub5_Sub14.tabWidgetIds[10] != -1) {
 		Node.currentTabId = 10;
 		ISAAC.aBoolean1089 = true;
 		Class39_Sub14.updateTab = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 669 && Class39_Sub4.mouseClickPositionX <= 699
-		&& Bzip2Block.mouseClickPositionY >= 466 && Bzip2Block.mouseClickPositionY < 503
+		&& Bzip2Entry.mouseClickPositionY >= 466 && Bzip2Entry.mouseClickPositionY < 503
 		&& Class39_Sub5_Sub14.tabWidgetIds[11] != -1) {
 		ISAAC.aBoolean1089 = true;
 		Class39_Sub14.updateTab = true;
 		Node.currentTabId = 11;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 696 && Class39_Sub4.mouseClickPositionX <= 726
-		&& Bzip2Block.mouseClickPositionY >= 466 && Bzip2Block.mouseClickPositionY < 503
+		&& Bzip2Entry.mouseClickPositionY >= 466 && Bzip2Entry.mouseClickPositionY < 503
 		&& Class39_Sub5_Sub14.tabWidgetIds[12] != -1) {
 		Node.currentTabId = 12;
 		ISAAC.aBoolean1089 = true;
 		Class39_Sub14.updateTab = true;
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 724 && Class39_Sub4.mouseClickPositionX <= 758
-		&& Bzip2Block.mouseClickPositionY >= 466 && Bzip2Block.mouseClickPositionY < 502
+		&& Bzip2Entry.mouseClickPositionY >= 466 && Bzip2Entry.mouseClickPositionY < 502
 		&& Class39_Sub5_Sub14.tabWidgetIds[13] != -1) {
 		Class39_Sub14.updateTab = true;
 		ISAAC.aBoolean1089 = true;

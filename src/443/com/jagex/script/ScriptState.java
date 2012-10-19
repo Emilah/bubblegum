@@ -13,7 +13,7 @@ import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
@@ -164,7 +164,7 @@ public class ScriptState {
                 FrameBuffer.outgoingBuffer.putWord128(var0 >> 14 & 0x7fff);
             }
             if (type == 8 && Class39_Sub10.anInt1420 == -1) { //Continue
-                Bzip2Block.method1035(var1, var2);
+                Bzip2Entry.method1035(var1, var2);
                 JString.anInt1231 = var1;
                 Class39_Sub10.anInt1420 = var2;
             }
@@ -183,7 +183,7 @@ public class ScriptState {
                 }
                 Class4.crossMode = 2;
                 Class26.crossFrameNum = 0;
-                Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                 AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                 FrameBuffer.outgoingBuffer.putFrame(149);
                 FrameBuffer.outgoingBuffer.putWordLe128(Class65.anInt1145 + var1);
@@ -222,7 +222,7 @@ public class ScriptState {
                             var1);
                 }
                 Class4.crossMode = 2;
-                Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                 AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                 Class26.crossFrameNum = 0;
                 FrameBuffer.outgoingBuffer.putFrame(252);
@@ -298,7 +298,7 @@ public class ScriptState {
                                 (Cache.localPlayer.queueY[0]),
                                 npc.queueX[0]);
                         Class4.crossMode = 2;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         Class26.crossFrameNum = 0;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         FrameBuffer.outgoingBuffer.putFrame(154);
@@ -314,7 +314,7 @@ public class ScriptState {
                                 (Cache.localPlayer.queueX[0]),
                                 (Cache.localPlayer.queueY[0]),
                                 npc.queueX[0]);
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         Class26.crossFrameNum = 0;
                         Class4.crossMode = 2;
@@ -336,7 +336,7 @@ public class ScriptState {
                                 npc.queueX[0]);
                         Class26.crossFrameNum = 0;
                         Class4.crossMode = 2;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         FrameBuffer.outgoingBuffer.putFrame(222);
                         FrameBuffer.outgoingBuffer.putWordLe128(var0);
@@ -355,7 +355,7 @@ public class ScriptState {
                                 var1));
                     }
                     Class4.crossMode = 2;
-                    Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                    Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                     Class26.crossFrameNum = 0;
                     AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                     FrameBuffer.outgoingBuffer.putFrame(114);
@@ -411,7 +411,7 @@ public class ScriptState {
                                 var1));
                     }
                     Class26.crossFrameNum = 0;
-                    Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                    Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                     AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                     Class4.crossMode = 2;
                     FrameBuffer.outgoingBuffer.putFrame(38);
@@ -438,7 +438,7 @@ public class ScriptState {
                                 npc.queueX[0]);
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         Class26.crossFrameNum = 0;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         Class4.crossMode = 2;
                         FrameBuffer.outgoingBuffer.putFrame(200);
                         FrameBuffer.outgoingBuffer.putWordLe(MouseRecorder.useWithAmountChildren);
@@ -455,7 +455,7 @@ public class ScriptState {
                                 (Cache.localPlayer.queueX[0]),
                                 (Cache.localPlayer.queueY[0]),
                                 player.queueX[0]);
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         Class26.crossFrameNum = 0;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         Class4.crossMode = 2;
@@ -545,7 +545,7 @@ public class ScriptState {
                     if (!Class39_Sub12.aBoolean1493) {
                         Class44.world.method355((Class39_Sub4.mouseClickPositionX
                                 - 4),
-                                Bzip2Block.mouseClickPositionY - 4);
+                                Bzip2Entry.mouseClickPositionY - 4);
                     } else {
                         Class44.world.method355(var1 - 4, var2 - 4);
                     }
@@ -570,7 +570,7 @@ public class ScriptState {
                     Class4.crossMode = 2;
                     AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                     Class26.crossFrameNum = 0;
-                    Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                    Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                     FrameBuffer.outgoingBuffer.putFrame(85);
                     FrameBuffer.outgoingBuffer.putWord128(var2 + JKeyListener.anInt618);
                     FrameBuffer.outgoingBuffer.putWordLe128(Class65.anInt1145 + var1);
@@ -589,7 +589,7 @@ public class ScriptState {
                                 (Cache.localPlayer.queueY[0]),
                                 player.queueX[0]);
                         Class26.crossFrameNum = 0;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         Class4.crossMode = 2;
                         FrameBuffer.outgoingBuffer.putFrame(206);
@@ -641,7 +641,7 @@ public class ScriptState {
                     AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                     Class26.crossFrameNum = 0;
                     Class4.crossMode = 2;
-                    Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                    Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                     Npc npc = (GroundItem.npcs[var0]);
                     if (npc != null) {
                         NpcDefinition definition = (npc.definition);
@@ -709,7 +709,7 @@ public class ScriptState {
                                 var1));
                     }
                     Class26.crossFrameNum = 0;
-                    Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                    Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                     AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                     Class4.crossMode = 2;
                     FrameBuffer.outgoingBuffer.putFrame(64);
@@ -745,7 +745,7 @@ public class ScriptState {
                                 (Cache.localPlayer.queueY[0]),
                                 player.queueX[0]);
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         Class4.crossMode = 2;
                         Class26.crossFrameNum = 0;
                         FrameBuffer.outgoingBuffer.putFrame(236);
@@ -793,7 +793,7 @@ public class ScriptState {
                         Class26.crossFrameNum = 0;
                         Class4.crossMode = 2;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         FrameBuffer.outgoingBuffer.putFrame(87);
                         FrameBuffer.outgoingBuffer.putWord(var0);
                     }
@@ -807,7 +807,7 @@ public class ScriptState {
                                 (Cache.localPlayer.queueX[0]),
                                 (Cache.localPlayer.queueY[0]),
                                 npc.queueX[0]);
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         Class26.crossFrameNum = 0;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         Class4.crossMode = 2;
@@ -825,7 +825,7 @@ public class ScriptState {
                                 (Cache.localPlayer.queueY[0]),
                                 player.queueX[0]);
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         Class26.crossFrameNum = 0;
                         VarpDefinition.anInt1976++;
                         Class4.crossMode = 2;
@@ -870,7 +870,7 @@ public class ScriptState {
                 if (type == 1003) {
                     OndemandRequest.anInt1724++;
                     AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
-                    Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                    Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                     Class4.crossMode = 2;
                     Class26.crossFrameNum = 0;
                     FrameBuffer.outgoingBuffer.putFrame(219);
@@ -886,7 +886,7 @@ public class ScriptState {
                                 (Cache.localPlayer.queueY[0]),
                                 npc.queueX[0]);
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         Class4.crossMode = 2;
                         Class26.crossFrameNum = 0;
                         FrameBuffer.outgoingBuffer.putFrame(224);
@@ -904,7 +904,7 @@ public class ScriptState {
                                 player.queueX[0]);
                         Class4.crossMode = 2;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         Class26.crossFrameNum = 0;
                         FrameBuffer.outgoingBuffer.putFrame(169);
                         FrameBuffer.outgoingBuffer.putWordLe128(var0);
@@ -954,7 +954,7 @@ public class ScriptState {
                         Class26.crossFrameNum = 0;
                         Class4.crossMode = 2;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         FrameBuffer.outgoingBuffer.putFrame(136);
                         FrameBuffer.outgoingBuffer.putWord128(var1 + Class65.anInt1145);
                         FrameBuffer.outgoingBuffer.putWordLe(var0);
@@ -1005,7 +1005,7 @@ public class ScriptState {
                         GroundItem.anInt2242 = 0;
                     }
                     if (type == 1006) {
-                        Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                        Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         Class4.crossMode = 2;
                         Class26.crossFrameNum = 0;
@@ -1040,7 +1040,7 @@ public class ScriptState {
                                     (Cache.localPlayer.queueY[0]),
                                     (player.queueX[0]));
                             Class4.crossMode = 2;
-                            Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                            Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                             AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                             Class26.crossFrameNum = 0;
                             FrameBuffer.outgoingBuffer.putFrame(229);
@@ -1060,7 +1060,7 @@ public class ScriptState {
                             Class4.crossMode = 2;
                             Class26.crossFrameNum = 0;
                             Class39_Sub5_Sub4_Sub2.anInt2220++;
-                            Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                            Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                             FrameBuffer.outgoingBuffer.putFrame(11);
                             FrameBuffer.outgoingBuffer.putWordLe128(var0);
                         }

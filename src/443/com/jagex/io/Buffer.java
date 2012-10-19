@@ -10,7 +10,7 @@ import com.jagex.TextConstants;
 import com.jagex.net.JSocket;
 import com.jagex.utils.Cache;
 import java.math.BigInteger;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.awt.JCanvas;
 import com.jagex.world.Barrier;
 import unpackaged.Class13;
@@ -463,12 +463,12 @@ public class Buffer extends Node {
                                         Class68.encodeHuffmans((FrameBuffer.outgoingBuffer),
                                                 Class66.chatMessageJstr, -110);
                                         FrameBuffer.outgoingBuffer.putByteLength((FrameBuffer.outgoingBuffer.offset) - offset);
-                                        if (Bzip2Block.anInt1051 == 2) {
+                                        if (Bzip2Entry.anInt1051 == 2) {
                                             Mob.aBoolean2253 = true;
-                                            Bzip2Block.anInt1051 = 3;
+                                            Bzip2Entry.anInt1051 = 3;
                                             Projectile.anInt2203++;
                                             FrameBuffer.outgoingBuffer.putFrame(76);
-                                            FrameBuffer.outgoingBuffer.putByte(Bzip2Block.anInt1051);
+                                            FrameBuffer.outgoingBuffer.putByte(Bzip2Entry.anInt1051);
                                             FrameBuffer.outgoingBuffer.putByte(NameTable.anInt177);
                                             FrameBuffer.outgoingBuffer.putByte(Cache.anInt118);
                                         }
@@ -544,7 +544,7 @@ public class Buffer extends Node {
                                 Projectile.anInt2203++;
                                 NameTable.anInt177 = 1;
                                 FrameBuffer.outgoingBuffer.putFrame(76);
-                                FrameBuffer.outgoingBuffer.putByte(Bzip2Block.anInt1051);
+                                FrameBuffer.outgoingBuffer.putByte(Bzip2Entry.anInt1051);
                                 FrameBuffer.outgoingBuffer.putByte(NameTable.anInt177);
                                 FrameBuffer.outgoingBuffer.putByte(Cache.anInt118);
                             }
@@ -746,7 +746,7 @@ public class Buffer extends Node {
         if (Mob.aBoolean2253) {
             NameTable.aBoolean183 = true;
             Mob.aBoolean2253 = false;
-            ArchiveWorker.method1119(Cache.anInt118, Bzip2Block.anInt1051,
+            ArchiveWorker.method1119(Cache.anInt118, Bzip2Entry.anInt1051,
                     (Class39_Sub5_Sub14.p12fullFont),
                     41, NameTable.anInt177);
         }

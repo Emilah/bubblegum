@@ -16,7 +16,7 @@ import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.awt.events.JKeyListener;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.utils.HashTable;
@@ -167,7 +167,7 @@ public class GouraudVertex
 					  Class30.aClass3_533);
 	    Class39_Sub5_Sub14.aClass39_Sub5_Sub10_Sub4_1909
 		= Class39_Sub10.method867((byte) -79, class9,
-					  Bzip2Block.aClass3_1056,
+					  Bzip2Entry.aClass3_1056,
 					  Class30.aClass3_533);
 	    Class68.aClass39_Sub5_Sub10_Sub4_1189
 		= Class39_Sub10.method867((byte) -79, class9,

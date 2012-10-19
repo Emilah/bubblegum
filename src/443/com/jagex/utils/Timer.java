@@ -83,7 +83,7 @@ public abstract class Timer
 	for (int i_7_ = 0; i_7_ < 4; i_7_++) {
 	    for (int i_8_ = 0; i_8_ < 64; i_8_++) {
 		for (int i_9_ = 0; i_9_ < 64; i_9_++)
-		    Deque.loadMapTile(buffer, 0, i_3_, i_9_ + i, i_2_, i_8_ + i_1_, i_7_);
+		    Deque.loadLandscapeTile(buffer, 0, i_3_, i_9_ + i, i_2_, i_8_ + i_1_, i_7_);
 	    }
 	}
     }

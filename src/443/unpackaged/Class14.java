@@ -163,7 +163,7 @@ public class Class14
 		for (int i_24_ = 0; i_24_ < 64; i_24_++) {
 		    if (i_22_ == i_18_ && i_23_ >= i_13_ && i_23_ < i_13_ + 8
 			&& i_24_ >= i_17_ && i_17_ + 8 > i_24_)
-			Deque.loadMapTile
+			Deque.loadLandscapeTile
 			    (class39_sub6, i_15_, 0,
 			     i_19_ + ClassCheckRequest.method848(i_23_ & 0x7, i_15_,
 							    (byte) -93,
@@ -173,7 +173,7 @@ public class Class14
 					       true) + i_16_,
 			     i_14_);
 		    else
-			Deque.loadMapTile(class39_sub6, 0, 0, -1, 0,
+			Deque.loadLandscapeTile(class39_sub6, 0, 0, -1, 0,
 					  -1, 0);
 		}
 	    }

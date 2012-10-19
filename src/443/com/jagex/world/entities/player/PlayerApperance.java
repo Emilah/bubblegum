@@ -378,7 +378,7 @@ public class PlayerApperance
 	    = class45_33_.aLong849 + (long) (isMale ? 1 : 0);
 	anIntArray848[5] = i;
 	if (l != 0L && aLong849 != l)
-	    JRuntimeException.aClass7_1220.remove(l, -123);
+	    JRuntimeException.aClass7_1220.remove(l);
     }
     
     public static int method927(int i, int i_34_, int i_35_, byte i_36_) {

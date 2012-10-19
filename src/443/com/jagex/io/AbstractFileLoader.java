@@ -3,7 +3,7 @@ package com.jagex.io;
 import com.jagex.Client;
 import com.jagex.KeycodeConstants;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.utils.Huffman;
 import com.jagex.graphics.JImage;
 import com.jagex.graphics.DirectColorSprite;
@@ -53,7 +53,7 @@ public abstract class AbstractFileLoader {
     public int[][] childrenEntries;
     public static JString aClass3_140;
     public static DirectColorSprite aClass39_Sub5_Sub10_Sub3_141;
-    public boolean removeChild;
+    public boolean removeFile;
     public int localChecksum;
     public int[] versions;
     public int[] checksums;
@@ -173,7 +173,7 @@ public abstract class AbstractFileLoader {
         if (Client.state == 10) {
             int i_16_ = Timer.anInt887;
             int positionX = Class39_Sub4.mouseClickPositionX - 202;
-            int positionY = Bzip2Block.mouseClickPositionY - 171;
+            int positionY = Bzip2Entry.mouseClickPositionY - 171;
             if (Barrier.anInt155 == 0) {
                 int i_19_ = 120;
                 int i_20_ = 100;
@@ -285,7 +285,7 @@ public abstract class AbstractFileLoader {
             }
         }
         byte[] archive = childBuffers[archiveId][childId];
-        if (removeChild) {
+        if (removeFile) {
             childBuffers[archiveId][childId] = null;
         }
         return archive;
@@ -552,7 +552,7 @@ public abstract class AbstractFileLoader {
 
     public AbstractFileLoader(boolean bool, boolean bool_90_) {
         removeArchive = bool;
-        removeChild = bool_90_;
+        removeFile = bool_90_;
     }
 
     static {

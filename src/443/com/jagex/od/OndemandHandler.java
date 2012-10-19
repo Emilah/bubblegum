@@ -20,7 +20,7 @@ import com.jagex.io.CacheIO;
 import com.jagex.io.FileLoader;
 import com.jagex.net.JSocket;
 import com.jagex.od.OndemandRequest;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.utils.Deque;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
@@ -62,8 +62,8 @@ public class OndemandHandler {
 
     public static boolean cycle() {
         long l = Class2.getSystemTime();
-        int i_2_ = (int) (-Bzip2Block.aLong1063 + l);
-        Bzip2Block.aLong1063 = l;
+        int i_2_ = (int) (-Bzip2Entry.aLong1063 + l);
+        Bzip2Entry.aLong1063 = l;
         if (i_2_ > 200) {
             i_2_ = 200;
         }
@@ -294,7 +294,7 @@ public class OndemandHandler {
             }
         }
         Huffman.anInt748 = 0;
-        Bzip2Block.aLong1063 = Class2.getSystemTime();
+        Bzip2Entry.aLong1063 = Class2.getSystemTime();
     }
 
     public static void writeStatus(boolean bool) {

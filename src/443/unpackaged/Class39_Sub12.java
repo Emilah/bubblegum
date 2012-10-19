@@ -26,7 +26,7 @@ import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
 import com.jagex.io.CacheIO;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
@@ -209,7 +209,7 @@ public class Class39_Sub12 extends Node {
                             Class67.fileLoader2);
                     ScriptState.setObjectFileLoaders(PlayerApperance.isLowMemory, PlayerApperance.fileLoader7, Class67.fileLoader2, 64);
                     Class47.setNpcFileLoaders(Class67.fileLoader2, PlayerApperance.fileLoader7);
-                    Bzip2Block.method1032(PlayerApperance.fileLoader7, (byte) -113,
+                    Bzip2Entry.method1032(PlayerApperance.fileLoader7, (byte) -113,
                             Class67.fileLoader2,
                             (Npc.aClass39_Sub5_Sub10_Sub1_2495),
                             HashTable.members);
@@ -444,7 +444,7 @@ public class Class39_Sub12 extends Node {
         if (Class39_Sub5_Sub7.minimapState == 0) {
             if (Timer.anInt887 == 1) {
                 int i_18_ = Class39_Sub4.mouseClickPositionX - 25 - 550;
-                int i_19_ = Bzip2Block.mouseClickPositionY - 4 - 5;
+                int i_19_ = Bzip2Entry.mouseClickPositionY - 4 - 5;
                 if (i_18_ >= 0 && i_19_ >= 0 && i_18_ < 146 && i_19_ < 151) {
                     i_18_ -= 73;
                     int i_20_ = Class34.anInt605 + ArchiveRequest.anInt1401 & 0x7ff;

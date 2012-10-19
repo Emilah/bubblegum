@@ -259,8 +259,8 @@ public class Node
 	    && NpcDefinition.aClass39_Sub5_Sub17_1864 == null) {
 	    int i_14_ = Timer.anInt887;
 	    if (ISAAC.aBoolean1100 && Class39_Sub4.mouseClickPositionX >= 516
-		&& Bzip2Block.mouseClickPositionY >= 160 && Class39_Sub4.mouseClickPositionX <= 765
-		&& Bzip2Block.mouseClickPositionY <= 205)
+		&& Bzip2Entry.mouseClickPositionY >= 160 && Class39_Sub4.mouseClickPositionX <= 765
+		&& Bzip2Entry.mouseClickPositionY <= 205)
 		i_14_ = 0;
 	    if (!Class39_Sub12.aBoolean1493) {
 		if (i_14_ == 1 && Class39_Sub5_Sub11.actionOffset > 0) {
@@ -276,7 +276,7 @@ public class Node
 			    Cache.aBoolean121 = false;
 			    Widget.anInt2031 = 0;
 			    ArchiveWorker.swapWidgetHash = widgetId;
-			    OndemandRequest.itemClickPositionY = Bzip2Block.mouseClickPositionY;
+			    OndemandRequest.itemClickPositionY = Bzip2Entry.mouseClickPositionY;
 			    Class30.anInt534 = 2;
 			    if (widgetId >> 16 == StillObject.viewOverlayId) {
                                 Class30.anInt534 = 1;
@@ -334,7 +334,7 @@ public class Node
 		    int i_21_ = Widget.anInt2063;
 		    int i_22_ = Class14.anInt227;
 		    int positionX = Class39_Sub4.mouseClickPositionX;
-		    int positionY = Bzip2Block.mouseClickPositionY;
+		    int positionY = Bzip2Entry.mouseClickPositionY;
 		    int i_25_ = -1;
 		    if (Class37.anInt653 == 0) {
 			positionY -= 4;

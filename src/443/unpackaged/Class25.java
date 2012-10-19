@@ -21,7 +21,7 @@ import com.jagex.awt.events.JKeyListener;
 import com.jagex.Client;
 import com.jagex.awt.JApplet;
 import com.jagex.io.CacheIO;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;

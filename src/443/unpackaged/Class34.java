@@ -27,7 +27,7 @@ import com.jagex.awt.JCanvas;
 import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
@@ -229,7 +229,7 @@ public abstract class Class34 {
             Class37.method354((byte) 102);
         } else {
             for (int i = 0; i < 100; i++) {
-                if (!Bzip2Block.readFrame()) {
+                if (!Bzip2Entry.readFrame()) {
                     break;
                 }
             }
@@ -328,7 +328,7 @@ public abstract class Class34 {
                     if (l > 4095L) {
                         l = 4095L;
                     }
-                    int i_19_ = Bzip2Block.mouseClickPositionY;
+                    int i_19_ = Bzip2Entry.mouseClickPositionY;
                     int i_20_ = Class39_Sub4.mouseClickPositionX;
                     if (i_20_ >= 0) {
                         if (i_20_ > 764) {
@@ -586,7 +586,7 @@ public abstract class Class34 {
                             if (bool) {
                                 Class4.crossMode = 1;
                                 Class26.crossFrameNum = 0;
-                                Class62_Sub2.crossPositionY = Bzip2Block.mouseClickPositionY;
+                                Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                                 AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                             }
                             World.anInt682 = -1;

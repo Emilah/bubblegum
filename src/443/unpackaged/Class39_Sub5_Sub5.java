@@ -10,7 +10,7 @@ import com.jagex.world.Mob;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.awt.events.JMouseListener;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.utils.HashTable;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.world.entities.Projectile;
@@ -48,49 +48,49 @@ public class Class39_Sub5_Sub5 extends SubNode
     public static void method569(byte i) {
 	if (Timer.anInt887 == 1) {
 	    if (Class39_Sub4.mouseClickPositionX >= 6 && Class39_Sub4.mouseClickPositionX <= 106
-		&& Bzip2Block.mouseClickPositionY >= 467 && Bzip2Block.mouseClickPositionY <= 499) {
+		&& Bzip2Entry.mouseClickPositionY >= 467 && Bzip2Entry.mouseClickPositionY <= 499) {
 		Projectile.anInt2203++;
-		Bzip2Block.anInt1051 = (Bzip2Block.anInt1051 + 1) % 4;
+		Bzip2Entry.anInt1051 = (Bzip2Entry.anInt1051 + 1) % 4;
 		Class14.aBoolean245 = true;
 		Mob.aBoolean2253 = true;
 		FrameBuffer.outgoingBuffer.putFrame(76);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Bzip2Block.anInt1051);
+		    .putByte(Bzip2Entry.anInt1051);
 		FrameBuffer.outgoingBuffer
 		    .putByte(NameTable.anInt177);
 		FrameBuffer.outgoingBuffer
 		    .putByte(Cache.anInt118);
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 135 && Class39_Sub4.mouseClickPositionX <= 235
-		&& Bzip2Block.mouseClickPositionY >= 467 && Bzip2Block.mouseClickPositionY <= 499) {
+		&& Bzip2Entry.mouseClickPositionY >= 467 && Bzip2Entry.mouseClickPositionY <= 499) {
 		Projectile.anInt2203++;
 		NameTable.anInt177 = (NameTable.anInt177 + 1) % 3;
 		Mob.aBoolean2253 = true;
 		Class14.aBoolean245 = true;
 		FrameBuffer.outgoingBuffer.putFrame(76);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Bzip2Block.anInt1051);
+		    .putByte(Bzip2Entry.anInt1051);
 		FrameBuffer.outgoingBuffer
 		    .putByte(NameTable.anInt177);
 		FrameBuffer.outgoingBuffer
 		    .putByte(Cache.anInt118);
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 273 && Class39_Sub4.mouseClickPositionX <= 373
-		&& Bzip2Block.mouseClickPositionY >= 467 && Bzip2Block.mouseClickPositionY <= 499) {
+		&& Bzip2Entry.mouseClickPositionY >= 467 && Bzip2Entry.mouseClickPositionY <= 499) {
 		Mob.aBoolean2253 = true;
 		Cache.anInt118 = (Cache.anInt118 + 1) % 3;
 		Projectile.anInt2203++;
 		Class14.aBoolean245 = true;
 		FrameBuffer.outgoingBuffer.putFrame(76);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Bzip2Block.anInt1051);
+		    .putByte(Bzip2Entry.anInt1051);
 		FrameBuffer.outgoingBuffer
 		    .putByte(NameTable.anInt177);
 		FrameBuffer.outgoingBuffer
 		    .putByte(Cache.anInt118);
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 412 && Class39_Sub4.mouseClickPositionX <= 512
-		&& Bzip2Block.mouseClickPositionY >= 467 && Bzip2Block.mouseClickPositionY <= 499) {
+		&& Bzip2Entry.mouseClickPositionY >= 467 && Bzip2Entry.mouseClickPositionY <= 499) {
 		if (StillObject.viewOverlayId == -1) {
 		    TextureLoaderImpl.closeOverlays();
 		    if (GouraudVertex.anInt907 != -1) {

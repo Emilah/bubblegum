@@ -10,7 +10,7 @@ import com.jagex.config.ItemDefinition;
 import com.jagex.config.NpcDefinition;
 import com.jagex.awt.events.JKeyListener;
 import com.jagex.io.CacheIO;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.utils.HashTable;
 import com.jagex.graphics.JImage;
@@ -195,7 +195,7 @@ public class ArchiveWorker implements Runnable {
                 class39_sub5_sub10_sub1.method636(Timer.aClass3_881, 184, 41,
                         16711680, true);
             }
-            class39_sub5_sub10_sub1.method636(Bzip2Block.aClass3_1049, 324, 28,
+            class39_sub5_sub10_sub1.method636(Bzip2Entry.aClass3_1049, 324, 28,
                     16777215, true);
             if (i == 0) {
                 class39_sub5_sub10_sub1.method636(JImage.aClass3_1574,

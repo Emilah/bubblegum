@@ -8,7 +8,7 @@ import com.jagex.utils.Timer;
 import com.jagex.audio.AbstractMidiHandler;
 import com.jagex.world.Barrier;
 import com.jagex.awt.events.JMouseListener;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.world.entities.Projectile;
@@ -56,7 +56,7 @@ public class Class39_Sub5_Sub18 extends SubNode
 	    Class33.mousePositionY = Barrier.queuedMousePositionY;
 	    Timer.anInt887 = Class23.anInt430;
 	    Class39_Sub4.mouseClickPositionX = JMouseListener.anInt791;
-	    Bzip2Block.mouseClickPositionY = Class41.anInt784;
+	    Bzip2Entry.mouseClickPositionY = Class41.anInt784;
 	    StillGraphic.aLong2331 = Class2.aLong55;
 	    Class23.anInt430 = 0;
 	}

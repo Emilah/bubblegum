@@ -15,7 +15,7 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.awt.events.JKeyListener;
 import com.jagex.Client;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.utils.HashTable;
@@ -241,7 +241,7 @@ public abstract class Entity extends SubNode {
             GroundItem.anIntArray2245 = new int[256];
             HashTable.anIntArray377 = new int[32768];
             Cache.anIntArray112 = new int[32768];
-            Bzip2Block.method1034(null, (byte) -107);
+            Bzip2Entry.method1034(null, (byte) -107);
             Class39_Sub5_Sub14.password = Class39_Sub5_Sub14.blankJstr;
             Class53.anIntArray969 = new int[32768];
             Barrier.anInt155 = 0;

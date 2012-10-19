@@ -15,7 +15,7 @@ import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.graphics.AbstractImage;
@@ -122,7 +122,7 @@ public class Class32
 		    if (Class66.inputMessageJstr.getLength() != 0) {
 			if (Class67.anInt1184 == 0)
 			    aClass39_Sub5_Sub10_Sub1_587
-				.method629(Bzip2Block.aClass3_1050, 239, 40, 0);
+				.method629(Bzip2Entry.aClass3_1050, 239, 40, 0);
 		    } else
 			aClass39_Sub5_Sub10_Sub1_587
 			    .method629(ISAAC.aClass3_1098, 239, 40, 255);
@@ -174,8 +174,8 @@ public class Class32
 					font.method647(Class2.messageBodies[i_16_], 4, i_18_, 0);
 				}
 				if ((type == 1 || type == 2)
-				    && (type == 1 || Bzip2Block.anInt1051 == 0
-					|| (Bzip2Block.anInt1051 == 1
+				    && (type == 1 || Bzip2Entry.anInt1051 == 0
+					|| (Bzip2Entry.anInt1051 == 1
 					    && JString.method60(21469,
 							       prefix)))) {
 				    if (i_18_ > 0 && i_18_ < 110) {

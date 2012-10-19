@@ -84,12 +84,10 @@ import com.jagex.config.Widget;
 /* Class7 - Decompiled by JODE
  * Visit http://jode.sourceforge.net/
  */
+public class Cache {
 
-public class Cache
-{
     public static int anInt101;
-    public static JString aClass3_102
-	= JString.create("Bitte laden Sie die Seite neu)3");
+    public static JString aClass3_102 = JString.create("Bitte laden Sie die Seite neu)3");
     public static JString aClass3_103;
     public static byte[][] aByteArrayArray104;
     public static JString aClass3_105;
@@ -98,10 +96,9 @@ public class Cache
     public static Signlink webSignlink;
     public static Player localPlayer;
     public SubNode aClass39_Sub5_110 = new SubNode();
-    public static byte[] aByteArray111
-	= { 95, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109,
-	    110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122,
-	    48, 49, 50, 51, 52, 53, 54, 55, 56, 57 };
+    public static byte[] aByteArray111 = {95, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109,
+        110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122,
+        48, 49, 50, 51, 52, 53, 54, 55, 56, 57};
     public static int[] anIntArray112;
     public static JString huffmanJstr;
     public static JString aClass3_114;
@@ -109,202 +106,189 @@ public class Cache
     public static JString aClass3_116;
     public static JString worldIsFullJstr;
     public static int anInt118;
-    public int anInt119;
-    public HashTable aClass19_120;
+    public int maximumSize;
+    public HashTable hashTable;
     public static boolean aBoolean121;
-    public Queue aClass54_122 = new Queue();
+    public Queue addedNodes = new Queue();
     public static MouseRecorder mouseRecorder;
-    public int anInt124;
-    
+    public int spaceRemaining;
+
     public static void drawMessages(byte i) {
-	if (Class2.anInt53 != 0) {
-	    BitmapFont font
-		= Class39_Sub5_Sub14.p12fullFont;
-	    int i_0_ = 0;
-	    if (ClassCheckRequest.systemUpdateTime != 0)
-		i_0_ = 1;
-	    for (int i_1_ = 0; i_1_ < 100; i_1_++) {
-		if (Class2.messageBodies[i_1_] != null) {
-		    int type = Client.messageTypes[i_1_];
-		    JString prefix = StillObject.messagePrefixes[i_1_];
-		    int i_3_ = 0;
-		    if (prefix != null
-			&& prefix.beginsWith(Class37.crown1Jstr)) {
-			prefix = prefix.substring(5);
-			i_3_ = 1;
-		    }
-		    if (prefix != null
-			&& prefix.beginsWith(Class53.crown2Jstr)) {
-			prefix = prefix.substring(5);
-			i_3_ = 2;
-		    }
-		    if ((type == 3 || type == 7)
-			&& (type == 7 || NameTable.anInt177 == 0
-			    || (NameTable.anInt177 == 1
-				&& JString.method60(21469, prefix)))) {
-			int i_4_ = -(i_0_ * 13) + 329;
-			i_0_++;
-			int i_5_ = 4;
-			font.method647((VarpDefinition
-							   .aClass3_1991),
-							  i_5_, i_4_, 0);
-			font.method647((VarpDefinition
-							   .aClass3_1991),
-							  i_5_, i_4_ - 1,
-							  65535);
-			i_5_
-			    += font
-				   .method637(VarpDefinition.aClass3_1991);
-			i_5_ += font.method645(32);
-			if (i_3_ == 1) {
-			    TextureLoaderImpl.aClass39_Sub5_Sub10_Sub4Array1247[0]
-				.method695(i_5_, i_4_ - 12);
-			    i_5_ += 14;
-			}
-			if (i_3_ == 2) {
-			    TextureLoaderImpl.aClass39_Sub5_Sub10_Sub4Array1247[1]
-				.method695(i_5_, i_4_ - 12);
-			    i_5_ += 14;
-			}
-			font.method647
-			    ((Class39_Sub5_Sub11.join
-			      (new JString[] { prefix, MouseRecorder.colonJstr,
-					      Class2.messageBodies[i_1_] })),
-			     i_5_, i_4_, 0);
-			font.method647
-			    ((Class39_Sub5_Sub11.join
-			      (new JString[] { prefix, MouseRecorder.colonJstr,
-					      Class2.messageBodies[i_1_] })),
-			     i_5_, i_4_ - 1, 65535);
-			if (i_0_ >= 5)
-			    break;
-		    }
-		    if (type == 5 && NameTable.anInt177 < 2) {
-			int i_6_ = 329 - i_0_ * 13;
-			i_0_++;
-			font.method647((Class2
-							   .messageBodies
-							   [i_1_]),
-							  4, i_6_, 0);
-			font.method647((Class2
-							   .messageBodies
-							   [i_1_]),
-							  4, i_6_ - 1, 65535);
-			if (i_0_ >= 5)
-			    break;
-		    }
-		    if (type == 6 && NameTable.anInt177 < 2) {
-			int i_7_ = -(i_0_ * 13) + 329;
-			font.method647
-			    ((Class39_Sub5_Sub11.join
-			      (new JString[] { Class39_Sub14.toJstr,
-					      Class62_Sub2.spaceJstr,
-					      prefix, MouseRecorder.colonJstr,
-					      Class2.messageBodies[i_1_] })),
-			     4, i_7_, 0);
-			i_0_++;
-			font.method647
-			    ((Class39_Sub5_Sub11.join
-			      (new JString[] { Class39_Sub14.toJstr,
-					      Class62_Sub2.spaceJstr,
-					      prefix, MouseRecorder.colonJstr,
-					      Class2.messageBodies[i_1_] })),
-			     4, i_7_ - 1, 65535);
-			if (i_0_ >= 5)
-			    break;
-		    }
-		}
-	    }
-	}
+        if (Class2.anInt53 != 0) {
+            BitmapFont font = Class39_Sub5_Sub14.p12fullFont;
+            int i_0_ = 0;
+            if (ClassCheckRequest.systemUpdateTime != 0) {
+                i_0_ = 1;
+            }
+            for (int i_1_ = 0; i_1_ < 100; i_1_++) {
+                if (Class2.messageBodies[i_1_] != null) {
+                    int type = Client.messageTypes[i_1_];
+                    JString prefix = StillObject.messagePrefixes[i_1_];
+                    int i_3_ = 0;
+                    if (prefix != null
+                            && prefix.beginsWith(Class37.crown1Jstr)) {
+                        prefix = prefix.substring(5);
+                        i_3_ = 1;
+                    }
+                    if (prefix != null
+                            && prefix.beginsWith(Class53.crown2Jstr)) {
+                        prefix = prefix.substring(5);
+                        i_3_ = 2;
+                    }
+                    if ((type == 3 || type == 7)
+                            && (type == 7 || NameTable.anInt177 == 0
+                            || (NameTable.anInt177 == 1
+                            && JString.method60(21469, prefix)))) {
+                        int i_4_ = -(i_0_ * 13) + 329;
+                        i_0_++;
+                        int i_5_ = 4;
+                        font.method647((VarpDefinition.aClass3_1991),
+                                i_5_, i_4_, 0);
+                        font.method647((VarpDefinition.aClass3_1991),
+                                i_5_, i_4_ - 1,
+                                65535);
+                        i_5_ += font
+                                .method637(VarpDefinition.aClass3_1991);
+                        i_5_ += font.method645(32);
+                        if (i_3_ == 1) {
+                            TextureLoaderImpl.aClass39_Sub5_Sub10_Sub4Array1247[0]
+                                    .method695(i_5_, i_4_ - 12);
+                            i_5_ += 14;
+                        }
+                        if (i_3_ == 2) {
+                            TextureLoaderImpl.aClass39_Sub5_Sub10_Sub4Array1247[1]
+                                    .method695(i_5_, i_4_ - 12);
+                            i_5_ += 14;
+                        }
+                        font.method647((Class39_Sub5_Sub11.join(new JString[]{prefix, MouseRecorder.colonJstr,
+                                    Class2.messageBodies[i_1_]})),
+                                i_5_, i_4_, 0);
+                        font.method647((Class39_Sub5_Sub11.join(new JString[]{prefix, MouseRecorder.colonJstr,
+                                    Class2.messageBodies[i_1_]})),
+                                i_5_, i_4_ - 1, 65535);
+                        if (i_0_ >= 5) {
+                            break;
+                        }
+                    }
+                    if (type == 5 && NameTable.anInt177 < 2) {
+                        int i_6_ = 329 - i_0_ * 13;
+                        i_0_++;
+                        font.method647((Class2.messageBodies[i_1_]),
+                                4, i_6_, 0);
+                        font.method647((Class2.messageBodies[i_1_]),
+                                4, i_6_ - 1, 65535);
+                        if (i_0_ >= 5) {
+                            break;
+                        }
+                    }
+                    if (type == 6 && NameTable.anInt177 < 2) {
+                        int i_7_ = -(i_0_ * 13) + 329;
+                        font.method647((Class39_Sub5_Sub11.join(new JString[]{Class39_Sub14.toJstr,
+                                    Class62_Sub2.spaceJstr,
+                                    prefix, MouseRecorder.colonJstr,
+                                    Class2.messageBodies[i_1_]})),
+                                4, i_7_, 0);
+                        i_0_++;
+                        font.method647((Class39_Sub5_Sub11.join(new JString[]{Class39_Sub14.toJstr,
+                                    Class62_Sub2.spaceJstr,
+                                    prefix, MouseRecorder.colonJstr,
+                                    Class2.messageBodies[i_1_]})),
+                                4, i_7_ - 1, 65535);
+                        if (i_0_ >= 5) {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
-    
-    public void remove(long l, int i) {
-	SubNode class39_sub5
-	    = (SubNode) aClass19_120.get(l);
-	if (class39_sub5 != null) {
-	    class39_sub5.unlinkDeque();
-	    class39_sub5.unlinkQueue();
-	    anInt124++;
-	}
+
+    public void remove(long hash) {
+        SubNode node = (SubNode) hashTable.get(hash);
+        if (node != null) {
+            node.unlinkDeque();
+            node.unlinkQueue();
+            spaceRemaining++;
+        }
     }
-    
+
     public SubNode get(long hash) {
-	SubNode class39_sub5
-	    = (SubNode) aClass19_120.get(hash);
-	if (class39_sub5 != null)
-	    aClass54_122.offerFirst(class39_sub5);
-	return class39_sub5;
+        SubNode node = (SubNode) hashTable.get(hash);
+        if (node != null) {
+            addedNodes.offerFirst(node);
+        }
+        return node;
     }
-    
+
     public void clear() {
-	for (;;) {
-	    SubNode class39_sub5 = aClass54_122.pollFirst();
-	    if (class39_sub5 == null)
-		break;
-	    class39_sub5.unlinkDeque();
-	    class39_sub5.unlinkQueue();
-	}
-	anInt124 = anInt119;
+        for (;;) {
+            SubNode node = addedNodes.pollFirst();
+            if (node == null) {
+                break;
+            }
+            node.unlinkDeque();
+            node.unlinkQueue();
+        }
+        spaceRemaining = maximumSize;
     }
-    
-    public void put(SubNode class39_sub5, long l) {
-	if (anInt124 != 0)
-	    anInt124--;
-	else {
-	    SubNode class39_sub5_8_ = aClass54_122.pollFirst();
-	    class39_sub5_8_.unlinkDeque();
-	    class39_sub5_8_.unlinkQueue();
-	    if (class39_sub5_8_ == aClass39_Sub5_110) {
-		class39_sub5_8_ = aClass54_122.pollFirst();
-		class39_sub5_8_.unlinkDeque();
-		class39_sub5_8_.unlinkQueue();
-	    }
-	}
-	aClass19_120.put(l, class39_sub5);
-	aClass54_122.offerFirst(class39_sub5);
+
+    public void put(SubNode node, long hash) {
+        if (spaceRemaining != 0) {
+            spaceRemaining--;
+        } else {
+            SubNode nodeToRemove = addedNodes.pollFirst();
+            nodeToRemove.unlinkDeque();
+            nodeToRemove.unlinkQueue();
+            if (nodeToRemove == aClass39_Sub5_110) {
+                nodeToRemove = addedNodes.pollFirst();
+                nodeToRemove.unlinkDeque();
+                nodeToRemove.unlinkQueue();
+            }
+        }
+        hashTable.put(hash, node);
+        addedNodes.offerFirst(node);
     }
-    
+
     public static void method136(int i) {
-	aByteArrayArray104 = null;
-	aClass3_114 = null;
-	mouseRecorder = null;
-	aClass3_102 = null;
-	localPlayer = null;
-	aClass19_106 = null;
-	aClass3_105 = null;
-	aClass3_107 = null;
-	aClass3_115 = null;
-	aByteArray111 = null;
-	aClass3_116 = null;
-	huffmanJstr = null;
-	anIntArray112 = null;
-	webSignlink = null;
-	aClass3_103 = null;
-	worldIsFullJstr = null;
+        aByteArrayArray104 = null;
+        aClass3_114 = null;
+        mouseRecorder = null;
+        aClass3_102 = null;
+        localPlayer = null;
+        aClass19_106 = null;
+        aClass3_105 = null;
+        aClass3_107 = null;
+        aClass3_115 = null;
+        aByteArray111 = null;
+        aClass3_116 = null;
+        huffmanJstr = null;
+        anIntArray112 = null;
+        webSignlink = null;
+        aClass3_103 = null;
+        worldIsFullJstr = null;
     }
-    
-    public Cache(int i) {
-	anInt119 = i;
-	int i_9_ = 1;
-	anInt124 = i;
-	for (/**/; i_9_ + i_9_ < i; i_9_ += i_9_) {
-	    /* empty */
-	}
-	aClass19_120 = new HashTable(i_9_);
+
+    public Cache(int size) {
+        maximumSize = size;
+        int counter = 1;
+        spaceRemaining = size;
+        for (/**/; counter + counter < size; counter += counter) {
+            /* empty */
+        }
+        hashTable = new HashTable(counter);
     }
-    
+
     static {
-	anInt101 = 0;
-	huffmanJstr = JString.create("huffman");
-	aClass3_103 = JString.create(" @whi@(X");
-	aClass3_107 = JString.create("backhmid1");
-	worldIsFullJstr = JString.create("This world is full)3");
-	aClass3_115 = JString.create("headicons_hint");
-	aClass3_116
-	    = JString.create("Service unavailable)3");
-	aClass3_114 = aClass3_116;
-	aClass3_105 = worldIsFullJstr;
-	aBoolean121 = false;
-	anInt118 = 0;
+        anInt101 = 0;
+        huffmanJstr = JString.create("huffman");
+        aClass3_103 = JString.create(" @whi@(X");
+        aClass3_107 = JString.create("backhmid1");
+        worldIsFullJstr = JString.create("This world is full)3");
+        aClass3_115 = JString.create("headicons_hint");
+        aClass3_116 = JString.create("Service unavailable)3");
+        aClass3_114 = aClass3_116;
+        aClass3_105 = worldIsFullJstr;
+        aBoolean121 = false;
+        anInt118 = 0;
     }
 }

@@ -15,7 +15,7 @@ import com.jagex.awt.JCanvas;
 import com.jagex.awt.events.JMouseListener;
 import com.jagex.awt.events.JKeyListener;
 import com.jagex.utils.NameTable;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
@@ -256,9 +256,9 @@ public class Class1
 		    }
 		}
 		if (class39_sub5_sub4_sub4.aClass3_2295 != null
-		    && (i >= TraversalMap.anInt515 || Bzip2Block.anInt1051 == 0
-			|| Bzip2Block.anInt1051 == 3
-			|| (Bzip2Block.anInt1051 == 1
+		    && (i >= TraversalMap.anInt515 || Bzip2Entry.anInt1051 == 0
+			|| Bzip2Entry.anInt1051 == 3
+			|| (Bzip2Entry.anInt1051 == 1
 			    && JString.method60(21469,
 					       (((Player)
 						 class39_sub5_sub4_sub4)
@@ -548,7 +548,7 @@ public class Class1
 	if (Class39_Sub5_Sub7.anInt1783 > Cache.anIntArray112.length) {
 	    int i_45_ = (int) (Math.random() * 12.0);
 	    Class39_Sub5_Sub7.anInt1783 -= Cache.anIntArray112.length;
-	    Bzip2Block.method1034((AbstractImage.aClass39_Sub5_Sub10_Sub4Array1002
+	    Bzip2Entry.method1034((AbstractImage.aClass39_Sub5_Sub10_Sub4Array1002
 				[i_45_]),
 			       (byte) -107);
 	}

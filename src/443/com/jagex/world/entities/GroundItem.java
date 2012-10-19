@@ -5,7 +5,7 @@ import com.jagex.utils.JString;
 import com.jagex.net.JSocket;
 import com.jagex.utils.Deque;
 import com.jagex.io.Buffer;
-import com.jagex.utils.Bzip2Block;
+import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.CacheIO;
 import com.jagex.awt.JCanvas;
 import unpackaged.Class1;
@@ -88,7 +88,7 @@ public class GroundItem extends Entity
 						    int i_0_, boolean bool) {
 	if (!Client.decodeSprite(class9, i_0_, i))
 	    return null;
-	return Bzip2Block.method1036(false);
+	return Bzip2Entry.method1036(false);
     }
     
     public static Widget method504
