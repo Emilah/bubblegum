@@ -8,7 +8,7 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;

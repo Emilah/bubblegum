@@ -8,7 +8,7 @@ import com.jagex.script.ScriptState;
 import com.jagex.utils.Timer;
 import com.jagex.world.Mob;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.utils.HashTable;

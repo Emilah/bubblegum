@@ -4,7 +4,7 @@ import com.jagex.Client;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.utils.NameTable;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.IndexedColorSprite;

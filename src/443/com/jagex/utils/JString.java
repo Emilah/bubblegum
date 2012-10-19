@@ -45,7 +45,7 @@ import unpackaged.Class67;
 import com.jagex.script.ClientScript;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.config.ItemDefinition;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.world.entities.Projectile;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.config.Widget;

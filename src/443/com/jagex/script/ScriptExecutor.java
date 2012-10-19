@@ -8,7 +8,7 @@
 package com.jagex.script;
 
 import com.jagex.Client;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.config.ItemDefinition;
 import com.jagex.config.Widget;
 import com.jagex.graphics.AbstractImage;

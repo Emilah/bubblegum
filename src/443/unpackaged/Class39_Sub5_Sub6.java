@@ -1,7 +1,7 @@
 package unpackaged;
 
 import com.jagex.config.Model;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.utils.HashTable;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.JImage;

@@ -39,7 +39,7 @@ import com.jagex.script.ClientScript;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.io.FileLoader;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.config.NpcDefinition;
 import com.jagex.od.OndemandRequest;
 import com.jagex.world.entities.Projectile;

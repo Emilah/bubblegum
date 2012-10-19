@@ -29,7 +29,7 @@ import com.jagex.script.ClientScript;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.utils.Huffman;
 import com.jagex.graphics.IndexedColorSprite;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.utils.JString;
 import com.jagex.config.Model;
 import com.jagex.utils.NameTable;

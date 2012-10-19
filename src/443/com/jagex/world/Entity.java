@@ -13,7 +13,7 @@ import com.jagex.world.Barrier;
 import com.jagex.world.Mob;
 import com.jagex.io.ArchiveWorker;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.Client;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;

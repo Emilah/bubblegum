@@ -7,7 +7,7 @@ import com.jagex.script.ClientScript;
 import com.jagex.utils.Timer;
 import com.jagex.audio.AbstractMidiHandler;
 import com.jagex.world.Barrier;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.world.entities.StillGraphic;

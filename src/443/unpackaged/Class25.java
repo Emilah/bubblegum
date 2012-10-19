@@ -17,7 +17,7 @@ import com.jagex.od.OndemandRequest;
 import com.jagex.config.VarbitDefinition;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.Client;
 import com.jagex.awt.JApplet;
 import com.jagex.io.CacheIO;

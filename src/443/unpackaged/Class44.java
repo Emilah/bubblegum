@@ -7,7 +7,7 @@ import com.jagex.config.Widget;
 import com.jagex.world.World;
 import com.jagex.io.ArchiveRequest;
 import com.jagex.config.VarbitDefinition;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.utils.JString;

@@ -51,8 +51,8 @@ import com.jagex.io.FileLoader;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.utils.Huffman;
-import com.jagex.awt.events.JKeyListener;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.script.ScriptState;
 
 public class JImage extends AbstractImage

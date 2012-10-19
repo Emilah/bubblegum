@@ -4,7 +4,7 @@ package com.jagex.config;
  * Visit http://jode.sourceforge.net/
  */
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.utils.NameTable;
 import com.jagex.io.BufferedFile;
 import com.jagex.world.entities.GroundItem;

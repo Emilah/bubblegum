@@ -3,7 +3,7 @@ package com.jagex.awt;
 /* Applet_Sub1 - Decompiled by JODE
  * Visit http://jode.sourceforge.net/
  */
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.io.BufferedFile;
 import com.jagex.utils.HashTable;
 import com.jagex.graphics.AbstractImage;

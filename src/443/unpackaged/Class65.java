@@ -12,7 +12,7 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.sign.Signlink;
 import com.jagex.config.ItemDefinition;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.awt.JApplet;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;

@@ -9,7 +9,7 @@ import com.jagex.utils.JRuntimeException;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.Bzip2Decompressor;
 import com.jagex.utils.HashTable;

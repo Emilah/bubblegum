@@ -14,7 +14,7 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;

@@ -2,7 +2,7 @@ package unpackaged;
 
 import com.jagex.script.ClientScript;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.od.OndemandHandler;
 import com.jagex.script.ScriptExecutor;

@@ -56,7 +56,7 @@ import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.utils.ISAAC;
 import com.jagex.graphics.JImage;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.utils.JString;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Node;

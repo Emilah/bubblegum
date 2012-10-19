@@ -14,7 +14,7 @@ import com.jagex.config.VarbitDefinition;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.events.JMouseListener;
+import com.jagex.awt.listeners.JMouseListener;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;

@@ -2,7 +2,7 @@ package com.jagex.config;
 
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.Client;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;

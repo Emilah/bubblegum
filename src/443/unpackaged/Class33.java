@@ -3,7 +3,7 @@ package unpackaged;
 import com.jagex.world.entities.StillObject;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Node;
 import com.jagex.utils.JString;

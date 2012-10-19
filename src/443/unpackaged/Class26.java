@@ -14,7 +14,7 @@ import com.jagex.io.ArchiveRequest;
 import com.jagex.io.ArchiveWorker;
 import com.jagex.config.VarbitDefinition;
 import com.jagex.config.ItemDefinition;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;

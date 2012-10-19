@@ -8,7 +8,7 @@ import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.utils.NameTable;
 import com.jagex.io.BufferedFile;
 import com.jagex.graphics.DirectColorSprite;

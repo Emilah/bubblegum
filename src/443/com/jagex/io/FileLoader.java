@@ -1,6 +1,6 @@
 package com.jagex.io;
 
-import com.jagex.awt.events.JKeyListener;
+import com.jagex.awt.listeners.JKeyListener;
 import com.jagex.io.CacheIO;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.world.entities.Projectile;
