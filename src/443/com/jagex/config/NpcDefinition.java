@@ -67,8 +67,8 @@ public class NpcDefinition extends SubNode {
         Class37.aClass9_658 = class9_0_;
         VarpDefinition.wigetFileLoader = class9_1_;
         Huffman.aClass9_760 = class9;
-        AbstractMidiHandler.widgets = (new Widget[VarpDefinition.wigetFileLoader.amountArchives()][]);
-        Entity.widgetsLoaded = new boolean[VarpDefinition.wigetFileLoader.amountArchives()];
+        AbstractMidiHandler.widgets = (new Widget[VarpDefinition.wigetFileLoader.getAmountArchives()][]);
+        Entity.widgetsLoaded = new boolean[VarpDefinition.wigetFileLoader.getAmountArchives()];
     }
 
     public static void method715(byte i, AbstractFileLoader class9, AbstractFileLoader class9_2_) {

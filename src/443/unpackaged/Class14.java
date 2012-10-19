@@ -197,38 +197,6 @@ public class Class14
 	return i_25_;
     }
     
-    public static byte[] unpackContainer(byte[] src) {
-	Buffer buffer = new Buffer(src);
-	int compression = buffer.getUbyte();
-	int i_33_ = buffer.getDword();
-	if (i_33_ < 0
-	    || Class39_Sub14.anInt1517 != 0 && i_33_ > Class39_Sub14.anInt1517)
-	    throw new RuntimeException();
-	if (compression != 0) {
-	    int i_34_ = buffer.getDword();
-	    if (i_34_ < 0 || (Class39_Sub14.anInt1517 != 0 && Class39_Sub14.anInt1517 < i_34_))
-		throw new RuntimeException();
-	    byte[] is_35_ = new byte[i_34_];
-	    if (compression != 1) {
-		try {
-		    DataInputStream datainputstream
-			= (new DataInputStream
-			   (new GZIPInputStream
-			    (new ByteArrayInputStream(src, 9, i_33_))));
-		    datainputstream.readFully(is_35_);
-		    datainputstream.close();
-		} catch (java.io.IOException ioexception) {
-		    /* empty */
-		}
-	    } else
-		Bzip2Decompressor.method269(is_35_, i_34_, src, i_33_, 9);
-	    return is_35_;
-	}
-	byte[] is_36_ = new byte[i_33_];
-	buffer.getBytes(is_36_, 0, i_33_);
-	return is_36_;
-    }
-    
     public static int method212(int fPositionX, int fPositionY, int height) {
 	int x = fPositionX >> 7;
 	int y = fPositionY >> 7;

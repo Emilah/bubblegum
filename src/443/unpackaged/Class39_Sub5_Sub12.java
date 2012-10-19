@@ -249,7 +249,7 @@ public class Class39_Sub5_Sub12 extends SubNode
 	Deque class49 = new Deque();
 	int i_15_ = class9.getAmountChildren(i);
 	aClass51Array1855 = new Class51[i_15_];
-	int[] is = class9.getChildrenEntries(i);
+	int[] is = class9.getFileEntries(i);
 	for (int i_16_ = 0; i_16_ < is.length; i_16_++) {
 	    byte[] is_17_ = class9.lookupFile(i, is[i_16_]);
 	    Class39_Sub12 class39_sub12 = null;

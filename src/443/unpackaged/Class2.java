@@ -57,13 +57,13 @@ public class Class2
 		if (i_1_ == -1) {
 		    class3_0_ = class3_0_.method69();
 		    if (class3_0_.getLength() > 0)
-			class3s[i++] = class3_0_.method77();
+			class3s[i++] = class3_0_.toLowerCase();
 		    break;
 		}
 		JString class3_2_
 		    = class3_0_.substring(0, i_1_).method69();
 		if (class3_2_.getLength() > 0)
-		    class3s[i++] = class3_2_.method77();
+		    class3s[i++] = class3_2_.toLowerCase();
 		class3_0_ = class3_0_.substring(i_1_ + 1);
 	    }
 	    Class67.anInt1184 = 0;
@@ -74,7 +74,7 @@ public class Class2
 		if (class39_sub5_sub1.anInt1644 == -1
 		    && class39_sub5_sub1.name != null) {
 		    JString class3_4_
-			= class39_sub5_sub1.name.method77();
+			= class39_sub5_sub1.name.toLowerCase();
 		    for (int i_5_ = 0; i > i_5_; i_5_++) {
 			if (class3_4_.method80(22938, class3s[i_5_]) == -1)
 			    continue while_1_;

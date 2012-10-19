@@ -388,7 +388,7 @@ public class Class39_Sub12 extends Node {
                 Class26.loadingStage = 120;
                 ClassCheckRequest.loadingPercent = 94;
             } else if (Class26.loadingStage == 120) {
-                if (!Class66.fileLoader10.method152(22411, Class66.blankString, Cache.huffmanJstr)) {
+                if (!Class66.fileLoader10.isFileLoaded(Class66.blankString, Cache.huffmanJstr)) {
                     Class39_Sub5_Sub14.loadingMessage = Class39_Sub5_Sub11.join((new JString[]{Class14.loadingWordpackJstr, (Buffer.aClass3_1366)}));
                     ClassCheckRequest.loadingPercent = 96;
                 } else {

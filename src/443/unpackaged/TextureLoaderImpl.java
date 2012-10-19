@@ -274,7 +274,7 @@ public class TextureLoaderImpl implements TextureLoader
 	anInt1261 = i_23_;
 	anInt1260 = i;
 	anInt1258 = anInt1260;
-	int[] children = texturesLoader.getChildrenEntries(0);
+	int[] children = texturesLoader.getFileEntries(0);
 	int i_24_ = children.length;
 	textures = new Texture[texturesLoader.getAmountChildren(0)];
 	for (int i_25_ = 0; i_24_ > i_25_; i_25_++) {

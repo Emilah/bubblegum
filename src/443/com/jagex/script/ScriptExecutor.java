@@ -594,7 +594,7 @@ public class ScriptExecutor {
                                                                 strStack[strStackPointer++] = (Class39_Sub5_Sub11.join(new JString[]{class3, Npc.method519(10, true, i_112_)}));
                                                             } else if (opcode == 4103) {
                                                                 JString class3 = strStack[--strStackPointer];
-                                                                strStack[strStackPointer++] = (class3.method77());
+                                                                strStack[strStackPointer++] = (class3.toLowerCase());
                                                             } else if (opcode == 4104) {
                                                                 int i_113_ = intStack[--intStackPointer];
                                                                 long l = ((long) i_113_ + 11745L) * 86400000L;

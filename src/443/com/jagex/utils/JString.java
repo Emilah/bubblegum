@@ -581,16 +581,16 @@ public class JString {
         return toInteger(10);
     }
 
-    public JString method77() {
+    public JString toLowerCase() {
         JString str = new JString();
         str.length = length;
         str.bytes = new byte[length];
-        for (int i_58_ = 0; length > i_58_; i_58_++) {
-            byte i_59_ = bytes[i_58_];
+        for (int i = 0; length > i; i++) {
+            byte i_59_ = bytes[i];
             if (i_59_ >= 65 && i_59_ <= 90 || i_59_ >= -64 && i_59_ <= -34 && i_59_ != -41) {
                 i_59_ += 32;
             }
-            str.bytes[i_58_] = i_59_;
+            str.bytes[i] = i_59_;
         }
         return str;
     }

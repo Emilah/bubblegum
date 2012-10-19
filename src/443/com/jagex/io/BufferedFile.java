@@ -203,23 +203,23 @@ public class BufferedFile {
     public static int method230(boolean bool, AbstractFileLoader class9,
             AbstractFileLoader class9_14_) {
         int i = 0;
-        if (class9.method152(22411, Class39_Sub5_Sub14.blankJstr,
+        if (class9.isFileLoaded(Class39_Sub5_Sub14.blankJstr,
                 Class4.aClass3_69)) {
             i++;
         }
-        if (class9_14_.method152(22411, Class39_Sub5_Sub14.blankJstr,
+        if (class9_14_.isFileLoaded(Class39_Sub5_Sub14.blankJstr,
                 StillObject.aClass3_1481)) {
             i++;
         }
-        if (class9_14_.method152(22411, Class39_Sub5_Sub14.blankJstr,
+        if (class9_14_.isFileLoaded(Class39_Sub5_Sub14.blankJstr,
                 Class23.aClass3_422)) {
             i++;
         }
-        if (class9_14_.method152(22411, Class39_Sub5_Sub14.blankJstr,
+        if (class9_14_.isFileLoaded(Class39_Sub5_Sub14.blankJstr,
                 StillGraphic.aClass3_2339)) {
             i++;
         }
-        if (class9_14_.method152(22411, Class39_Sub5_Sub14.blankJstr,
+        if (class9_14_.isFileLoaded(Class39_Sub5_Sub14.blankJstr,
                 JSocket.aClass3_310)) {
             i++;
         }

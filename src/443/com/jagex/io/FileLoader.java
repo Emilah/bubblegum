@@ -53,7 +53,7 @@ public class FileLoader extends AbstractFileLoader {
         int totalPercentage = 0;
         int percentage = 0;
         for (int i_2_ = 0; archiveBuffers.length > i_2_; i_2_++) {
-            if (amountChildren[i_2_] > 0) {
+            if (amountFiles[i_2_] > 0) {
                 percentage += method171((byte) -114, i_2_);
                 totalPercentage += 100;
             }
@@ -239,7 +239,7 @@ public class FileLoader extends AbstractFileLoader {
             anInt1300 = -1;
             for (int i_19_ = 0; archivesLoaded.length > i_19_;
                     i_19_++) {
-                if (amountChildren[i_19_] > 0) {
+                if (amountFiles[i_19_] > 0) {
                     JKeyListener.fetchArchive(true, localCache, this, i_19_);
                     anInt1300 = i_19_;
                 }

@@ -126,53 +126,53 @@ public class ArchiveRequest extends Node
     
     public static int method861(byte i, AbstractFileLoader class9) {
 	int i_2_ = 0;
-	if (class9.method152(22411, Class30.aClass3_533,
+	if (class9.isFileLoaded(Class30.aClass3_533,
 			     StillObject.aClass3_1455))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, Class43.aClass3_803))
+	if (class9.isFileLoaded(Class30.aClass3_533, Class43.aClass3_803))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, Class34.aClass3_609))
+	if (class9.isFileLoaded(Class30.aClass3_533, Class34.aClass3_609))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, Bzip2Entry.aClass3_1056))
+	if (class9.isFileLoaded(Class30.aClass3_533, Bzip2Entry.aClass3_1056))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, Class30.aClass3_545))
+	if (class9.isFileLoaded(Class30.aClass3_533, Class30.aClass3_545))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, Cache.aClass3_107))
+	if (class9.isFileLoaded(Class30.aClass3_533, Cache.aClass3_107))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, ISAAC.aClass3_1103))
+	if (class9.isFileLoaded(Class30.aClass3_533, ISAAC.aClass3_1103))
 	    i_2_++;
-	if (class9.method152(i ^ ~0x57b5, Class30.aClass3_533,
+	if (class9.isFileLoaded(Class30.aClass3_533,
 			     Class67.aClass3_1169))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, BufferedFile.aClass3_348))
+	if (class9.isFileLoaded(Class30.aClass3_533, BufferedFile.aClass3_348))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, Class41.aClass3_771))
+	if (class9.isFileLoaded(Class30.aClass3_533, Class41.aClass3_771))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533,
+	if (class9.isFileLoaded(Class30.aClass3_533,
 			     Class39_Sub5_Sub14.aClass3_1904))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533,
+	if (class9.isFileLoaded(Class30.aClass3_533,
 			     Class39_Sub5_Sub18.aClass3_2125))
 	    i_2_++;
 	if (i != -63)
 	    method859(false);
-	if (class9.method152(22411, Class30.aClass3_533,
+	if (class9.isFileLoaded(Class30.aClass3_533,
 			     Class39_Sub4.aClass3_1340))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, Class43.aClass3_822))
+	if (class9.isFileLoaded(Class30.aClass3_533, Class43.aClass3_822))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, ISAAC.aClass3_1090))
+	if (class9.isFileLoaded(Class30.aClass3_533, ISAAC.aClass3_1090))
 	    i_2_++;
-	if (class9.method152(i + 22474, Class30.aClass3_533,
+	if (class9.isFileLoaded(Class30.aClass3_533,
 			     Npc.aClass3_2489))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533,
+	if (class9.isFileLoaded(Class30.aClass3_533,
 			     ObjectDefinition.aClass3_1937))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533,
+	if (class9.isFileLoaded(Class30.aClass3_533,
 			     FrameBuffer.aClass3_2149))
 	    i_2_++;
-	if (class9.method152(22411, Class30.aClass3_533, ArchiveWorker.aClass3_1200))
+	if (class9.isFileLoaded(Class30.aClass3_533, ArchiveWorker.aClass3_1200))
 	    i_2_++;
 	return i_2_;
     }

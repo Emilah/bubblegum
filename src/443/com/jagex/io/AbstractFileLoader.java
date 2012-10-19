@@ -15,6 +15,7 @@ import com.jagex.world.map.TraversalMap;
 import com.jagex.io.Buffer;
 import com.jagex.utils.ArrayUtils;
 import com.jagex.io.ArchiveRequest;
+import com.jagex.utils.Bzip2Decompressor;
 import unpackaged.Class1;
 import com.jagex.world.Barrier;
 import unpackaged.Class13;
@@ -33,66 +34,98 @@ import unpackaged.Class39_Sub5_Sub7;
 import unpackaged.Class39_Sub5_Sub9;
 import unpackaged.Class43;
 import com.jagex.utils.Timer;
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.util.zip.GZIPInputStream;
 
 /* Class9 - Decompiled by JODE
  * Visit http://jode.sourceforge.net/
  */
-
 public abstract class AbstractFileLoader {
 
+    public static byte[] unpackContainer(byte[] src) {
+        Buffer buffer = new Buffer(src);
+        int compression = buffer.getUbyte();
+        int i_33_ = buffer.getDword();
+        if (i_33_ < 0 || Class39_Sub14.anInt1517 != 0 && i_33_ > Class39_Sub14.anInt1517) {
+            throw new RuntimeException();
+        }
+        if (compression != 0) {
+            int i_34_ = buffer.getDword();
+            if (i_34_ < 0 || (Class39_Sub14.anInt1517 != 0 && Class39_Sub14.anInt1517 < i_34_)) {
+                throw new RuntimeException();
+            }
+            byte[] is_35_ = new byte[i_34_];
+            if (compression != 1) {
+                try {
+                    DataInputStream datainputstream = new DataInputStream(new GZIPInputStream(new ByteArrayInputStream(src, 9, i_33_)));
+                    datainputstream.readFully(is_35_);
+                    datainputstream.close();
+                } catch (IOException ioexception) {
+                    /* empty */
+                }
+            } else {
+                Bzip2Decompressor.method269(is_35_, i_34_, src, i_33_, 9);
+            }
+            return is_35_;
+        }
+        byte[] is_36_ = new byte[i_33_];
+        buffer.getBytes(is_36_, 0, i_33_);
+        return is_36_;
+    }
     public int amountEntries;
-    public NameTable aClass11_130;
+    public NameTable archiveNameTable;
     public static JString aClass3_131;
     public boolean removeArchive;
     public static int modeWhat;
-    public int[] amountChildren;
+    public int[] amountFiles;
     public static JString aClass3_135 = JString.create("Loaded sprites");
-    public NameTable[] childNameTables;
+    public NameTable[] fileNameTables;
     public byte[][] archiveBuffers;
-    public byte[][][] childBuffers;
-    public int[][] childrenEntries;
+    public byte[][][] fileBuffers;
+    public int[][] fileEntries;
     public static JString aClass3_140;
     public static DirectColorSprite aClass39_Sub5_Sub10_Sub3_141;
     public boolean removeFile;
     public int localChecksum;
     public int[] versions;
     public int[] checksums;
-    public int[][] childNameHashes;
+    public int[][] fileNameHashes;
     public int[] entries;
     public static JString aClass3_148;
     public static int ambientEffectVolume;
     public int[] archiveNameHashes;
 
     public int lookupFile(int id, JString childName) {
-        childName = childName.method77();
-        return childNameTables[id].method184(true, childName.getHashCode());
+        childName = childName.toLowerCase();
+        return fileNameTables[id].method184(true, childName.getHashCode());
     }
 
     public void method144(JString archiveName, byte i) {
-        archiveName = archiveName.method77();
-        int i_1_ = aClass11_130.method184(true, archiveName.getHashCode());
+        archiveName = archiveName.toLowerCase();
+        int i_1_ = archiveNameTable.method184(true, archiveName.getHashCode());
     }
 
-    public void method145(int i) {
-        for (int i_2_ = i; i_2_ < childBuffers.length; i_2_++) {
-            if (childBuffers[i_2_] != null) {
-                for (int i_3_ = 0; childBuffers[i_2_].length > i_3_; i_3_++) {
-                    childBuffers[i_2_][i_3_] = null;
+    public void removeAllFileBuffers() {
+        for (int i_2_ = 0; i_2_ < fileBuffers.length; i_2_++) {
+            if (fileBuffers[i_2_] != null) {
+                for (int i_3_ = 0; fileBuffers[i_2_].length > i_3_; i_3_++) {
+                    fileBuffers[i_2_][i_3_] = null;
                 }
             }
         }
     }
 
-    public int[] getChildrenEntries(int archiveId) {
-        return childrenEntries[archiveId];
+    public int[] getFileEntries(int archiveId) {
+        return fileEntries[archiveId];
     }
 
     public void method147(int i) {
-        
     }
 
-    public int amountArchives() {
-        return childBuffers.length;
+    public int getAmountArchives() {
+        return fileBuffers.length;
     }
 
     public void method149(int id) {
@@ -107,35 +140,34 @@ public abstract class AbstractFileLoader {
     }
 
     public byte[] fetchArchive(int id) {
-        if (childBuffers.length == 1) {
+        if (fileBuffers.length == 1) {
             return lookupFile(0, id);
         }
-        if (childBuffers[id].length == 1) {
+        if (fileBuffers[id].length == 1) {
             return lookupFile(id, 0);
         }
         throw new RuntimeException();
     }
 
-    public boolean method152(int i, JString class3, JString class3_7_) {
-        class3_7_ = class3_7_.method77();
-        class3 = class3.method77();
-        int i_8_ = aClass11_130.method184(true, class3_7_.getHashCode());
-        int i_9_ = childNameTables[i_8_].method184(true,
-                class3.getHashCode());
-        return isArchiveLoaded(i_8_, i_9_);
+    public boolean isFileLoaded(JString childName, JString archiveName) {
+        archiveName = archiveName.toLowerCase();
+        childName = childName.toLowerCase();
+        int archiveId = archiveNameTable.method184(true, archiveName.getHashCode());
+        int childId = fileNameTables[archiveId].method184(true, childName.getHashCode());
+        return isArchiveLoaded(archiveId, childId);
     }
 
     public void removeChildBuffers(int archiveId) {
-        for (int i = 0; i < childBuffers[archiveId].length; i++) {
-            childBuffers[archiveId][i] = null;
+        for (int i = 0; i < fileBuffers[archiveId].length; i++) {
+            fileBuffers[archiveId][i] = null;
         }
     }
 
     public byte[] lookupFile(int archiveId, int childId) {
-        if (archiveId < 0 || childBuffers.length <= archiveId || childBuffers[archiveId] == null || childId < 0 || childId >= childBuffers[archiveId].length) {
+        if (archiveId < 0 || fileBuffers.length <= archiveId || fileBuffers[archiveId] == null || childId < 0 || childId >= fileBuffers[archiveId].length) {
             return null;
         }
-        if (childBuffers[archiveId][childId] == null) {
+        if (fileBuffers[archiveId][childId] == null) {
             boolean bool = unpackArchive(archiveId, null);
             if (!bool) {
                 method149(archiveId);
@@ -145,17 +177,17 @@ public abstract class AbstractFileLoader {
                 }
             }
         }
-        byte[] is = childBuffers[archiveId][childId];
+        byte[] is = fileBuffers[archiveId][childId];
         return is;
     }
 
     public boolean isArchiveLoaded(int archiveId, int childId) {
-        if (archiveId < 0 || childBuffers.length <= archiveId
-                || childBuffers[archiveId] == null || childId < 0
-                || childBuffers[archiveId].length <= childId) {
+        if (archiveId < 0 || fileBuffers.length <= archiveId
+                || fileBuffers[archiveId] == null || childId < 0
+                || fileBuffers[archiveId].length <= childId) {
             return false;
         }
-        if (childBuffers[archiveId][childId] != null) {
+        if (fileBuffers[archiveId][childId] != null) {
             return true;
         }
         if (archiveBuffers[archiveId] != null) {
@@ -271,10 +303,10 @@ public abstract class AbstractFileLoader {
     }
 
     public byte[] lookupFile(int archiveId, int childId, int[] cipherKeys) {
-        if (archiveId < 0 || childBuffers.length <= archiveId || childBuffers[archiveId] == null || childId < 0 || childId >= childBuffers[archiveId].length) {
+        if (archiveId < 0 || fileBuffers.length <= archiveId || fileBuffers[archiveId] == null || childId < 0 || childId >= fileBuffers[archiveId].length) {
             return null;
         }
-        if (childBuffers[archiveId][childId] == null) {
+        if (fileBuffers[archiveId][childId] == null) {
             boolean bool = unpackArchive(archiveId, cipherKeys);
             if (!bool) {
                 method149(archiveId);
@@ -284,15 +316,15 @@ public abstract class AbstractFileLoader {
                 }
             }
         }
-        byte[] archive = childBuffers[archiveId][childId];
+        byte[] archive = fileBuffers[archiveId][childId];
         if (removeFile) {
-            childBuffers[archiveId][childId] = null;
+            fileBuffers[archiveId][childId] = null;
         }
         return archive;
     }
 
     public int getAmountChildren(int archiveId) {
-        return childBuffers[archiveId].length;
+        return fileBuffers[archiveId].length;
     }
 
     public boolean getArchivesLoaded() {
@@ -332,10 +364,10 @@ public abstract class AbstractFileLoader {
         if (archiveBuffers[id] == null) {
             return false;
         }
-        int children = amountChildren[id];
-        byte[][] buffers = childBuffers[id];
+        int children = amountFiles[id];
+        byte[][] buffers = fileBuffers[id];
         boolean childrenLoaded = true;
-        int[] childEntries = childrenEntries[id];
+        int[] childEntries = fileEntries[id];
         for (int i = 0; i < children; i++) {
             if (buffers[childEntries[i]] == null) {
                 childrenLoaded = false;
@@ -354,7 +386,7 @@ public abstract class AbstractFileLoader {
             Buffer buffer = new Buffer(archiveBytes);
             buffer.decipherXtea(keys, 0, buffer.payload.length, 5);
         }
-        byte[] src = Class14.unpackContainer(archiveBytes);
+        byte[] src = unpackContainer(archiveBytes);
         if (removeArchive) {
             archiveBuffers[id] = null;
         }
@@ -448,9 +480,9 @@ public abstract class AbstractFileLoader {
 
     public int lookupArchive(JString archiveName) {
 
-        archiveName = archiveName.method77();
+        archiveName = archiveName.toLowerCase();
         String str = new String(archiveName.bytes);
-        return aClass11_130.method184(true, archiveName.getHashCode());
+        return archiveNameTable.method184(true, archiveName.getHashCode());
     }
 
     public boolean hasArchive(int id) {
@@ -464,27 +496,27 @@ public abstract class AbstractFileLoader {
         return false;
     }
 
-    public byte[] method166(int i, boolean bool) {
-        if (childBuffers.length == 1) {
+    public byte[] method166(int i) {
+        if (fileBuffers.length == 1) {
             return lookupFile(0, i);
         }
-        if (childBuffers[i].length == 1) {
+        if (fileBuffers[i].length == 1) {
             return lookupFile(i, 0);
         }
         throw new RuntimeException();
     }
 
-    public byte[] lookupFile(JString class3, JString class3_67_) {
-        class3 = class3.method77();
-        class3_67_ = class3_67_.method77();
-        int archiveId = aClass11_130.method184(true, class3.getHashCode());
-        int childId = childNameTables[archiveId].method184(true, class3_67_.getHashCode());
+    public byte[] lookupFile(JString archiveName, JString fileName) {
+        archiveName = archiveName.toLowerCase();
+        fileName = fileName.toLowerCase();
+        int archiveId = archiveNameTable.method184(true, archiveName.getHashCode());
+        int childId = fileNameTables[archiveId].method184(true, fileName.getHashCode());
         return lookupFile(archiveId, childId);
     }
 
     public void decode(byte[] src) {
         localChecksum = Class13.computeChecksum(src, src.length);
-        Buffer buffer = new Buffer(Class14.unpackContainer(src));
+        Buffer buffer = new Buffer(unpackContainer(src));
         int version = buffer.getUbyte();
         if (version == 5) {
             int settingFlags = buffer.getUbyte();
@@ -498,18 +530,18 @@ public abstract class AbstractFileLoader {
                     maximumEntry = entries[i];
                 }
             }
-            amountChildren = new int[maximumEntry + 1];
-            childrenEntries = new int[maximumEntry + 1][];
+            amountFiles = new int[maximumEntry + 1];
+            fileEntries = new int[maximumEntry + 1][];
             versions = new int[maximumEntry + 1];
             checksums = new int[maximumEntry + 1];
-            childBuffers = new byte[maximumEntry + 1][][];
+            fileBuffers = new byte[maximumEntry + 1][][];
             archiveBuffers = new byte[maximumEntry + 1][];
             if (settingFlags != 0) {
                 archiveNameHashes = new int[maximumEntry + 1];
                 for (int i = 0; amountEntries > i; i++) {
                     archiveNameHashes[entries[i]] = buffer.getDword();
                 }
-                aClass11_130 = new NameTable(archiveNameHashes);
+                archiveNameTable = new NameTable(archiveNameHashes);
             }
             for (int i_76_ = 0; i_76_ < amountEntries; i_76_++) {
                 checksums[entries[i_76_]] = buffer.getDword();
@@ -518,33 +550,33 @@ public abstract class AbstractFileLoader {
                 versions[entries[i_77_]] = buffer.getDword();
             }
             for (int i_78_ = 0; i_78_ < amountEntries; i_78_++) {
-                amountChildren[entries[i_78_]] = buffer.getUword();
+                amountFiles[entries[i_78_]] = buffer.getUword();
             }
             for (int i_79_ = 0; amountEntries > i_79_; i_79_++) {
                 counter = 0;
-                int fileId = entries[i_79_];
-                int amtChildren = amountChildren[fileId];
+                int entryId = entries[i_79_];
+                int amtChildren = amountFiles[entryId];
                 int maximumChild = -1;
-                childrenEntries[fileId] = new int[amtChildren];
+                fileEntries[entryId] = new int[amtChildren];
                 for (int i_83_ = 0; amtChildren > i_83_; i_83_++) {
-                    int i_84_ = (childrenEntries[fileId][i_83_] = counter += buffer.getUword());
-                    if (maximumChild < i_84_) {
-                        maximumChild = i_84_;
+                    int fileId = (fileEntries[entryId][i_83_] = counter += buffer.getUword());
+                    if (maximumChild < fileId) {
+                        maximumChild = fileId;
                     }
                 }
-                childBuffers[fileId] = new byte[maximumChild + 1][];
+                fileBuffers[entryId] = new byte[maximumChild + 1][];
             }
             if (settingFlags != 0) {
-                childNameHashes = new int[maximumEntry + 1][];
-                childNameTables = new NameTable[maximumEntry + 1];
+                fileNameHashes = new int[maximumEntry + 1][];
+                fileNameTables = new NameTable[maximumEntry + 1];
                 for (int i_85_ = 0; amountEntries > i_85_; i_85_++) {
                     int i_86_ = entries[i_85_];
-                    int i_87_ = amountChildren[i_86_];
-                    childNameHashes[i_86_] = new int[childBuffers[i_86_].length];
+                    int i_87_ = amountFiles[i_86_];
+                    fileNameHashes[i_86_] = new int[fileBuffers[i_86_].length];
                     for (int i_88_ = 0; i_88_ < i_87_; i_88_++) {
-                        childNameHashes[i_86_][(childrenEntries[i_86_][i_88_])] = buffer.getDword();
+                        fileNameHashes[i_86_][(fileEntries[i_86_][i_88_])] = buffer.getDword();
                     }
-                    childNameTables[i_86_] = new NameTable(childNameHashes[i_86_]);
+                    fileNameTables[i_86_] = new NameTable(fileNameHashes[i_86_]);
                 }
             }
         }

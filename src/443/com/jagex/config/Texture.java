@@ -27,7 +27,7 @@ public class Texture extends Node
     
     public boolean method853(double d, int i, AbstractFileLoader class9) {
 	for (int i_0_ = 0; i_0_ < anIntArray1390.length; i_0_++) {
-	    if (class9.method166(anIntArray1390[i_0_], true) == null)
+	    if (class9.method166(anIntArray1390[i_0_]) == null)
 		return false;
 	}
 	int i_1_ = i * i;

@@ -394,7 +394,7 @@ public class Buffer extends Node {
                                     } else {
                                         int i_37_ = 0;
                                         int i_38_ = 0;
-                                        JString class3 = Class66.chatMessageJstr.method77();
+                                        JString class3 = Class66.chatMessageJstr.toLowerCase();
                                         if (!class3.beginsWith((Class39_Sub5_Sub4_Sub2.aClass3_2218))) {
                                             if (class3.beginsWith(Class39_Sub12.aClass3_1485)) {
                                                 Class66.chatMessageJstr = (Class66.chatMessageJstr.substring(Class39_Sub12.aClass3_1485.getLength()));
@@ -438,7 +438,7 @@ public class Buffer extends Node {
                                             i_37_ = 0;
                                             Class66.chatMessageJstr = (Class66.chatMessageJstr.substring(Class39_Sub5_Sub4_Sub2.aClass3_2218.getLength()));
                                         }
-                                        class3 = Class66.chatMessageJstr.method77();
+                                        class3 = Class66.chatMessageJstr.toLowerCase();
                                         if (class3.beginsWith((Class53.aClass3_958))) {
                                             i_38_ = 1;
                                             Class66.chatMessageJstr = (Class66.chatMessageJstr.substring(Class53.aClass3_958.getLength()));

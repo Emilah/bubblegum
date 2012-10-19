@@ -82,18 +82,18 @@ public abstract class AudioHandler {
         ScriptState.method277(bool);
         ((TextureLoaderImpl) TriangleRasterizer.textureLoader).method1002(94);
         PlayerApperance.clientScriptCache.clear();
-        Buffer.fileLoader0.method145(0);
-        Class15.fileLoader1.method145(0);
-        Node.fileLoader3.method145(0);
-        Node.fileLoader4.method145(0);
-        JSocket.fileLoader5.method145(0);
-        Projectile.fileLoader6.method145(0);
-        PlayerApperance.fileLoader7.method145(0);
-        TraversalMap.fileLoader8.method145(0);
-        Widget.fileLoader9.method145(0);
-        Class66.fileLoader10.method145(0);
-        Wall.fileLoader11.method145(0);
-        Class33.fileLoader12.method145(0);
+        Buffer.fileLoader0.removeAllFileBuffers();
+        Class15.fileLoader1.removeAllFileBuffers();
+        Node.fileLoader3.removeAllFileBuffers();
+        Node.fileLoader4.removeAllFileBuffers();
+        JSocket.fileLoader5.removeAllFileBuffers();
+        Projectile.fileLoader6.removeAllFileBuffers();
+        PlayerApperance.fileLoader7.removeAllFileBuffers();
+        TraversalMap.fileLoader8.removeAllFileBuffers();
+        Widget.fileLoader9.removeAllFileBuffers();
+        Class66.fileLoader10.removeAllFileBuffers();
+        Wall.fileLoader11.removeAllFileBuffers();
+        Class33.fileLoader12.removeAllFileBuffers();
     }
 
     public static void method1046(byte i) {
