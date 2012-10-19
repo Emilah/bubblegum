@@ -135,7 +135,7 @@ public class ScriptState {
             if (type == 32) { //
                 FrameBuffer.outgoingBuffer.putFrame(182);
                 FrameBuffer.outgoingBuffer.putWordLe(var0);
-                FrameBuffer.outgoingBuffer.putWord(var1);
+                FrameBuffer.outgoingBuffer.putInt16(var1);
                 FrameBuffer.outgoingBuffer.putDwordLe(var2);
                 Class39_Sub5_Sub5.anInt1739 = var1;
                 Class65.anInt1137 = var2;
@@ -151,15 +151,15 @@ public class ScriptState {
             if (type == 1005) { //
                 Npc.method526(var0, var1, false, var2);
                 FrameBuffer.outgoingBuffer.putFrame(120);
-                FrameBuffer.outgoingBuffer.putWord(KeyListenerImpl.anInt618 + var2);
-                FrameBuffer.outgoingBuffer.putWord(Class65.anInt1145 + var1);
-                FrameBuffer.outgoingBuffer.putWord((var0 & 0x1ffff835) >> 14);
+                FrameBuffer.outgoingBuffer.putInt16(KeyListenerImpl.anInt618 + var2);
+                FrameBuffer.outgoingBuffer.putInt16(Class65.anInt1145 + var1);
+                FrameBuffer.outgoingBuffer.putInt16((var0 & 0x1ffff835) >> 14);
             }
             if (type == 12 && Npc.method526(var0, var1, false, var2)) { //widget on object
                 FrameBuffer.outgoingBuffer.putFrame(78);
                 FrameBuffer.outgoingBuffer.putDwordB(Class41.useWithWidgetId);
-                FrameBuffer.outgoingBuffer.putWord(var1 + Class65.anInt1145);
-                FrameBuffer.outgoingBuffer.putWord(MouseRecorder.useWithAmountChildren);
+                FrameBuffer.outgoingBuffer.putInt16(var1 + Class65.anInt1145);
+                FrameBuffer.outgoingBuffer.putInt16(MouseRecorder.useWithAmountChildren);
                 FrameBuffer.outgoingBuffer.putWordLe(KeyListenerImpl.anInt618 + var2);
                 FrameBuffer.outgoingBuffer.putWord128(var0 >> 14 & 0x7fff);
             }
@@ -188,7 +188,7 @@ public class ScriptState {
                 FrameBuffer.outgoingBuffer.putFrame(149);
                 FrameBuffer.outgoingBuffer.putWordLe128(Class65.anInt1145 + var1);
                 FrameBuffer.outgoingBuffer.putWordLe128(KeyListenerImpl.anInt618 + var2);
-                FrameBuffer.outgoingBuffer.putWord(var0);
+                FrameBuffer.outgoingBuffer.putInt16(var0);
             }
             if (type == 31 || type == 21 || type == 2 || type == 50) {
                 JString class3 = Class33.actionNames[i];
@@ -233,7 +233,7 @@ public class ScriptState {
             if (type == 28) {
                 FrameBuffer.outgoingBuffer.putFrame(0);
                 FrameBuffer.outgoingBuffer.putWordLe(var1);
-                FrameBuffer.outgoingBuffer.putWord(var0);
+                FrameBuffer.outgoingBuffer.putInt16(var0);
                 FrameBuffer.outgoingBuffer.putDwordLe(var2);
                 GroundItem.anInt2242 = 0;
                 Class65.anInt1137 = var2;
@@ -249,7 +249,7 @@ public class ScriptState {
             if (type == 35) {
                 FrameBuffer.outgoingBuffer.putFrame(144);
                 FrameBuffer.outgoingBuffer.putWordLe128(var1);
-                FrameBuffer.outgoingBuffer.putDword(var2);
+                FrameBuffer.outgoingBuffer.putInt32(var2);
                 FrameBuffer.outgoingBuffer.putWordLe(var0);
                 Class39_Sub5_Sub5.anInt1739 = var1;
                 GroundItem.anInt2242 = 0;
@@ -302,7 +302,7 @@ public class ScriptState {
                         Class26.crossFrameNum = 0;
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         FrameBuffer.outgoingBuffer.putFrame(154);
-                        FrameBuffer.outgoingBuffer.putWord(var0);
+                        FrameBuffer.outgoingBuffer.putInt16(var0);
                     }
                 }
                 if (type == 47) { //item on npc
@@ -320,8 +320,8 @@ public class ScriptState {
                         Class4.crossMode = 2;
                         FrameBuffer.outgoingBuffer.putFrame(146);
                         FrameBuffer.outgoingBuffer.putDwordA(Class39_Sub10.useWithItemWidgetId);
-                        FrameBuffer.outgoingBuffer.putWord(Class63.useWithItemId);
-                        FrameBuffer.outgoingBuffer.putWord(Class23.useWithItemSlot);
+                        FrameBuffer.outgoingBuffer.putInt16(Class63.useWithItemId);
+                        FrameBuffer.outgoingBuffer.putInt16(Class23.useWithItemSlot);
                         FrameBuffer.outgoingBuffer.putWordLe128(var0);
                     }
                 }
@@ -361,7 +361,7 @@ public class ScriptState {
                     FrameBuffer.outgoingBuffer.putFrame(114);
                     FrameBuffer.outgoingBuffer.putWordLe(Class63.useWithItemId);
                     FrameBuffer.outgoingBuffer.putWord128(var2 + KeyListenerImpl.anInt618);
-                    FrameBuffer.outgoingBuffer.putDword(Class39_Sub10.useWithItemWidgetId);
+                    FrameBuffer.outgoingBuffer.putInt32(Class39_Sub10.useWithItemWidgetId);
                     FrameBuffer.outgoingBuffer.putWord128(var1 + Class65.anInt1145);
                     FrameBuffer.outgoingBuffer.putWordLe(var0);
                     FrameBuffer.outgoingBuffer.putWordLe128(Class23.useWithItemSlot);
@@ -369,7 +369,7 @@ public class ScriptState {
                 if (type == 49) {
                     FrameBuffer.outgoingBuffer.putFrame(171);
                     FrameBuffer.outgoingBuffer.putWord128(var1);
-                    FrameBuffer.outgoingBuffer.putDword(var2);
+                    FrameBuffer.outgoingBuffer.putInt32(var2);
                     FrameBuffer.outgoingBuffer.putWordLe(var0);
                     Class65.anInt1137 = var2;
                     Class25.anInt459 = 2;
@@ -417,15 +417,15 @@ public class ScriptState {
                     FrameBuffer.outgoingBuffer.putFrame(38);
                     FrameBuffer.outgoingBuffer.putWordLe(var0);
                     FrameBuffer.outgoingBuffer.putWord128(KeyListenerImpl.anInt618 + var2);
-                    FrameBuffer.outgoingBuffer.putWord(Class65.anInt1145 + var1);
+                    FrameBuffer.outgoingBuffer.putInt16(Class65.anInt1145 + var1);
                 }
                 if (type == 43) {
                     Npc.method526(var0, var1, false,
                             var2);
                     FrameBuffer.outgoingBuffer.putFrame(69);
                     FrameBuffer.outgoingBuffer.putWordLe((var0 & 0x1fffcb21) >> 14);
-                    FrameBuffer.outgoingBuffer.putWord(var2 + KeyListenerImpl.anInt618);
-                    FrameBuffer.outgoingBuffer.putWord(Class65.anInt1145 + var1);
+                    FrameBuffer.outgoingBuffer.putInt16(var2 + KeyListenerImpl.anInt618);
+                    FrameBuffer.outgoingBuffer.putInt16(Class65.anInt1145 + var1);
                 }
                 if (type == 48) { //widget on npc
                     Npc npc = (GroundItem.npcs[var0]);
@@ -443,7 +443,7 @@ public class ScriptState {
                         FrameBuffer.outgoingBuffer.putFrame(200);
                         FrameBuffer.outgoingBuffer.putWordLe(MouseRecorder.useWithAmountChildren);
                         FrameBuffer.outgoingBuffer.putDwordLe(Class41.useWithWidgetId);
-                        FrameBuffer.outgoingBuffer.putWord(var0);
+                        FrameBuffer.outgoingBuffer.putInt16(var0);
                     }
                 }
                 if (type == 58) { //item on player
@@ -505,7 +505,7 @@ public class ScriptState {
                     FrameBuffer.outgoingBuffer.putFrame(221);
                     FrameBuffer.outgoingBuffer.putDwordB(var2);
                     FrameBuffer.outgoingBuffer.putWordLe128(var1);
-                    FrameBuffer.outgoingBuffer.putWord(var0);
+                    FrameBuffer.outgoingBuffer.putInt16(var0);
                     Class65.anInt1137 = var2;
                     Class25.anInt459 = 2;
                     GroundItem.anInt2242 = 0;
@@ -521,7 +521,7 @@ public class ScriptState {
                     Npc.method526(var0, var1, false,
                             var2);
                     FrameBuffer.outgoingBuffer.putFrame(202);
-                    FrameBuffer.outgoingBuffer.putWord(var0 >> 14 & 0x7fff);
+                    FrameBuffer.outgoingBuffer.putInt16(var0 >> 14 & 0x7fff);
                     FrameBuffer.outgoingBuffer.putWord128(Class65.anInt1145 + var1);
                     FrameBuffer.outgoingBuffer.putWordLe128(KeyListenerImpl.anInt618 + var2);
                 }
@@ -593,7 +593,7 @@ public class ScriptState {
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         Class4.crossMode = 2;
                         FrameBuffer.outgoingBuffer.putFrame(206);
-                        FrameBuffer.outgoingBuffer.putWord(var0);
+                        FrameBuffer.outgoingBuffer.putInt16(var0);
                     }
                 }
                 if (type == 10) {
@@ -626,7 +626,7 @@ public class ScriptState {
                 }
                 if (type == 36) {
                     FrameBuffer.outgoingBuffer.putFrame(54);
-                    FrameBuffer.outgoingBuffer.putDword(var2);
+                    FrameBuffer.outgoingBuffer.putInt32(var2);
                     Class39_Sub5_Sub12.anInt1848++;
                     Widget widget = Class37.getWidget(var2);
                     if (widget.scriptOpcodes != null
@@ -650,7 +650,7 @@ public class ScriptState {
                         }
                         if (definition != null) {
                             FrameBuffer.outgoingBuffer.putFrame(158);
-                            FrameBuffer.outgoingBuffer.putWord(definition.id);
+                            FrameBuffer.outgoingBuffer.putInt16(definition.id);
                         }
                     }
                 }
@@ -715,14 +715,14 @@ public class ScriptState {
                     FrameBuffer.outgoingBuffer.putFrame(64);
                     FrameBuffer.outgoingBuffer.putWordLe128(var0);
                     FrameBuffer.outgoingBuffer.putDwordB(Class41.useWithWidgetId);
-                    FrameBuffer.outgoingBuffer.putWord(KeyListenerImpl.anInt618 + var2);
+                    FrameBuffer.outgoingBuffer.putInt16(KeyListenerImpl.anInt618 + var2);
                     FrameBuffer.outgoingBuffer.putWordLe128(Class65.anInt1145 + var1);
                     FrameBuffer.outgoingBuffer.putWordLe128(MouseRecorder.useWithAmountChildren);
                 }
                 if (type == 16) {
                     FrameBuffer.outgoingBuffer.putFrame(29);
                     FrameBuffer.outgoingBuffer.putDwordA(var2);
-                    FrameBuffer.outgoingBuffer.putWord(var0);
+                    FrameBuffer.outgoingBuffer.putInt16(var0);
                     FrameBuffer.outgoingBuffer.putWord128(var1);
                     Class25.anInt459 = 2;
                     Class39_Sub5_Sub5.anInt1739 = var1;
@@ -761,7 +761,7 @@ public class ScriptState {
                     FrameBuffer.outgoingBuffer.putWordLe(var0);
                     FrameBuffer.outgoingBuffer.putDwordLe(var2);
                     FrameBuffer.outgoingBuffer.putDwordB(Class39_Sub10.useWithItemWidgetId);
-                    FrameBuffer.outgoingBuffer.putWord(var1);
+                    FrameBuffer.outgoingBuffer.putInt16(var1);
                     GroundItem.anInt2242 = 0;
                     Class65.anInt1137 = var2;
                     Class25.anInt459 = 2;
@@ -795,7 +795,7 @@ public class ScriptState {
                         AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                         Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                         FrameBuffer.outgoingBuffer.putFrame(87);
-                        FrameBuffer.outgoingBuffer.putWord(var0);
+                        FrameBuffer.outgoingBuffer.putInt16(var0);
                     }
                 }
                 if (type == 13) {
@@ -841,7 +841,7 @@ public class ScriptState {
                     }
                     if (bool) {
                         FrameBuffer.outgoingBuffer.putFrame(54);
-                        FrameBuffer.outgoingBuffer.putDword(var2);
+                        FrameBuffer.outgoingBuffer.putInt32(var2);
                         Class39_Sub5_Sub12.anInt1848++;
                     }
                 }
@@ -849,14 +849,14 @@ public class ScriptState {
                     Npc.method526(var0, var1, false,
                             var2);
                     FrameBuffer.outgoingBuffer.putFrame(245);
-                    FrameBuffer.outgoingBuffer.putWord(var1 + Class65.anInt1145);
-                    FrameBuffer.outgoingBuffer.putWord(var0 >> 14 & 0x7fff);
+                    FrameBuffer.outgoingBuffer.putInt16(var1 + Class65.anInt1145);
+                    FrameBuffer.outgoingBuffer.putInt16(var0 >> 14 & 0x7fff);
                     FrameBuffer.outgoingBuffer.putWord128(KeyListenerImpl.anInt618 + var2);
                 }
                 if (type == 41) {
                     Class39_Sub5_Sub12.anInt1848++;
                     FrameBuffer.outgoingBuffer.putFrame(54);
-                    FrameBuffer.outgoingBuffer.putDword(var2);
+                    FrameBuffer.outgoingBuffer.putInt32(var2);
                     Widget widget = Class37.getWidget(var2);
                     if (widget.scriptOpcodes != null && widget.scriptOpcodes[0][0] == 5) {
                         int opcode = widget.scriptOpcodes[0][1];
@@ -890,7 +890,7 @@ public class ScriptState {
                         Class4.crossMode = 2;
                         Class26.crossFrameNum = 0;
                         FrameBuffer.outgoingBuffer.putFrame(224);
-                        FrameBuffer.outgoingBuffer.putWord(var0);
+                        FrameBuffer.outgoingBuffer.putInt16(var0);
                     }
                 }
                 if (type == 22) {
@@ -958,15 +958,15 @@ public class ScriptState {
                         FrameBuffer.outgoingBuffer.putFrame(136);
                         FrameBuffer.outgoingBuffer.putWord128(var1 + Class65.anInt1145);
                         FrameBuffer.outgoingBuffer.putWordLe(var0);
-                        FrameBuffer.outgoingBuffer.putWord(var2 + KeyListenerImpl.anInt618);
+                        FrameBuffer.outgoingBuffer.putInt16(var2 + KeyListenerImpl.anInt618);
                     }
                     if (type == 29) {
                         TextureLoaderImpl.closeOverlays();
                     }
                     if (type == 39) { //widget on widget
                         FrameBuffer.outgoingBuffer.putFrame(145);
-                        FrameBuffer.outgoingBuffer.putDword(Class41.useWithWidgetId);
-                        FrameBuffer.outgoingBuffer.putDword(var2);
+                        FrameBuffer.outgoingBuffer.putInt32(Class41.useWithWidgetId);
+                        FrameBuffer.outgoingBuffer.putInt32(var2);
                         FrameBuffer.outgoingBuffer.putWord128(MouseRecorder.useWithAmountChildren);
                         FrameBuffer.outgoingBuffer.putWordLe128(var1);
                     }
@@ -1014,7 +1014,7 @@ public class ScriptState {
                     }
                     if (type == 5) { //widget on item
                         FrameBuffer.outgoingBuffer.putFrame(243);
-                        FrameBuffer.outgoingBuffer.putDword(var2);
+                        FrameBuffer.outgoingBuffer.putInt32(var2);
                         FrameBuffer.outgoingBuffer.putWord128(var1);
                         FrameBuffer.outgoingBuffer.putDwordB(Class41.useWithWidgetId);
                         FrameBuffer.outgoingBuffer.putWordLe128(var0);

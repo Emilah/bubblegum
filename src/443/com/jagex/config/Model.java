@@ -1583,18 +1583,18 @@ public class Model extends Entity
 	Buffer class39_sub6_339_ = new Buffer(is);
 	Buffer class39_sub6_340_ = new Buffer(is);
 	class39_sub6.offset = is.length - 18;
-	int vertices = class39_sub6.getUword();
-	int i_341_ = class39_sub6.getUword();
-	int i_342_ = class39_sub6.getUbyte();
-	int i_343_ = class39_sub6.getUbyte();
-	int i_344_ = class39_sub6.getUbyte();
-	int i_345_ = class39_sub6.getUbyte();
-	int i_346_ = class39_sub6.getUbyte();
-	int i_347_ = class39_sub6.getUbyte();
-	int i_348_ = class39_sub6.getUword();
-	int i_349_ = class39_sub6.getUword();
-	int i_350_ = class39_sub6.getUword();
-	int i_351_ = class39_sub6.getUword();
+	int vertices = class39_sub6.getUint16();
+	int i_341_ = class39_sub6.getUint16();
+	int i_342_ = class39_sub6.getUint8();
+	int i_343_ = class39_sub6.getUint8();
+	int i_344_ = class39_sub6.getUint8();
+	int i_345_ = class39_sub6.getUint8();
+	int i_346_ = class39_sub6.getUint8();
+	int i_347_ = class39_sub6.getUint8();
+	int i_348_ = class39_sub6.getUint16();
+	int i_349_ = class39_sub6.getUint16();
+	int i_350_ = class39_sub6.getUint16();
+	int i_351_ = class39_sub6.getUint16();
 	int i_352_ = 0;
 	int i_353_ = i_352_;
 	i_352_ += vertices;
@@ -1671,16 +1671,16 @@ public class Model extends Entity
 	int lastPositionY = 0;
 	int lastPositionZ = 0;
 	for (int i_369_ = 0; i_369_ < vertices; i_369_++) {
-	    int opcode = class39_sub6.getUbyte();
+	    int opcode = class39_sub6.getUint8();
 	    int xAmount = 0;
 	    if ((opcode & 0x1) != 0)
-		xAmount = class39_sub6_337_.getSmartA();
+		xAmount = class39_sub6_337_.getSmart();
 	    int yAmount = 0;
 	    if ((opcode & 0x2) != 0)
-		yAmount = class39_sub6_338_.getSmartA();
+		yAmount = class39_sub6_338_.getSmart();
 	    int zAmount = 0;
 	    if ((opcode & 0x4) != 0)
-		zAmount = class39_sub6_339_.getSmartA();
+		zAmount = class39_sub6_339_.getSmart();
 	    vPositionX[i_369_] = lastPositionX + xAmount;
 	    vPositionY[i_369_] = lastPositionY + yAmount;
 	    vPositionZ[i_369_] = lastPositionZ + zAmount;
@@ -1688,7 +1688,7 @@ public class Model extends Entity
 	    lastPositionY = vPositionY[i_369_];
 	    lastPositionZ = vPositionZ[i_369_];
 	    if (vertexGroups != null)
-		vertexGroups[i_369_] = class39_sub6_340_.getUbyte();
+		vertexGroups[i_369_] = class39_sub6_340_.getUint8();
 	}
 	class39_sub6.offset = i_361_;
 	class39_sub6_337_.offset = i_357_;
@@ -1696,19 +1696,19 @@ public class Model extends Entity
 	class39_sub6_339_.offset = i_359_;
 	class39_sub6_340_.offset = i_356_;
 	for (int i_374_ = 0; i_374_ < i_341_; i_374_++) {
-	    anIntArray2371[i_374_] = class39_sub6.getUword();
+	    anIntArray2371[i_374_] = class39_sub6.getUint16();
 	    if (anIntArray2378 != null)
 		anIntArray2378[i_374_]
-		    = class39_sub6_337_.getUbyte();
+		    = class39_sub6_337_.getUint8();
 	    if (anIntArray2365 != null)
 		anIntArray2365[i_374_]
-		    = class39_sub6_338_.getUbyte();
+		    = class39_sub6_338_.getUint8();
 	    if (anIntArray2379 != null)
 		anIntArray2379[i_374_]
-		    = class39_sub6_339_.getUbyte();
+		    = class39_sub6_339_.getUint8();
 	    if (anIntArray2375 != null)
 		anIntArray2375[i_374_]
-		    = class39_sub6_340_.getUbyte();
+		    = class39_sub6_340_.getUint8();
 	}
 	class39_sub6.offset = i_360_;
 	class39_sub6_337_.offset = i_354_;
@@ -1717,13 +1717,13 @@ public class Model extends Entity
 	int i_377_ = 0;
 	int i_378_ = 0;
 	for (int i_379_ = 0; i_379_ < i_341_; i_379_++) {
-	    int i_380_ = class39_sub6_337_.getUbyte();
+	    int i_380_ = class39_sub6_337_.getUint8();
 	    if (i_380_ == 1) {
-		i_375_ = class39_sub6.getSmartA() + i_378_;
+		i_375_ = class39_sub6.getSmart() + i_378_;
 		i_378_ = i_375_;
-		i_376_ = class39_sub6.getSmartA() + i_378_;
+		i_376_ = class39_sub6.getSmart() + i_378_;
 		i_378_ = i_376_;
-		i_377_ = class39_sub6.getSmartA() + i_378_;
+		i_377_ = class39_sub6.getSmart() + i_378_;
 		i_378_ = i_377_;
 		tVertices0[i_379_] = i_375_;
 		tVertices1[i_379_] = i_376_;
@@ -1731,7 +1731,7 @@ public class Model extends Entity
 	    }
 	    if (i_380_ == 2) {
 		i_376_ = i_377_;
-		i_377_ = class39_sub6.getSmartA() + i_378_;
+		i_377_ = class39_sub6.getSmart() + i_378_;
 		i_378_ = i_377_;
 		tVertices0[i_379_] = i_375_;
 		tVertices1[i_379_] = i_376_;
@@ -1739,7 +1739,7 @@ public class Model extends Entity
 	    }
 	    if (i_380_ == 3) {
 		i_375_ = i_377_;
-		i_377_ = class39_sub6.getSmartA() + i_378_;
+		i_377_ = class39_sub6.getSmart() + i_378_;
 		i_378_ = i_377_;
 		tVertices0[i_379_] = i_375_;
 		tVertices1[i_379_] = i_376_;
@@ -1749,7 +1749,7 @@ public class Model extends Entity
 		int i_381_ = i_375_;
 		i_375_ = i_376_;
 		i_376_ = i_381_;
-		i_377_ = class39_sub6.getSmartA() + i_378_;
+		i_377_ = class39_sub6.getSmart() + i_378_;
 		i_378_ = i_377_;
 		tVertices0[i_379_] = i_375_;
 		tVertices1[i_379_] = i_376_;
@@ -1758,9 +1758,9 @@ public class Model extends Entity
 	}
 	class39_sub6.offset = i_362_;
 	for (int i_382_ = 0; i_382_ < i_342_; i_382_++) {
-	    anIntArray2370[i_382_] = class39_sub6.getUword();
-	    anIntArray2373[i_382_] = class39_sub6.getUword();
-	    anIntArray2387[i_382_] = class39_sub6.getUword();
+	    anIntArray2370[i_382_] = class39_sub6.getUint16();
+	    anIntArray2373[i_382_] = class39_sub6.getUint16();
+	    anIntArray2387[i_382_] = class39_sub6.getUint16();
 	}
     }
     

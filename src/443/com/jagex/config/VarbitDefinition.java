@@ -121,7 +121,7 @@ public class VarbitDefinition extends SubNode
     
     public void decode(Buffer buffer) {
 	for (;;) {
-	    int opcode = buffer.getUbyte();
+	    int opcode = buffer.getUint8();
 	    if (opcode == 0)
 		break;
 	    decodeOpcode(opcode, buffer);
@@ -198,9 +198,9 @@ public class VarbitDefinition extends SubNode
     
     public void decodeOpcode(int opcode, Buffer buffer) {
 	if (opcode == 1) {
-	    stateId = buffer.getUword();
-	    anInt1793 = buffer.getUbyte();
-	    anInt1794 = buffer.getUbyte();
+	    stateId = buffer.getUint16();
+	    anInt1793 = buffer.getUint8();
+	    anInt1794 = buffer.getUint8();
 	}
     }
     

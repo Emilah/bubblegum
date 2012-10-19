@@ -40,7 +40,7 @@ public class Class39_Sub5_Sub11 extends SubNode
     
     public void method698(Buffer class39_sub6, int i) {
 	for (;;) {
-	    int i_0_ = class39_sub6.getUbyte();
+	    int i_0_ = class39_sub6.getUint8();
 	    if (i_0_ == 0)
 		break;
 	    method700(class39_sub6, i_0_, 0);
@@ -54,59 +54,59 @@ public class Class39_Sub5_Sub11 extends SubNode
     public void method700(Buffer class39_sub6, int i, int i_1_) {
 	if (i_1_ == 0) {
 	    if (i == 1) {
-		int i_2_ = class39_sub6.getUbyte();
+		int i_2_ = class39_sub6.getUint8();
 		anIntArray1831 = new int[i_2_];
 		for (int i_3_ = 0; i_3_ < i_2_; i_3_++)
-		    anIntArray1831[i_3_] = class39_sub6.getUword();
+		    anIntArray1831[i_3_] = class39_sub6.getUint16();
 		anIntArray1833 = new int[i_2_];
 		for (int i_4_ = 0; i_2_ > i_4_; i_4_++)
 		    anIntArray1833[i_4_]
-			= class39_sub6.getUword();
+			= class39_sub6.getUint16();
 		for (int i_5_ = 0; i_5_ < i_2_; i_5_++)
-		    anIntArray1833[i_5_] = ((class39_sub6.getUword() << 16)
+		    anIntArray1833[i_5_] = ((class39_sub6.getUint16() << 16)
 					    + anIntArray1833[i_5_]);
 	    } else if (i != 2) {
 		if (i == 3) {
-		    int i_6_ = class39_sub6.getUbyte();
+		    int i_6_ = class39_sub6.getUint8();
 		    anIntArray1835 = new int[i_6_ + 1];
 		    for (int i_7_ = 0; i_6_ > i_7_; i_7_++)
 			anIntArray1835[i_7_]
-			    = class39_sub6.getUbyte();
+			    = class39_sub6.getUint8();
 		    anIntArray1835[i_6_] = 9999999;
 		} else if (i == 4)
 		    aBoolean1838 = true;
 		else if (i == 5)
-		    anInt1826 = class39_sub6.getUbyte();
+		    anInt1826 = class39_sub6.getUint8();
 		else if (i == 6)
-		    anInt1825 = class39_sub6.getUword();
+		    anInt1825 = class39_sub6.getUint16();
 		else if (i != 7) {
 		    if (i == 8)
-			anInt1829 = class39_sub6.getUbyte();
+			anInt1829 = class39_sub6.getUint8();
 		    else if (i != 9) {
 			if (i != 10) {
 			    if (i != 11) {
 				if (i == 12) {
 				    int i_8_
-					= class39_sub6.getUbyte();
+					= class39_sub6.getUint8();
 				    anIntArray1832 = new int[i_8_];
 				    for (int i_9_ = 0; i_8_ > i_9_; i_9_++)
 					anIntArray1832[i_9_]
-					    = class39_sub6.getUword();
+					    = class39_sub6.getUint16();
 				    for (int i_10_ = 0; i_8_ > i_10_; i_10_++)
 					anIntArray1832[i_10_]
-					    = (class39_sub6.getUword()
+					    = (class39_sub6.getUint16()
 					       << 16) + anIntArray1832[i_10_];
 				}
 			    } else
-				anInt1830 = class39_sub6.getUbyte();
+				anInt1830 = class39_sub6.getUint8();
 			} else
-			    anInt1837 = class39_sub6.getUbyte();
+			    anInt1837 = class39_sub6.getUint8();
 		    } else
-			anInt1840 = class39_sub6.getUbyte();
+			anInt1840 = class39_sub6.getUint8();
 		} else
-		    anInt1836 = class39_sub6.getUword();
+		    anInt1836 = class39_sub6.getUint16();
 	    } else
-		anInt1839 = class39_sub6.getUword();
+		anInt1839 = class39_sub6.getUint16();
 	}
     }
     

@@ -21,9 +21,9 @@ public class Envelope
     public int anInt532;
     
     public void method311(Buffer class39_sub6) {
-	anInt524 = class39_sub6.getUbyte();
-	anInt522 = class39_sub6.getDword();
-	anInt525 = class39_sub6.getDword();
+	anInt524 = class39_sub6.getUint8();
+	anInt522 = class39_sub6.getUint32();
+	anInt525 = class39_sub6.getUint32();
 	method313(class39_sub6);
     }
     
@@ -36,12 +36,12 @@ public class Envelope
     }
     
     public void method313(Buffer class39_sub6) {
-	anInt523 = class39_sub6.getUbyte();
+	anInt523 = class39_sub6.getUint8();
 	anIntArray526 = new int[anInt523];
 	anIntArray527 = new int[anInt523];
 	for (int i = 0; i < anInt523; i++) {
-	    anIntArray526[i] = class39_sub6.getUword();
-	    anIntArray527[i] = class39_sub6.getUword();
+	    anIntArray526[i] = class39_sub6.getUint16();
+	    anIntArray527[i] = class39_sub6.getUint16();
 	}
     }
     

@@ -235,9 +235,9 @@ public class Client extends JApplet {
             if (loginStage == 2) {
                 long l = encodedUsername = Class39_Sub5_Sub14.username.encodeBase37();
                 FrameBuffer.outgoingBuffer.offset = 0;
-                FrameBuffer.outgoingBuffer.putByte(14);
+                FrameBuffer.outgoingBuffer.putInt8(14);
                 int i_48_ = (int) (l >> 16 & 31L);
-                FrameBuffer.outgoingBuffer.putByte(i_48_);
+                FrameBuffer.outgoingBuffer.putInt8(i_48_);
                 Class37.gameSocket.write(FrameBuffer.outgoingBuffer.payload, 0, 2);
                 Class39_Sub5_Sub11.incomingBuffer.offset = 0;
                 loginStage = 3;
@@ -264,7 +264,7 @@ public class Client extends JApplet {
                 }
                 if (Class39_Sub5_Sub11.incomingBuffer.offset == 8) {
                     Class39_Sub5_Sub11.incomingBuffer.offset = 0;
-                    KeyListenerImpl.isaacSeed = Class39_Sub5_Sub11.incomingBuffer.getQword();
+                    KeyListenerImpl.isaacSeed = Class39_Sub5_Sub11.incomingBuffer.getInt64();
                     loginStage = 5;
                 }
             }
@@ -275,38 +275,38 @@ public class Client extends JApplet {
                 seeds[1] = (int) (Math.random() * 9.9999999E7);
                 seeds[3] = (int) KeyListenerImpl.isaacSeed;
                 seeds[2] = (int) (KeyListenerImpl.isaacSeed >> 32);
-                FrameBuffer.outgoingBuffer.putByte(10);
-                FrameBuffer.outgoingBuffer.putDword(seeds[0]);
-                FrameBuffer.outgoingBuffer.putDword(seeds[1]);
-                FrameBuffer.outgoingBuffer.putDword(seeds[2]);
-                FrameBuffer.outgoingBuffer.putDword(seeds[3]);
-                FrameBuffer.outgoingBuffer.putDword(Class39_Sub5_Sub9.fileSignlink.clientUid);
-                FrameBuffer.outgoingBuffer.putQword(Class39_Sub5_Sub14.username.encodeBase37());
+                FrameBuffer.outgoingBuffer.putInt8(10);
+                FrameBuffer.outgoingBuffer.putInt32(seeds[0]);
+                FrameBuffer.outgoingBuffer.putInt32(seeds[1]);
+                FrameBuffer.outgoingBuffer.putInt32(seeds[2]);
+                FrameBuffer.outgoingBuffer.putInt32(seeds[3]);
+                FrameBuffer.outgoingBuffer.putInt32(Class39_Sub5_Sub9.fileSignlink.clientUid);
+                FrameBuffer.outgoingBuffer.putInt64(Class39_Sub5_Sub14.username.encodeBase37());
                 FrameBuffer.outgoingBuffer.putJstr(Class39_Sub5_Sub14.password);
-                FrameBuffer.outgoingBuffer.applyRsa(Class2.aBigInteger47, JSocket.aBigInteger292, -17694);
+                FrameBuffer.outgoingBuffer.applyRsa(Class2.aBigInteger47, JSocket.aBigInteger292);
                 loginBuffer.offset = 0;
                 if (state == 40) {
-                    loginBuffer.putByte(18);
+                    loginBuffer.putInt8(18);
                 } else {
-                    loginBuffer.putByte(16);
+                    loginBuffer.putInt8(16);
                 }
-                loginBuffer.putByte(FrameBuffer.outgoingBuffer.offset + 61);
-                loginBuffer.putDword(443);
-                loginBuffer.putByte(!PlayerApperance.isLowMemory ? 0 : 1);
-                loginBuffer.putDword(Buffer.fileLoader0.localChecksum);
-                loginBuffer.putDword(Class15.fileLoader1.localChecksum);
-                loginBuffer.putDword(Class67.fileLoader2.localChecksum);
-                loginBuffer.putDword(Node.fileLoader3.localChecksum);
-                loginBuffer.putDword(Node.fileLoader4.localChecksum);
-                loginBuffer.putDword(JSocket.fileLoader5.localChecksum);
-                loginBuffer.putDword(Projectile.fileLoader6.localChecksum);
-                loginBuffer.putDword(PlayerApperance.fileLoader7.localChecksum);
-                loginBuffer.putDword(TraversalMap.fileLoader8.localChecksum);
-                loginBuffer.putDword(Widget.fileLoader9.localChecksum);
-                loginBuffer.putDword(Class66.fileLoader10.localChecksum);
-                loginBuffer.putDword(Wall.fileLoader11.localChecksum);
-                loginBuffer.putDword(Class33.fileLoader12.localChecksum);
-                loginBuffer.putDword(TextureLoaderImpl.fileLoader13.localChecksum);
+                loginBuffer.putInt8(FrameBuffer.outgoingBuffer.offset + 61);
+                loginBuffer.putInt32(443);
+                loginBuffer.putInt8(!PlayerApperance.isLowMemory ? 0 : 1);
+                loginBuffer.putInt32(Buffer.fileLoader0.localChecksum);
+                loginBuffer.putInt32(Class15.fileLoader1.localChecksum);
+                loginBuffer.putInt32(Class67.fileLoader2.localChecksum);
+                loginBuffer.putInt32(Node.fileLoader3.localChecksum);
+                loginBuffer.putInt32(Node.fileLoader4.localChecksum);
+                loginBuffer.putInt32(JSocket.fileLoader5.localChecksum);
+                loginBuffer.putInt32(Projectile.fileLoader6.localChecksum);
+                loginBuffer.putInt32(PlayerApperance.fileLoader7.localChecksum);
+                loginBuffer.putInt32(TraversalMap.fileLoader8.localChecksum);
+                loginBuffer.putInt32(Widget.fileLoader9.localChecksum);
+                loginBuffer.putInt32(Class66.fileLoader10.localChecksum);
+                loginBuffer.putInt32(Wall.fileLoader11.localChecksum);
+                loginBuffer.putInt32(Class33.fileLoader12.localChecksum);
+                loginBuffer.putInt32(TextureLoaderImpl.fileLoader13.localChecksum);
                 loginBuffer.putBytes(FrameBuffer.outgoingBuffer.payload, 0, FrameBuffer.outgoingBuffer.offset);
                 Class37.gameSocket.write(loginBuffer.payload, 0, loginBuffer.offset);
                 FrameBuffer.outgoingBuffer.initIsaac(seeds);
@@ -361,7 +361,7 @@ public class Client extends JApplet {
                     Class4.frameId = Class39_Sub5_Sub11.incomingBuffer.getFrame();
                     Class37.gameSocket.read(Class39_Sub5_Sub11.incomingBuffer.payload, 0, 2);
                     Class39_Sub5_Sub11.incomingBuffer.offset = 0;
-                    Huffman.frameSize = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                    Huffman.frameSize = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                     loginStage = 10;
                 }
                 if (loginStage == 10) {
@@ -929,8 +929,8 @@ public class Client extends JApplet {
                         if (ObjectDefinition.odStage == 2) {
                             ArchiveWorker.odSocket = new JSocket((Socket) (Class20.aClass56_390.returnObject), Class39_Sub5_Sub9.fileSignlink);
                             Buffer buffer = new Buffer(5);
-                            buffer.putByte(15);
-                            buffer.putDword(443);
+                            buffer.putInt8(15);
+                            buffer.putInt32(443);
                             ArchiveWorker.odSocket.write(buffer.payload, 0, 5);
                             ObjectDefinition.odStage++;
                             OndemandRequest.wroteGatewayTime = Class2.getSystemTime();

@@ -65,7 +65,7 @@ public class VarpDefinition extends SubNode
     
     public void decodeOpcode(Buffer buffer, int opcode) {
 	if (opcode == 5)
-	    type = buffer.getUword();
+	    type = buffer.getUint16();
     }
     
     public static int method744(KeyEvent keyevent, int i) {
@@ -77,7 +77,7 @@ public class VarpDefinition extends SubNode
     
     public void decode(Buffer buffer) {
 	for (;;) {
-	    int opcode = buffer.getUbyte();
+	    int opcode = buffer.getUint8();
 	    if (opcode == 0)
 		break;
 	    decodeOpcode(buffer, opcode);

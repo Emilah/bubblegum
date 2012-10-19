@@ -135,8 +135,8 @@ public class MouseRecorder implements Runnable
     
     public static void parseClassCheckRequest(Signlink signlink, Buffer buffer) {
 	ClassCheckRequest request = new ClassCheckRequest();
-	request.size = buffer.getUbyte();
-	request.uid = buffer.getDword();
+	request.size = buffer.getUint8();
+	request.uid = buffer.getUint32();
 	request.requestTypes = new int[request.size];
 	request.fieldValues = new int[request.size];
 	request.returnCodes = new int[request.size];
@@ -145,27 +145,27 @@ public class MouseRecorder implements Runnable
 	request.fieldResources = new Resource[request.size];
 	for (int i = 0; i < request.size; i++) {
 	    try {
-		int type = buffer.getUbyte();
+		int type = buffer.getUint8();
 		if (type == 0 || type == 1 || type == 2) {
 		    String className = new String(buffer.getJstr().method78(4484));
 		    String fieldName = new String(buffer.getJstr().method78(4484));
 		    int value = 0;
 		    if (type == 1)
-			value = buffer.getDword();
+			value = buffer.getUint32();
 		    request.requestTypes[i] = type;
 		    request.fieldValues[i] = value;
 		    request.fieldResources[i] = signlink.requestDeclaredField(Class4.getTypeFromName(className), fieldName);
 		} else if (type == 3 || type == 4) {
 		    String className = new String(buffer.getJstr().method78(4484));
 		    String methodName = new String(buffer.getJstr().method78(4484));
-		    int amountParams = buffer.getUbyte();
+		    int amountParams = buffer.getUint8();
 		    String[] paramClasses = new String[amountParams];
 		    for (int i_7_ = 0; i_7_ < amountParams; i_7_++)
 			paramClasses[i_7_] = new String(buffer.getJstr().method78(4484));
 		    byte[][] paramSrcs = new byte[amountParams][];
 		    if (type == 3) {
 			for (int i_8_ = 0; i_8_ < amountParams; i_8_++) {
-			    int length = buffer.getDword();
+			    int length = buffer.getUint32();
 			    paramSrcs[i_8_] = new byte[length];
 			    buffer.getBytes(paramSrcs[i_8_], 0, length);
 			}

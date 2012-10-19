@@ -394,7 +394,7 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
             class39_sub5_sub4_sub4_sub2.method515(0);
         }
         if ((i_20_ & 0x200) != 0) {
-            class39_sub5_sub4_sub4_sub2.anInt2270 = Class39_Sub5_Sub11.incomingBuffer.getUword();
+            class39_sub5_sub4_sub4_sub2.anInt2270 = Class39_Sub5_Sub11.incomingBuffer.getUint16();
             int i_22_ = Class39_Sub5_Sub11.incomingBuffer.getDwordB();
             class39_sub5_sub4_sub4_sub2.anInt2272 = (i_22_ & 0xffff) + Class2.logicCycle;
             if (class39_sub5_sub4_sub4_sub2.anInt2270 == 65535) {
@@ -445,8 +445,8 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
                     i_24_);
         }
         if ((i_20_ & 0x4) != 0) {
-            int i_25_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
-            int i_26_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int i_25_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+            int i_26_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             int i_27_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte128();
             int i_28_ = Class39_Sub5_Sub11.incomingBuffer.offset;
             if (class39_sub5_sub4_sub4_sub2.aClass3_2521 != null
@@ -487,17 +487,17 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
             Class39_Sub5_Sub11.incomingBuffer.offset = i_28_ + i_27_;
         }
         if ((i_20_ & 0x400) != 0) {
-            int i_30_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int i_30_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             int i_31_ = Class39_Sub5_Sub11.incomingBuffer.getUbyteB();
             class39_sub5_sub4_sub4_sub2.method513(-89, Class2.logicCycle, i_30_,
                     i_31_);
             class39_sub5_sub4_sub4_sub2.anInt2252 = Class2.logicCycle + 300;
             class39_sub5_sub4_sub4_sub2.anInt2318 = Class39_Sub5_Sub11.incomingBuffer.getUbyte128();
-            class39_sub5_sub4_sub4_sub2.anInt2269 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            class39_sub5_sub4_sub4_sub2.anInt2269 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
         }
         if ((i_20_ & 0x20) != 0) {
             int i_32_ = Class39_Sub5_Sub11.incomingBuffer.getUbyteA();
-            int i_33_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int i_33_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             class39_sub5_sub4_sub4_sub2.method513(-116, Class2.logicCycle, i_32_,
                     i_33_);
             class39_sub5_sub4_sub4_sub2.anInt2252 = Class2.logicCycle + 300;

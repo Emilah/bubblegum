@@ -57,7 +57,7 @@ public class Class20 {
                         JApplet.aLongArray2[i_1_] = JApplet.aLongArray2[i_1_ + 1];
                     }
                     FrameBuffer.outgoingBuffer.putFrame(159);
-                    FrameBuffer.outgoingBuffer.putQword(l);
+                    FrameBuffer.outgoingBuffer.putInt64(l);
                     break;
                 }
             }

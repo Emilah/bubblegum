@@ -141,64 +141,64 @@ public class NpcDefinition extends SubNode {
 
     public void decodeOpcode(int i, Buffer class39_sub6, int i_7_) {
         if (i_7_ == 1) {
-            int i_8_ = class39_sub6.getUbyte();
+            int i_8_ = class39_sub6.getUint8();
             anIntArray1885 = new int[i_8_];
             for (int i_9_ = 0; i_8_ > i_9_; i_9_++) {
-                anIntArray1885[i_9_] = class39_sub6.getUword();
+                anIntArray1885[i_9_] = class39_sub6.getUint16();
             }
         } else if (i_7_ != 2) {
             if (i_7_ != 12) {
                 if (i_7_ != 13) {
                     if (i_7_ == 14) {
-                        anInt1861 = class39_sub6.getUword();
+                        anInt1861 = class39_sub6.getUint16();
                     } else if (i_7_ != 15) {
                         if (i_7_ == 16) {
-                            anInt1875 = class39_sub6.getUword();
+                            anInt1875 = class39_sub6.getUint16();
                         } else if (i_7_ != 17) {
                             if (i_7_ < 30 || i_7_ >= 35) {
                                 if (i_7_ == 40) {
-                                    int i_10_ = class39_sub6.getUbyte();
+                                    int i_10_ = class39_sub6.getUint8();
                                     anIntArray1869 = new int[i_10_];
                                     anIntArray1868 = new int[i_10_];
                                     for (int i_11_ = 0; i_10_ > i_11_;
                                             i_11_++) {
-                                        anIntArray1868[i_11_] = class39_sub6.getUword();
-                                        anIntArray1869[i_11_] = class39_sub6.getUword();
+                                        anIntArray1868[i_11_] = class39_sub6.getUint16();
+                                        anIntArray1869[i_11_] = class39_sub6.getUint16();
                                     }
                                 } else if (i_7_ == 60) {
-                                    int i_12_ = class39_sub6.getUbyte();
+                                    int i_12_ = class39_sub6.getUint8();
                                     anIntArray1873 = new int[i_12_];
                                     for (int i_13_ = 0; i_13_ < i_12_; i_13_++) {
-                                        anIntArray1873[i_13_] = class39_sub6.getUword();
+                                        anIntArray1873[i_13_] = class39_sub6.getUint16();
                                     }
                                 } else if (i_7_ != 93) {
                                     if (i_7_ != 95) {
                                         if (i_7_ != 97) {
                                             if (i_7_ == 98) {
-                                                anInt1876 = (class39_sub6.getUword());
+                                                anInt1876 = (class39_sub6.getUint16());
                                             } else if (i_7_ == 99) {
                                                 aBoolean1883 = true;
                                             } else if (i_7_ != 100) {
                                                 if (i_7_ != 101) {
                                                     if (i_7_ == 102) {
-                                                        anInt1871 = (class39_sub6.getUword());
+                                                        anInt1871 = (class39_sub6.getUint16());
                                                     } else if (i_7_ == 103) {
-                                                        anInt1882 = (class39_sub6.getUword());
+                                                        anInt1882 = (class39_sub6.getUint16());
                                                     } else if (i_7_ == 106) {
-                                                        varbitId = (class39_sub6.getUword());
+                                                        varbitId = (class39_sub6.getUint16());
                                                         if (varbitId == 65535) {
                                                             varbitId = -1;
                                                         }
-                                                        stateId = (class39_sub6.getUword());
+                                                        stateId = (class39_sub6.getUint16());
                                                         if (stateId == 65535) {
                                                             stateId = -1;
                                                         }
-                                                        int i_14_ = (class39_sub6.getUbyte());
+                                                        int i_14_ = (class39_sub6.getUint8());
                                                         anIntArray1878 = (new int[i_14_ + 1]);
                                                         for (int i_15_ = 0;
                                                                 i_14_ >= i_15_;
                                                                 i_15_++) {
-                                                            anIntArray1878[i_15_] = (class39_sub6.getUword());
+                                                            anIntArray1878[i_15_] = (class39_sub6.getUint16());
                                                             if ((anIntArray1878[i_15_])
                                                                     == 65535) {
                                                                 anIntArray1878[i_15_] = -1;
@@ -208,17 +208,17 @@ public class NpcDefinition extends SubNode {
                                                         aBoolean1886 = false;
                                                     }
                                                 } else {
-                                                    anInt1880 = (class39_sub6.getByte()
+                                                    anInt1880 = (class39_sub6.getInt8()
                                                             * 5);
                                                 }
                                             } else {
-                                                anInt1865 = class39_sub6.getByte();
+                                                anInt1865 = class39_sub6.getInt8();
                                             }
                                         } else {
-                                            anInt1862 = class39_sub6.getUword();
+                                            anInt1862 = class39_sub6.getUint16();
                                         }
                                     } else {
-                                        anInt1859 = class39_sub6.getUword();
+                                        anInt1859 = class39_sub6.getUint16();
                                     }
                                 } else {
                                     aBoolean1888 = false;
@@ -230,19 +230,19 @@ public class NpcDefinition extends SubNode {
                                 }
                             }
                         } else {
-                            anInt1861 = class39_sub6.getUword();
-                            anInt1877 = class39_sub6.getUword();
-                            anInt1863 = class39_sub6.getUword();
-                            anInt1879 = class39_sub6.getUword();
+                            anInt1861 = class39_sub6.getUint16();
+                            anInt1877 = class39_sub6.getUint16();
+                            anInt1863 = class39_sub6.getUint16();
+                            anInt1879 = class39_sub6.getUint16();
                         }
                     } else {
-                        anInt1872 = class39_sub6.getUword();
+                        anInt1872 = class39_sub6.getUint16();
                     }
                 } else {
-                    anInt1887 = class39_sub6.getUword();
+                    anInt1887 = class39_sub6.getUint16();
                 }
             } else {
-                anInt1870 = class39_sub6.getUbyte();
+                anInt1870 = class39_sub6.getUint8();
             }
         } else {
             name = class39_sub6.getJstr();
@@ -251,7 +251,7 @@ public class NpcDefinition extends SubNode {
 
     public void decode(Buffer buffer) {
         for (;;) {
-            int opcode = buffer.getUbyte();
+            int opcode = buffer.getUint8();
             if (opcode == 0) {
                 break;
             }

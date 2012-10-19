@@ -51,13 +51,13 @@ public class Class39_Sub5_Sub14 extends SubNode
 	    if (i_1_ != 2) {
 		if (i_1_ != 5) {
 		    if (i_1_ == 7)
-			anInt1907 = class39_sub6.getUtri();
+			anInt1907 = class39_sub6.getUint24();
 		} else
 		    aBoolean1894 = false;
 	    } else
-		anInt1901 = class39_sub6.getUbyte();
+		anInt1901 = class39_sub6.getUint8();
 	} else
-	    anInt1915 = class39_sub6.getUtri();
+	    anInt1915 = class39_sub6.getUint24();
 	if (i_0_ == 106) {
 	    /* empty */
 	}
@@ -141,7 +141,7 @@ public class Class39_Sub5_Sub14 extends SubNode
     
     public void method730(int i, Buffer class39_sub6, int i_10_) {
 	for (;;) {
-	    int i_11_ = class39_sub6.getUbyte();
+	    int i_11_ = class39_sub6.getUint8();
 	    if (i_11_ == 0)
 		break;
 	    method726(i_10_, class39_sub6, (byte) 106, i_11_);

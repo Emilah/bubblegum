@@ -345,15 +345,15 @@ public class Class26 {
             int i_35_ = JString.anIntArray1239[i_19_];
             if (i_8_ == 0) {
                 FrameBuffer.outgoingBuffer.putFrame(99);
-                FrameBuffer.outgoingBuffer.putByte(amountSteps + 3 + amountSteps);
+                FrameBuffer.outgoingBuffer.putInt8(amountSteps + 3 + amountSteps);
             }
             if (i_8_ == 1) {
                 FrameBuffer.outgoingBuffer.putFrame(80);
-                FrameBuffer.outgoingBuffer.putByte(amountSteps + 3 + (amountSteps + 14));
+                FrameBuffer.outgoingBuffer.putInt8(amountSteps + 3 + (amountSteps + 14));
             }
             if (i_8_ == 2) {
                 FrameBuffer.outgoingBuffer.putFrame(81);
-                FrameBuffer.outgoingBuffer.putByte(amountSteps + (amountSteps + 3));
+                FrameBuffer.outgoingBuffer.putInt8(amountSteps + (amountSteps + 3));
             }
             FrameBuffer.outgoingBuffer.putWordLe128(i_35_ + Class65.anInt1145);
             FrameBuffer.outgoingBuffer.putByteA(Class13.activeKeys[82] ? 1 : 0);
@@ -362,7 +362,7 @@ public class Class26 {
             ArchiveRequest.anInt1407 = Widget.anIntArray2112[0];
             for (int i_36_ = 1; i_36_ < amountSteps; i_36_++) {
                 i_19_--;
-                FrameBuffer.outgoingBuffer.putByte(-i_35_ + JString.anIntArray1239[i_19_]);
+                FrameBuffer.outgoingBuffer.putInt8(-i_35_ + JString.anIntArray1239[i_19_]);
                 FrameBuffer.outgoingBuffer.putByteB(Widget.anIntArray2112[i_19_] - i_34_);
             }
             return true;

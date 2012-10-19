@@ -219,7 +219,7 @@ public class Bzip2Entry {
     public static void method1035(int i_21_, int i_22_) {
         FrameBuffer.outgoingBuffer.putFrame(153);
         FrameBuffer.outgoingBuffer.putWordLe(i_21_);
-        FrameBuffer.outgoingBuffer.putDword(i_22_);
+        FrameBuffer.outgoingBuffer.putInt32(i_22_);
     }
 
     public static IndexedColorSprite method1036(boolean bool) {
@@ -284,7 +284,7 @@ public class Bzip2Entry {
                 Class37.gameSocket.read((Class39_Sub5_Sub11.incomingBuffer.payload), 0, 2);
                 available -= 2;
                 Class39_Sub5_Sub11.incomingBuffer.offset = 0;
-                Huffman.frameSize = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                Huffman.frameSize = Class39_Sub5_Sub11.incomingBuffer.getUint16();
             }
             if (available < Huffman.frameSize) {
                 return false;
@@ -315,10 +315,10 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 156) {
-                int i_27_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                int i_28_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                int i_29_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                int i_30_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                int i_27_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                int i_28_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                int i_29_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                int i_30_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 Class44.aBooleanArray837[i_27_] = true;
                 Class13.anIntArray197[i_27_] = i_28_;
                 Class2.anIntArray49[i_27_] = i_29_;
@@ -345,23 +345,23 @@ public class Bzip2Entry {
                 Object[] params = new Object[paramStr.getLength() + 1];
                 for (int i = paramStr.getLength() - 1; i >= 0; i--) {
                     if (paramStr.charAt(i) != 's') {
-                        params[i + 1] = new Integer(Class39_Sub5_Sub11.incomingBuffer.getDword());
+                        params[i + 1] = new Integer(Class39_Sub5_Sub11.incomingBuffer.getUint32());
                     } else {
                         params[i + 1] = Class39_Sub5_Sub11.incomingBuffer.getJstr();
                     }
                 }
-                params[0] = new Integer(Class39_Sub5_Sub11.incomingBuffer.getDword());
+                params[0] = new Integer(Class39_Sub5_Sub11.incomingBuffer.getUint32());
                 ScriptExecutor.executeClientScript(0, params, null, 115, 0, null, 0);
                 Class4.frameId = -1;
                 return true;
             }
             if (Class4.frameId == 111) {
                 TraversalMap.isCameraMoving = true;
-                GroundItem.cameraPositionX = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                Class26.cameraPositionY = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                PlayerApperance.cameraHeightOffset = Class39_Sub5_Sub11.incomingBuffer.getUword();
-                MsTimer.cameraOffset = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                Class43.cameraMoveRate = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                GroundItem.cameraPositionX = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                Class26.cameraPositionY = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                PlayerApperance.cameraHeightOffset = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                MsTimer.cameraOffset = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                Class43.cameraMoveRate = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 if (Class43.cameraMoveRate >= 100) {
                     StillObject.fCameraPositionX = GroundItem.cameraPositionX * 128 + 64;
                     Node.fCameraPositionY = Class26.cameraPositionY * 128 + 64;
@@ -376,9 +376,9 @@ public class Bzip2Entry {
                 return false;
             }
             if (Class4.frameId == 137) {
-                int i_32_ = Class39_Sub5_Sub11.incomingBuffer.getDword();
-                int hash = Class39_Sub5_Sub11.incomingBuffer.getDword();
-                int itemId = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int i_32_ = Class39_Sub5_Sub11.incomingBuffer.getUint32();
+                int hash = Class39_Sub5_Sub11.incomingBuffer.getUint32();
+                int itemId = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 if (itemId == 65535) {
                     itemId = -1;
                 }
@@ -419,7 +419,7 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 77) {
-                long encodedUsername = Class39_Sub5_Sub11.incomingBuffer.getQword();
+                long encodedUsername = Class39_Sub5_Sub11.incomingBuffer.getInt64();
                 JString jstr = Class63.decodeHuffmans(Class39_Sub5_Sub11.incomingBuffer).method58(true);
                 MouseListenerImpl.printMessage(6,Deque.decodeBase37(encodedUsername).formatUsername(), jstr);
                 Class4.frameId = -1;
@@ -427,7 +427,7 @@ public class Bzip2Entry {
             }
             if (Class4.frameId == 58) {
                 Class39_Sub14.updateTab = true;
-                int id = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                int id = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 int i_41_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte128();
                 int i_42_ = Class39_Sub5_Sub11.incomingBuffer.getDwordB();
                 Class39_Sub14.levelExperience[id] = i_42_;
@@ -445,7 +445,7 @@ public class Bzip2Entry {
             if (Class4.frameId == 147) {
                 int hash = Class39_Sub5_Sub11.incomingBuffer.getDwordA();
                 int i_45_ = Class39_Sub5_Sub11.incomingBuffer.getUwordLe();
-                int i_46_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int i_46_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 int i_47_ = Class39_Sub5_Sub11.incomingBuffer.getUwordLe128();
                 Widget widget = Class37.getWidget(hash);
                 widget.modelSineRotationX = i_46_;
@@ -457,14 +457,14 @@ public class Bzip2Entry {
             if (Class4.frameId == 159) {
                 Class15.amountIgnores = Huffman.frameSize / 8;
                 for (int i_48_ = 0; Class15.amountIgnores > i_48_; i_48_++) {
-                    Class39_Sub5_Sub9.ignoreUsernames[i_48_] = Class39_Sub5_Sub11.incomingBuffer.getQword();
+                    Class39_Sub5_Sub9.ignoreUsernames[i_48_] = Class39_Sub5_Sub11.incomingBuffer.getInt64();
                 }
                 Class4.frameId = -1;
                 return true;
             }
             if (Class4.frameId == 74) {
                 int value = Class39_Sub5_Sub11.incomingBuffer.getDwordB();
-                int id = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int id = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 Class39_Sub5_Sub4_Sub2.defaultStateValues[id] = value;
                 if (value != Client.stateValues[id]) {
                     Client.stateValues[id] = value;
@@ -484,7 +484,7 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 221) {
-                int i_51_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int i_51_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 int i_52_ = Class39_Sub5_Sub11.incomingBuffer.getUwordLe128();
                 VarbitDefinition.method594(-107, i_51_);
                 if (i_52_ != -1) {
@@ -529,8 +529,8 @@ public class Bzip2Entry {
             }
             if (Class4.frameId == 228) {
                 Class39_Sub14.updateTab = true;
-                int hash = Class39_Sub5_Sub11.incomingBuffer.getDword();
-                int containerId = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int hash = Class39_Sub5_Sub11.incomingBuffer.getUint32();
+                int containerId = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 Widget widget;
                 if (hash >= 0) {
                     widget = Class37.getWidget(hash);
@@ -544,13 +544,13 @@ public class Bzip2Entry {
                     }
                 }
                 ArchiveRequest.resetItemContainer(containerId);
-                int amountItems = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int amountItems = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 for (int i = 0; amountItems > i; i++) {
                     int itemAmount = Class39_Sub5_Sub11.incomingBuffer.getUbyteA();
                     if (itemAmount == 255) {
-                        itemAmount = Class39_Sub5_Sub11.incomingBuffer.getDword();
+                        itemAmount = Class39_Sub5_Sub11.incomingBuffer.getUint32();
                     }
-                    int itemId = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                    int itemId = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                     if (widget != null && widget.itemIds.length > i) {
                         widget.itemIds[i] = itemId;
                         widget.itemAmounts[i] = itemAmount;
@@ -562,7 +562,7 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 57) {
-                Class14.anInt232 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                Class14.anInt232 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 Class4.frameId = -1;
                 Class39_Sub14.updateTab = true;
                 return true;
@@ -579,7 +579,7 @@ public class Bzip2Entry {
             }
             if (Class4.frameId == 146) {
                 int v0 = Class39_Sub5_Sub11.incomingBuffer.getUwordLe128();
-                int v1 = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int v1 = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 if (Class39_Sub5_Sub14.chatboxOverlayId != -1) {
                     Class62_Sub2.method1084((byte) 109, Class39_Sub5_Sub14.chatboxOverlayId);
                     Class39_Sub5_Sub14.chatboxOverlayId = -1;
@@ -625,8 +625,8 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 179) {
-                long l = Class39_Sub5_Sub11.incomingBuffer.getQword();
-                int i_63_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                long l = Class39_Sub5_Sub11.incomingBuffer.getInt64();
+                int i_63_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 JString class3 = Deque.decodeBase37(l).formatUsername();
                 for (int i_64_ = 0; i_64_ < Class4.anInt62; i_64_++) {
                     if (JApplet.aLongArray2[i_64_] == l) {
@@ -684,7 +684,7 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 87) {
-                Class39_Sub5_Sub7.minimapState = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                Class39_Sub5_Sub7.minimapState = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 Class4.frameId = -1;
                 return true;
             }
@@ -692,7 +692,7 @@ public class Bzip2Entry {
                 if (Node.currentTabId == 12) {
                     Class39_Sub14.updateTab = true;
                 }
-                MsTimer.runEnergy = Class39_Sub5_Sub11.incomingBuffer.getWord();
+                MsTimer.runEnergy = Class39_Sub5_Sub11.incomingBuffer.getInt16();
                 Class4.frameId = -1;
                 return true;
             }
@@ -727,7 +727,7 @@ public class Bzip2Entry {
             if (Class4.frameId == 73) {
                 int i_72_ = Class39_Sub5_Sub11.incomingBuffer.getDwordA();
                 int i_73_ = Class39_Sub5_Sub11.incomingBuffer.getUwordLe128();
-                int i_74_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int i_74_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 Widget widget = Class37.getWidget(i_72_);
                 widget.anInt2069 = i_73_ + (i_74_ << 16);
                 Class4.frameId = -1;
@@ -863,7 +863,7 @@ public class Bzip2Entry {
             }
             if (Class4.frameId == 62) {
                 int i_80_ = Class39_Sub5_Sub11.incomingBuffer.getByteA();
-                int i_81_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int i_81_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 Class39_Sub5_Sub4_Sub2.defaultStateValues[i_81_] = i_80_;
                 if (Client.stateValues[i_81_] != i_80_) {
                     Client.stateValues[i_81_] = i_80_;
@@ -892,17 +892,17 @@ public class Bzip2Entry {
             }
             if (Class4.frameId == 244) {
                 Node.mSectorX = Class39_Sub5_Sub11.incomingBuffer.getUbyteA();
-                ISAAC.mSectorY = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                ISAAC.mSectorY = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 while (Class39_Sub5_Sub11.incomingBuffer.offset
                         < Huffman.frameSize) {
-                    Class4.frameId = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                    Class4.frameId = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                     Class12.parseStillEntityFrame();
                 }
                 Class4.frameId = -1;
                 return true;
             }
             if (Class4.frameId == 130) {
-                int i_83_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                int i_83_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 JString class3 = Class39_Sub5_Sub11.incomingBuffer.getJstr();
                 int i_84_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte128();
                 if (i_83_ >= 1 && i_83_ <= 5) {
@@ -917,7 +917,7 @@ public class Bzip2Entry {
             }
             if (Class4.frameId == 232) {
                 int amountX = Class39_Sub5_Sub11.incomingBuffer.getWord128();
-                int amountY = Class39_Sub5_Sub11.incomingBuffer.getWord();
+                int amountY = Class39_Sub5_Sub11.incomingBuffer.getInt16();
                 int widgetId = Class39_Sub5_Sub11.incomingBuffer.getDwordB();
                 Widget widget = Class37.getWidget(widgetId);
                 widget.displayOffsetY = widget.offsetY + amountX;
@@ -959,9 +959,9 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 96) {
-                MouseListenerImpl.anInt787 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                MouseListenerImpl.anInt787 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 if (MouseListenerImpl.anInt787 == 1) {
-                    Class30.anInt542 = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                    Class30.anInt542 = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 }
                 if (MouseListenerImpl.anInt787 >= 2 && MouseListenerImpl.anInt787 <= 6) {
                     if (MouseListenerImpl.anInt787 == 2) {
@@ -985,12 +985,12 @@ public class Bzip2Entry {
                         Class43.anInt823 = 64;
                     }
                     MouseListenerImpl.anInt787 = 2;
-                    JString.anInt1229 = Class39_Sub5_Sub11.incomingBuffer.getUword();
-                    Class25.anInt471 = Class39_Sub5_Sub11.incomingBuffer.getUword();
-                    Class66.anInt1158 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                    JString.anInt1229 = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                    Class25.anInt471 = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                    Class66.anInt1158 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 }
                 if (MouseListenerImpl.anInt787 == 10) {
-                    Class34.anInt607 = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                    Class34.anInt607 = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 }
                 Class4.frameId = -1;
                 return true;
@@ -1007,7 +1007,7 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 90) {
-                int id = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                int id = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 int parentId = Class39_Sub5_Sub11.incomingBuffer.getUword128();
                 if (parentId == 65535) {
                     parentId = -1;
@@ -1044,7 +1044,7 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 10) {
-                Node.currentTabId = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                Node.currentTabId = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 Class39_Sub14.updateTab = true;
                 ISAAC.aBoolean1089 = true;
                 Class4.frameId = -1;
@@ -1071,10 +1071,10 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 25) {
-                long l = Class39_Sub5_Sub11.incomingBuffer.getQword();
-                long l_99_ = (long) Class39_Sub5_Sub11.incomingBuffer.getUword();
-                long l_100_ = (long) Class39_Sub5_Sub11.incomingBuffer.getUtri();
-                int i_101_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                long l = Class39_Sub5_Sub11.incomingBuffer.getInt64();
+                long l_99_ = (long) Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                long l_100_ = (long) Class39_Sub5_Sub11.incomingBuffer.getUint24();
+                int i_101_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 long l_102_ = (l_99_ << 32) - -l_100_;
                 boolean bool = false;
                 for (int i_103_ = 0; i_103_ < 100; i_103_++) {
@@ -1150,8 +1150,8 @@ public class Bzip2Entry {
             }
             if (Class4.frameId == 213) {
                 Class39_Sub14.updateTab = true;
-                int hash = Class39_Sub5_Sub11.incomingBuffer.getDword();
-                int containerId = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int hash = Class39_Sub5_Sub11.incomingBuffer.getUint32();
+                int containerId = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 Widget widget;
                 if (hash < 0) {
                     widget = null;
@@ -1159,13 +1159,13 @@ public class Bzip2Entry {
                     widget = Class37.getWidget(hash);
                 }
                 while (Class39_Sub5_Sub11.incomingBuffer.offset < Huffman.frameSize) {
-                    int slot = Class39_Sub5_Sub11.incomingBuffer.getSmartB();
-                    int id = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                    int slot = Class39_Sub5_Sub11.incomingBuffer.getUsmart();
+                    int id = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                     int amt = 0;
                     if (id != 0) {
-                        amt = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                        amt = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                         if (amt == 255) {
-                            amt = Class39_Sub5_Sub11.incomingBuffer.getDword();
+                            amt = Class39_Sub5_Sub11.incomingBuffer.getUint32();
                         }
                     }
                     if (widget != null && slot >= 0  && widget.itemIds.length > slot) {
@@ -1266,11 +1266,11 @@ public class Bzip2Entry {
             }
             if (Class4.frameId == 241) {
                 TraversalMap.isCameraMoving = true;
-                Class53.anInt965 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                Class39_Sub5_Sub18.anInt2121 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                ScriptState.anInt454 = Class39_Sub5_Sub11.incomingBuffer.getUword();
-                FrameBuffer.anInt2156 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                Class32.anInt590 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                Class53.anInt965 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                Class39_Sub5_Sub18.anInt2121 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                ScriptState.anInt454 = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                FrameBuffer.anInt2156 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                Class32.anInt590 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 if (Class32.anInt590 >= 100) {
                     int i_122_ = Class53.anInt965 * 128 + 64;
                     int i_123_ = Class39_Sub5_Sub18.anInt2121 * 128 + 64;
@@ -1297,9 +1297,9 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 91) {
-                anInt1051 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                NameTable.anInt177 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                Cache.anInt118 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                anInt1051 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                NameTable.anInt177 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                Cache.anInt118 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 Mob.aBoolean2253 = true;
                 Class14.aBoolean245 = true;
                 Class4.frameId = -1;
@@ -1337,7 +1337,7 @@ public class Bzip2Entry {
                 if (Node.currentTabId == 12) {
                     Class39_Sub14.updateTab = true;
                 }
-                ArchiveRequest.runEnergy = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                ArchiveRequest.runEnergy = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 Class4.frameId = -1;
                 return true;
             }
@@ -1355,15 +1355,15 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 81) {
-                int effectId = Class39_Sub5_Sub11.incomingBuffer.getUword();
-                int loopCount = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                int delay = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int effectId = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                int loopCount = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                int delay = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 TraversalMap.queueSoundEffect(effectId, loopCount, delay);
                 Class4.frameId = -1;
                 return true;
             }
             if (Class4.frameId == 236) {
-                Huffman.anInt756 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                Huffman.anInt756 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 Class4.frameId = -1;
                 return true;
             }
@@ -1432,8 +1432,8 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 227) {
-                int i_138_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
-                int i_139_ = Class39_Sub5_Sub11.incomingBuffer.getDword();
+                int i_138_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                int i_139_ = Class39_Sub5_Sub11.incomingBuffer.getUint32();
                 Widget class39_sub5_sub17 = Class37.getWidget(i_139_);
                 class39_sub5_sub17.inactiveAnimationModelId = i_138_;
                 Class4.frameId = -1;

@@ -169,7 +169,7 @@ public class Class65 {
                     Class39_Sub5_Sub9.ignoreUsernames[Class15.amountIgnores++] = encodedUsername;
                     Class39_Sub14.updateTab = true;
                     FrameBuffer.outgoingBuffer.putFrame(198);
-                    FrameBuffer.outgoingBuffer.putQword(encodedUsername);
+                    FrameBuffer.outgoingBuffer.putInt64(encodedUsername);
                 }
             }
         }

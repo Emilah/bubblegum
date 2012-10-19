@@ -46,13 +46,13 @@ public abstract class AbstractFileLoader {
 
     public static byte[] unpackContainer(byte[] src) {
         Buffer buffer = new Buffer(src);
-        int compression = buffer.getUbyte();
-        int i_33_ = buffer.getDword();
+        int compression = buffer.getUint8();
+        int i_33_ = buffer.getUint32();
         if (i_33_ < 0 || Class39_Sub14.anInt1517 != 0 && i_33_ > Class39_Sub14.anInt1517) {
             throw new RuntimeException();
         }
         if (compression != 0) {
-            int i_34_ = buffer.getDword();
+            int i_34_ = buffer.getUint32();
             if (i_34_ < 0 || (Class39_Sub14.anInt1517 != 0 && Class39_Sub14.anInt1517 < i_34_)) {
                 throw new RuntimeException();
             }
@@ -402,7 +402,7 @@ public abstract class AbstractFileLoader {
             for (int i = 0; iterations > i; i++) {
                 int counter = 0;
                 for (int i_48_ = 0; children > i_48_; i_48_++) {
-                    counter += buffer.getDword();
+                    counter += buffer.getUint32();
                     offsets[i_48_] += counter;
                 }
             }
@@ -417,7 +417,7 @@ public abstract class AbstractFileLoader {
             for (int i = 0; iterations > i; i++) {
                 int length = 0;
                 for (int j = 0; children > j; j++) {
-                    length += buffer.getDword();
+                    length += buffer.getUint32();
                     ArrayUtils.arrayCopy(src, counter, buffers[childEntries[j]], offsets[j], length);
                     offsets[j] += length;
                     counter += length;
@@ -517,15 +517,15 @@ public abstract class AbstractFileLoader {
     public void decode(byte[] src) {
         localChecksum = Class13.computeChecksum(src, src.length);
         Buffer buffer = new Buffer(unpackContainer(src));
-        int version = buffer.getUbyte();
+        int version = buffer.getUint8();
         if (version == 5) {
-            int settingFlags = buffer.getUbyte();
+            int settingFlags = buffer.getUint8();
             int counter = 0;
             int maximumEntry = -1;
-            amountEntries = buffer.getUword();
+            amountEntries = buffer.getUint16();
             entries = new int[amountEntries];
             for (int i = 0; amountEntries > i; i++) {
-                entries[i] = counter += buffer.getUword();
+                entries[i] = counter += buffer.getUint16();
                 if (entries[i] > maximumEntry) {
                     maximumEntry = entries[i];
                 }
@@ -539,18 +539,18 @@ public abstract class AbstractFileLoader {
             if (settingFlags != 0) {
                 archiveNameHashes = new int[maximumEntry + 1];
                 for (int i = 0; amountEntries > i; i++) {
-                    archiveNameHashes[entries[i]] = buffer.getDword();
+                    archiveNameHashes[entries[i]] = buffer.getUint32();
                 }
                 archiveNameTable = new NameTable(archiveNameHashes);
             }
             for (int i_76_ = 0; i_76_ < amountEntries; i_76_++) {
-                checksums[entries[i_76_]] = buffer.getDword();
+                checksums[entries[i_76_]] = buffer.getUint32();
             }
             for (int i_77_ = 0; amountEntries > i_77_; i_77_++) {
-                versions[entries[i_77_]] = buffer.getDword();
+                versions[entries[i_77_]] = buffer.getUint32();
             }
             for (int i_78_ = 0; i_78_ < amountEntries; i_78_++) {
-                amountFiles[entries[i_78_]] = buffer.getUword();
+                amountFiles[entries[i_78_]] = buffer.getUint16();
             }
             for (int i_79_ = 0; amountEntries > i_79_; i_79_++) {
                 counter = 0;
@@ -559,7 +559,7 @@ public abstract class AbstractFileLoader {
                 int maximumChild = -1;
                 fileEntries[entryId] = new int[amtChildren];
                 for (int i_83_ = 0; amtChildren > i_83_; i_83_++) {
-                    int fileId = (fileEntries[entryId][i_83_] = counter += buffer.getUword());
+                    int fileId = (fileEntries[entryId][i_83_] = counter += buffer.getUint16());
                     if (maximumChild < fileId) {
                         maximumChild = fileId;
                     }
@@ -574,7 +574,7 @@ public abstract class AbstractFileLoader {
                     int i_87_ = amountFiles[i_86_];
                     fileNameHashes[i_86_] = new int[fileBuffers[i_86_].length];
                     for (int i_88_ = 0; i_88_ < i_87_; i_88_++) {
-                        fileNameHashes[i_86_][(fileEntries[i_86_][i_88_])] = buffer.getDword();
+                        fileNameHashes[i_86_][(fileEntries[i_86_][i_88_])] = buffer.getUint32();
                     }
                     fileNameTables[i_86_] = new NameTable(fileNameHashes[i_86_]);
                 }

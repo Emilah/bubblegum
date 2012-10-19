@@ -300,12 +300,12 @@ public class BufferedFile {
                 break;
             }
             frameBuffer.putFrame(194);
-            frameBuffer.putByte(0);
+            frameBuffer.putInt8(0);
             int startOffset = frameBuffer.offset;
-            frameBuffer.putDword(request.uid);
+            frameBuffer.putInt32(request.uid);
             for (int i = 0; i < request.size; i++) {
                 if (request.returnCodes[i] != 0) {
-                    frameBuffer.putByte((request.returnCodes[i]));
+                    frameBuffer.putInt8((request.returnCodes[i]));
                 } else {
                     try {
                         int type = request.requestTypes[i];
@@ -313,18 +313,18 @@ public class BufferedFile {
                             if (type == 1) {
                                 Field field = ((Field) (request.fieldResources[i].returnObject));
                                 field.setInt(null, (request.fieldValues[i]));
-                                frameBuffer.putByte(0);
+                                frameBuffer.putInt8(0);
                             } else if (type == 2) {
                                 Field field = ((Field) (request.fieldResources[i].returnObject));
                                 int modifiers = field.getModifiers();
-                                frameBuffer.putByte(0);
-                                frameBuffer.putDword(modifiers);
+                                frameBuffer.putInt8(0);
+                                frameBuffer.putInt32(modifiers);
                             }
                         } else {
                             Field field = (Field) (request.fieldResources[i].returnObject);
                             int value = field.getInt(null);
-                            frameBuffer.putByte(0);
-                            frameBuffer.putDword(value);
+                            frameBuffer.putInt8(0);
+                            frameBuffer.putInt32(value);
                         }
                         if (type == 3) {
                             Method method = (Method) (request.methodResources[i].returnObject);
@@ -336,48 +336,48 @@ public class BufferedFile {
                             }
                             Object object = method.invoke(null, parameters);
                             if (object == null) {
-                                frameBuffer.putByte(0);
+                                frameBuffer.putInt8(0);
                             } else if (!(object instanceof Number)) {
                                 if (!(object instanceof JString)) {
-                                    frameBuffer.putByte(4);
+                                    frameBuffer.putInt8(4);
                                 } else {
-                                    frameBuffer.putByte(2);
+                                    frameBuffer.putInt8(2);
                                     frameBuffer.putJstr(((JString) object));
                                 }
                             } else {
-                                frameBuffer.putByte(1);
-                                frameBuffer.putQword(((Number) object).longValue());
+                                frameBuffer.putInt8(1);
+                                frameBuffer.putInt64(((Number) object).longValue());
                             }
                         } else if (type == 4) {
                             Method method = (Method) (request.methodResources[i].returnObject);
                             int modifiers = method.getModifiers();
-                            frameBuffer.putByte(0);
-                            frameBuffer.putDword(modifiers);
+                            frameBuffer.putInt8(0);
+                            frameBuffer.putInt32(modifiers);
                         }
                     } catch (ClassNotFoundException classnotfoundexception) {
-                        frameBuffer.putByte(-10);
+                        frameBuffer.putInt8(-10);
                     } catch (java.io.InvalidClassException invalidclassexception) {
-                        frameBuffer.putByte(-11);
+                        frameBuffer.putInt8(-11);
                     } catch (java.io.StreamCorruptedException streamcorruptedexception) {
-                        frameBuffer.putByte(-12);
+                        frameBuffer.putInt8(-12);
                     } catch (java.io.OptionalDataException optionaldataexception) {
-                        frameBuffer.putByte(-13);
+                        frameBuffer.putInt8(-13);
                     } catch (IllegalAccessException illegalaccessexception) {
-                        frameBuffer.putByte(-14);
+                        frameBuffer.putInt8(-14);
                     } catch (IllegalArgumentException illegalargumentexception) {
-                        frameBuffer.putByte(-15);
+                        frameBuffer.putInt8(-15);
                     } catch (java.lang.reflect.InvocationTargetException invocationtargetexception) {
-                        frameBuffer.putByte(-16);
+                        frameBuffer.putInt8(-16);
                     } catch (SecurityException securityexception) {
-                        frameBuffer.putByte(-17);
+                        frameBuffer.putInt8(-17);
                     } catch (IOException ioexception) {
-                        frameBuffer.putByte(-18);
+                        frameBuffer.putInt8(-18);
                     } catch (NullPointerException nullpointerexception) {
-                        frameBuffer.putByte(-19);
+                        frameBuffer.putInt8(-19);
                     } catch (Exception exception) {
-                        frameBuffer.putByte(-20);
+                        frameBuffer.putInt8(-20);
                     } catch (Throwable throwable) {
-                        frameBuffer.putByte(-21);
+                        frameBuffer.putInt8(-21);
                     }
                 }
             }

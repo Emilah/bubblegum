@@ -33,28 +33,28 @@ public class Filter
     }
     
     public void method1023(Buffer class39_sub6, Envelope class28) {
-	int i = class39_sub6.getUbyte();
+	int i = class39_sub6.getUint8();
 	anIntArray1009[0] = i >> 4;
 	anIntArray1009[1] = i & 0xf;
 	if (i != 0) {
-	    anIntArray1008[0] = class39_sub6.getUword();
-	    anIntArray1008[1] = class39_sub6.getUword();
-	    int i_3_ = class39_sub6.getUbyte();
+	    anIntArray1008[0] = class39_sub6.getUint16();
+	    anIntArray1008[1] = class39_sub6.getUint16();
+	    int i_3_ = class39_sub6.getUint8();
 	    for (int i_4_ = 0; i_4_ < 2; i_4_++) {
 		for (int i_5_ = 0; i_5_ < anIntArray1009[i_4_]; i_5_++) {
 		    anIntArrayArrayArray1010[i_4_][0][i_5_]
-			= class39_sub6.getUword();
+			= class39_sub6.getUint16();
 		    anIntArrayArrayArray1005[i_4_][0][i_5_]
-			= class39_sub6.getUword();
+			= class39_sub6.getUint16();
 		}
 	    }
 	    for (int i_6_ = 0; i_6_ < 2; i_6_++) {
 		for (int i_7_ = 0; i_7_ < anIntArray1009[i_6_]; i_7_++) {
 		    if ((i_3_ & 1 << i_6_ * 4 << i_7_) != 0) {
 			anIntArrayArrayArray1010[i_6_][1][i_7_]
-			    = class39_sub6.getUword();
+			    = class39_sub6.getUint16();
 			anIntArrayArrayArray1005[i_6_][1][i_7_]
-			    = class39_sub6.getUword();
+			    = class39_sub6.getUint16();
 		    } else {
 			anIntArrayArrayArray1010[i_6_][1][i_7_]
 			    = anIntArrayArrayArray1010[i_6_][0][i_7_];

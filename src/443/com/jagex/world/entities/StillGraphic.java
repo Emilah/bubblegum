@@ -187,7 +187,7 @@ public class StillGraphic extends Entity {
     public static JString decodeHuffmans(Buffer buffer, int length) {
         try {
             JString jstr = new JString();
-            jstr.length = buffer.getSmartB();
+            jstr.length = buffer.getUsmart();
             if (jstr.length > length) {
                 jstr.length = length;
             }

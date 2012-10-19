@@ -159,7 +159,7 @@ public class Class39_Sub5_Sub6 extends SubNode
     
     public void method582(byte i, Buffer class39_sub6) {
 	for (;;) {
-	    int i_9_ = class39_sub6.getUbyte();
+	    int i_9_ = class39_sub6.getUint8();
 	    if (i_9_ == 0)
 		break;
 	    method583(i ^ 0x2930, i_9_, class39_sub6);
@@ -175,20 +175,20 @@ public class Class39_Sub5_Sub6 extends SubNode
 		    aBoolean1754 = true;
 		else if (i_10_ >= 40 && i_10_ < 50)
 		    anIntArray1752[i_10_ - 40]
-			= class39_sub6.getUword();
+			= class39_sub6.getUint16();
 		else if (i_10_ >= 50 && i_10_ < 60)
-		    anIntArray1753[i_10_ - 50] = class39_sub6.getUword();
+		    anIntArray1753[i_10_ - 50] = class39_sub6.getUint16();
 		else if (i_10_ >= 60 && i_10_ < 70)
 		    anIntArray1756[i_10_ - 60]
-			= class39_sub6.getUword();
+			= class39_sub6.getUint16();
 	    } else {
-		int i_11_ = class39_sub6.getUbyte();
+		int i_11_ = class39_sub6.getUint8();
 		anIntArray1757 = new int[i_11_];
 		for (int i_12_ = 0; i_12_ < i_11_; i_12_++)
-		    anIntArray1757[i_12_] = class39_sub6.getUword();
+		    anIntArray1757[i_12_] = class39_sub6.getUint16();
 	    }
 	} else
-	    anInt1758 = class39_sub6.getUbyte();
+	    anInt1758 = class39_sub6.getUint8();
 	if (i != -10553)
 	    method581((byte) 15);
     }

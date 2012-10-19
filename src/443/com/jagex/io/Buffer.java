@@ -115,7 +115,7 @@ public class Buffer extends Node {
         }
     }
 
-    public int getUbyte() {
+    public int getUint8() {
         return payload[offset++] & 0xff;
     }
 
@@ -151,7 +151,7 @@ public class Buffer extends Node {
 
     public int putPayloadChecksum(int startOff) {
         int checksum = Class25.computeChecksum(payload, startOff, offset);
-        putDword(checksum);
+        putInt32(checksum);
         return checksum;
     }
 
@@ -165,7 +165,7 @@ public class Buffer extends Node {
         return i;
     }
 
-    public int getUtri() {
+    public int getUint24() {
         offset += 3;
         return ((payload[offset - 2] << 8 & 0xff00)
                 + ((payload[offset - 3] << 16 & 0xff0000)
@@ -182,9 +182,9 @@ public class Buffer extends Node {
         return i_14_;
     }
 
-    public long getQword() {
-        long l = (long) getDword() & 0xffffffffL;
-        long l_15_ = (long) getDword() & 0xffffffffL;
+    public long getInt64() {
+        long l = (long) getUint32() & 0xffffffffL;
+        long l_15_ = (long) getUint32() & 0xffffffffL;
         return l_15_ + (l << 32);
     }
 
@@ -210,7 +210,7 @@ public class Buffer extends Node {
         return (byte) (128 - payload[offset++]);
     }
 
-    public int getUword() {
+    public int getUint16() {
         offset += 2;
         return ((payload[offset - 1] & 0xff)
                 + ((payload[offset - 2] & 0xff) << 8));
@@ -222,11 +222,11 @@ public class Buffer extends Node {
                 + (payload[offset - 2] & 0xff));
     }
 
-    public byte getByte() {
+    public byte getInt8() {
         return payload[offset++];
     }
 
-    public void putQword(long l) {
+    public void putInt64(long l) {
         payload[offset++] = (byte) (int) (l >> 56);
         payload[offset++] = (byte) (int) (l >> 48);
         payload[offset++] = (byte) (int) (l >> 40);
@@ -241,11 +241,11 @@ public class Buffer extends Node {
         return 128 - payload[offset++] & 0xff;
     }
 
-    public void putByte(int i_20_) {
+    public void putInt8(int i_20_) {
         payload[offset++] = (byte) i_20_;
     }
 
-    public void putTri(int i_21_) {
+    public void putInt24(int i_21_) {
         payload[offset++] = (byte) (i_21_ >> 16);
         payload[offset++] = (byte) (i_21_ >> 8);
         payload[offset++] = (byte) i_21_;
@@ -256,11 +256,11 @@ public class Buffer extends Node {
         int i_25_ = (i_22_ - i_23_) / 8;
         offset = i_23_;
         for (int i_26_ = i; i_25_ > i_26_; i_26_++) {
-            int v0 = getDword();
+            int v0 = getUint32();
             int i_28_ = 32;
             int counter = -957401312;
             int delta = -1640531527;
-            int v1 = getDword();
+            int v1 = getUint32();
             while (i_28_-- > 0) {
                 v1 -= (keys[(counter & 0x1ff1) >>> 11] + counter
                         ^ v0 + (v0 << 4 ^ v0 >>> 5));
@@ -269,20 +269,20 @@ public class Buffer extends Node {
                         ^ counter + keys[counter & 0x3]);
             }
             offset -= 8;
-            putDword(v0);
-            putDword(v1);
+            putInt32(v0);
+            putInt32(v1);
         }
         offset = i_24_;
     }
 
-    public void putDword(int i) {
+    public void putInt32(int i) {
         payload[offset++] = (byte) (i >> 24);
         payload[offset++] = (byte) (i >> 16);
         payload[offset++] = (byte) (i >> 8);
         payload[offset++] = (byte) i;
     }
 
-    public int getWord() {
+    public int getInt16() {
         offset += 2;
         int i_33_ = ((payload[offset - 1] & 0xff)
                 + (payload[offset - 2] << 8 & 0xff00));
@@ -296,7 +296,7 @@ public class Buffer extends Node {
         return (byte) -payload[offset++];
     }
 
-    public int getDword() {
+    public int getUint32() {
         offset += 4;
         return (((payload[offset - 2] & 0xff) << 8)
                 + ((payload[offset - 3] & 0xff) << 16)
@@ -333,7 +333,7 @@ public class Buffer extends Node {
                             if (Class15.currentKeyCode == KeycodeConstants.VK_ENTER) {
                                 if (Class66.inputMessageJstr.getLength() > 0) {
                                     FrameBuffer.outgoingBuffer.putFrame(22);
-                                    FrameBuffer.outgoingBuffer.putQword(Class66.inputMessageJstr.encodeBase37());
+                                    FrameBuffer.outgoingBuffer.putInt64(Class66.inputMessageJstr.encodeBase37());
                                 }
                                 Mob.keyboardInputType = 0;
                                 Class14.aBoolean245 = true;
@@ -389,7 +389,7 @@ public class Buffer extends Node {
                                     }
                                     if (Class66.chatMessageJstr.beginsWith(Barrier.commandPrefixJstr)) {
                                         FrameBuffer.outgoingBuffer.putFrame(174);
-                                        FrameBuffer.outgoingBuffer.putByte(Class66.chatMessageJstr.getLength() - 1);
+                                        FrameBuffer.outgoingBuffer.putInt8(Class66.chatMessageJstr.getLength() - 1);
                                         FrameBuffer.outgoingBuffer.putJstr(Class66.chatMessageJstr.substring(2));
                                     } else {
                                         int i_37_ = 0;
@@ -456,10 +456,10 @@ public class Buffer extends Node {
                                             Class66.chatMessageJstr = (Class66.chatMessageJstr.substring(Class34.aClass3_615.getLength()));
                                         }
                                         FrameBuffer.outgoingBuffer.putFrame(4);
-                                        FrameBuffer.outgoingBuffer.putByte(0);
+                                        FrameBuffer.outgoingBuffer.putInt8(0);
                                         int offset = (FrameBuffer.outgoingBuffer.offset);
-                                        FrameBuffer.outgoingBuffer.putByte(i_37_);
-                                        FrameBuffer.outgoingBuffer.putByte(i_38_);
+                                        FrameBuffer.outgoingBuffer.putInt8(i_37_);
+                                        FrameBuffer.outgoingBuffer.putInt8(i_38_);
                                         Class68.encodeHuffmans((FrameBuffer.outgoingBuffer),
                                                 Class66.chatMessageJstr, -110);
                                         FrameBuffer.outgoingBuffer.putByteLength((FrameBuffer.outgoingBuffer.offset) - offset);
@@ -468,9 +468,9 @@ public class Buffer extends Node {
                                             Bzip2Entry.anInt1051 = 3;
                                             Projectile.anInt2203++;
                                             FrameBuffer.outgoingBuffer.putFrame(76);
-                                            FrameBuffer.outgoingBuffer.putByte(Bzip2Entry.anInt1051);
-                                            FrameBuffer.outgoingBuffer.putByte(NameTable.anInt177);
-                                            FrameBuffer.outgoingBuffer.putByte(Cache.anInt118);
+                                            FrameBuffer.outgoingBuffer.putInt8(Bzip2Entry.anInt1051);
+                                            FrameBuffer.outgoingBuffer.putInt8(NameTable.anInt177);
+                                            FrameBuffer.outgoingBuffer.putInt8(Cache.anInt118);
                                         }
                                     }
                                     Class14.aBoolean245 = true;
@@ -503,7 +503,7 @@ public class Buffer extends Node {
                                     i_40_ = Class66.inputMessageJstr.toInteger();
                                 }
                                 FrameBuffer.outgoingBuffer.putFrame(74);
-                                FrameBuffer.outgoingBuffer.putDword(i_40_);
+                                FrameBuffer.outgoingBuffer.putInt32(i_40_);
                             }
                             Mob.keyboardInputType = 0;
                             Class14.aBoolean245 = true;
@@ -533,9 +533,9 @@ public class Buffer extends Node {
                         }
                         if (Class15.socialListMessageType == 3 && Class66.socialListMessage.getLength() > 0) {
                             FrameBuffer.outgoingBuffer.putFrame(50);
-                            FrameBuffer.outgoingBuffer.putByte(0);
+                            FrameBuffer.outgoingBuffer.putInt8(0);
                             int i_41_ = (FrameBuffer.outgoingBuffer.offset);
-                            FrameBuffer.outgoingBuffer.putQword(Huffman.aLong752);
+                            FrameBuffer.outgoingBuffer.putInt64(Huffman.aLong752);
                             Class68.encodeHuffmans((FrameBuffer.outgoingBuffer),
                                     Class66.socialListMessage, -126);
                             FrameBuffer.outgoingBuffer.putByteLength(-i_41_ + (FrameBuffer.outgoingBuffer.offset));
@@ -544,9 +544,9 @@ public class Buffer extends Node {
                                 Projectile.anInt2203++;
                                 NameTable.anInt177 = 1;
                                 FrameBuffer.outgoingBuffer.putFrame(76);
-                                FrameBuffer.outgoingBuffer.putByte(Bzip2Entry.anInt1051);
-                                FrameBuffer.outgoingBuffer.putByte(NameTable.anInt177);
-                                FrameBuffer.outgoingBuffer.putByte(Cache.anInt118);
+                                FrameBuffer.outgoingBuffer.putInt8(Bzip2Entry.anInt1051);
+                                FrameBuffer.outgoingBuffer.putInt8(NameTable.anInt177);
+                                FrameBuffer.outgoingBuffer.putInt8(Cache.anInt118);
                             }
                         }
                         if (Class15.socialListMessageType == 4 && Class15.amountIgnores < 100) {
@@ -581,12 +581,12 @@ public class Buffer extends Node {
         payload[-length + offset - 1] = (byte) length;
     }
 
-    public int getSmartA() {
+    public int getSmart() {
         int i_43_ = payload[offset] & 0xff;
         if (i_43_ < 128) {
-            return getUbyte() - 64;
+            return getUint8() - 64;
         }
-        return getUword() - 49152;
+        return getUint16() - 49152;
     }
 
     public int getUword128() {
@@ -731,7 +731,7 @@ public class Buffer extends Node {
             if (ClientScript.anInt1703 != -1 && ClientScript.anInt1703 == Node.currentTabId) {
                 ClientScript.anInt1703 = -1;
                 FrameBuffer.outgoingBuffer.putFrame(65);
-                FrameBuffer.outgoingBuffer.putByte(Node.currentTabId);
+                FrameBuffer.outgoingBuffer.putInt8(Node.currentTabId);
             }
             NameTable.aBoolean183 = true;
             ISAAC.aBoolean1089 = false;
@@ -772,12 +772,12 @@ public class Buffer extends Node {
         }
     }
 
-    public int getSmartB() {
+    public int getUsmart() {
         int i_52_ = payload[offset] & 0xff;
         if (i_52_ >= 128) {
-            return getUword() - 32768;
+            return getUint16() - 32768;
         }
-        return getUbyte();
+        return getUint8();
     }
 
     public void putDwordB(int i) {
@@ -787,7 +787,7 @@ public class Buffer extends Node {
         payload[offset++] = (byte) (i >> 8);
     }
 
-    public void applyRsa(BigInteger publicExponent, BigInteger modulus, int i) {
+    public void applyRsa(BigInteger publicExponent, BigInteger modulus) {
         int i_55_ = offset;
         offset = 0;
         byte[] is = new byte[i_55_];
@@ -796,7 +796,7 @@ public class Buffer extends Node {
         BigInteger biginteger_57_ = biginteger_56_;//.modPow(publicExponent, modulus);
         byte[] is_58_ = biginteger_57_.toByteArray();
         offset = 0;
-        putByte(is_58_.length);
+        putInt8(is_58_.length);
         putBytes(is_58_, 0, is_58_.length);
     }
 
@@ -820,15 +820,15 @@ public class Buffer extends Node {
 
     public void putSmartB(int value) {
         if (value >= 0 && value < 128) {
-            putByte(value);
+            putInt8(value);
         } else if (value >= 0 && value < 32768) {
-            putWord(value + 32768);
+            putInt16(value + 32768);
         } else {
             throw new IllegalArgumentException();
         }
     }
 
-    public void putWord(int value) {
+    public void putInt16(int value) {
         payload[offset++] = (byte) (value >> 8);
         payload[offset++] = (byte) value;
     }

@@ -79,7 +79,7 @@ public class Class68
 		    Class4.anInt62++;
 		    Class39_Sub14.updateTab = true;
 		    FrameBuffer.outgoingBuffer.putFrame(90);
-		    FrameBuffer.outgoingBuffer.putQword(l);
+		    FrameBuffer.outgoingBuffer.putInt64(l);
 		}
 	    }
 	}

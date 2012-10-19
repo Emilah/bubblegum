@@ -155,7 +155,7 @@ public class Class39_Sub5_Sub9 extends SubNode
     
     public void method603(int i, byte i_12_, Buffer class39_sub6) {
 	for (;;) {
-	    int i_13_ = class39_sub6.getUbyte();
+	    int i_13_ = class39_sub6.getUint8();
 	    if (i_13_ == 0)
 		break;
 	    method605(i, i_13_, (byte) 35, class39_sub6);
@@ -171,7 +171,7 @@ public class Class39_Sub5_Sub9 extends SubNode
 	if (i_15_ != 35)
 	    method604(false);
 	if (i_14_ == 1)
-	    anInt1815 = class39_sub6.getUtri();
+	    anInt1815 = class39_sub6.getUint24();
     }
     
     public static void method607(int i) {

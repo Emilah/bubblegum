@@ -353,20 +353,20 @@ public abstract class Mob extends Entity {
         Buffer class39_sub6 = new Buffer(is);
         int i_151_ = -1;
         for (;;) {
-            int i_152_ = class39_sub6.getSmartB();
+            int i_152_ = class39_sub6.getUsmart();
             if (i_152_ == 0) {
                 break;
             }
             i_151_ += i_152_;
             int i_153_ = 0;
             for (;;) {
-                int i_154_ = class39_sub6.getSmartB();
+                int i_154_ = class39_sub6.getUsmart();
                 if (i_154_ == 0) {
                     break;
                 }
                 i_153_ += i_154_ - 1;
                 int i_155_ = i_153_ & 0x3f;
-                int i_156_ = class39_sub6.getUbyte();
+                int i_156_ = class39_sub6.getUint8();
                 int i_157_ = i_153_ >> 12;
                 int i_158_ = i_156_ >> 2;
                 int i_159_ = i_153_ >> 6 & 0x3f;

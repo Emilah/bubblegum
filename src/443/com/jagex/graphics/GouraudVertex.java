@@ -143,9 +143,9 @@ public class GouraudVertex
 	    TextureLoaderImpl.closeOverlays();
 	    if (Class66.reportUsername.getLength() > 0) {
 		FrameBuffer.outgoingBuffer.putFrame(119);
-		FrameBuffer.outgoingBuffer.putQword(Class66.reportUsername.encodeBase37());
-		FrameBuffer.outgoingBuffer.putByte(i_0_ - 601);
-		FrameBuffer.outgoingBuffer.putByte(Class39_Sub12.aBoolean1487 ? 1 : 0);
+		FrameBuffer.outgoingBuffer.putInt64(Class66.reportUsername.encodeBase37());
+		FrameBuffer.outgoingBuffer.putInt8(i_0_ - 601);
+		FrameBuffer.outgoingBuffer.putInt8(Class39_Sub12.aBoolean1487 ? 1 : 0);
 	    }
 	}
 	return false;

@@ -200,7 +200,7 @@ public class Class62_Sub2 extends AudioHandler {
     public static void getTableChecksum(FileLoader fileLoader, int indexId) {
         if (ImageImpl.updateTableBuffer != null) {
             ImageImpl.updateTableBuffer.offset = indexId * 4 + 5;
-            int checksum = ImageImpl.updateTableBuffer.getDword();
+            int checksum = ImageImpl.updateTableBuffer.getUint32();
             fileLoader.setChecksum(checksum);
         } else {
             Class39_Sub10.requestArchive(null, 255, 255, true, 0, (byte) 0);
@@ -508,7 +508,7 @@ public class Class62_Sub2 extends AudioHandler {
                 Class43.aClass7_811.clear();
                 if (Barrier.frame != null) {
                     FrameBuffer.outgoingBuffer.putFrame(141);
-                    FrameBuffer.outgoingBuffer.putDword(0x3F008EDD);
+                    FrameBuffer.outgoingBuffer.putInt32(0x3F008EDD);
                 }
                 if (!Class63.isCustomMap) {
                     int i_67_ = (anInt1597 - 6) / 8;

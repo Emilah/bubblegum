@@ -155,7 +155,7 @@ public class Class25 {
             Class14.anIntArrayArray221 = new int[i_30_][4];
             for (int i_31_ = 0; i_30_ > i_31_; i_31_++) {
                 for (int i_32_ = 0; i_32_ < 4; i_32_++) {
-                    Class14.anIntArrayArray221[i_31_][i_32_] = Class39_Sub5_Sub11.incomingBuffer.getDword();
+                    Class14.anIntArrayArray221[i_31_][i_32_] = Class39_Sub5_Sub11.incomingBuffer.getUint32();
                 }
             }
             int i_33_ = Class39_Sub5_Sub11.incomingBuffer.getUwordLe128();

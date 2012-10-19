@@ -245,41 +245,41 @@ public class Widget extends SubNode {
 
     public void decodeOldFormat(Buffer buffer) {
         isNewFormat = false;
-        type = buffer.getUbyte();
-        anInt2089 = buffer.getUbyte();
-        anInt2078 = buffer.getUword();
-        offsetX = displayOffsetX = buffer.getWord();
-        offsetY = displayOffsetY = buffer.getWord();
-        width = buffer.getUword();
-        height = buffer.getUword();
-        alpha = buffer.getUbyte();
-        anInt2050 = buffer.getUword();
+        type = buffer.getUint8();
+        anInt2089 = buffer.getUint8();
+        anInt2078 = buffer.getUint16();
+        offsetX = displayOffsetX = buffer.getInt16();
+        offsetY = displayOffsetY = buffer.getInt16();
+        width = buffer.getUint16();
+        height = buffer.getUint16();
+        alpha = buffer.getUint8();
+        anInt2050 = buffer.getUint16();
         if (anInt2050 == 65535) {
             anInt2050 = -1;
         } else {
             anInt2050 = anInt2050 + (id & ~0xffff);
         }
-        anInt2057 = buffer.getUword();
+        anInt2057 = buffer.getUint16();
         if (anInt2057 == 65535) {
             anInt2057 = -1;
         }
-        int amountConditions = buffer.getUbyte();
+        int amountConditions = buffer.getUint8();
         if (amountConditions > 0) {
             conditionOpcodes = new int[amountConditions];
             conditionValues = new int[amountConditions];
             for (int i_1_ = 0; amountConditions > i_1_; i_1_++) {
-                conditionOpcodes[i_1_] = buffer.getUbyte();
-                conditionValues[i_1_] = buffer.getUword();
+                conditionOpcodes[i_1_] = buffer.getUint8();
+                conditionValues[i_1_] = buffer.getUint16();
             }
         }
-        int amountOpcodes = buffer.getUbyte();
+        int amountOpcodes = buffer.getUint8();
         if (amountOpcodes > 0) {
             scriptOpcodes = new int[amountOpcodes][];
             for (int i_3_ = 0; amountOpcodes > i_3_; i_3_++) {
-                int i_4_ = buffer.getUword();
+                int i_4_ = buffer.getUint16();
                 scriptOpcodes[i_3_] = new int[i_4_];
                 for (int i_5_ = 0; i_4_ > i_5_; i_5_++) {
-                    scriptOpcodes[i_3_][i_5_] = buffer.getUword();
+                    scriptOpcodes[i_3_][i_5_] = buffer.getUint16();
                     if (scriptOpcodes[i_3_][i_5_] == 65535) {
                         scriptOpcodes[i_3_][i_5_] = -1;
                     }
@@ -287,43 +287,43 @@ public class Widget extends SubNode {
             }
         }
         if (type == 0) {
-            anInt2095 = buffer.getUword();
-            aBoolean2055 = buffer.getUbyte() == 1;
+            anInt2095 = buffer.getUint16();
+            aBoolean2055 = buffer.getUint8() == 1;
         }
         if (type == 1) {
-            buffer.getUword();
-            buffer.getUbyte();
+            buffer.getUint16();
+            buffer.getUint8();
         }
         if (type == 2) {
             itemIds = new int[width * height];
             itemAmounts = new int[height * width];
-            int i_6_ = buffer.getUbyte();
+            int i_6_ = buffer.getUint8();
             if (i_6_ == 1) {
                 flags |= 0x10000000;
             }
-            int i_7_ = buffer.getUbyte();
+            int i_7_ = buffer.getUint8();
             if (i_7_ == 1) {
                 flags |= 0x40000000;
             }
-            int i_8_ = buffer.getUbyte();
+            int i_8_ = buffer.getUint8();
             if (i_8_ == 1) {
                 flags |= ~0x7fffffff;
             }
-            int i_9_ = buffer.getUbyte();
+            int i_9_ = buffer.getUint8();
             if (i_9_ == 1) {
                 flags |= 0x20000000;
             }
-            itemOffsetX = buffer.getUbyte();
-            itemOffsetY = buffer.getUbyte();
+            itemOffsetX = buffer.getUint8();
+            itemOffsetY = buffer.getUint8();
             itemOffsetsY = new int[20];
             itemOffsetsX = new int[20];
             defaultSpriteIds = new int[20];
             for (int i_10_ = 0; i_10_ < 20; i_10_++) {
-                int i_11_ = buffer.getUbyte();
+                int i_11_ = buffer.getUint8();
                 if (i_11_ == 1) {
-                    itemOffsetsX[i_10_] = buffer.getWord();
-                    itemOffsetsY[i_10_] = buffer.getWord();
-                    defaultSpriteIds[i_10_] = buffer.getDword();
+                    itemOffsetsX[i_10_] = buffer.getInt16();
+                    itemOffsetsY[i_10_] = buffer.getInt16();
+                    defaultSpriteIds[i_10_] = buffer.getUint32();
                 } else {
                     defaultSpriteIds[i_10_] = -1;
                 }
@@ -338,70 +338,70 @@ public class Widget extends SubNode {
             }
         }
         if (type == 3) {
-            drawSolidQuad = buffer.getUbyte() == 1;
+            drawSolidQuad = buffer.getUint8() == 1;
         }
         if (type == 4 || type == 1) {
-            anInt2032 = buffer.getUbyte();
-            anInt1996 = buffer.getUbyte();
-            anInt2036 = buffer.getUbyte();
-            fontId = buffer.getUword();
+            anInt2032 = buffer.getUint8();
+            anInt1996 = buffer.getUint8();
+            anInt2036 = buffer.getUint8();
+            fontId = buffer.getUint16();
             if (fontId == 65535) {
                 fontId = -1;
             }
-            drawShadow = buffer.getUbyte() == 1;
+            drawShadow = buffer.getUint8() == 1;
         }
         if (type == 4) {
             inactiveText = buffer.getJstr();
             activeText = buffer.getJstr();
         }
         if (type == 1 || type == 3 || type == 4) {
-            inactiveColor = buffer.getDword();
+            inactiveColor = buffer.getUint32();
         }
         if (type == 3 || type == 4) {
-            activeColor = buffer.getDword();
-            anInt2041 = buffer.getDword();
-            anInt2086 = buffer.getDword();
+            activeColor = buffer.getUint32();
+            anInt2041 = buffer.getUint32();
+            anInt2086 = buffer.getUint32();
         }
         if (type == 5) {
-            unactiveSpriteId = buffer.getDword();
-            activeSpriteId = buffer.getDword();
+            unactiveSpriteId = buffer.getUint32();
+            activeSpriteId = buffer.getUint32();
         }
         if (type == 6) {
             inactiveModelType = 1;
-            inactiveAnimationModelId = buffer.getUword();
+            inactiveAnimationModelId = buffer.getUint16();
             activeAnimateType = 1;
             if (inactiveAnimationModelId == 65535) {
                 inactiveAnimationModelId = -1;
             }
-            activeAnimationModelId = buffer.getUword();
+            activeAnimationModelId = buffer.getUint16();
             if (activeAnimationModelId == 65535) {
                 activeAnimationModelId = -1;
             }
-            anInt2103 = buffer.getUword();
+            anInt2103 = buffer.getUint16();
             if (anInt2103 == 65535) {
                 anInt2103 = -1;
             }
-            anInt2052 = buffer.getUword();
+            anInt2052 = buffer.getUint16();
             if (anInt2052 == 65535) {
                 anInt2052 = -1;
             }
-            modelRotationY = buffer.getUword();
-            modelCosineRotationX = buffer.getUword();
-            modelSineRotationX = buffer.getUword();
+            modelRotationY = buffer.getUint16();
+            modelCosineRotationX = buffer.getUint16();
+            modelSineRotationX = buffer.getUint16();
         }
         if (type == 7) {
             itemAmounts = new int[height * width];
             itemIds = new int[height * width];
-            anInt2032 = buffer.getUbyte();
-            fontId = buffer.getUword();
+            anInt2032 = buffer.getUint8();
+            fontId = buffer.getUint16();
             if (fontId == 65535) {
                 fontId = -1;
             }
-            drawShadow = buffer.getUbyte() == 1;
-            inactiveColor = buffer.getDword();
-            itemOffsetX = buffer.getWord();
-            itemOffsetY = buffer.getWord();
-            int i_13_ = buffer.getUbyte();
+            drawShadow = buffer.getUint8() == 1;
+            inactiveColor = buffer.getUint32();
+            itemOffsetX = buffer.getInt16();
+            itemOffsetY = buffer.getInt16();
+            int i_13_ = buffer.getUint8();
             itemOptions = new JString[5];
             if (i_13_ == 1) {
                 flags |= 0x40000000;
@@ -420,7 +420,7 @@ public class Widget extends SubNode {
         if (anInt2089 == 2 || type == 2) {
             use = buffer.getJstr();
             aClass3_2066 = buffer.getJstr();
-            int i_15_ = buffer.getUword() & 0x3f;
+            int i_15_ = buffer.getUint16() & 0x3f;
             flags |= i_15_ << 11;
         }
         if (anInt2089 == 1 || anInt2089 == 4 || anInt2089 == 5 || anInt2089 == 6) {
@@ -463,90 +463,90 @@ public class Widget extends SubNode {
     }
 
     public void decodeNewFormat(Buffer buffer) {
-        buffer.getUbyte();
+        buffer.getUint8();
         isNewFormat = true;
-        type = buffer.getUbyte();
-        anInt2078 = buffer.getUword();
-        offsetX = displayOffsetX = buffer.getWord();
-        offsetY = displayOffsetY = buffer.getWord();
-        width = buffer.getUword();
+        type = buffer.getUint8();
+        anInt2078 = buffer.getUint16();
+        offsetX = displayOffsetX = buffer.getInt16();
+        offsetY = displayOffsetY = buffer.getInt16();
+        width = buffer.getUint16();
         if (type != 9) {
-            height = buffer.getUword();
+            height = buffer.getUint16();
         } else {
-            height = buffer.getWord();
+            height = buffer.getInt16();
         }
-        anInt2050 = buffer.getUword();
+        anInt2050 = buffer.getUint16();
         if (anInt2050 == 65535) {
             anInt2050 = -1;
         } else {
             anInt2050 = anInt2050 + (id & ~0xffff);
         }
-        aBoolean2055 = buffer.getUbyte() == 1;
+        aBoolean2055 = buffer.getUint8() == 1;
         if (type == 0) {
-            anInt2020 = buffer.getUword();
-            anInt2095 = buffer.getUword();
+            anInt2020 = buffer.getUint16();
+            anInt2095 = buffer.getUint16();
         }
         if (type == 5) {
-            unactiveSpriteId = buffer.getDword();
-            anInt2051 = buffer.getUword();
-            aBoolean2014 = buffer.getUbyte() == 1;
-            alpha = buffer.getUbyte();
-            anInt2022 = buffer.getUbyte();
-            anInt2003 = buffer.getDword();
-            invertVertical = buffer.getUbyte() == 1;
-            invertHorizontal = buffer.getUbyte() == 1;
+            unactiveSpriteId = buffer.getUint32();
+            anInt2051 = buffer.getUint16();
+            aBoolean2014 = buffer.getUint8() == 1;
+            alpha = buffer.getUint8();
+            anInt2022 = buffer.getUint8();
+            anInt2003 = buffer.getUint32();
+            invertVertical = buffer.getUint8() == 1;
+            invertHorizontal = buffer.getUint8() == 1;
         }
         if (type == 6) {
             inactiveModelType = 1;
-            inactiveAnimationModelId = buffer.getUword();
+            inactiveAnimationModelId = buffer.getUint16();
             if (inactiveAnimationModelId == 65535) {
                 inactiveAnimationModelId = -1;
             }
-            anInt2072 = buffer.getWord();
-            anInt2058 = buffer.getWord();
-            modelCosineRotationX = buffer.getUword();
-            modelSineRotationX = buffer.getUword();
-            anInt2007 = buffer.getUword();
-            modelRotationY = buffer.getUword();
-            anInt2103 = buffer.getUword();
+            anInt2072 = buffer.getInt16();
+            anInt2058 = buffer.getInt16();
+            modelCosineRotationX = buffer.getUint16();
+            modelSineRotationX = buffer.getUint16();
+            anInt2007 = buffer.getUint16();
+            modelRotationY = buffer.getUint16();
+            anInt2103 = buffer.getUint16();
             if (anInt2103 == 65535) {
                 anInt2103 = -1;
             }
-            aBoolean2081 = buffer.getUbyte() == 1;
+            aBoolean2081 = buffer.getUint8() == 1;
         }
         if (type == 4) {
-            fontId = buffer.getUword();
+            fontId = buffer.getUint16();
             if (fontId == 65535) {
                 fontId = -1;
             }
             inactiveText = buffer.getJstr();
-            anInt2036 = buffer.getUbyte();
-            anInt2032 = buffer.getUbyte();
-            anInt1996 = buffer.getUbyte();
-            drawShadow = buffer.getUbyte() == 1;
-            inactiveColor = buffer.getDword();
+            anInt2036 = buffer.getUint8();
+            anInt2032 = buffer.getUint8();
+            anInt1996 = buffer.getUint8();
+            drawShadow = buffer.getUint8() == 1;
+            inactiveColor = buffer.getUint32();
         }
         if (type == 3) {
-            inactiveColor = buffer.getDword();
-            drawSolidQuad = buffer.getUbyte() == 1;
-            alpha = buffer.getUbyte();
+            inactiveColor = buffer.getUint32();
+            drawSolidQuad = buffer.getUint8() == 1;
+            alpha = buffer.getUint8();
         }
         if (type == 9) {
-            anInt2083 = buffer.getUbyte();
-            inactiveColor = buffer.getDword();
+            anInt2083 = buffer.getUint8();
+            inactiveColor = buffer.getUint32();
         }
-        flags = anInt1998 = buffer.getUtri();
+        flags = anInt1998 = buffer.getUint24();
         aClass3_2065 = buffer.getJstr();
-        int i = buffer.getUbyte();
+        int i = buffer.getUint8();
         if (i > 0) {
             options = new JString[i];
             for (int i_18_ = 0; i > i_18_; i_18_++) {
                 options[i_18_] = buffer.getJstr();
             }
         }
-        anInt2056 = buffer.getUbyte();
-        anInt2008 = buffer.getUbyte();
-        aBoolean2108 = buffer.getUbyte() == 1;
+        anInt2056 = buffer.getUint8();
+        anInt2008 = buffer.getUint8();
+        aBoolean2108 = buffer.getUint8() == 1;
         use = buffer.getJstr();
         anObjectArray2033 = getScriptParams(buffer);
         anObjectArray2019 = getScriptParams(buffer);
@@ -599,7 +599,7 @@ public class Widget extends SubNode {
         return class39_sub5_sub10_sub3;
     }
 
-    public void swapItem(int i, int i_21_) {
+    public void swapItems(int i, int i_21_) {
         int i_23_ = itemIds[i_21_];
         itemIds[i_21_] = itemIds[i];
         itemIds[i] = i_23_;
@@ -801,9 +801,9 @@ public class Widget extends SubNode {
             for (int i_37_ = 0; i_37_ < ImageImpl.anInt1586; i_37_++) {
                 int i_38_ = ArchiveRequest.anIntArray1400[i_37_];
                 Npc npc = (GroundItem.npcs[i_38_]);
-                int i_39_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                int i_39_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 if ((i_39_ & 0x2) != 0) {
-                    npc.anInt2316 = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                    npc.anInt2316 = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                     npc.anInt2300 = Class39_Sub5_Sub11.incomingBuffer.getUwordLe();
                 }
                 if ((i_39_ & 0x20) != 0) {
@@ -842,7 +842,7 @@ public class Widget extends SubNode {
                     int i_44_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte128();
                     npc.method513(i + 4241, Class2.logicCycle, i_43_, i_44_);
                     npc.anInt2252 = Class2.logicCycle + 300;
-                    npc.anInt2318 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                    npc.anInt2318 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                     npc.anInt2269 = Class39_Sub5_Sub11.incomingBuffer.getUbyteA();
                 }
                 if ((i_39_ & 0x4) != 0) {
@@ -870,7 +870,7 @@ public class Widget extends SubNode {
                     int i_47_ = Class39_Sub5_Sub11.incomingBuffer.getUbyteB();
                     npc.method513(i + 4425, Class2.logicCycle, i_46_, i_47_);
                     npc.anInt2252 = Class2.logicCycle + 300;
-                    npc.anInt2318 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                    npc.anInt2318 = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                     npc.anInt2269 = Class39_Sub5_Sub11.incomingBuffer.getUbyteB();
                 }
                 if ((i_39_ & 0x1) != 0) {
@@ -935,19 +935,19 @@ public class Widget extends SubNode {
     }
 
     public Object[] getScriptParams(Buffer buffer) {
-        int amountParams = buffer.getUbyte();
+        int amountParams = buffer.getUint8();
         if (amountParams == 0) {
             return null;
         }
         Object[] params = new Object[amountParams];
         for (int i = 0; i < amountParams; i++) {
-            int type = buffer.getUbyte();
+            int type = buffer.getUint8();
             if (type != 0) {
                 if (type == 1) {
                     params[i] = buffer.getJstr();
                 }
             } else {
-                params[i] = new Integer(buffer.getDword());
+                params[i] = new Integer(buffer.getUint32());
             }
         }
         aBoolean2047 = true;
@@ -1019,21 +1019,21 @@ public class Widget extends SubNode {
 
     public DirectColorSprite getSprite(boolean isActive) {
         Class39_Sub5_Sub12.aBoolean1856 = false;
-        int id;
+        int spriteId;
         if (!isActive) {
-            id = unactiveSpriteId;
+            spriteId = unactiveSpriteId;
         } else {
-            id = activeSpriteId;
+            spriteId = activeSpriteId;
         }
-        if (-1 == id) {
+        if (-1 == spriteId) {
             return null;
         }
-        long l = (((long) anInt2022 << 36) + (long) id - (-((invertVertical ? 1L : 0L) << 38) + (-((invertHorizontal ? 1L : 0L) << 39) - ((long) anInt2003 << 40))));
+        long l = (((long) anInt2022 << 36) + (long) spriteId - (-((invertVertical ? 1L : 0L) << 38) + (-((invertHorizontal ? 1L : 0L) << 39) - ((long) anInt2003 << 40))));
         DirectColorSprite sprite = ((DirectColorSprite) AbstractMidiHandler.spriteCache.get(l));
         if (sprite != null) {
             return sprite;
         }
-        sprite = PlayerApperance.loadSprite(Class37.aClass9_658, 0, id);
+        sprite = PlayerApperance.loadSprite(Class37.aClass9_658, 0, spriteId);
         if (sprite == null) {
             Class39_Sub5_Sub12.aBoolean1856 = true;
             return null;

@@ -111,23 +111,23 @@ public class Class1
 	clientScript = new ClientScript();
 	Buffer buffer = new Buffer(is);
 	buffer.offset = buffer.payload.length - 12;
-	int amountOpcodes = buffer.getDword();
-	clientScript.amountIntVars = buffer.getUword();
-	clientScript.amountStrVars = buffer.getUword();
-	clientScript.amountIntParams = buffer.getUword();
+	int amountOpcodes = buffer.getUint32();
+	clientScript.amountIntVars = buffer.getUint16();
+	clientScript.amountStrVars = buffer.getUint16();
+	clientScript.amountIntParams = buffer.getUint16();
 	int offset = 0;
-	clientScript.amountStrParams = buffer.getUword();
+	clientScript.amountStrParams = buffer.getUint16();
 	clientScript.strOperands = new JString[amountOpcodes];
 	clientScript.opcodes = new int[amountOpcodes];
 	clientScript.intOperands = new int[amountOpcodes];
 	buffer.offset = 0;
 	while (buffer.offset < buffer.payload.length - 12) {
-	    int operand = buffer.getUword();
+	    int operand = buffer.getUint16();
 	    if (operand != 3) {
 		if (operand < 100 && operand != 21 && operand != 38 && operand != 39)
-		    clientScript.intOperands[offset] = buffer.getDword();
+		    clientScript.intOperands[offset] = buffer.getUint32();
 		else
-		    clientScript.intOperands[offset] = buffer.getUbyte();
+		    clientScript.intOperands[offset] = buffer.getUint8();
 	    } else
 		clientScript.strOperands[offset] = buffer.getJstr();
 	    clientScript.opcodes[offset++] = operand;

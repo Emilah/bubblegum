@@ -84,8 +84,8 @@ public class OndemandHandler {
                 }
                 OndemandRequest request = (OndemandRequest) Class25.priorityRequestsQueue.quickLookup();
                 Buffer buffer = new Buffer(4);
-                buffer.putByte(1);
-                buffer.putTri((int) request.hash);
+                buffer.putInt8(1);
+                buffer.putInt24((int) request.hash);
                 socket.write(buffer.payload, 0, 4);
                 CacheIO.pendingPriorityRequests.put(request.hash, request);
                 Class39_Sub5_Sub6.queuedPriorityRequests--;
@@ -93,8 +93,8 @@ public class OndemandHandler {
             for (; JCanvas.pendingRegularRequests < 20 && Class41.queuedRegularRequests > 0; JCanvas.pendingRegularRequests++) {
                 OndemandRequest request = (OndemandRequest) regularRequestsQueue.peekFirst();
                 Buffer buffer = new Buffer(4);
-                buffer.putByte(0);
-                buffer.putTri((int) request.hash);
+                buffer.putInt8(0);
+                buffer.putInt24((int) request.hash);
                 socket.write(buffer.payload, 0, 4);
                 request.unlinkQueue();
                 pendingRegularRequests.put(request.hash, request);
@@ -135,11 +135,11 @@ public class OndemandHandler {
                     }
                     if (FileLoader.currentOdRequest == null) {
                         JApplet.odBuffer.offset = 0;
-                        int indexId = JApplet.odBuffer.getUbyte();
-                        int archiveId = JApplet.odBuffer.getUword();
-                        int flags = JApplet.odBuffer.getUbyte();
+                        int indexId = JApplet.odBuffer.getUint8();
+                        int archiveId = JApplet.odBuffer.getUint16();
+                        int flags = JApplet.odBuffer.getUint8();
                         long hash = (long) (archiveId + (indexId << 16));
-                        int size = JApplet.odBuffer.getDword();
+                        int size = JApplet.odBuffer.getUint32();
                         OndemandRequest request = (OndemandRequest) CacheIO.pendingPriorityRequests.get(hash);
                         Class41.isCurrentRequestPriority = true;
                         if (request == null) {
@@ -152,8 +152,8 @@ public class OndemandHandler {
                         FileLoader.currentOdRequest = request;
                         int i_13_ = flags != 0 ? 9 : 5;
                         requestBuffer = new Buffer(i_13_ + (size + (FileLoader.currentOdRequest.footerSize)));
-                        requestBuffer.putByte(flags);
-                        requestBuffer.putDword(size);
+                        requestBuffer.putInt8(flags);
+                        requestBuffer.putInt32(size);
                         Class39_Sub4.odBlockOffset = 8;
                         JApplet.odBuffer.offset = 0;
                     } else if (Class39_Sub4.odBlockOffset == 0) {
@@ -188,7 +188,7 @@ public class OndemandHandler {
                                 FileLoader class9_sub1 = Class33.fileLoaders[i_17_];
                                 if (class9_sub1 != null) {
                                     ImageImpl.updateTableBuffer.offset = i_17_ * 4 + 5;
-                                    int checksum = ImageImpl.updateTableBuffer.getDword();
+                                    int checksum = ImageImpl.updateTableBuffer.getUint32();
                                     class9_sub1.setChecksum(checksum);
                                 }
                             }
@@ -279,9 +279,9 @@ public class OndemandHandler {
         if (encryptionKey != 0) {
             try {
                 Buffer buffer = new Buffer(4);
-                buffer.putByte(4);
-                buffer.putByte(encryptionKey);
-                buffer.putWord(0);
+                buffer.putInt8(4);
+                buffer.putInt8(encryptionKey);
+                buffer.putInt16(0);
                 socket.write(buffer.payload, 0, 4);
             } catch (IOException ioexception) {
                 try {
@@ -301,8 +301,8 @@ public class OndemandHandler {
         if (socket != null) {
             try {
                 Buffer buffer = new Buffer(4);
-                buffer.putByte(!bool ? 3 : 2);
-                buffer.putTri(0);
+                buffer.putInt8(!bool ? 3 : 2);
+                buffer.putInt24(0);
                 socket.write(buffer.payload, 0, 4);
             } catch (IOException ioex) {
                 try {

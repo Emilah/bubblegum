@@ -62,31 +62,31 @@ public class ClassCheckRequest extends Node
     public static void decodeSprite(byte[] is) {
 	Buffer class39_sub6 = new Buffer(is);
 	class39_sub6.offset = is.length - 2;
-	JSocket.anInt302 = class39_sub6.getUword();
+	JSocket.anInt302 = class39_sub6.getUint16();
 	Class39_Sub5_Sub9.anIntArray1799 = new int[JSocket.anInt302];
 	TraversalMap.aByteArrayArray517 = new byte[JSocket.anInt302][];
 	SubNode.anIntArray1352 = new int[JSocket.anInt302];
 	Class39_Sub14.anIntArray1512 = new int[JSocket.anInt302];
 	MsTimer.anIntArray1548 = new int[JSocket.anInt302];
 	class39_sub6.offset = is.length - 7 - JSocket.anInt302 * 8;
-	Class13.anInt203 = class39_sub6.getUword();
-	Class39_Sub5_Sub12.anInt1854 = class39_sub6.getUword();
-	int i_0_ = (class39_sub6.getUbyte() & 0xff) + 1;
+	Class13.anInt203 = class39_sub6.getUint16();
+	Class39_Sub5_Sub12.anInt1854 = class39_sub6.getUint16();
+	int i_0_ = (class39_sub6.getUint8() & 0xff) + 1;
 	for (int i_1_ = 0; JSocket.anInt302 > i_1_; i_1_++)
-	    MsTimer.anIntArray1548[i_1_] = class39_sub6.getUword();
+	    MsTimer.anIntArray1548[i_1_] = class39_sub6.getUint16();
 	for (int i_2_ = 0; JSocket.anInt302 > i_2_; i_2_++)
-	    SubNode.anIntArray1352[i_2_] = class39_sub6.getUword();
+	    SubNode.anIntArray1352[i_2_] = class39_sub6.getUint16();
 	for (int i_3_ = 0; JSocket.anInt302 > i_3_; i_3_++)
 	    Class39_Sub5_Sub9.anIntArray1799[i_3_]
-		= class39_sub6.getUword();
+		= class39_sub6.getUint16();
 	for (int i_4_ = 0; i_4_ < JSocket.anInt302; i_4_++)
-	    Class39_Sub14.anIntArray1512[i_4_] = class39_sub6.getUword();
+	    Class39_Sub14.anIntArray1512[i_4_] = class39_sub6.getUint16();
 	class39_sub6.offset
 	    = 3 - i_0_ * 3 + (is.length - 7 - JSocket.anInt302 * 8);
 	StillObject.anIntArray1460 = new int[i_0_];
 	for (int i_5_ = 1; i_0_ > i_5_; i_5_++) {
 	    StillObject.anIntArray1460[i_5_]
-		= class39_sub6.getUtri();
+		= class39_sub6.getUint24();
 	    if (StillObject.anIntArray1460[i_5_] == 0)
 		StillObject.anIntArray1460[i_5_] = 1;
 	}
@@ -97,15 +97,15 @@ public class ClassCheckRequest extends Node
 	    int i_9_ = i_7_ * i_8_;
 	    byte[] is_10_ = new byte[i_9_];
 	    TraversalMap.aByteArrayArray517[i_6_] = is_10_;
-	    int i_11_ = class39_sub6.getUbyte();
+	    int i_11_ = class39_sub6.getUint8();
 	    if (i_11_ == 0) {
 		for (int i_12_ = 0; i_12_ < i_9_; i_12_++)
-		    is_10_[i_12_] = class39_sub6.getByte();
+		    is_10_[i_12_] = class39_sub6.getInt8();
 	    } else if (i_11_ == 1) {
 		for (int i_13_ = 0; i_13_ < i_8_; i_13_++) {
 		    for (int i_14_ = 0; i_14_ < i_7_; i_14_++)
 			is_10_[i_8_ * i_14_ + i_13_]
-			    = class39_sub6.getByte();
+			    = class39_sub6.getInt8();
 		}
 	    }
 	}

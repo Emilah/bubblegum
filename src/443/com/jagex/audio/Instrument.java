@@ -39,7 +39,7 @@ public class Instrument
 	aClass28_1013.method311(buffer);
 	aClass28_1016 = new Envelope();
 	aClass28_1016.method311(buffer);
-	int i = buffer.getUbyte();
+	int i = buffer.getUint8();
 	if (i != 0) {
 	    buffer.offset--;
 	    aClass28_1026 = new Envelope();
@@ -47,7 +47,7 @@ public class Instrument
 	    aClass28_1014 = new Envelope();
 	    aClass28_1014.method311(buffer);
 	}
-	i = buffer.getUbyte();
+	i = buffer.getUint8();
 	if (i != 0) {
 	    buffer.offset--;
 	    aClass28_1025 = new Envelope();
@@ -55,7 +55,7 @@ public class Instrument
 	    aClass28_1027 = new Envelope();
 	    aClass28_1027.method311(buffer);
 	}
-	i = buffer.getUbyte();
+	i = buffer.getUint8();
 	if (i != 0) {
 	    buffer.offset--;
 	    aClass28_1031 = new Envelope();
@@ -64,17 +64,17 @@ public class Instrument
 	    aClass28_1018.method311(buffer);
 	}
 	for (int i_0_ = 0; i_0_ < 10; i_0_++) {
-	    int i_1_ = buffer.getSmartB();
+	    int i_1_ = buffer.getUsmart();
 	    if (i_1_ == 0)
 		break;
 	    anIntArray1030[i_0_] = i_1_;
-	    anIntArray1028[i_0_] = buffer.getSmartA();
-	    anIntArray1024[i_0_] = buffer.getSmartB();
+	    anIntArray1028[i_0_] = buffer.getSmart();
+	    anIntArray1024[i_0_] = buffer.getUsmart();
 	}
-	anInt1021 = buffer.getSmartB();
-	anInt1020 = buffer.getSmartB();
-	anInt1015 = buffer.getUword();
-	anInt1019 = buffer.getUword();
+	anInt1021 = buffer.getUsmart();
+	anInt1020 = buffer.getUsmart();
+	anInt1015 = buffer.getUint16();
+	anInt1019 = buffer.getUint16();
 	aClass58_1022 = new Filter();
 	aClass28_1032 = new Envelope();
 	aClass58_1022.method1023(buffer, aClass28_1032);

@@ -125,16 +125,16 @@ public class PlayerApperance
     }
     
     public void writeToBuffer(Buffer buffer) {
-	buffer.putByte(isMale ? 1 : 0);
+	buffer.putInt8(isMale ? 1 : 0);
 	for (int i_3_ = 0; i_3_ < 7; i_3_++) {
 	    int i_4_ = anIntArray848[NameTable.anIntArray179[i_3_]];
 	    if (i_4_ == 0)
-		buffer.putByte(-1);
+		buffer.putInt8(-1);
 	    else
-		buffer.putByte(i_4_ - 256);
+		buffer.putInt8(i_4_ - 256);
 	}
 	for (int i_5_ = 0; i_5_ < 5; i_5_++)
-	    buffer.putByte(anIntArray851[i_5_]);
+	    buffer.putInt8(anIntArray851[i_5_]);
     }
     
     public Model method922

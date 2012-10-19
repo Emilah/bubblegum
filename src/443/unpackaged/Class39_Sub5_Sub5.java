@@ -55,11 +55,11 @@ public class Class39_Sub5_Sub5 extends SubNode
 		Mob.aBoolean2253 = true;
 		FrameBuffer.outgoingBuffer.putFrame(76);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Bzip2Entry.anInt1051);
+		    .putInt8(Bzip2Entry.anInt1051);
 		FrameBuffer.outgoingBuffer
-		    .putByte(NameTable.anInt177);
+		    .putInt8(NameTable.anInt177);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Cache.anInt118);
+		    .putInt8(Cache.anInt118);
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 135 && Class39_Sub4.mouseClickPositionX <= 235
 		&& Bzip2Entry.mouseClickPositionY >= 467 && Bzip2Entry.mouseClickPositionY <= 499) {
@@ -69,11 +69,11 @@ public class Class39_Sub5_Sub5 extends SubNode
 		Class14.aBoolean245 = true;
 		FrameBuffer.outgoingBuffer.putFrame(76);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Bzip2Entry.anInt1051);
+		    .putInt8(Bzip2Entry.anInt1051);
 		FrameBuffer.outgoingBuffer
-		    .putByte(NameTable.anInt177);
+		    .putInt8(NameTable.anInt177);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Cache.anInt118);
+		    .putInt8(Cache.anInt118);
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 273 && Class39_Sub4.mouseClickPositionX <= 373
 		&& Bzip2Entry.mouseClickPositionY >= 467 && Bzip2Entry.mouseClickPositionY <= 499) {
@@ -83,11 +83,11 @@ public class Class39_Sub5_Sub5 extends SubNode
 		Class14.aBoolean245 = true;
 		FrameBuffer.outgoingBuffer.putFrame(76);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Bzip2Entry.anInt1051);
+		    .putInt8(Bzip2Entry.anInt1051);
 		FrameBuffer.outgoingBuffer
-		    .putByte(NameTable.anInt177);
+		    .putInt8(NameTable.anInt177);
 		FrameBuffer.outgoingBuffer
-		    .putByte(Cache.anInt118);
+		    .putInt8(Cache.anInt118);
 	    }
 	    if (Class39_Sub4.mouseClickPositionX >= 412 && Class39_Sub4.mouseClickPositionX <= 512
 		&& Bzip2Entry.mouseClickPositionY >= 467 && Bzip2Entry.mouseClickPositionY <= 499) {
@@ -109,7 +109,7 @@ public class Class39_Sub5_Sub5 extends SubNode
     public void method570(byte i, Buffer class39_sub6, int i_0_) {
 	if (i >= 9) {
 	    if (i_0_ == 2)
-		anInt1746 = class39_sub6.getUword();
+		anInt1746 = class39_sub6.getUint16();
 	}
     }
     
@@ -129,7 +129,7 @@ public class Class39_Sub5_Sub5 extends SubNode
     
     public void method572(Buffer class39_sub6, byte i) {
 	for (;;) {
-	    int i_1_ = class39_sub6.getUbyte();
+	    int i_1_ = class39_sub6.getUint8();
 	    if (i_1_ == 0)
 		break;
 	    method570((byte) 31, class39_sub6, i_1_);

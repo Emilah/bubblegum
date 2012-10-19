@@ -466,17 +466,17 @@ public class Class39_Sub12 extends Node {
                             (Cache.localPlayer.queueY[0]),
                             i_24_);
                     if (bool) {
-                        FrameBuffer.outgoingBuffer.putByte(i_18_);
-                        FrameBuffer.outgoingBuffer.putByte(i_19_);
-                        FrameBuffer.outgoingBuffer.putWord(Class34.anInt605);
-                        FrameBuffer.outgoingBuffer.putByte(57);
-                        FrameBuffer.outgoingBuffer.putByte(ArchiveRequest.anInt1401);
-                        FrameBuffer.outgoingBuffer.putByte(ClassCheckRequest.anInt1386);
-                        FrameBuffer.outgoingBuffer.putByte(89);
-                        FrameBuffer.outgoingBuffer.putWord((Cache.localPlayer.fPositionY));
-                        FrameBuffer.outgoingBuffer.putWord((Cache.localPlayer.fPositionX));
-                        FrameBuffer.outgoingBuffer.putByte(CacheIO.anInt99);
-                        FrameBuffer.outgoingBuffer.putByte(63);
+                        FrameBuffer.outgoingBuffer.putInt8(i_18_);
+                        FrameBuffer.outgoingBuffer.putInt8(i_19_);
+                        FrameBuffer.outgoingBuffer.putInt16(Class34.anInt605);
+                        FrameBuffer.outgoingBuffer.putInt8(57);
+                        FrameBuffer.outgoingBuffer.putInt8(ArchiveRequest.anInt1401);
+                        FrameBuffer.outgoingBuffer.putInt8(ClassCheckRequest.anInt1386);
+                        FrameBuffer.outgoingBuffer.putInt8(89);
+                        FrameBuffer.outgoingBuffer.putInt16((Cache.localPlayer.fPositionY));
+                        FrameBuffer.outgoingBuffer.putInt16((Cache.localPlayer.fPositionX));
+                        FrameBuffer.outgoingBuffer.putInt8(CacheIO.anInt99);
+                        FrameBuffer.outgoingBuffer.putInt8(63);
                     }
                 }
             }
@@ -486,19 +486,19 @@ public class Class39_Sub12 extends Node {
     public Class39_Sub12(int i, byte[] is) {
         anInt1494 = i;
         Buffer class39_sub6 = new Buffer(is);
-        anInt1500 = class39_sub6.getUbyte();
+        anInt1500 = class39_sub6.getUint8();
         anIntArrayArray1486 = new int[anInt1500][];
         anIntArray1497 = new int[anInt1500];
         for (int i_27_ = 0; i_27_ < anInt1500; i_27_++) {
-            anIntArray1497[i_27_] = class39_sub6.getUbyte();
+            anIntArray1497[i_27_] = class39_sub6.getUint8();
         }
         for (int i_28_ = 0; anInt1500 > i_28_; i_28_++) {
-            anIntArrayArray1486[i_28_] = new int[class39_sub6.getUbyte()];
+            anIntArrayArray1486[i_28_] = new int[class39_sub6.getUint8()];
         }
         for (int i_29_ = 0; i_29_ < anInt1500; i_29_++) {
             for (int i_30_ = 0; i_30_ < anIntArrayArray1486[i_29_].length;
                     i_30_++) {
-                anIntArrayArray1486[i_29_][i_30_] = class39_sub6.getUbyte();
+                anIntArrayArray1486[i_29_][i_30_] = class39_sub6.getUint8();
             }
         }
     }

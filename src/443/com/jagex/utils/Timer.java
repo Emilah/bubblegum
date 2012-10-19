@@ -105,10 +105,10 @@ public abstract class Timer
 	    Player class39_sub5_sub4_sub4_sub2
 		= Class14.players[i_12_];
 	    int i_13_ = Class39_Sub5_Sub11.incomingBuffer
-			    .getUbyte();
+			    .getUint8();
 	    if ((i_13_ & 0x80) != 0)
 		i_13_ += Class39_Sub5_Sub11.incomingBuffer
-			     .getUbyte() << 8;
+			     .getUint8() << 8;
 	    JApplet.method25(class39_sub5_sub4_sub4_sub2, (byte) 60, i_12_,
 				 i_13_);
 	}

@@ -201,14 +201,14 @@ public class Queue {
         Buffer class39_sub6 = new Buffer(is);
         int i_15_ = -1;
         for (;;) {
-            int i_16_ = class39_sub6.getSmartB();
+            int i_16_ = class39_sub6.getUsmart();
             if (i_16_ == 0) {
                 break;
             }
             i_15_ += i_16_;
             int i_17_ = 0;
             for (;;) {
-                int i_18_ = class39_sub6.getSmartB();
+                int i_18_ = class39_sub6.getUsmart();
                 if (i_18_ == 0) {
                     break;
                 }
@@ -216,7 +216,7 @@ public class Queue {
                 int i_19_ = i_17_ & 0x3f;
                 int i_20_ = (i_17_ & 0xfc6) >> 6;
                 int i_21_ = i_17_ >> 12;
-                int i_22_ = class39_sub6.getUbyte();
+                int i_22_ = class39_sub6.getUint8();
                 int i_23_ = i_22_ >> 2;
                 int i_24_ = i_22_ & 0x3;
                 if (i_11_ == i_21_ && i_20_ >= i_12_ && i_12_ + 8 > i_20_

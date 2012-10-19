@@ -236,22 +236,22 @@ public class Deque {
             int height) {
         if (x < 0 || x >= 104 || y < 0 || y >= 104) {
             for (;;) {
-                int i_35_ = buffer.getUbyte();
+                int i_35_ = buffer.getUint8();
                 if (i_35_ == 0) {
                     break;
                 }
                 if (i_35_ == 1) {
-                    buffer.getUbyte();
+                    buffer.getUint8();
                     break;
                 }
                 if (i_35_ <= 49) {
-                    buffer.getUbyte();
+                    buffer.getUint8();
                 }
             }
         } else {
             TextureLoaderImpl.tileFlags[height][x][y] = (byte) 0;
             for (;;) {
-                int i_36_ = buffer.getUbyte();
+                int i_36_ = buffer.getUint8();
                 if (i_36_ == 0) {
                     if (height != 0) {
                         Class67.heightMap[height][x][y] = (Class67.heightMap[height - 1][x][y]) - 240;
@@ -263,7 +263,7 @@ public class Deque {
                     break;
                 }
                 if (i_36_ == 1) {
-                    int i_37_ = buffer.getUbyte();
+                    int i_37_ = buffer.getUint8();
                     if (i_37_ == 1) {
                         i_37_ = 0;
                     }
@@ -275,7 +275,7 @@ public class Deque {
                     break;
                 }
                 if (i_36_ <= 49) {
-                    Class33.aByteArrayArrayArray596[height][x][y] = buffer.getByte();
+                    Class33.aByteArrayArrayArray596[height][x][y] = buffer.getInt8();
                     Class67.aByteArrayArrayArray1179[height][x][y] = (byte) ((i_36_ - 2) / 4);
                     ISAAC.aByteArrayArrayArray1081[height][x][y] = (byte) Class34.and(i_36_ + i_29_ - 2, 3);
                 } else if (i_36_ <= 81) {

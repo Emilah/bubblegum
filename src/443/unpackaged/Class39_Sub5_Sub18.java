@@ -68,26 +68,26 @@ public class Class39_Sub5_Sub18 extends SubNode
 		if (i != 4) {
 		    if (i != 5) {
 			if (i == 6)
-			    anInt2128 = class39_sub6.getUword();
+			    anInt2128 = class39_sub6.getUint16();
 			else if (i == 7)
-			    anInt2127 = class39_sub6.getUbyte();
+			    anInt2127 = class39_sub6.getUint8();
 			else if (i != 8) {
 			    if (i >= 40 && i < 50)
 				anIntArray2140[i - 40]
-				    = class39_sub6.getUword();
+				    = class39_sub6.getUint16();
 			    else if (i >= 50 && i < 60)
 				anIntArray2136[i - 50]
-				    = class39_sub6.getUword();
+				    = class39_sub6.getUint16();
 			} else
-			    anInt2132 = class39_sub6.getUbyte();
+			    anInt2132 = class39_sub6.getUint8();
 		    } else
-			anInt2139 = class39_sub6.getUword();
+			anInt2139 = class39_sub6.getUint16();
 		} else
-		    anInt2133 = class39_sub6.getUword();
+		    anInt2133 = class39_sub6.getUint16();
 	    } else
-		anInt2126 = class39_sub6.getUword();
+		anInt2126 = class39_sub6.getUint16();
 	} else
-	    anInt2122 = class39_sub6.getUword();
+	    anInt2122 = class39_sub6.getUint16();
 	int i_1_ = 43 / ((i_0_ + 61) / 47);
     }
     
@@ -142,7 +142,7 @@ public class Class39_Sub5_Sub18 extends SubNode
     
     public void method779(int i, Buffer class39_sub6) {
 	for (;;) {
-	    int i_5_ = class39_sub6.getUbyte();
+	    int i_5_ = class39_sub6.getUint8();
 	    if (i_5_ == 0)
 		break;
 	    method777(class39_sub6, i_5_, 86);

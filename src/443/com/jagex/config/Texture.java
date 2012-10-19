@@ -170,29 +170,29 @@ public class Texture extends Node
     }
     
     public Texture(Buffer class39_sub6) {
-	anInt1396 = class39_sub6.getUword();
-	aBoolean1393 = class39_sub6.getUbyte() == 1;
-	int i = class39_sub6.getUbyte();
+	anInt1396 = class39_sub6.getUint16();
+	aBoolean1393 = class39_sub6.getUint8() == 1;
+	int i = class39_sub6.getUint8();
 	if (i < 1 || i > 4)
 	    throw new RuntimeException();
 	anIntArray1390 = new int[i];
 	for (int i_34_ = 0; i_34_ < i; i_34_++)
-	    anIntArray1390[i_34_] = class39_sub6.getUword();
+	    anIntArray1390[i_34_] = class39_sub6.getUint16();
 	if (i > 1) {
 	    anIntArray1399 = new int[i - 1];
 	    for (int i_35_ = 0; i_35_ < i - 1; i_35_++)
-		anIntArray1399[i_35_] = class39_sub6.getUbyte();
+		anIntArray1399[i_35_] = class39_sub6.getUint8();
 	}
 	if (i > 1) {
 	    anIntArray1397 = new int[i - 1];
 	    for (int i_36_ = 0; i_36_ < i - 1; i_36_++)
-		anIntArray1397[i_36_] = class39_sub6.getUbyte();
+		anIntArray1397[i_36_] = class39_sub6.getUint8();
 	}
 	anIntArray1389 = new int[i];
 	for (int i_37_ = 0; i_37_ < i; i_37_++)
-	    anIntArray1389[i_37_] = class39_sub6.getDword();
-	anInt1394 = class39_sub6.getUbyte();
-	anInt1391 = class39_sub6.getUbyte();
+	    anIntArray1389[i_37_] = class39_sub6.getUint32();
+	anInt1394 = class39_sub6.getUint8();
+	anInt1391 = class39_sub6.getUint8();
 	anIntArray1395 = null;
     }
 }

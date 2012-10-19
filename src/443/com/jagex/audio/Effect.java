@@ -77,15 +77,15 @@ public class Effect
     public Effect(Buffer buffer) {
 	instruments = new Instrument[10];
 	for (int i = 0; i < 10; i++) {
-	    int i_11_ = buffer.getUbyte();
+	    int i_11_ = buffer.getUint8();
 	    if (i_11_ != 0) {
 		buffer.offset--;
 		instruments[i] = new Instrument();
 		instruments[i].decode(buffer);
 	    }
 	}
-	anInt950 = buffer.getUword();
-	anInt949 = buffer.getUword();
+	anInt950 = buffer.getUint16();
+	anInt949 = buffer.getUint16();
     }
     
     public Effect() {

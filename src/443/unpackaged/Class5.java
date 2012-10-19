@@ -107,14 +107,14 @@ public class Class5
     public void method114(byte[] is) {
 	aClass39_Sub6_84.payload = is;
 	aClass39_Sub6_84.offset = 10;
-	int i = aClass39_Sub6_84.getUword();
-	anInt90 = aClass39_Sub6_84.getUword();
+	int i = aClass39_Sub6_84.getUint16();
+	anInt90 = aClass39_Sub6_84.getUint16();
 	anInt87 = 500000;
 	anIntArray88 = new int[i];
 	int i_8_ = 0;
 	while (i_8_ < i) {
-	    int i_9_ = aClass39_Sub6_84.getDword();
-	    int i_10_ = aClass39_Sub6_84.getDword();
+	    int i_9_ = aClass39_Sub6_84.getUint32();
+	    int i_10_ = aClass39_Sub6_84.getUint32();
 	    if (i_9_ == 1297379947) {
 		anIntArray88[i_8_] = aClass39_Sub6_84.offset;
 		i_8_++;
@@ -139,14 +139,14 @@ public class Class5
     
     public int method117(int i, int i_13_) {
 	if (i_13_ == 255) {
-	    int i_14_ = aClass39_Sub6_84.getUbyte();
+	    int i_14_ = aClass39_Sub6_84.getUint8();
 	    int i_15_ = aClass39_Sub6_84.method798(-97);
 	    if (i_14_ == 47) {
 		aClass39_Sub6_84.offset += i_15_;
 		return 1;
 	    }
 	    if (i_14_ == 81) {
-		int i_16_ = aClass39_Sub6_84.getUtri();
+		int i_16_ = aClass39_Sub6_84.getUint24();
 		i_15_ -= 3;
 		int i_17_ = anIntArray91[i];
 		aLong85 += (long) i_17_ * (long) (anInt87 - i_16_);
@@ -160,9 +160,9 @@ public class Class5
 	byte i_18_ = aByteArray83[i_13_ - 128];
 	int i_19_ = i_13_;
 	if (i_18_ >= 1)
-	    i_19_ |= aClass39_Sub6_84.getUbyte() << 8;
+	    i_19_ |= aClass39_Sub6_84.getUint8() << 8;
 	if (i_18_ >= 2)
-	    i_19_ |= aClass39_Sub6_84.getUbyte() << 16;
+	    i_19_ |= aClass39_Sub6_84.getUint8() << 16;
 	return i_19_;
     }
     

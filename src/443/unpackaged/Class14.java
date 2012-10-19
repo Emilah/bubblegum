@@ -96,7 +96,7 @@ public class Class14
 	int i_2_ = -1;
 	Buffer buffer = new Buffer(is);
 	for (;;) {
-	    int i_3_ = buffer.getSmartB();
+	    int i_3_ = buffer.getUsmart();
 	    if (i_3_ == 0)
 		break;
 	    i_2_ += i_3_;
@@ -104,17 +104,17 @@ public class Class14
 	    int i_5_ = 0;
 	    for (;;) {
 		if (bool_4_) {
-		    int i_6_ = buffer.getSmartB();
+		    int i_6_ = buffer.getUsmart();
 		    if (i_6_ == 0)
 			break;
-		    buffer.getUbyte();
+		    buffer.getUint8();
 		} else {
-		    int i_7_ = buffer.getSmartB();
+		    int i_7_ = buffer.getUsmart();
 		    if (i_7_ == 0)
 			break;
 		    i_5_ += i_7_ - 1;
 		    int i_8_ = i_5_ >> 6 & 0x3f;
-		    int i_9_ = buffer.getUbyte() >> 2;
+		    int i_9_ = buffer.getUint8() >> 2;
 		    int i_10_ = i_5_ & 0x3f;
 		    int i_11_ = i_10_ + i;
 		    int i_12_ = i_8_ + i_0_;

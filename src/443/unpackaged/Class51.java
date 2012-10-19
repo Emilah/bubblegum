@@ -32,12 +32,12 @@ public class Class51
 	Buffer class39_sub6 = new Buffer(is);
 	Buffer class39_sub6_0_ = new Buffer(is);
 	class39_sub6.offset = 2;
-	int i = class39_sub6.getUbyte();
+	int i = class39_sub6.getUint8();
 	int i_1_ = -1;
 	int i_2_ = 0;
 	class39_sub6_0_.offset = class39_sub6.offset + i;
 	for (int i_3_ = 0; i_3_ < i; i_3_++) {
-	    int i_4_ = class39_sub6.getUbyte();
+	    int i_4_ = class39_sub6.getUint8();
 	    if (i_4_ > 0) {
 		if (aClass39_Sub12_938.anIntArray1497[i_3_] != 0) {
 		    for (int i_5_ = i_3_ - 1; i_5_ > i_1_; i_5_--) {
@@ -57,16 +57,16 @@ public class Class51
 		    i_6_ = 128;
 		if ((i_4_ & 0x1) != 0)
 		    anIntArray941[i_2_]
-			= class39_sub6_0_.getSmartA();
+			= class39_sub6_0_.getSmart();
 		else
 		    anIntArray941[i_2_] = i_6_;
 		if ((i_4_ & 0x2) != 0)
-		    anIntArray943[i_2_] = class39_sub6_0_.getSmartA();
+		    anIntArray943[i_2_] = class39_sub6_0_.getSmart();
 		else
 		    anIntArray943[i_2_] = i_6_;
 		if ((i_4_ & 0x4) != 0)
 		    anIntArray947[i_2_]
-			= class39_sub6_0_.getSmartA();
+			= class39_sub6_0_.getSmart();
 		else
 		    anIntArray947[i_2_] = i_6_;
 		i_1_ = i_3_;

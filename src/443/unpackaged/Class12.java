@@ -37,12 +37,12 @@ public class Class12 {
 
     public static void parseStillEntityFrame() {
         if (Class4.frameId == 79) {
-            int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             int x = Node.mSectorX + (locationHash >> 4 & 0x7);
             int y = (locationHash & 0x7) + ISAAC.mSectorY;
-            int itemId = Class39_Sub5_Sub11.incomingBuffer.getUword();
-            int oldAmount = Class39_Sub5_Sub11.incomingBuffer.getUword();
-            int newAmount = Class39_Sub5_Sub11.incomingBuffer.getUword();
+            int itemId = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+            int oldAmount = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+            int newAmount = Class39_Sub5_Sub11.incomingBuffer.getUint16();
             if (x >= 0 && y >= 0 && x < 104 && y < 104) {
                 Deque class49 = (Class20.groundItems[NameTable.height][x][y]);
                 if (class49 != null) {
@@ -79,7 +79,7 @@ public class Class12 {
             }
         } else if (Class4.frameId == 84) {
             int itemId = Class39_Sub5_Sub11.incomingBuffer.getUwordLe();
-            int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             int posY = (locationHash & 0x7) + ISAAC.mSectorY;
             int posX = Node.mSectorX + ((locationHash & 0x7a) >> 4);
             if (posX >= 0 && posY >= 0 && posX < 104 && posY < 104) {
@@ -101,7 +101,7 @@ public class Class12 {
                 }
             }
         } else if (Class4.frameId == 69) {
-            int infoHash = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int infoHash = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             int typeId = infoHash >> 2;
             int rotation = infoHash & 0x3;
             int type = Class33.anIntArray598[typeId];
@@ -113,21 +113,21 @@ public class Class12 {
                         -1, posX);
             }
         } else if (Class4.frameId == 101) {
-            int i_23_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int i_23_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             int i_24_ = (i_23_ & 0x7) + ISAAC.mSectorY;
             int i_25_ = Node.mSectorX + ((i_23_ & 0x7c) >> 4);
-            int i_26_ = i_25_ + Class39_Sub5_Sub11.incomingBuffer.getByte();
-            int i_27_ = i_24_ + Class39_Sub5_Sub11.incomingBuffer.getByte();
-            int i_28_ = Class39_Sub5_Sub11.incomingBuffer.getWord();
-            int i_29_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
-            int i_30_ = (Class39_Sub5_Sub11.incomingBuffer.getUbyte()
+            int i_26_ = i_25_ + Class39_Sub5_Sub11.incomingBuffer.getInt8();
+            int i_27_ = i_24_ + Class39_Sub5_Sub11.incomingBuffer.getInt8();
+            int i_28_ = Class39_Sub5_Sub11.incomingBuffer.getInt16();
+            int i_29_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+            int i_30_ = (Class39_Sub5_Sub11.incomingBuffer.getUint8()
                     * 4);
-            int i_31_ = (Class39_Sub5_Sub11.incomingBuffer.getUbyte()
+            int i_31_ = (Class39_Sub5_Sub11.incomingBuffer.getUint8()
                     * 4);
-            int i_32_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
-            int i_33_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
-            int i_34_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-            int i_35_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int i_32_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+            int i_33_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+            int i_34_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+            int i_35_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             if (i_25_ >= 0 && i_24_ >= 0 && i_25_ < 104 && i_24_ < 104
                     && i_26_ >= 0 && i_27_ >= 0 && i_26_ < 104 && i_27_ < 104
                     && i_29_ != 65535) {
@@ -146,7 +146,7 @@ public class Class12 {
         } else if (Class4.frameId == 207) {
             int i_36_ = Class39_Sub5_Sub11.incomingBuffer.getUword128();
             int itemId = Class39_Sub5_Sub11.incomingBuffer.getUwordLe();
-            int i_38_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+            int i_38_ = Class39_Sub5_Sub11.incomingBuffer.getUint8();
             int x = ((i_38_ & 0x7a) >> 4) + Node.mSectorX;
             int y = ISAAC.mSectorY + (i_38_ & 0x7);
             if (x >= 0 && y >= 0 && x < 104 && y < 104) {
@@ -229,7 +229,7 @@ public class Class12 {
                 int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUbyteA();
                 int posY = ISAAC.mSectorY + (locationHash & 0x7);
                 int posX = ((locationHash & 0x78) >> 4) + Node.mSectorX;
-                int i_57_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int i_57_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 int infoHash = Class39_Sub5_Sub11.incomingBuffer.getUbyte128();
                 int rotation = infoHash & 0x3;
                 int typeId = infoHash >> 2;
@@ -241,12 +241,12 @@ public class Class12 {
                             posX);
                 }
             } else if (Class4.frameId == 115) {
-                int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                 int posX = Node.mSectorX + (locationHash >> 4 & 0x7);
                 int posY = (locationHash & 0x7) + ISAAC.mSectorY;
-                int graphicId = Class39_Sub5_Sub11.incomingBuffer.getUword();
-                int heightOffset = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                int delay = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                int graphicId = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                int heightOffset = Class39_Sub5_Sub11.incomingBuffer.getUint8();
+                int delay = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                 if (posX >= 0 && posY >= 0 && posX < 104 && posY < 104) {
                     posY = posY * 128 + 64;
                     posX = posX * 128 + 64;
@@ -270,7 +270,7 @@ public class Class12 {
                     int i_78_ = Class39_Sub5_Sub11.incomingBuffer.getUbyteB();
                     int posX = Node.mSectorX + ((i_78_ & 0x77) >> 4);
                     int posY = (i_78_ & 0x7) + ISAAC.mSectorY;
-                    int i_81_ = Class39_Sub5_Sub11.incomingBuffer.getUword();
+                    int i_81_ = Class39_Sub5_Sub11.incomingBuffer.getUint16();
                     int playerId = Class39_Sub5_Sub11.incomingBuffer.getUwordLe128();
                     Player player;
                     if (playerId == ItemContainer.localId) {
@@ -322,13 +322,13 @@ public class Class12 {
                     }
                 }
                 if (Class4.frameId == 109) {
-                    int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                    int locationHash = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                     int posX = ((locationHash & 0x75) >> 4) + Node.mSectorX;
                     int posY = ISAAC.mSectorY + (locationHash & 0x7);
-                    int effectId = Class39_Sub5_Sub11.incomingBuffer.getUword();
-                    int infoHash = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                    int effectId = Class39_Sub5_Sub11.incomingBuffer.getUint16();
+                    int infoHash = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                     int distance = (infoHash & 0xf0) >> 4;
-                    int delay = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                    int delay = Class39_Sub5_Sub11.incomingBuffer.getUint8();
                     int loops = infoHash & 0x7;
                     if (posX >= 0 && posY >= 0 && posX < 104
                             && posY < 104) {

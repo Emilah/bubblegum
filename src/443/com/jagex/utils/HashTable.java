@@ -61,7 +61,7 @@ public class HashTable
 			    = Class39_Sub5_Sub9.ignoreUsernames[i_1_ + 1];
 		    FrameBuffer.outgoingBuffer
 			.putFrame(250);
-		    FrameBuffer.outgoingBuffer.putQword(l);
+		    FrameBuffer.outgoingBuffer.putInt64(l);
 		    break;
 		}
 	    }

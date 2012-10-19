@@ -73,53 +73,53 @@ public abstract class Class34 {
     public static void method333(int i, int i_0_, int i_1_) {
         if (i_1_ == 1) {
             FrameBuffer.outgoingBuffer.putFrame(13);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 2) {
             FrameBuffer.outgoingBuffer.putFrame(217);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 3) {
             FrameBuffer.outgoingBuffer.putFrame(161);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 4) {
             FrameBuffer.outgoingBuffer.putFrame(3);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 5) {
             FrameBuffer.outgoingBuffer.putFrame(40);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 6) {
             FrameBuffer.outgoingBuffer.putFrame(73);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 7) {
             FrameBuffer.outgoingBuffer.putFrame(57);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 8) {
             FrameBuffer.outgoingBuffer.putFrame(167);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 9) {
             FrameBuffer.outgoingBuffer.putFrame(28);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         if (i_1_ == 10) {
             FrameBuffer.outgoingBuffer.putFrame(8);
-            FrameBuffer.outgoingBuffer.putDword(i);
-            FrameBuffer.outgoingBuffer.putWord(i_0_);
+            FrameBuffer.outgoingBuffer.putInt32(i);
+            FrameBuffer.outgoingBuffer.putInt16(i_0_);
         }
         Widget widget = Class62_Sub2.getWidgetChild(i, i_0_);
         if (widget != null && widget.anObjectArray2045 != null) {
@@ -252,7 +252,7 @@ public abstract class Class34 {
                     } else if (Timer.anInt887 != 0 || Cache.mouseRecorder.anInt561 >= 40) {
                         FrameBuffer.outgoingBuffer.putFrame(133);
                         int i_10_ = 0;
-                        FrameBuffer.outgoingBuffer.putByte(0);
+                        FrameBuffer.outgoingBuffer.putInt8(0);
                         int i_11_ = (FrameBuffer.outgoingBuffer.offset);
                         for (int i_12_ = 0; Cache.mouseRecorder.anInt561 > i_12_; i_12_++) {
                             if (-i_11_ + (FrameBuffer.outgoingBuffer.offset) >= 240) {
@@ -294,15 +294,15 @@ public abstract class Class34 {
                                         && i_17_ <= 31) {
                                     i_16_ += 32;
                                     i_17_ += 32;
-                                    FrameBuffer.outgoingBuffer.putWord(((Timer.anInt882 << 12)
+                                    FrameBuffer.outgoingBuffer.putInt16(((Timer.anInt882 << 12)
                                             - (-(i_16_ << 6) - i_17_)));
                                     Timer.anInt882 = 0;
                                 } else if (Timer.anInt882 < 8) {
-                                    FrameBuffer.outgoingBuffer.putTri(8388608 + (Timer.anInt882
+                                    FrameBuffer.outgoingBuffer.putInt24(8388608 + (Timer.anInt882
                                             << 19) + i_15_);
                                     Timer.anInt882 = 0;
                                 } else {
-                                    FrameBuffer.outgoingBuffer.putDword(((Timer.anInt882 << 19) - 1073741824
+                                    FrameBuffer.outgoingBuffer.putInt32(((Timer.anInt882 << 19) - 1073741824
                                             + i_15_));
                                     Timer.anInt882 = 0;
                                 }
@@ -365,21 +365,21 @@ public abstract class Class34 {
                     Deque.aBoolean914 = false;
                     FrameBuffer.outgoingBuffer.putFrame(66);
                     FrameBuffer.outgoingBuffer.putWord128(JSocket.anInt301);
-                    FrameBuffer.outgoingBuffer.putWord(anInt605);
+                    FrameBuffer.outgoingBuffer.putInt16(anInt605);
                 }
                 if (!Class43.aBoolean802 != true
                         && !JString.aBoolean1232 == true) {
                     JString.aBoolean1232 = true;
                     FrameBuffer.outgoingBuffer.putFrame(207);
                     ArchiveRequest.anInt1408++;
-                    FrameBuffer.outgoingBuffer.putByte(1);
+                    FrameBuffer.outgoingBuffer.putInt8(1);
                 }
                 if (!Class43.aBoolean802 == true
                         && JString.aBoolean1232 == true) {
                     JString.aBoolean1232 = false;
                     FrameBuffer.outgoingBuffer.putFrame(207);
                     ArchiveRequest.anInt1408++;
-                    FrameBuffer.outgoingBuffer.putByte(0);
+                    FrameBuffer.outgoingBuffer.putInt8(0);
                 }
                 Class23.method271();
                 if (Client.state == 30 || Client.state == 35) {
@@ -444,16 +444,16 @@ public abstract class Class34 {
                                         }
                                         if (!widget.replaceSwap()) {
                                             if (type != 1) {
-                                                widget.swapItem(Class14.swapSlotTo, ArchiveRequest.swapSlotFrom);
+                                                widget.swapItems(Class14.swapSlotTo, ArchiveRequest.swapSlotFrom);
                                             } else {
                                                 int slotFrom = ArchiveRequest.swapSlotFrom;
                                                 int slotTo = Class14.swapSlotTo;
                                                 while (slotTo != slotFrom) {
                                                     if (slotTo < slotFrom) {
-                                                        widget.swapItem(slotFrom - 1, slotFrom);
+                                                        widget.swapItems(slotFrom - 1, slotFrom);
                                                         slotFrom--;
                                                     } else if (slotFrom < slotTo) {
-                                                        widget.swapItem(slotFrom + 1, slotFrom);
+                                                        widget.swapItems(slotFrom + 1, slotFrom);
                                                         slotFrom++;
                                                     }
                                                 }
@@ -467,10 +467,10 @@ public abstract class Class34 {
                                             widget.itemAmounts[slotFrom] = 0;
                                         }
                                         FrameBuffer.outgoingBuffer.putFrame(190);
-                                        FrameBuffer.outgoingBuffer.putWord(ArchiveRequest.swapSlotFrom);
-                                        FrameBuffer.outgoingBuffer.putDword(ArchiveWorker.swapWidgetHash);
-                                        FrameBuffer.outgoingBuffer.putByte(type);
-                                        FrameBuffer.outgoingBuffer.putWord(Class14.swapSlotTo);
+                                        FrameBuffer.outgoingBuffer.putInt16(ArchiveRequest.swapSlotFrom);
+                                        FrameBuffer.outgoingBuffer.putInt32(ArchiveWorker.swapWidgetHash);
+                                        FrameBuffer.outgoingBuffer.putInt8(type);
+                                        FrameBuffer.outgoingBuffer.putInt16(Class14.swapSlotTo);
                                     }
                                 } else if ((PlayerApperance.anInt868 != 1
                                         && !(Class33.method327((Class39_Sub5_Sub11.actionOffset

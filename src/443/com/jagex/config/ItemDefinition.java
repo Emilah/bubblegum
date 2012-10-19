@@ -131,7 +131,7 @@ public class ItemDefinition extends SubNode
     
     public void decode(int i, Buffer class39_sub6) {
 	for (;;) {
-	    int i_4_ = class39_sub6.getUbyte();
+	    int i_4_ = class39_sub6.getUint8();
 	    if (i_4_ == 0)
 		break;
 	    method465((byte) 113, class39_sub6, i_4_);
@@ -141,18 +141,18 @@ public class ItemDefinition extends SubNode
     public void method465(byte i, Buffer class39_sub6, int i_5_) {
 	int i_6_ = 104 % ((i - 22) / 57);
 	if (i_5_ == 1)
-	    anInt1655 = class39_sub6.getUword();
+	    anInt1655 = class39_sub6.getUint16();
 	else if (i_5_ != 2) {
 	    if (i_5_ != 4) {
 		if (i_5_ == 5)
-		    anInt1669 = class39_sub6.getUword();
+		    anInt1669 = class39_sub6.getUint16();
 		else if (i_5_ != 6) {
 		    if (i_5_ == 7) {
-			anInt1674 = class39_sub6.getUword();
+			anInt1674 = class39_sub6.getUint16();
 			if (anInt1674 > 32767)
 			    anInt1674 -= 65536;
 		    } else if (i_5_ == 8) {
-			anInt1654 = class39_sub6.getUword();
+			anInt1654 = class39_sub6.getUint16();
 			if (anInt1654 > 32767)
 			    anInt1654 -= 65536;
 		    } else if (i_5_ != 11) {
@@ -161,13 +161,13 @@ public class ItemDefinition extends SubNode
 				aBoolean1653 = true;
 			    else if (i_5_ != 23) {
 				if (i_5_ == 24)
-				    anInt1664 = class39_sub6.getUword();
+				    anInt1664 = class39_sub6.getUint16();
 				else if (i_5_ == 25) {
-				    anInt1667 = class39_sub6.getUword();
+				    anInt1667 = class39_sub6.getUint16();
 				    anInt1679
-					= class39_sub6.getUbyte();
+					= class39_sub6.getUint8();
 				} else if (i_5_ == 26)
-				    anInt1643 = class39_sub6.getUword();
+				    anInt1643 = class39_sub6.getUint16();
 				else if (i_5_ >= 30 && i_5_ < 35) {
 				    groundOptions[i_5_ - 30]
 					= class39_sub6.getJstr();
@@ -179,67 +179,67 @@ public class ItemDefinition extends SubNode
 					= class39_sub6.getJstr();
 				else if (i_5_ == 40) {
 				    int i_7_
-					= class39_sub6.getUbyte();
+					= class39_sub6.getUint8();
 				    anIntArray1658 = new int[i_7_];
 				    anIntArray1642 = new int[i_7_];
 				    for (int i_8_ = 0; i_8_ < i_7_; i_8_++) {
 					anIntArray1658[i_8_]
-					    = class39_sub6.getUword();
+					    = class39_sub6.getUint16();
 					anIntArray1642[i_8_]
-					    = class39_sub6.getUword();
+					    = class39_sub6.getUint16();
 				    }
 				} else if (i_5_ == 78)
-				    anInt1660 = class39_sub6.getUword();
+				    anInt1660 = class39_sub6.getUint16();
 				else if (i_5_ == 79)
-				    anInt1666 = class39_sub6.getUword();
+				    anInt1666 = class39_sub6.getUint16();
 				else if (i_5_ != 90) {
 				    if (i_5_ == 91)
 					anInt1648
-					    = class39_sub6.getUword();
+					    = class39_sub6.getUint16();
 				    else if (i_5_ != 92) {
 					if (i_5_ != 93) {
 					    if (i_5_ == 95)
 						anInt1656
 						    = class39_sub6
-							  .getUword();
+							  .getUint16();
 					    else if (i_5_ != 97) {
 						if (i_5_ == 98)
 						    anInt1644
 							= class39_sub6
-							      .getUword();
+							      .getUint16();
 						else if (i_5_ < 100
 							 || i_5_ >= 110) {
 						    if (i_5_ == 110)
 							anInt1668
 							    = (class39_sub6
-								   .getUword
+								   .getUint16
 							       ());
 						    else if (i_5_ == 111)
 							anInt1677
 							    = (class39_sub6
-								   .getUword
+								   .getUint16
 							       ());
 						    else if (i_5_ == 112)
 							anInt1641
 							    = (class39_sub6
-								   .getUword
+								   .getUint16
 							       ());
 						    else if (i_5_ != 113) {
 							if (i_5_ != 114) {
 							    if (i_5_ == 115)
 								anInt1650
 								    = (class39_sub6
-									   .getUbyte
+									   .getUint8
 								       ());
 							} else
 							    anInt1673
 								= (class39_sub6
-								       .getByte
+								       .getInt8
 								   ()) * 5;
 						    } else
 							anInt1647
 							    = (class39_sub6
-								   .getByte
+								   .getInt8
 							       ());
 						} else {
 						    if (anIntArray1670
@@ -251,35 +251,35 @@ public class ItemDefinition extends SubNode
 						    }
 						    anIntArray1670[i_5_ - 100]
 							= class39_sub6
-							      .getUword();
+							      .getUint16();
 						    anIntArray1646[i_5_ - 100]
 							= class39_sub6
-							      .getUword();
+							      .getUint16();
 						}
 					    } else
 						anInt1651
 						    = class39_sub6
-							  .getUword();
+							  .getUint16();
 					} else
 					    anInt1678
-						= class39_sub6.getUword();
+						= class39_sub6.getUint16();
 				    } else
 					anInt1675
-					    = class39_sub6.getUword();
+					    = class39_sub6.getUint16();
 				} else
-				    anInt1665 = class39_sub6.getUword();
+				    anInt1665 = class39_sub6.getUint16();
 			    } else {
-				anInt1645 = class39_sub6.getUword();
-				anInt1659 = class39_sub6.getUbyte();
+				anInt1645 = class39_sub6.getUint16();
+				anInt1659 = class39_sub6.getUint8();
 			    }
 			} else
-			    anInt1686 = class39_sub6.getDword();
+			    anInt1686 = class39_sub6.getUint32();
 		    } else
 			anInt1662 = 1;
 		} else
-		    anInt1676 = class39_sub6.getUword();
+		    anInt1676 = class39_sub6.getUint16();
 	    } else
-		anInt1649 = class39_sub6.getUword();
+		anInt1649 = class39_sub6.getUint16();
 	} else
 	    name = class39_sub6.getJstr();
     }

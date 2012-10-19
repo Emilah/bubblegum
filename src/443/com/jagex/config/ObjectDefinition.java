@@ -152,7 +152,7 @@ public class ObjectDefinition extends SubNode
     
     public void decodeOpcode(boolean bool, Buffer class39_sub6, int i) {
 	if (i == 1) {
-	    int i_4_ = class39_sub6.getUbyte();
+	    int i_4_ = class39_sub6.getUint8();
 	    if (i_4_ > 0) {
 		if (anIntArray1954 != null && !MouseListenerImpl.aBoolean785)
 		    class39_sub6.offset += i_4_ * 3;
@@ -160,16 +160,16 @@ public class ObjectDefinition extends SubNode
 		    anIntArray1954 = new int[i_4_];
 		    anIntArray1960 = new int[i_4_];
 		    for (int i_5_ = 0; i_4_ > i_5_; i_5_++) {
-			anIntArray1954[i_5_] = class39_sub6.getUword();
+			anIntArray1954[i_5_] = class39_sub6.getUint16();
 			anIntArray1960[i_5_]
-			    = class39_sub6.getUbyte();
+			    = class39_sub6.getUint8();
 		    }
 		}
 	    }
 	} else if (i == 2)
 	    name = class39_sub6.getJstr();
 	else if (i == 5) {
-	    int i_6_ = class39_sub6.getUbyte();
+	    int i_6_ = class39_sub6.getUint8();
 	    if (i_6_ > 0) {
 		if (anIntArray1954 != null && !MouseListenerImpl.aBoolean785)
 		    class39_sub6.offset += i_6_ * 2;
@@ -177,12 +177,12 @@ public class ObjectDefinition extends SubNode
 		    anIntArray1960 = null;
 		    anIntArray1954 = new int[i_6_];
 		    for (int i_7_ = 0; i_7_ < i_6_; i_7_++)
-			anIntArray1954[i_7_] = class39_sub6.getUword();
+			anIntArray1954[i_7_] = class39_sub6.getUint16();
 		}
 	    }
 	} else if (i != 14) {
 	    if (i == 15)
-		anInt1948 = class39_sub6.getUbyte();
+		anInt1948 = class39_sub6.getUint8();
 	    else if (i != 17) {
 		if (i == 18)
 		    aBoolean1949 = false;
@@ -191,12 +191,12 @@ public class ObjectDefinition extends SubNode
 			if (i != 22) {
 			    if (i != 23) {
 				if (i == 24) {
-				    anInt1939 = class39_sub6.getUword();
+				    anInt1939 = class39_sub6.getUint16();
 				    if (anInt1939 == 65535)
 					anInt1939 = -1;
 				} else if (i == 28)
 				    anInt1936
-					= class39_sub6.getUbyte();
+					= class39_sub6.getUint8();
 				else if (i != 29) {
 				    if (i != 39) {
 					if (i >= 30 && i < 35) {
@@ -218,18 +218,18 @@ public class ObjectDefinition extends SubNode
 						    if (i == 66)
 							anInt1952
 							    = (class39_sub6
-								   .getUword
+								   .getUint16
 							       ());
 						    else if (i != 67) {
 							if (i == 68)
 							    anInt1972
 								= (class39_sub6
-								       .getUword
+								       .getUint16
 								   ());
 							else if (i == 69)
 							    anInt1958
 								= (class39_sub6
-								       .getUbyte
+								       .getUint8
 								   ());
 							else if (i != 70) {
 							    if (i != 71) {
@@ -246,82 +246,82 @@ public class ObjectDefinition extends SubNode
 									     != 75) {
 									if (i
 									    == 77) {
-									    anInt1934 = class39_sub6.getUword();
+									    anInt1934 = class39_sub6.getUint16();
 									    if (anInt1934 == 65535)
 										anInt1934 = -1;
-									    anInt1968 = class39_sub6.getUword();
+									    anInt1968 = class39_sub6.getUint16();
 									    if (anInt1968 == 65535)
 										anInt1968 = -1;
-									    int i_8_ = class39_sub6.getUbyte();
+									    int i_8_ = class39_sub6.getUint8();
 									    anIntArray1961 = new int[i_8_ + 1];
 									    for (int i_9_ = 0; i_9_ <= i_8_; i_9_++) {
-										anIntArray1961[i_9_] = class39_sub6.getUword();
+										anIntArray1961[i_9_] = class39_sub6.getUint16();
 										if (anIntArray1961[i_9_] == 65535)
 										    anIntArray1961[i_9_] = -1;
 									    }
 									} else if (i == 78) {
-									    anInt1945 = class39_sub6.getUword();
-									    anInt1924 = class39_sub6.getUbyte();
+									    anInt1945 = class39_sub6.getUint16();
+									    anInt1924 = class39_sub6.getUint8();
 									} else if (i == 79) {
-									    anInt1956 = class39_sub6.getUword();
-									    anInt1930 = class39_sub6.getUword();
-									    anInt1924 = class39_sub6.getUbyte();
-									    int i_10_ = class39_sub6.getUbyte();
+									    anInt1956 = class39_sub6.getUint16();
+									    anInt1930 = class39_sub6.getUint16();
+									    anInt1924 = class39_sub6.getUint8();
+									    int i_10_ = class39_sub6.getUint8();
 									    anIntArray1920 = new int[i_10_];
 									    for (int i_11_ = 0; i_10_ > i_11_; i_11_++)
-										anIntArray1920[i_11_] = class39_sub6.getUword();
+										anIntArray1920[i_11_] = class39_sub6.getUint16();
 									}
 								    } else
 									anInt1967
-									    = class39_sub6.getUbyte();
+									    = class39_sub6.getUint8();
 								} else
 								    anInt1922
-									= (class39_sub6.getWord
+									= (class39_sub6.getInt16
 									   ());
 							    } else
 								anInt1955
 								    = (class39_sub6
-									   .getWord
+									   .getInt16
 								       ());
 							} else
 							    anInt1933
 								= (class39_sub6
-								       .getWord
+								       .getInt16
 								   ());
 						    } else
 							anInt1944
 							    = (class39_sub6
-								   .getUword
+								   .getUint16
 							       ());
 						} else
 						    anInt1943
 							= class39_sub6
-							      .getUword();
+							      .getUint16();
 					    } else
 						anInt1962
 						    = class39_sub6
-							  .getUword();
+							  .getUint16();
 					} else {
 					    int i_12_
 						= class39_sub6
-						      .getUbyte();
+						      .getUint8();
 					    anIntArray1970 = new int[i_12_];
 					    anIntArray1938 = new int[i_12_];
 					    for (int i_13_ = 0; i_13_ < i_12_;
 						 i_13_++) {
 						anIntArray1938[i_13_]
 						    = class39_sub6
-							  .getUword();
+							  .getUint16();
 						anIntArray1970[i_13_]
 						    = class39_sub6
-							  .getUword();
+							  .getUint16();
 					    }
 					}
 				    } else
 					anInt1965
-					    = class39_sub6.getByte() * 5;
+					    = class39_sub6.getInt8() * 5;
 				} else
-				    anInt1974 = class39_sub6.getByte();
+				    anInt1974 = class39_sub6.getInt8();
 			    } else
 				aBoolean1929 = true;
 			} else
@@ -329,11 +329,11 @@ public class ObjectDefinition extends SubNode
 		    } else
 			aBoolean1951 = true;
 		} else
-		    anInt1941 = class39_sub6.getUbyte();
+		    anInt1941 = class39_sub6.getUint8();
 	    } else
 		aBoolean1928 = false;
 	} else
-	    anInt1925 = class39_sub6.getUbyte();
+	    anInt1925 = class39_sub6.getUint8();
 	if (bool) {
 	    /* empty */
 	}
@@ -544,7 +544,7 @@ public class ObjectDefinition extends SubNode
     
     public void decode(Buffer buffer) {
 	for (;;) {
-	    int opcode = buffer.getUbyte();
+	    int opcode = buffer.getUint8();
 	    if (opcode == 0)
 		break;
 	    decodeOpcode(false, buffer, opcode);

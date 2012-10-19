@@ -63,21 +63,21 @@ public class Player extends Mob
     
     public void parseAppearance(Buffer buffer) {
 	buffer.offset = 0;
-	int i_0_ = buffer.getUbyte();
-	anInt2509 = buffer.getByte();
+	int i_0_ = buffer.getUint8();
+	anInt2509 = buffer.getInt8();
 	int[] is = new int[12];
-	anInt2507 = buffer.getByte();
+	anInt2507 = buffer.getInt8();
 	anInt2526 = 0;
 	int i_1_ = -1;
 	for (int i_2_ = 0; i_2_ < 12; i_2_++) {
-	    int i_3_ = buffer.getUbyte();
+	    int i_3_ = buffer.getUint8();
 	    if (i_3_ == 0)
 		is[i_2_] = 0;
 	    else {
-		int i_4_ = buffer.getUbyte();
+		int i_4_ = buffer.getUint8();
 		is[i_2_] = i_4_ + (i_3_ << 8);
 		if (i_2_ == 0 && is[0] == 65535) {
-		    i_1_ = buffer.getUword();
+		    i_1_ = buffer.getUint16();
 		    break;
 		}
 		if (is[i_2_] >= 512) {
@@ -90,40 +90,40 @@ public class Player extends Mob
 	}
 	int[] is_6_ = new int[5];
 	for (int i_7_ = 0; i_7_ < 5; i_7_++) {
-	    int i_8_ = buffer.getUbyte();
+	    int i_8_ = buffer.getUint8();
 	    if (i_8_ < 0
 		|| (GroundItem.anIntArrayArray2233[i_7_].length
 		    <= i_8_))
 		i_8_ = 0;
 	    is_6_[i_7_] = i_8_;
 	}
-	anInt2317 = buffer.getUword();
+	anInt2317 = buffer.getUint16();
 	if (anInt2317 == 65535)
 	    anInt2317 = -1;
-	anInt2263 = buffer.getUword();
+	anInt2263 = buffer.getUint16();
 	if (anInt2263 == 65535)
 	    anInt2263 = -1;
 	anInt2280 = anInt2263;
-	anInt2264 = buffer.getUword();
+	anInt2264 = buffer.getUint16();
 	if (anInt2264 == 65535)
 	    anInt2264 = -1;
-	anInt2262 = buffer.getUword();
+	anInt2262 = buffer.getUint16();
 	if (anInt2262 == 65535)
 	    anInt2262 = -1;
-	anInt2257 = buffer.getUword();
+	anInt2257 = buffer.getUint16();
 	if (anInt2257 == 65535)
 	    anInt2257 = -1;
-	anInt2282 = buffer.getUword();
+	anInt2282 = buffer.getUint16();
 	if (anInt2282 == 65535)
 	    anInt2282 = -1;
-	anInt2293 = buffer.getUword();
+	anInt2293 = buffer.getUint16();
 	if (anInt2293 == 65535)
 	    anInt2293 = -1;
 	aClass3_2521
-	    = Deque.decodeBase37(buffer.getQword())
+	    = Deque.decodeBase37(buffer.getInt64())
 		  .formatUsername();
-	combatLevel = buffer.getUbyte();
-	anInt2508 = buffer.getUword();
+	combatLevel = buffer.getUint8();
+	anInt2508 = buffer.getUint16();
 	if (aClass45_2516 == null)
 	    aClass45_2516 = new PlayerApperance();
 	aClass45_2516.method925(is, i_0_ == 1, is_6_, 104, i_1_);
