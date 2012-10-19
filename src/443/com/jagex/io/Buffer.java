@@ -56,7 +56,7 @@ import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.utils.ISAAC;
 import com.jagex.graphics.JImage;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.utils.JString;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Node;
@@ -399,7 +399,7 @@ public class Buffer extends Node {
                                             if (class3.beginsWith(Class39_Sub12.aClass3_1485)) {
                                                 Class66.chatMessageJstr = (Class66.chatMessageJstr.substring(Class39_Sub12.aClass3_1485.getLength()));
                                                 i_37_ = 1;
-                                            } else if (!class3.beginsWith(JMouseListener.aClass3_795)) {
+                                            } else if (!class3.beginsWith(MouseListenerImpl.aClass3_795)) {
                                                 if (!class3.beginsWith(JSocket.aClass3_308)) {
                                                     if (class3.beginsWith((Npc.aClass3_2496))) {
                                                         i_37_ = 4;
@@ -432,7 +432,7 @@ public class Buffer extends Node {
                                                 }
                                             } else {
                                                 i_37_ = 2;
-                                                Class66.chatMessageJstr = (Class66.chatMessageJstr.substring(JMouseListener.aClass3_795.getLength()));
+                                                Class66.chatMessageJstr = (Class66.chatMessageJstr.substring(MouseListenerImpl.aClass3_795.getLength()));
                                             }
                                         } else {
                                             i_37_ = 0;

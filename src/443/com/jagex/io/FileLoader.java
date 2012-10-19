@@ -1,6 +1,6 @@
 package com.jagex.io;
 
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.io.CacheIO;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.world.entities.Projectile;
@@ -240,7 +240,7 @@ public class FileLoader extends AbstractFileLoader {
             for (int i_19_ = 0; archivesLoaded.length > i_19_;
                     i_19_++) {
                 if (amountFiles[i_19_] > 0) {
-                    JKeyListener.fetchArchive(true, localCache, this, i_19_);
+                    KeyListenerImpl.fetchArchive(true, localCache, this, i_19_);
                     anInt1300 = i_19_;
                 }
             }

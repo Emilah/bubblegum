@@ -2,7 +2,7 @@ package com.jagex.config;
 
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.Client;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;
@@ -400,7 +400,7 @@ public class ItemDefinition extends SubNode
 	    Class47.aClass39_Sub5_Sub10_Sub4_891 = null;
 	    Class39_Sub5_Sub14.aClass39_Sub5_Sub10_Sub4_1909 = null;
 	    Class65.aClass39_Sub5_Sub10_Sub4_1146 = null;
-	    JKeyListener.aClass39_Sub5_Sub10_Sub4_629 = null;
+	    KeyListenerImpl.aClass39_Sub5_Sub10_Sub4_629 = null;
 	    TraversalMap.aClass57_516 = null;
 	    Widget.anIntArray2109 = null;
 	    NameTable.aClass57_182 = null;

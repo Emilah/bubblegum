@@ -13,7 +13,7 @@ import com.jagex.world.Barrier;
 import com.jagex.world.Mob;
 import com.jagex.io.ArchiveWorker;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.Client;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
@@ -66,7 +66,7 @@ public abstract class Entity extends SubNode {
 
     public static void method487(boolean bool) {
         int i = ((Cache.localPlayer.fPositionX >> 7)
-                + JKeyListener.anInt618);
+                + KeyListenerImpl.anInt618);
         int i_0_ = ((Cache.localPlayer.fPositionY >> 7)
                 + Class65.anInt1145);
         Wall.anInt630 = 0;

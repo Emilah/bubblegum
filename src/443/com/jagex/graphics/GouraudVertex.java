@@ -14,7 +14,7 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
@@ -290,9 +290,9 @@ public class GouraudVertex
 		= Class39_Sub10.method867((byte) -79, class9,
 					  FrameBuffer.aClass3_2149,
 					  Class30.aClass3_533);
-	    JKeyListener.aClass39_Sub5_Sub10_Sub4_629
+	    KeyListenerImpl.aClass39_Sub5_Sub10_Sub4_629
 		= Class68.aClass39_Sub5_Sub10_Sub4_1188.method692();
-	    JKeyListener.aClass39_Sub5_Sub10_Sub4_629.method691();
+	    KeyListenerImpl.aClass39_Sub5_Sub10_Sub4_629.method691();
 	    Class65.aClass39_Sub5_Sub10_Sub4_1146
 		= ObjectDefinition.aClass39_Sub5_Sub10_Sub4_1927.method692();
 	    Class65.aClass39_Sub5_Sub10_Sub4_1146.method691();

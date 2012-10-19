@@ -13,8 +13,8 @@ import com.jagex.audio.AbstractMidiHandler;
 import com.jagex.audio.AudioHandler;
 import com.jagex.awt.JApplet;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.listeners.JKeyListener;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.config.ItemDefinition;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.Widget;
@@ -113,7 +113,7 @@ public final class LanguageUtils {
         PlayerApperance.aClass3_864 = Deque.aClass3_913;
         TextConstants.aClass3_1264 = StillGraphic.aClass3_2344;
         Class39_Sub4.aClass3_1334 = Class39_Sub5_Sub12.aClass3_1851;
-        Class14.aClass3_247 = JMouseListener.aClass3_790;
+        Class14.aClass3_247 = MouseListenerImpl.aClass3_790;
         Class39_Sub5_Sub6.aClass3_1751 = Class39_Sub5_Sub6.aClass3_1771;
         Class14.aClass3_236 = GroundItem.aClass3_2237;
         Class14.aClass3_272 = ItemDefinition.aClass3_1681;
@@ -154,7 +154,7 @@ public final class LanguageUtils {
         Mob.aClass3_2289 = Class39_Sub5_Sub18.aClass3_2131;
         Class39_Sub12.aClass3_1485 = TextConstants.aClass3_1722;
         Class34.aClass3_608 = Timer.aClass3_873;
-        Class14.aClass3_250 = JMouseListener.aClass3_790;
+        Class14.aClass3_250 = MouseListenerImpl.aClass3_790;
         Class25.aClass3_460 = Huffman.aClass3_763;
         StillGraphic.aClass3_2327 = Cache.aClass3_102;
         Class14.aClass3_261 = ItemDefinition.aClass3_1681;
@@ -243,7 +243,7 @@ public final class LanguageUtils {
         Class14.aClass3_257 = AbstractFileLoader.aClass3_131;
         Class44.aClass3_847 = Class53.aClass3_963;
         JImage.aClass3_1574 = Buffer.aClass3_1356;
-        JMouseListener.aClass3_795 = Class39_Sub10.aClass3_1425;
+        MouseListenerImpl.aClass3_795 = Class39_Sub10.aClass3_1425;
         Class39_Sub5_Sub4_Sub2.aClass3_2218 = Huffman.aClass3_747;
         Class14.aClass3_268 = ItemDefinition.aClass3_1681;
         Class14.aClass3_256 = Queue.aClass3_991;

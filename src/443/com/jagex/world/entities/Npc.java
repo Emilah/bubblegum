@@ -29,7 +29,7 @@ import com.jagex.script.ClientScript;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.utils.Huffman;
 import com.jagex.graphics.IndexedColorSprite;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.utils.JString;
 import com.jagex.config.Model;
 import com.jagex.utils.NameTable;
@@ -62,7 +62,7 @@ public class Npc extends Mob
     public static JString aClass3_2496;
     public static JString aClass3_2497;
     public static JString aClass3_2498;
-    public static JKeyListener aClass35_2499;
+    public static KeyListenerImpl aClass35_2499;
     public static IndexedColorSprite aClass39_Sub5_Sub10_Sub4_2500;
     public static BufferedFile[] indexFiles;
     public static JString aClass3_2502;
@@ -315,6 +315,6 @@ public class Npc extends Mob
 	aClass3_2504 = aClass3_2502;
 	aClass3_2498
 	    = JString.create(" hat sich eingeloggt)3");
-	aClass35_2499 = new JKeyListener();
+	aClass35_2499 = new KeyListenerImpl();
     }
 }

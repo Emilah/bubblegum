@@ -7,7 +7,7 @@ import com.jagex.od.OndemandRequest;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.io.FileLoader;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.utils.HashTable;

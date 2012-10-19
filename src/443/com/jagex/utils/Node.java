@@ -39,7 +39,7 @@ import com.jagex.script.ClientScript;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.io.FileLoader;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.config.NpcDefinition;
 import com.jagex.od.OndemandRequest;
 import com.jagex.world.entities.Projectile;
@@ -264,7 +264,7 @@ public class Node
 		i_14_ = 0;
 	    if (!Class39_Sub12.aBoolean1493) {
 		if (i_14_ == 1 && Class39_Sub5_Sub11.actionOffset > 0) {
-		    int types = (JKeyListener.actionTypes [Class39_Sub5_Sub11.actionOffset - 1]);
+		    int types = (KeyListenerImpl.actionTypes [Class39_Sub5_Sub11.actionOffset - 1]);
 		    if (types == 35 || types == 30 || types == 26
 			|| types == 25 || types == 49 || types == 28
 			|| types == 16 || types == 54 || types == 32

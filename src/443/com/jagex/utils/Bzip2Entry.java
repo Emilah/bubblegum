@@ -67,8 +67,8 @@ import com.jagex.script.ClientScript;
 import com.jagex.io.FileLoader;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.config.ItemDefinition;
-import com.jagex.awt.listeners.JKeyListener;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.od.OndemandRequest;
 import com.jagex.script.ScriptState;
@@ -421,7 +421,7 @@ public class Bzip2Entry {
             if (Class4.frameId == 77) {
                 long encodedUsername = Class39_Sub5_Sub11.incomingBuffer.getQword();
                 JString jstr = Class63.decodeHuffmans(Class39_Sub5_Sub11.incomingBuffer).method58(true);
-                JMouseListener.printMessage(6,Deque.decodeBase37(encodedUsername).formatUsername(), jstr);
+                MouseListenerImpl.printMessage(6,Deque.decodeBase37(encodedUsername).formatUsername(), jstr);
                 Class4.frameId = -1;
                 return true;
             }
@@ -635,12 +635,12 @@ public class Bzip2Entry {
                             Player.anIntArray2533[i_64_] = i_63_;
                             Class39_Sub14.updateTab = true;
                             if (i_63_ > 0) {
-                                JMouseListener.printMessage(5,Class66.blankString,
+                                MouseListenerImpl.printMessage(5,Class66.blankString,
                                         (Class39_Sub5_Sub11.join((new JString[]{class3,
                                             (Class39_Sub5_Sub6.aClass3_1769)}))));
                             }
                             if (i_63_ == 0) {
-                                JMouseListener.printMessage(5,Class66.blankString,
+                                MouseListenerImpl.printMessage(5,Class66.blankString,
                                         (Class39_Sub5_Sub11.join((new JString[]{class3,
                                             ScriptState.aClass3_442}))));
                             }
@@ -959,37 +959,37 @@ public class Bzip2Entry {
                 return true;
             }
             if (Class4.frameId == 96) {
-                JMouseListener.anInt787 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
-                if (JMouseListener.anInt787 == 1) {
+                MouseListenerImpl.anInt787 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
+                if (MouseListenerImpl.anInt787 == 1) {
                     Class30.anInt542 = Class39_Sub5_Sub11.incomingBuffer.getUword();
                 }
-                if (JMouseListener.anInt787 >= 2 && JMouseListener.anInt787 <= 6) {
-                    if (JMouseListener.anInt787 == 2) {
+                if (MouseListenerImpl.anInt787 >= 2 && MouseListenerImpl.anInt787 <= 6) {
+                    if (MouseListenerImpl.anInt787 == 2) {
                         Class43.anInt823 = 64;
                         Class39_Sub5_Sub18.anInt2124 = 64;
                     }
-                    if (JMouseListener.anInt787 == 3) {
+                    if (MouseListenerImpl.anInt787 == 3) {
                         Class39_Sub5_Sub18.anInt2124 = 64;
                         Class43.anInt823 = 0;
                     }
-                    if (JMouseListener.anInt787 == 4) {
+                    if (MouseListenerImpl.anInt787 == 4) {
                         Class39_Sub5_Sub18.anInt2124 = 64;
                         Class43.anInt823 = 128;
                     }
-                    if (JMouseListener.anInt787 == 5) {
+                    if (MouseListenerImpl.anInt787 == 5) {
                         Class39_Sub5_Sub18.anInt2124 = 0;
                         Class43.anInt823 = 64;
                     }
-                    if (JMouseListener.anInt787 == 6) {
+                    if (MouseListenerImpl.anInt787 == 6) {
                         Class39_Sub5_Sub18.anInt2124 = 128;
                         Class43.anInt823 = 64;
                     }
-                    JMouseListener.anInt787 = 2;
+                    MouseListenerImpl.anInt787 = 2;
                     JString.anInt1229 = Class39_Sub5_Sub11.incomingBuffer.getUword();
                     Class25.anInt471 = Class39_Sub5_Sub11.incomingBuffer.getUword();
                     Class66.anInt1158 = Class39_Sub5_Sub11.incomingBuffer.getUbyte();
                 }
-                if (JMouseListener.anInt787 == 10) {
+                if (MouseListenerImpl.anInt787 == 10) {
                     Class34.anInt607 = Class39_Sub5_Sub11.incomingBuffer.getUword();
                 }
                 Class4.frameId = -1;
@@ -1097,14 +1097,14 @@ public class Bzip2Entry {
                     JString class3 = Class63.decodeHuffmans(Class39_Sub5_Sub11.incomingBuffer).method58(true);
                     if (i_101_ != 2 && i_101_ != 3) {
                         if (i_101_ != 1) {
-                            JMouseListener.printMessage(3,Deque.decodeBase37(l).formatUsername(),
+                            MouseListenerImpl.printMessage(3,Deque.decodeBase37(l).formatUsername(),
                                     class3);
                         } else {
-                            JMouseListener.printMessage(7,(Class39_Sub5_Sub11.join(new JString[]{Class37.crown1Jstr, Deque.decodeBase37(l).formatUsername()})),
+                            MouseListenerImpl.printMessage(7,(Class39_Sub5_Sub11.join(new JString[]{Class37.crown1Jstr, Deque.decodeBase37(l).formatUsername()})),
                                     class3);
                         }
                     } else {
-                        JMouseListener.printMessage(7,(Class39_Sub5_Sub11.join((new JString[]{Class53.crown2Jstr, Deque.decodeBase37(l).formatUsername()}))), class3);
+                        MouseListenerImpl.printMessage(7,(Class39_Sub5_Sub11.join((new JString[]{Class53.crown2Jstr, Deque.decodeBase37(l).formatUsername()}))), class3);
                     }
                 }
                 Class4.frameId = -1;
@@ -1210,10 +1210,10 @@ public class Bzip2Entry {
                             }
                         }
                         if (!bool && Wall.anInt630 == 0) {
-                            JMouseListener.printMessage(8,class3_113_, ISAAC.aClass3_1085);
+                            MouseListenerImpl.printMessage(8,class3_113_, ISAAC.aClass3_1085);
                         }
-                    } else if (!message.startsWith(JMouseListener.chalRequestJstr)) {
-                        JMouseListener.printMessage(0, Class66.blankString, message);
+                    } else if (!message.startsWith(MouseListenerImpl.chalRequestJstr)) {
+                        MouseListenerImpl.printMessage(0, Class66.blankString, message);
                     } else {
                         JString class3_115_ = (message.substring(0, message.method80(22938, (TextConstants.colon))));
                         long l = class3_115_.encodeBase37();
@@ -1229,7 +1229,7 @@ public class Bzip2Entry {
                         if (!bool && Wall.anInt630 == 0) {
                             JString class3_117_ = (message.substring((message.method80(22938, (TextConstants.colon))
                                                              + 1), message.getLength() - 9));
-                            JMouseListener.printMessage(8,class3_115_, class3_117_);
+                            MouseListenerImpl.printMessage(8,class3_115_, class3_117_);
                         }
                     }
                 } else {
@@ -1244,7 +1244,7 @@ public class Bzip2Entry {
                         }
                     }
                     if (!bool && Wall.anInt630 == 0) {
-                        JMouseListener.printMessage(4,class3_118_, Class30.aClass3_535);
+                        MouseListenerImpl.printMessage(4,class3_118_, Class30.aClass3_535);
                     }
                 }
                 Class4.frameId = -1;
@@ -1474,7 +1474,7 @@ public class Bzip2Entry {
                     + (Cache.localPlayer.queueX[0]
                     + Class65.anInt1145)
                     + ","
-                    + (JKeyListener.anInt618
+                    + (KeyListenerImpl.anInt618
                     + (Cache.localPlayer.queueY[0]))
                     + " - ");
             for (int i_141_ = 0; i_141_ < Huffman.frameSize && i_141_ < 50;

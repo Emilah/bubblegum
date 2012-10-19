@@ -7,8 +7,8 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.od.OndemandRequest;
 import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.listeners.JMouseListener;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
@@ -110,7 +110,7 @@ public class ScriptState {
     public static void setObjectFileLoaders(boolean bool, AbstractFileLoader class9, AbstractFileLoader class9_2_,
             int i) {
         Deque.objectFileLoader = class9_2_;
-        JMouseListener.aBoolean785 = bool;
+        MouseListenerImpl.aBoolean785 = bool;
         Npc.modelFileLoader = class9;
     }
 
@@ -123,7 +123,7 @@ public class ScriptState {
     public static void handleMenuAction(int i, int i_3_) {
             int var1 = Class12.actionVars1[i];
             int var2 = Class43.actionVars2[i];
-            int type = JKeyListener.actionTypes[i];
+            int type = KeyListenerImpl.actionTypes[i];
             if (type >= 2000) {
                 type -= 2000;
             }
@@ -151,7 +151,7 @@ public class ScriptState {
             if (type == 1005) { //
                 Npc.method526(var0, var1, false, var2);
                 FrameBuffer.outgoingBuffer.putFrame(120);
-                FrameBuffer.outgoingBuffer.putWord(JKeyListener.anInt618 + var2);
+                FrameBuffer.outgoingBuffer.putWord(KeyListenerImpl.anInt618 + var2);
                 FrameBuffer.outgoingBuffer.putWord(Class65.anInt1145 + var1);
                 FrameBuffer.outgoingBuffer.putWord((var0 & 0x1ffff835) >> 14);
             }
@@ -160,7 +160,7 @@ public class ScriptState {
                 FrameBuffer.outgoingBuffer.putDwordB(Class41.useWithWidgetId);
                 FrameBuffer.outgoingBuffer.putWord(var1 + Class65.anInt1145);
                 FrameBuffer.outgoingBuffer.putWord(MouseRecorder.useWithAmountChildren);
-                FrameBuffer.outgoingBuffer.putWordLe(JKeyListener.anInt618 + var2);
+                FrameBuffer.outgoingBuffer.putWordLe(KeyListenerImpl.anInt618 + var2);
                 FrameBuffer.outgoingBuffer.putWord128(var0 >> 14 & 0x7fff);
             }
             if (type == 8 && Class39_Sub10.anInt1420 == -1) { //Continue
@@ -187,7 +187,7 @@ public class ScriptState {
                 AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                 FrameBuffer.outgoingBuffer.putFrame(149);
                 FrameBuffer.outgoingBuffer.putWordLe128(Class65.anInt1145 + var1);
-                FrameBuffer.outgoingBuffer.putWordLe128(JKeyListener.anInt618 + var2);
+                FrameBuffer.outgoingBuffer.putWordLe128(KeyListenerImpl.anInt618 + var2);
                 FrameBuffer.outgoingBuffer.putWord(var0);
             }
             if (type == 31 || type == 21 || type == 2 || type == 50) {
@@ -228,7 +228,7 @@ public class ScriptState {
                 FrameBuffer.outgoingBuffer.putFrame(252);
                 FrameBuffer.outgoingBuffer.putWordLe128(var0);
                 FrameBuffer.outgoingBuffer.putWordLe128(Class65.anInt1145 + var1);
-                FrameBuffer.outgoingBuffer.putWordLe128(JKeyListener.anInt618 + var2);
+                FrameBuffer.outgoingBuffer.putWordLe128(KeyListenerImpl.anInt618 + var2);
             }
             if (type == 28) {
                 FrameBuffer.outgoingBuffer.putFrame(0);
@@ -360,7 +360,7 @@ public class ScriptState {
                     AbstractMidiHandler.crossPositionX = Class39_Sub4.mouseClickPositionX;
                     FrameBuffer.outgoingBuffer.putFrame(114);
                     FrameBuffer.outgoingBuffer.putWordLe(Class63.useWithItemId);
-                    FrameBuffer.outgoingBuffer.putWord128(var2 + JKeyListener.anInt618);
+                    FrameBuffer.outgoingBuffer.putWord128(var2 + KeyListenerImpl.anInt618);
                     FrameBuffer.outgoingBuffer.putDword(Class39_Sub10.useWithItemWidgetId);
                     FrameBuffer.outgoingBuffer.putWord128(var1 + Class65.anInt1145);
                     FrameBuffer.outgoingBuffer.putWordLe(var0);
@@ -416,7 +416,7 @@ public class ScriptState {
                     Class4.crossMode = 2;
                     FrameBuffer.outgoingBuffer.putFrame(38);
                     FrameBuffer.outgoingBuffer.putWordLe(var0);
-                    FrameBuffer.outgoingBuffer.putWord128(JKeyListener.anInt618 + var2);
+                    FrameBuffer.outgoingBuffer.putWord128(KeyListenerImpl.anInt618 + var2);
                     FrameBuffer.outgoingBuffer.putWord(Class65.anInt1145 + var1);
                 }
                 if (type == 43) {
@@ -424,7 +424,7 @@ public class ScriptState {
                             var2);
                     FrameBuffer.outgoingBuffer.putFrame(69);
                     FrameBuffer.outgoingBuffer.putWordLe((var0 & 0x1fffcb21) >> 14);
-                    FrameBuffer.outgoingBuffer.putWord(var2 + JKeyListener.anInt618);
+                    FrameBuffer.outgoingBuffer.putWord(var2 + KeyListenerImpl.anInt618);
                     FrameBuffer.outgoingBuffer.putWord(Class65.anInt1145 + var1);
                 }
                 if (type == 48) { //widget on npc
@@ -470,7 +470,7 @@ public class ScriptState {
                         && Npc.method526(var0, var1, false,
                         var2)) { //item on object
                     FrameBuffer.outgoingBuffer.putFrame(195);
-                    FrameBuffer.outgoingBuffer.putWordLe128(var2 + JKeyListener.anInt618);
+                    FrameBuffer.outgoingBuffer.putWordLe128(var2 + KeyListenerImpl.anInt618);
                     FrameBuffer.outgoingBuffer.putWordLe((var0 & 0x1ffffabb) >> 14);
                     FrameBuffer.outgoingBuffer.putWord128(Class63.useWithItemId);
                     FrameBuffer.outgoingBuffer.putWordLe(Class23.useWithItemSlot);
@@ -481,7 +481,7 @@ public class ScriptState {
                     Widget class39_sub5_sub17 = Class37.getWidget(var2);
                     if (class39_sub5_sub17 != null
                             && class39_sub5_sub17.itemAmounts[var1] >= 100000) {
-                        JMouseListener.printMessage(0,Class66.blankString,
+                        MouseListenerImpl.printMessage(0,Class66.blankString,
                                 (Class39_Sub5_Sub11.join((new JString[]{AbstractImage.toJstr((class39_sub5_sub17.itemAmounts[var1])),
                                     Class30.aClass3_543,
                                     (Class26.getItemDefinition(var0).name)}))));
@@ -523,7 +523,7 @@ public class ScriptState {
                     FrameBuffer.outgoingBuffer.putFrame(202);
                     FrameBuffer.outgoingBuffer.putWord(var0 >> 14 & 0x7fff);
                     FrameBuffer.outgoingBuffer.putWord128(Class65.anInt1145 + var1);
-                    FrameBuffer.outgoingBuffer.putWordLe128(JKeyListener.anInt618 + var2);
+                    FrameBuffer.outgoingBuffer.putWordLe128(KeyListenerImpl.anInt618 + var2);
                 }
                 if (type == 19) {
                     FrameBuffer.outgoingBuffer.putFrame(178);
@@ -572,7 +572,7 @@ public class ScriptState {
                     Class26.crossFrameNum = 0;
                     Class62_Sub2.crossPositionY = Bzip2Entry.mouseClickPositionY;
                     FrameBuffer.outgoingBuffer.putFrame(85);
-                    FrameBuffer.outgoingBuffer.putWord128(var2 + JKeyListener.anInt618);
+                    FrameBuffer.outgoingBuffer.putWord128(var2 + KeyListenerImpl.anInt618);
                     FrameBuffer.outgoingBuffer.putWordLe128(Class65.anInt1145 + var1);
                     FrameBuffer.outgoingBuffer.putWordLe128(var0);
                 }
@@ -690,7 +690,7 @@ public class ScriptState {
                             }
                         }
                         if (!bool) {
-                            JMouseListener.printMessage(0,Class66.blankString,
+                            MouseListenerImpl.printMessage(0,Class66.blankString,
                                     (Class39_Sub5_Sub11.join((new JString[]{Buffer.aClass3_1365,
                                         class3_14_}))));
                         }
@@ -715,7 +715,7 @@ public class ScriptState {
                     FrameBuffer.outgoingBuffer.putFrame(64);
                     FrameBuffer.outgoingBuffer.putWordLe128(var0);
                     FrameBuffer.outgoingBuffer.putDwordB(Class41.useWithWidgetId);
-                    FrameBuffer.outgoingBuffer.putWord(JKeyListener.anInt618 + var2);
+                    FrameBuffer.outgoingBuffer.putWord(KeyListenerImpl.anInt618 + var2);
                     FrameBuffer.outgoingBuffer.putWordLe128(Class65.anInt1145 + var1);
                     FrameBuffer.outgoingBuffer.putWordLe128(MouseRecorder.useWithAmountChildren);
                 }
@@ -777,7 +777,7 @@ public class ScriptState {
                     Npc.method526(var0, var1, false,
                             var2);
                     FrameBuffer.outgoingBuffer.putFrame(47);
-                    FrameBuffer.outgoingBuffer.putWord128(JKeyListener.anInt618 + var2);
+                    FrameBuffer.outgoingBuffer.putWord128(KeyListenerImpl.anInt618 + var2);
                     FrameBuffer.outgoingBuffer.putWordLe128(var0 >> 14 & 0x7fff);
                     FrameBuffer.outgoingBuffer.putWord128(Class65.anInt1145 + var1);
                 }
@@ -851,7 +851,7 @@ public class ScriptState {
                     FrameBuffer.outgoingBuffer.putFrame(245);
                     FrameBuffer.outgoingBuffer.putWord(var1 + Class65.anInt1145);
                     FrameBuffer.outgoingBuffer.putWord(var0 >> 14 & 0x7fff);
-                    FrameBuffer.outgoingBuffer.putWord128(JKeyListener.anInt618 + var2);
+                    FrameBuffer.outgoingBuffer.putWord128(KeyListenerImpl.anInt618 + var2);
                 }
                 if (type == 41) {
                     Class39_Sub5_Sub12.anInt1848++;
@@ -958,7 +958,7 @@ public class ScriptState {
                         FrameBuffer.outgoingBuffer.putFrame(136);
                         FrameBuffer.outgoingBuffer.putWord128(var1 + Class65.anInt1145);
                         FrameBuffer.outgoingBuffer.putWordLe(var0);
-                        FrameBuffer.outgoingBuffer.putWord(var2 + JKeyListener.anInt618);
+                        FrameBuffer.outgoingBuffer.putWord(var2 + KeyListenerImpl.anInt618);
                     }
                     if (type == 29) {
                         TextureLoaderImpl.closeOverlays();
@@ -983,7 +983,7 @@ public class ScriptState {
                                     Class26.anInt473 = StillObject.viewOverlayId = GouraudVertex.anInt907;
                                 }
                             } else {
-                                JMouseListener.printMessage(0,Class66.blankString,
+                                MouseListenerImpl.printMessage(0,Class66.blankString,
                                         MouseRecorder.aClass3_572);
                             }
                         }

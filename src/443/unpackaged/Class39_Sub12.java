@@ -21,7 +21,7 @@ import com.jagex.config.ObjectDefinition;
 import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
@@ -184,7 +184,7 @@ public class Class39_Sub12 extends Node {
             } else if (Class26.loadingStage == 60) {
                 int i_8_ = BufferedFile.method230(true, Class66.fileLoader10,
                         TraversalMap.fileLoader8);
-                int i_9_ = JKeyListener.method345((byte) 64);
+                int i_9_ = KeyListenerImpl.method345((byte) 64);
                 if (i_9_ > i_8_) {
                     Class39_Sub5_Sub14.loadingMessage = (Class39_Sub5_Sub11.join((new JString[]{JApplet.aClass3_10,
                                 AbstractImage.toJstr(i_8_ * 100 / i_9_),

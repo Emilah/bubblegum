@@ -14,7 +14,7 @@ import com.jagex.config.VarbitDefinition;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
@@ -241,7 +241,7 @@ public abstract class Mob extends Entity {
         Class39_Sub5_Sub11.anInt1827 = 0;
         ScriptState.anInt448 = -1;
         Class4.frameId = -1;
-        JMouseListener.anInt787 = 0;
+        MouseListenerImpl.anInt787 = 0;
         FileLoader.anInt1283 = -1;
         Class39_Sub5_Sub11.incomingBuffer.offset = 0;
         ClassCheckRequest.systemUpdateTime = 0;

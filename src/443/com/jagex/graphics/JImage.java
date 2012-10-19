@@ -51,8 +51,8 @@ import com.jagex.io.FileLoader;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.utils.Huffman;
-import com.jagex.awt.listeners.JKeyListener;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.script.ScriptState;
 
 public class JImage extends AbstractImage
@@ -91,10 +91,10 @@ public class JImage extends AbstractImage
     }
 
     public static void method1012(int i) {
-        if (JMouseListener.anInt787 == 2) {
+        if (MouseListenerImpl.anInt787 == 2) {
             Class4.method104(Class66.anInt1158 * 2,
                     (Class39_Sub5_Sub18.anInt2124
-                    + (-JKeyListener.anInt618 + Class25.anInt471 << 7)),
+                    + (-KeyListenerImpl.anInt618 + Class25.anInt471 << 7)),
                     -119,
                     ((-Class65.anInt1145 + JString.anInt1229 << 7)
                     + Class43.anInt823));

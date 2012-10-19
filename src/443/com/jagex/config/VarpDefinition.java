@@ -8,7 +8,7 @@ import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.utils.NameTable;
 import com.jagex.io.BufferedFile;
 import com.jagex.graphics.DirectColorSprite;
@@ -127,7 +127,7 @@ public class VarpDefinition extends SubNode
 		if (i_5_ == 5)
 		    Class65.aClass39_Sub5_Sub10_Sub4_1146.method695(181, 8);
 		if (i_5_ == 6)
-		    JKeyListener.aClass39_Sub5_Sub10_Sub4_629.method695(209, 9);
+		    KeyListenerImpl.aClass39_Sub5_Sub10_Sub4_629.method695(209, 9);
 	    }
 	    if (is[0] != -1 && i_4_ != 0)
 		TextureLoaderImpl.aClass39_Sub5_Sub10_Sub4Array1243[0].method695(29, 13);

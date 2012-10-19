@@ -8,7 +8,7 @@ import com.jagex.TextConstants;
 import com.jagex.config.VarbitDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.config.NpcDefinition;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.BitmapFont;

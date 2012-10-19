@@ -4,7 +4,7 @@ package com.jagex.config;
  * Visit http://jode.sourceforge.net/
  */
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.utils.NameTable;
 import com.jagex.io.BufferedFile;
 import com.jagex.world.entities.GroundItem;
@@ -133,7 +133,7 @@ public class VarbitDefinition extends SubNode
 	if (TextureLoaderImpl.audioHandler != null) {
 	    if (GroundItem.anInt2239 < 0) {
 		if (ArchiveRequest.anInt1415 != 0) {
-		    JKeyListener.aBoolean628 = bool;
+		    KeyListenerImpl.aBoolean628 = bool;
 		    Class39_Sub5_Sub6.aByteArray1768 = is;
 		    Class39_Sub5_Sub18.anInt2120 = i;
 		} else {
@@ -154,7 +154,7 @@ public class VarbitDefinition extends SubNode
                 }
 		Class39_Sub5_Sub6.aByteArray1768 = is;
 		Class39_Sub5_Sub18.anInt2120 = i;
-		JKeyListener.aBoolean628 = bool;
+		KeyListenerImpl.aBoolean628 = bool;
 	    }
 	}
     }

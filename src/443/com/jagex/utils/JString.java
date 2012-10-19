@@ -45,7 +45,7 @@ import unpackaged.Class67;
 import com.jagex.script.ClientScript;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.config.ItemDefinition;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.world.entities.Projectile;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.config.Widget;
@@ -115,7 +115,7 @@ public class JString {
             } else {
                 Class33.actionNames[Class39_Sub5_Sub11.actionOffset] = Class39_Sub5_Sub11.join((new JString[]{action, Class53.spaceJstr, name}));
             }
-            JKeyListener.actionTypes[Class39_Sub5_Sub11.actionOffset] = type;
+            KeyListenerImpl.actionTypes[Class39_Sub5_Sub11.actionOffset] = type;
             NameTable.actionVars0[Class39_Sub5_Sub11.actionOffset] = var0;
             Class12.actionVars1[Class39_Sub5_Sub11.actionOffset] = var1;
             Class43.actionVars2[Class39_Sub5_Sub11.actionOffset] = var2;
@@ -852,7 +852,7 @@ public class JString {
     public static void method95(int i) {
         if (Class30.anInt534 == 0) {
             Class39_Sub5_Sub11.actionOffset = 1;
-            JKeyListener.actionTypes[0] = 1002;
+            KeyListenerImpl.actionTypes[0] = 1002;
             Class33.actionNames[0] = Player.cancelJstr;
             if (SubNode.screenWidgetId != -1) {
                 GouraudVertex.anInt904 = -1;
@@ -947,14 +947,14 @@ public class JString {
                     bool = true;
                     for (int i_99_ = 0;
                             i_99_ < Class39_Sub5_Sub11.actionOffset - 1; i_99_++) {
-                        if (JKeyListener.actionTypes[i_99_] < 1000 && JKeyListener.actionTypes[i_99_ + 1] > 1000) {
+                        if (KeyListenerImpl.actionTypes[i_99_] < 1000 && KeyListenerImpl.actionTypes[i_99_ + 1] > 1000) {
                             bool = false;
                             JString class3 = Class33.actionNames[i_99_];
                             Class33.actionNames[i_99_] = Class33.actionNames[i_99_ + 1];
                             Class33.actionNames[i_99_ + 1] = class3;
-                            int type = JKeyListener.actionTypes[i_99_];
-                            JKeyListener.actionTypes[i_99_] = JKeyListener.actionTypes[i_99_ + 1];
-                            JKeyListener.actionTypes[i_99_ + 1] = type;
+                            int type = KeyListenerImpl.actionTypes[i_99_];
+                            KeyListenerImpl.actionTypes[i_99_] = KeyListenerImpl.actionTypes[i_99_ + 1];
+                            KeyListenerImpl.actionTypes[i_99_ + 1] = type;
                             type = Class12.actionVars1[i_99_];
                             Class12.actionVars1[i_99_] = Class12.actionVars1[i_99_ + 1];
                             Class12.actionVars1[i_99_ + 1] = type;

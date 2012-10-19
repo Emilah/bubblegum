@@ -14,7 +14,7 @@ import com.jagex.io.ArchiveRequest;
 import com.jagex.io.ArchiveWorker;
 import com.jagex.config.VarbitDefinition;
 import com.jagex.config.ItemDefinition;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;
@@ -131,12 +131,12 @@ public class Class26 {
                     Queue.anInt987 = 0;
                 }
                 Class39_Sub5_Sub6.aByteArray1768 = is;
-                JKeyListener.aBoolean628 = bool;
+                KeyListenerImpl.aBoolean628 = bool;
                 Class39_Sub5_Sub18.anInt2120 = i_3_;
             } else if (ArchiveRequest.anInt1415 != 0) {
                 Class39_Sub5_Sub6.aByteArray1768 = is;
                 Class39_Sub5_Sub18.anInt2120 = i_3_;
-                JKeyListener.aBoolean628 = bool;
+                KeyListenerImpl.aBoolean628 = bool;
             } else {
                 ArchiveRequest.method857(i_3_, bool, is, false);
             }
@@ -357,7 +357,7 @@ public class Class26 {
             }
             FrameBuffer.outgoingBuffer.putWordLe128(i_35_ + Class65.anInt1145);
             FrameBuffer.outgoingBuffer.putByteA(Class13.activeKeys[82] ? 1 : 0);
-            FrameBuffer.outgoingBuffer.putWordLe(JKeyListener.anInt618 + i_34_);
+            FrameBuffer.outgoingBuffer.putWordLe(KeyListenerImpl.anInt618 + i_34_);
             Class30.anInt544 = JString.anIntArray1239[0];
             ArchiveRequest.anInt1407 = Widget.anIntArray2112[0];
             for (int i_36_ = 1; i_36_ < amountSteps; i_36_++) {

@@ -3,7 +3,7 @@ package com.jagex.awt;
 /* Applet_Sub1 - Decompiled by JODE
  * Visit http://jode.sourceforge.net/
  */
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.io.BufferedFile;
 import com.jagex.utils.HashTable;
 import com.jagex.graphics.AbstractImage;
@@ -413,12 +413,12 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
                     != 126) {
                 if (class39_sub5_sub4_sub4_sub2
                         == Cache.localPlayer) {
-                    JMouseListener.printMessage(2,class39_sub5_sub4_sub4_sub2.aClass3_2521,
+                    MouseListenerImpl.printMessage(2,class39_sub5_sub4_sub4_sub2.aClass3_2521,
                             class39_sub5_sub4_sub4_sub2.aClass3_2295);
                 }
             } else {
                 class39_sub5_sub4_sub4_sub2.aClass3_2295 = class39_sub5_sub4_sub4_sub2.aClass3_2295.substring(1);
-                JMouseListener.printMessage(2,class39_sub5_sub4_sub4_sub2.aClass3_2521,
+                MouseListenerImpl.printMessage(2,class39_sub5_sub4_sub4_sub2.aClass3_2521,
                         class39_sub5_sub4_sub4_sub2.aClass3_2295);
             }
             class39_sub5_sub4_sub4_sub2.anInt2271 = 0;
@@ -471,14 +471,14 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
                     class39_sub5_sub4_sub4_sub2.anInt2296 = i_25_ >> 8;
                     class39_sub5_sub4_sub4_sub2.anInt2271 = i_25_ & 0xff;
                     if (i_26_ == 2 || i_26_ == 3) {
-                        JMouseListener.printMessage(1,(Class39_Sub5_Sub11.join((new JString[]{Class53.crown2Jstr,
+                        MouseListenerImpl.printMessage(1,(Class39_Sub5_Sub11.join((new JString[]{Class53.crown2Jstr,
                                     (class39_sub5_sub4_sub4_sub2.aClass3_2521)}))),
                                 class3);
                     } else if (i_26_ != 1) {
-                        JMouseListener.printMessage(2,(class39_sub5_sub4_sub4_sub2.aClass3_2521),
+                        MouseListenerImpl.printMessage(2,(class39_sub5_sub4_sub4_sub2.aClass3_2521),
                                 class3);
                     } else {
-                        JMouseListener.printMessage(1,(Class39_Sub5_Sub11.join((new JString[]{Class37.crown1Jstr,
+                        MouseListenerImpl.printMessage(1,(Class39_Sub5_Sub11.join((new JString[]{Class37.crown1Jstr,
                                     (class39_sub5_sub4_sub4_sub2.aClass3_2521)}))),
                                 class3);
                     }
@@ -672,13 +672,13 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
             method21((byte) 122);
         }
         long l = Class2.getSystemTime();
-        long l_51_ = ClassCheckRequest.aLongArray1374[JMouseListener.anInt793];
-        ClassCheckRequest.aLongArray1374[JMouseListener.anInt793] = l;
+        long l_51_ = ClassCheckRequest.aLongArray1374[MouseListenerImpl.anInt793];
+        ClassCheckRequest.aLongArray1374[MouseListenerImpl.anInt793] = l;
         if (l_51_ != 0L && l_51_ < l) {
             int i_52_ = (int) (l + -l_51_);
             Class39_Sub5_Sub18.anInt2119 = (32000 + (i_52_ >> 1)) / i_52_;
         }
-        JMouseListener.anInt793 = JMouseListener.anInt793 + 1 & 0x1f;
+        MouseListenerImpl.anInt793 = MouseListenerImpl.anInt793 + 1 & 0x1f;
         if (PlayerApperance.anInt855++ > 50) {
             PlayerApperance.anInt855 -= 50;
             ClientScript.aBoolean1690 = true;

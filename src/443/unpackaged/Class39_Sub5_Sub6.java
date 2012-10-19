@@ -1,7 +1,7 @@
 package unpackaged;
 
 import com.jagex.config.Model;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.utils.HashTable;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.JImage;
@@ -109,7 +109,7 @@ public class Class39_Sub5_Sub6 extends SubNode
 	if (i_5_ > 6)
 	    return Projectile.aClass3_2207;
 	if (i_5_ > 3)
-	    return JMouseListener.aClass3_794;
+	    return MouseListenerImpl.aClass3_794;
 	if (i_5_ > 0)
 	    return Class2.aClass3_45;
 	return HashTable.yelPrefixJstr;

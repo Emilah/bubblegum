@@ -13,7 +13,7 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.config.ItemDefinition;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
@@ -945,7 +945,7 @@ public class ClientScript extends SubNode
 	    }
 	    for (int i_119_ = 0; i_119_ < Class39_Sub5_Sub11.actionOffset;
 		 i_119_++) {
-		if (JKeyListener.actionTypes[i_119_] == 33) {
+		if (KeyListenerImpl.actionTypes[i_119_] == 33) {
 		    Class33.actionNames[i_119_]
 			= Class39_Sub5_Sub11.join((new JString[]
 							{ (Class39_Sub4

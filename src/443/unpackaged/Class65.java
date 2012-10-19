@@ -12,7 +12,7 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.sign.Signlink;
 import com.jagex.config.ItemDefinition;
 import com.jagex.io.AbstractFileLoader;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.awt.JApplet;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;
@@ -150,18 +150,18 @@ public class Class65 {
     public static void addIgnore(long encodedUsername) {
         if (encodedUsername != 0L) {
             if (Class15.amountIgnores >= 100) {
-                JMouseListener.printMessage(0, Class66.blankString, Class23.ignoreListFullJstr);
+                MouseListenerImpl.printMessage(0, Class66.blankString, Class23.ignoreListFullJstr);
             } else {
                 JString class3 = Deque.decodeBase37(encodedUsername).formatUsername();
                 for (int i_15_ = 0; Class15.amountIgnores > i_15_; i_15_++) {
                     if (encodedUsername == Class39_Sub5_Sub9.ignoreUsernames[i_15_]) {
-                        JMouseListener.printMessage(0, Class66.blankString, (Class39_Sub5_Sub11.join((new JString[]{class3, SubNode.aClass3_1343}))));
+                        MouseListenerImpl.printMessage(0, Class66.blankString, (Class39_Sub5_Sub11.join((new JString[]{class3, SubNode.aClass3_1343}))));
                         return;
                     }
                 }
                 for (int i_16_ = 0; i_16_ < Class4.anInt62; i_16_++) {
                     if (encodedUsername == JApplet.aLongArray2[i_16_]) {
-                        JMouseListener.printMessage(0,Class66.blankString, (Class39_Sub5_Sub11.join((new JString[]{StillObject.aClass3_1467, class3, (JRuntimeException.aClass3_1214)}))));
+                        MouseListenerImpl.printMessage(0,Class66.blankString, (Class39_Sub5_Sub11.join((new JString[]{StillObject.aClass3_1467, class3, (JRuntimeException.aClass3_1214)}))));
                         return;
                     }
                 }

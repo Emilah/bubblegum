@@ -8,7 +8,7 @@ import com.jagex.io.ArchiveWorker;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
@@ -47,7 +47,7 @@ import com.jagex.world.entities.player.PlayerApperance;
 public class ItemContainer extends Node {
 
     public static int localId = -1;
-    public static JMouseListener aClass42_1502;
+    public static MouseListenerImpl aClass42_1502;
     public static JString aClass3_1503;
     public int[] itemAmts = new int[1];
     public int[] itemIds = {-1};
@@ -289,7 +289,7 @@ public class ItemContainer extends Node {
     static {
         aClass3_1503 = aClass3_1506;
         aClass3_1507 = JString.create("Name eingeben:");
-        aClass42_1502 = new JMouseListener();
+        aClass42_1502 = new MouseListenerImpl();
         aClass3_1508 = JString.create("Drop");
         dropJstr = aClass3_1508;
     }

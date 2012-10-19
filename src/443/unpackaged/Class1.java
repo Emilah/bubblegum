@@ -12,8 +12,8 @@ import com.jagex.world.Mob;
 import com.jagex.io.ArchiveWorker;
 import com.jagex.config.NpcDefinition;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.listeners.JMouseListener;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.DrawingArea;
@@ -189,7 +189,7 @@ public class Class1
 		    int i_8_ = 30;
 		    if (class39_sub5_sub4_sub4_sub2.anInt2509 != -1
 			|| class39_sub5_sub4_sub4_sub2.anInt2507 != -1) {
-			JKeyListener.method346((byte) -11,
+			KeyListenerImpl.method346((byte) -11,
 					  (class39_sub5_sub4_sub4.anInt2308
 					   + 15),
 					  class39_sub5_sub4_sub4);
@@ -212,9 +212,9 @@ public class Class1
 			    }
 			}
 		    }
-		    if (i >= 0 && JMouseListener.anInt787 == 10
+		    if (i >= 0 && MouseListenerImpl.anInt787 == 10
 			&& Class34.anInt607 == anIntArray40[i]) {
-			JKeyListener.method346((byte) -11,
+			KeyListenerImpl.method346((byte) -11,
 					  (class39_sub5_sub4_sub4.anInt2308
 					   + 15),
 					  class39_sub5_sub4_sub4);
@@ -232,7 +232,7 @@ public class Class1
 		    if (class39_sub5_sub13.anInt1871 >= 0
 			&& (AudioHandler.aClass39_Sub5_Sub10_Sub3Array1106.length
 			    > class39_sub5_sub13.anInt1871)) {
-			JKeyListener.method346((byte) -11,
+			KeyListenerImpl.method346((byte) -11,
 					  (class39_sub5_sub4_sub4.anInt2308
 					   + 15),
 					  class39_sub5_sub4_sub4);
@@ -241,11 +241,11 @@ public class Class1
 				[class39_sub5_sub13.anInt1871].method670
 				(Class14.anInt224 - 12, Class53.anInt962 - 30);
 		    }
-		    if (JMouseListener.anInt787 == 1
+		    if (MouseListenerImpl.anInt787 == 1
 			&& (Entity.anIntArray1734
 			    [i - TraversalMap.anInt515]) == Class30.anInt542
 			&& Class2.logicCycle % 20 < 10) {
-			JKeyListener.method346((byte) -11,
+			KeyListenerImpl.method346((byte) -11,
 					  (class39_sub5_sub4_sub4.anInt2308
 					   + 15),
 					  class39_sub5_sub4_sub4);
@@ -263,7 +263,7 @@ public class Class1
 					       (((Player)
 						 class39_sub5_sub4_sub4)
 						.aClass3_2521))))) {
-		    JKeyListener.method346((byte) -11,
+		    KeyListenerImpl.method346((byte) -11,
 				      class39_sub5_sub4_sub4.anInt2308,
 				      class39_sub5_sub4_sub4);
 		    if (Class14.anInt224 > -1 && anInt36 > Class43.anInt829) {
@@ -286,7 +286,7 @@ public class Class1
 		    }
 		}
 		if (Class2.logicCycle < class39_sub5_sub4_sub4.anInt2252) {
-		    JKeyListener.method346((byte) -11,
+		    KeyListenerImpl.method346((byte) -11,
 				      class39_sub5_sub4_sub4.anInt2308 + 15,
 				      class39_sub5_sub4_sub4);
 		    if (Class14.anInt224 > -1) {
@@ -306,7 +306,7 @@ public class Class1
 		for (int i_10_ = 0; i_10_ < 4; i_10_++) {
 		    if (class39_sub5_sub4_sub4.anIntArray2286[i_10_]
 			> Class2.logicCycle) {
-			JKeyListener.method346((byte) -11,
+			KeyListenerImpl.method346((byte) -11,
 					  class39_sub5_sub4_sub4.anInt2308 / 2,
 					  class39_sub5_sub4_sub4);
 			if (Class14.anInt224 > -1) {

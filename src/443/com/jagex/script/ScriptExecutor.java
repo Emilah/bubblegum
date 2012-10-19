@@ -8,7 +8,7 @@
 package com.jagex.script;
 
 import com.jagex.Client;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.config.ItemDefinition;
 import com.jagex.config.Widget;
 import com.jagex.graphics.AbstractImage;
@@ -598,10 +598,10 @@ public class ScriptExecutor {
                                                             } else if (opcode == 4104) {
                                                                 int i_113_ = intStack[--intStackPointer];
                                                                 long l = ((long) i_113_ + 11745L) * 86400000L;
-                                                                JMouseListener.aCalendar786.setTime(new Date(l));
-                                                                int i_114_ = JMouseListener.aCalendar786.get(5);
-                                                                int i_115_ = JMouseListener.aCalendar786.get(2);
-                                                                int i_116_ = JMouseListener.aCalendar786.get(1);
+                                                                MouseListenerImpl.aCalendar786.setTime(new Date(l));
+                                                                int i_114_ = MouseListenerImpl.aCalendar786.get(5);
+                                                                int i_115_ = MouseListenerImpl.aCalendar786.get(2);
+                                                                int i_116_ = MouseListenerImpl.aCalendar786.get(1);
                                                                 strStack[strStackPointer++] = (Class39_Sub5_Sub11.join(new JString[]{AbstractImage.toJstr(i_114_), Class12.aClass3_191, Class43.aClass3Array808[i_115_], Class12.aClass3_191, AbstractImage.toJstr(i_116_)}));
                                                             } else if (opcode == 4105) {
                                                                 strStackPointer -= 2;
@@ -652,7 +652,7 @@ public class ScriptExecutor {
                                                         }
                                                     } else if (opcode == 3100) {
                                                         JString class3 = strStack[--strStackPointer];
-                                                        JMouseListener.printMessage(0, Class39_Sub12.aClass3_1492, class3);
+                                                        MouseListenerImpl.printMessage(0, Class39_Sub12.aClass3_1492, class3);
                                                     } else if (opcode == 3101) {
                                                         intStackPointer -= 2;
                                                         MsTimer.method944(Cache.localPlayer, intStack[intStackPointer], -12, intStack[intStackPointer + 1]);

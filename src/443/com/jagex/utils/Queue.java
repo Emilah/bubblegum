@@ -23,7 +23,7 @@ import com.jagex.io.AbstractFileLoader;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.graphics.JImage;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.world.entities.Npc;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.world.entities.Player;
@@ -119,8 +119,8 @@ public class Queue {
                         - Class65.anInt1145))
                         * 64) + class39_sub5_sub4_sub4.fPositionY;
                 int i_4_ = (class39_sub5_sub4_sub4.fPositionX
-                        - (-JKeyListener.anInt618 + class39_sub5_sub4_sub4.anInt2300
-                        - JKeyListener.anInt618) * 64);
+                        - (-KeyListenerImpl.anInt618 + class39_sub5_sub4_sub4.anInt2300
+                        - KeyListenerImpl.anInt618) * 64);
                 if (i != 0 || i_4_ != 0) {
                     class39_sub5_sub4_sub4.anInt2294 = (int) (Math.atan2((double) i, (double) i_4_)
                             * 325.949) & 0x7ff;

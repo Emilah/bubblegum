@@ -109,8 +109,8 @@ import com.jagex.script.ClientScript;
 import com.jagex.io.FileLoader;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.config.ItemDefinition;
-import com.jagex.awt.listeners.JKeyListener;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.config.Model;
 import com.jagex.config.NpcDefinition;
 import com.jagex.config.ObjectDefinition;
@@ -264,7 +264,7 @@ public class Client extends JApplet {
                 }
                 if (Class39_Sub5_Sub11.incomingBuffer.offset == 8) {
                     Class39_Sub5_Sub11.incomingBuffer.offset = 0;
-                    JKeyListener.isaacSeed = Class39_Sub5_Sub11.incomingBuffer.getQword();
+                    KeyListenerImpl.isaacSeed = Class39_Sub5_Sub11.incomingBuffer.getQword();
                     loginStage = 5;
                 }
             }
@@ -273,8 +273,8 @@ public class Client extends JApplet {
                 int[] seeds = new int[4];
                 seeds[0] = (int) (Math.random() * 9.9999999E7);
                 seeds[1] = (int) (Math.random() * 9.9999999E7);
-                seeds[3] = (int) JKeyListener.isaacSeed;
-                seeds[2] = (int) (JKeyListener.isaacSeed >> 32);
+                seeds[3] = (int) KeyListenerImpl.isaacSeed;
+                seeds[2] = (int) (KeyListenerImpl.isaacSeed >> 32);
                 FrameBuffer.outgoingBuffer.putByte(10);
                 FrameBuffer.outgoingBuffer.putDword(seeds[0]);
                 FrameBuffer.outgoingBuffer.putDword(seeds[1]);
@@ -417,12 +417,12 @@ public class Client extends JApplet {
             Class26.method294(false, NameTable.aClass3_190, null, 118);
             int i_5_ = Class65.anInt1145;
             Class65.anInt1145 = mSectorX * 8 - 48;
-            int i_6_ = JKeyListener.anInt618;
+            int i_6_ = KeyListenerImpl.anInt618;
             int i_7_ = -i_5_ + Class65.anInt1145;
             i_5_ = Class65.anInt1145;
-            JKeyListener.anInt618 = mSectorY * 8 - 48;
-            int i_8_ = -i_6_ + JKeyListener.anInt618;
-            i_6_ = JKeyListener.anInt618;
+            KeyListenerImpl.anInt618 = mSectorY * 8 - 48;
+            int i_8_ = -i_6_ + KeyListenerImpl.anInt618;
+            i_6_ = KeyListenerImpl.anInt618;
             for (int i_9_ = 0; i_9_ < 32768; i_9_++) {
                 Npc npc = GroundItem.npcs[i_9_];
                 if (npc != null) {
@@ -624,8 +624,8 @@ public class Client extends JApplet {
         Class50.method973(2);
         Class32.method324(239);
         Class17.method223();
-        JKeyListener.method344(-13461);
-        JMouseListener.method903(-6088);
+        KeyListenerImpl.method344(-13461);
+        MouseListenerImpl.method903(-6088);
         Class2.method53(0);
         SubNode.method462(i ^ i);
         AbstractFileLoader.method150(29320);

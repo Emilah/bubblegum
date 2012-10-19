@@ -10,8 +10,8 @@ import com.jagex.config.ItemDefinition;
 import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.listeners.JMouseListener;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.awt.JApplet;
 import com.jagex.utils.NameTable;
 import com.jagex.graphics.BitmapFont;
@@ -721,8 +721,8 @@ public class Widget extends SubNode {
                     }
                 }
             }
-            if (JMouseListener.anInt787 != 0 && Class2.logicCycle % 20 < 10) {
-                if (JMouseListener.anInt787 == 1 && Class30.anInt542 >= 0
+            if (MouseListenerImpl.anInt787 != 0 && Class2.logicCycle % 20 < 10) {
+                if (MouseListenerImpl.anInt787 == 1 && Class30.anInt542 >= 0
                         && ((GroundItem.npcs).length
                         > Class30.anInt542)) {
                     Npc class39_sub5_sub4_sub4_sub1 = (GroundItem.npcs[Class30.anInt542]);
@@ -737,8 +737,8 @@ public class Widget extends SubNode {
                                 i_29_, i_28_);
                     }
                 }
-                if (JMouseListener.anInt787 == 2) {
-                    i_28_ = ((Class25.anInt471 - JKeyListener.anInt618) * 4 + 2
+                if (MouseListenerImpl.anInt787 == 2) {
+                    i_28_ = ((Class25.anInt471 - KeyListenerImpl.anInt618) * 4 + 2
                             - (Cache.localPlayer.fPositionX
                             / 32));
                     i_29_ = ((-Class65.anInt1145 + JString.anInt1229) * 4 + 2
@@ -748,7 +748,7 @@ public class Widget extends SubNode {
                             Wall.aClass39_Sub5_Sub10_Sub3Array648[1], i_29_,
                             i_28_);
                 }
-                if (JMouseListener.anInt787 == 10 && Class34.anInt607 >= 0
+                if (MouseListenerImpl.anInt787 == 10 && Class34.anInt607 >= 0
                         && (Class14.players.length
                         > Class34.anInt607)) {
                     Player class39_sub5_sub4_sub4_sub2 = (Class14.players[Class34.anInt607]);

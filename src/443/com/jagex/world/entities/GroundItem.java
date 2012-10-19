@@ -31,7 +31,7 @@ import com.jagex.io.FileLoader;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.config.Model;
 import com.jagex.od.OndemandRequest;
 import com.jagex.config.Widget;

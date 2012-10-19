@@ -3,7 +3,7 @@ package unpackaged;
 import com.jagex.world.entities.StillObject;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Node;
 import com.jagex.utils.JString;
@@ -33,7 +33,7 @@ public class Class33
     public static boolean method327(int i, byte i_0_) {
 	if (i < 0)
 	    return false;
-	int i_1_ = JKeyListener.actionTypes[i];
+	int i_1_ = KeyListenerImpl.actionTypes[i];
 	if (i_1_ >= 2000)
 	    i_1_ -= 2000;
 	if (i_1_ == 31)

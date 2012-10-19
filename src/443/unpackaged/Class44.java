@@ -7,7 +7,7 @@ import com.jagex.config.Widget;
 import com.jagex.world.World;
 import com.jagex.io.ArchiveRequest;
 import com.jagex.config.VarbitDefinition;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.utils.JString;
@@ -68,7 +68,7 @@ public class Class44
 			    TextureLoaderImpl.audioHandler.updateSequencer
 				(Class39_Sub5_Sub18.anInt2120,
 				 Class39_Sub5_Sub6.aByteArray1768, (byte) 126,
-				 JKeyListener.aBoolean628);
+				 KeyListenerImpl.aBoolean628);
 			    Class39_Sub5_Sub6.aByteArray1768 = null;
 			}
 			Class65.anInt1141 = 0;

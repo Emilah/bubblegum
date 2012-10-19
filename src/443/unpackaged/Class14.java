@@ -9,7 +9,7 @@ import com.jagex.utils.JRuntimeException;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.io.CacheIO;
 import com.jagex.utils.Bzip2Decompressor;
 import com.jagex.utils.HashTable;
@@ -169,7 +169,7 @@ public class Class14
 							    (byte) -93,
 							    i_24_ & 0x7),
 			     0,
-			     JMouseListener.method901(i_15_, i_23_ & 0x7, i_24_ & 0x7,
+			     MouseListenerImpl.method901(i_15_, i_23_ & 0x7, i_24_ & 0x7,
 					       true) + i_16_,
 			     i_14_);
 		    else

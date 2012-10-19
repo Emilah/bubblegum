@@ -9,8 +9,8 @@ import com.jagex.config.Widget;
 import com.jagex.utils.MsTimer;
 import com.jagex.audio.AbstractMidiHandler;
 import com.jagex.io.ArchiveRequest;
-import com.jagex.awt.listeners.JMouseListener;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.awt.JApplet;
 import com.jagex.utils.HashTable;
 import com.jagex.graphics.AbstractImage;
@@ -48,13 +48,13 @@ public class Class68
 	if (l != 0L) {
 	    if (Class4.anInt62 >= 100 && Class63.isMember != 1
 		|| Class4.anInt62 >= 200)
-		JMouseListener.printMessage(0,Class66.blankString, Class1.aClass3_44);
+		MouseListenerImpl.printMessage(0,Class66.blankString, Class1.aClass3_44);
 	    else {
 		JString class3
 		    = Deque.decodeBase37(l).formatUsername();
 		for (int i_0_ = 0; Class4.anInt62 > i_0_; i_0_++) {
 		    if (JApplet.aLongArray2[i_0_] == l) {
-			JMouseListener.printMessage(0,Class66.blankString,
+			MouseListenerImpl.printMessage(0,Class66.blankString,
 					  (Class39_Sub5_Sub11.join
 					   (new JString[] { class3,
 							   (VarpDefinition
@@ -64,7 +64,7 @@ public class Class68
 		}
 		for (int i_1_ = 0; i_1_ < Class15.amountIgnores; i_1_++) {
 		    if (l == Class39_Sub5_Sub9.ignoreUsernames[i_1_]) {
-			JMouseListener.printMessage(0,Class66.blankString,
+			MouseListenerImpl.printMessage(0,Class66.blankString,
 					  (Class39_Sub5_Sub11.join
 					   ((new JString[]
 					     { StillObject.aClass3_1454,
@@ -237,7 +237,7 @@ public class Class68
 			      >> 7));
 		if (opcode == 19)
 		    operator = (Cache.localPlayer.fPositionX
-			     >> 7) + JKeyListener.anInt618;
+			     >> 7) + KeyListenerImpl.anInt618;
 		if (opcode == 20)
 		    operator = opcodes[offset++];
 		if (queuedArithmetic != 0)

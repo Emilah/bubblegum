@@ -4,7 +4,7 @@ import com.jagex.Client;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
 import com.jagex.awt.JCanvas;
-import com.jagex.awt.listeners.JMouseListener;
+import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.utils.NameTable;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.IndexedColorSprite;
@@ -154,7 +154,7 @@ public class ObjectDefinition extends SubNode
 	if (i == 1) {
 	    int i_4_ = class39_sub6.getUbyte();
 	    if (i_4_ > 0) {
-		if (anIntArray1954 != null && !JMouseListener.aBoolean785)
+		if (anIntArray1954 != null && !MouseListenerImpl.aBoolean785)
 		    class39_sub6.offset += i_4_ * 3;
 		else {
 		    anIntArray1954 = new int[i_4_];
@@ -171,7 +171,7 @@ public class ObjectDefinition extends SubNode
 	else if (i == 5) {
 	    int i_6_ = class39_sub6.getUbyte();
 	    if (i_6_ > 0) {
-		if (anIntArray1954 != null && !JMouseListener.aBoolean785)
+		if (anIntArray1954 != null && !MouseListenerImpl.aBoolean785)
 		    class39_sub6.offset += i_6_ * 2;
 		else {
 		    anIntArray1960 = null;

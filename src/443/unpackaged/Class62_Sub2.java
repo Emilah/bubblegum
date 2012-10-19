@@ -25,7 +25,7 @@ import com.jagex.config.ItemDefinition;
 import com.jagex.config.NpcDefinition;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FileLoader;
-import com.jagex.awt.listeners.JKeyListener;
+import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.Client;
 import com.jagex.TextConstants;
 import com.jagex.awt.JApplet;
@@ -328,7 +328,7 @@ public class Class62_Sub2 extends AudioHandler {
                 byte[] is = Cache.aByteArrayArray104[i_23_];
                 if (is != null) {
                     int i_24_ = ((Class65.anIntArray1132[i_23_] & 0xff) * 64
-                            - JKeyListener.anInt618);
+                            - KeyListenerImpl.anInt618);
                     int i_25_ = (-Class65.anInt1145
                             + (Class65.anIntArray1132[i_23_] >> 8) * 64);
                     if (Class63.isCustomMap) {
@@ -367,7 +367,7 @@ public class Class62_Sub2 extends AudioHandler {
                     for (int i_31_ = 0; i_30_ > i_31_; i_31_++) {
                         int i_32_ = ((Class65.anIntArray1132[i_31_] >> 8) * 64
                                 - Class65.anInt1145);
-                        int i_33_ = (-JKeyListener.anInt618
+                        int i_33_ = (-KeyListenerImpl.anInt618
                                 + (Class65.anIntArray1132[i_31_] & 0xff) * 64);
                         byte[] is = VarpDefinition.aByteArrayArray1989[i_31_];
                         if (is != null) {
@@ -381,7 +381,7 @@ public class Class62_Sub2 extends AudioHandler {
                         int i_35_ = (-Class65.anInt1145
                                 + (Class65.anIntArray1132[i_34_] >> 8) * 64);
                         int i_36_ = ((Class65.anIntArray1132[i_34_] & 0xff) * 64
-                                - JKeyListener.anInt618);
+                                - KeyListenerImpl.anInt618);
                         byte[] is = VarpDefinition.aByteArrayArray1989[i_34_];
                         if (is == null && Class65.anInt1147 < 800) {
                             ArchiveWorker.method1116(i_35_, (byte) -17, i_36_, 64,
@@ -395,7 +395,7 @@ public class Class62_Sub2 extends AudioHandler {
                             int i_38_ = (-Class65.anInt1145
                                     + (Class65.anIntArray1132[i_37_]
                                     >> 8) * 64);
-                            int i_39_ = (-JKeyListener.anInt618
+                            int i_39_ = (-KeyListenerImpl.anInt618
                                     + (Class65.anIntArray1132[i_37_]
                                     & 0xff) * 64);
                             Mob.method516(Class44.world, (byte) -93, i_38_,
