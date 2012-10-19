@@ -18,7 +18,7 @@ import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.config.ItemDefinition;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.config.Widget;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.ArchiveRequest;
 import com.jagex.io.ArchiveWorker;
@@ -165,7 +165,7 @@ public final class LanguageUtils {
         Class14.aClass3_243 = ItemDefinition.aClass3_1681;
         TextConstants.aClass3_1593 = Class39_Sub14.aClass3_1510;
         StillObject.aClass3_1475 = Class41.aClass3_770;
-        Class39_Sub5_Sub14.aClass3_1913 = JImage.aClass3_1583;
+        Class39_Sub5_Sub14.aClass3_1913 = ImageImpl.aClass3_1583;
         Class13.aClass3_207 = Class47.aClass3_889;
         Class14.aClass3_248 = GroundItem.aClass3_2237;
         FileLoader.aClass3_1286 = FileLoader.aClass3_1292;
@@ -199,7 +199,7 @@ public final class LanguageUtils {
         Class14.aClass3_252 = ItemDefinition.aClass3_1681;
         TextConstants.aClass3_1279 = Class65.aClass3_1133;
         StillGraphic.aClass3_2343 = Class68.aClass3_1191;
-        Class32.aClass3_577 = JImage.aClass3_1578;
+        Class32.aClass3_577 = ImageImpl.aClass3_1578;
         StillGraphic.aClass3_2340 = ItemContainer.aClass3_1507;
         Timer.aClass3_877 = Wall.aClass3_639;
         Class14.aClass3_240 = ItemDefinition.aClass3_1681;
@@ -242,7 +242,7 @@ public final class LanguageUtils {
         Node.aClass3_727 = Class39_Sub14.aClass3_1522;
         Class14.aClass3_257 = AbstractFileLoader.aClass3_131;
         Class44.aClass3_847 = Class53.aClass3_963;
-        JImage.aClass3_1574 = Buffer.aClass3_1356;
+        ImageImpl.aClass3_1574 = Buffer.aClass3_1356;
         MouseListenerImpl.aClass3_795 = Class39_Sub10.aClass3_1425;
         Class39_Sub5_Sub4_Sub2.aClass3_2218 = Huffman.aClass3_747;
         Class14.aClass3_268 = ItemDefinition.aClass3_1681;
@@ -264,7 +264,7 @@ public final class LanguageUtils {
         ISAAC.aClass3_1098 = Mob.aClass3_2278;
         VarpDefinition.aClass3_1981 = Class30.aClass3_546;
         Class39_Sub5_Sub9.aClass3_1803 = Queue.aClass3_980;
-        Huffman.mutePlayerOptionOnJstr = JImage.aClass3_1577;
+        Huffman.mutePlayerOptionOnJstr = ImageImpl.aClass3_1577;
         Class39_Sub14.toJstr = CacheIO.aClass3_96;
         Class67.aClass3_1176 = CacheIO.aClass3_100;
         Class13.aClass3_209 = Class2.aClass3_56;
@@ -308,7 +308,7 @@ public final class LanguageUtils {
         Projectile.aClass3_2182 = ArchiveWorker.aClass3_1209;
         Projectile.aClass3_2196 = Barrier.aClass3_166;
         Class25.aClass3_462 = Class67.aClass3_1173;
-        JImage.aClass3_1585 = Class62_Sub2.aClass3_1603;
+        ImageImpl.aClass3_1585 = Class62_Sub2.aClass3_1603;
         Class39_Sub12.aClass3_1496 = TextureLoaderImpl.aClass3_1250;
     }
     

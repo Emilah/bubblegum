@@ -36,7 +36,7 @@ import com.jagex.io.FileOnDisk;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.graphics.IndexedColorSprite;
@@ -146,7 +146,7 @@ public class Class62_Sub2 extends AudioHandler {
             class39_sub5_sub4_sub4_sub1.anInt2290 = Class2.logicCycle;
             int i_2_ = Class39_Sub5_Sub11.incomingBuffer.getBits(1);
             if (i_2_ == 1) {
-                ArchiveRequest.anIntArray1400[JImage.anInt1586++] = i_1_;
+                ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++] = i_1_;
             }
             class39_sub5_sub4_sub4_sub1.definition = ArchiveWorker.getNpcDefinition(Class39_Sub5_Sub11.incomingBuffer
                     .getBits(13));
@@ -198,9 +198,9 @@ public class Class62_Sub2 extends AudioHandler {
     }
 
     public static void getTableChecksum(FileLoader fileLoader, int indexId) {
-        if (JImage.updateTableBuffer != null) {
-            JImage.updateTableBuffer.offset = indexId * 4 + 5;
-            int checksum = JImage.updateTableBuffer.getDword();
+        if (ImageImpl.updateTableBuffer != null) {
+            ImageImpl.updateTableBuffer.offset = indexId * 4 + 5;
+            int checksum = ImageImpl.updateTableBuffer.getDword();
             fileLoader.setChecksum(checksum);
         } else {
             Class39_Sub10.requestArchive(null, 255, 255, true, 0, (byte) 0);

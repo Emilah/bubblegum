@@ -1,7 +1,7 @@
 package unpackaged;
 
 import com.jagex.config.Model;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.utils.SubNode;
 import com.jagex.utils.JString;
 import com.jagex.io.FrameBuffer;

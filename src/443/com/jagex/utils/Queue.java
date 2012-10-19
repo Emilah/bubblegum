@@ -22,7 +22,7 @@ import com.jagex.Client;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.graphics.IndexedColorSprite;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.world.entities.Npc;
 import com.jagex.config.ObjectDefinition;
@@ -260,7 +260,7 @@ public class Queue {
             class57.setComponent(component, i, i_28_);
             return class57;
         } catch (Throwable throwable) {
-            JImage class57_sub2 = new JImage();
+            ImageImpl class57_sub2 = new ImageImpl();
             class57_sub2.setComponent(component, i, i_28_);
             return class57_sub2;
         }

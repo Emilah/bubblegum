@@ -8,7 +8,7 @@ import com.jagex.io.CacheIO;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.world.entities.Projectile;
 import com.jagex.utils.SubNode;
@@ -429,7 +429,7 @@ public class ItemDefinition extends SubNode
 	    SubNode.aBoolean1341 = false;
 	    Class32.anIntArray586 = null;
 	    VarpDefinition.aClass39_Sub5_Sub10_Sub4_1988 = null;
-	    JImage.aClass57_1576 = null;
+	    ImageImpl.aClass57_1576 = null;
 	}
     }
     

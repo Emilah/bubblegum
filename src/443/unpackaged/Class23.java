@@ -11,7 +11,7 @@ import com.jagex.od.OndemandRequest;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.Client;
 import com.jagex.utils.NameTable;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.utils.Node;
@@ -44,7 +44,7 @@ public class Class23
     public static JString okJstrEng;
     
     public static void method271() {
-	if (PlayerApperance.isLowMemory && NameTable.height != JImage.lastHeight)
+	if (PlayerApperance.isLowMemory && NameTable.height != ImageImpl.lastHeight)
 	    Client.setMapLocation(Class62_Sub2.anInt1597, Class65.anInt1147, Cache.localPlayer.queueX[0], Cache.localPlayer.queueY[0], NameTable.height);
 	else if (ArchiveRequest.anInt1411 != NameTable.height) {
 	    ArchiveRequest.anInt1411 = NameTable.height;

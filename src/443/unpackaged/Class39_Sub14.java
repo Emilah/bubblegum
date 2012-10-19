@@ -15,7 +15,7 @@ import com.jagex.graphics.BitmapFont;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.utils.SubNode;
 import com.jagex.utils.Node;
 import com.jagex.utils.JString;
@@ -70,7 +70,7 @@ public class Class39_Sub14 extends Node
     public int anInt1546;
     
     public static void parseNpcUpdate(int i) {
-	JImage.anInt1586 = 0;
+	ImageImpl.anInt1586 = 0;
 	Huffman.anInt749 = 0;
 	Class53.method984(-93);
 	Class62_Sub2.method1075((byte) 126);

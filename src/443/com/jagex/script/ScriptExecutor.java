@@ -13,7 +13,7 @@ import com.jagex.config.ItemDefinition;
 import com.jagex.config.Widget;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.graphics.BitmapFont;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.net.JSocket;
 import com.jagex.utils.Cache;
 import com.jagex.utils.Deque;
@@ -410,7 +410,7 @@ public class ScriptExecutor {
                                                                     intStackPointer -= 2;
                                                                     int i_60_ = intStack[intStackPointer];
                                                                     int i_61_ = intStack[(intStackPointer + 1)];
-                                                                    intStack[intStackPointer++] = (JImage.getItemAmount(i_60_, i_61_));
+                                                                    intStack[intStackPointer++] = (ImageImpl.getItemAmount(i_60_, i_61_));
                                                                 } else if (opcode == 3303) {
                                                                     intStackPointer -= 2;
                                                                     int i_62_ = intStack[(intStackPointer + 1)];

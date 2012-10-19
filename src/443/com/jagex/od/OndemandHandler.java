@@ -13,7 +13,7 @@ import com.jagex.awt.JCanvas;
 import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.config.ObjectDefinition;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.io.ArchiveWorker;
 import com.jagex.io.Buffer;
 import com.jagex.io.CacheIO;
@@ -183,12 +183,12 @@ public class OndemandHandler {
                     Class39_Sub4.odBlockOffset += i_15_;
                     if (length == requestBuffer.offset) {
                         if (FileLoader.currentOdRequest.hash == 16711935L) {
-                            JImage.updateTableBuffer = requestBuffer;
+                            ImageImpl.updateTableBuffer = requestBuffer;
                             for (int i_17_ = 0; i_17_ < 256; i_17_++) {
                                 FileLoader class9_sub1 = Class33.fileLoaders[i_17_];
                                 if (class9_sub1 != null) {
-                                    JImage.updateTableBuffer.offset = i_17_ * 4 + 5;
-                                    int checksum = JImage.updateTableBuffer.getDword();
+                                    ImageImpl.updateTableBuffer.offset = i_17_ * 4 + 5;
+                                    int checksum = ImageImpl.updateTableBuffer.getDword();
                                     class9_sub1.setChecksum(checksum);
                                 }
                             }

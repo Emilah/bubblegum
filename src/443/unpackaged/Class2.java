@@ -11,7 +11,7 @@ import com.jagex.io.AbstractFileLoader;
 import com.jagex.Client;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.utils.JString;
 import com.jagex.world.map.TraversalMap;
@@ -106,10 +106,10 @@ public class Class2
     
     public static void parsePlayerUpdate() {
 	Huffman.anInt749 = 0;
-	JImage.anInt1586 = 0;
+	ImageImpl.anInt1586 = 0;
 	StillGraphic.parseLocalPlayerUpdate();
 	AbstractFileLoader.parsePlayerMovementUpdates();
-	JImage.parsePopulateUpdate((byte) 127);
+	ImageImpl.parsePopulateUpdate((byte) 127);
 	Timer.method936((byte) -101);
 	for (int i_6_ = 0; Huffman.anInt749 > i_6_; i_6_++) {
 	    int i_7_ = Class26.anIntArray496[i_6_];

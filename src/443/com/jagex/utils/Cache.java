@@ -66,7 +66,7 @@ import com.jagex.io.AbstractFileLoader;
 import com.jagex.io.FrameBuffer;
 import com.jagex.world.entities.GroundItem;
 import com.jagex.config.ItemDefinition;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.net.JSocket;

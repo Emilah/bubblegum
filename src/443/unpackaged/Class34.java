@@ -31,7 +31,7 @@ import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.world.entities.StillGraphic;
@@ -727,7 +727,7 @@ public abstract class Class34 {
     public static void method339(AbstractFileLoader class9, AbstractFileLoader class9_37_) {
         Class39_Sub10.aClass9_1424 = class9;
         Buffer.aClass9_1362 = class9_37_;
-        JImage.anInt1584 = Buffer.aClass9_1362.getAmountChildren(3);
+        ImageImpl.anInt1584 = Buffer.aClass9_1362.getAmountChildren(3);
     }
 
     public static void drawLoadingScreen(Color color, JString message, int percent) {

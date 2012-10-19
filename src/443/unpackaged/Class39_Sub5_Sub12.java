@@ -19,7 +19,7 @@ import com.jagex.Client;
 import com.jagex.io.CacheIO;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.graphics.DrawingArea;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.utils.SubNode;
@@ -132,7 +132,7 @@ public class Class39_Sub5_Sub12 extends SubNode
 					  (!(Class2.logicCycle % 40 < 20
 					     & Class43.anInt815 == 0)
 					   ? Class39_Sub5_Sub14.blankJstr
-					   : JImage.aClass3_1582) })),
+					   : ImageImpl.aClass3_1582) })),
 			 90, i_4_, 16777215, true);
 		    i_4_ += 15;
 		    class39_sub5_sub10_sub1_0_.method635
@@ -142,7 +142,7 @@ public class Class39_Sub5_Sub12 extends SubNode
 			      Class39_Sub5_Sub14.password
 				  .formatPassword(),
 			      (Class43.anInt815 == 1 & Class2.logicCycle % 40 < 20
-			       ? JImage.aClass3_1582
+			       ? ImageImpl.aClass3_1582
 			       : Class39_Sub5_Sub14.blankJstr) }))),
 			 92, i_4_, 16777215, true);
 		    i_4_ += 15;
@@ -603,7 +603,7 @@ public class Class39_Sub5_Sub12 extends SubNode
 	(byte i, AbstractFileLoader class9, JString class3, JString class3_45_) {
 	int i_46_ = class9.lookupArchive(class3_45_);
 	int i_47_ = class9.lookupFile(i_46_, class3);
-	return JImage.method1015(0, i_46_, i_47_, class9);
+	return ImageImpl.method1015(0, i_46_, i_47_, class9);
     }
     
     static {

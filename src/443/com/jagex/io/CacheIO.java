@@ -7,7 +7,7 @@ import com.jagex.io.BufferedFile;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.world.entities.Projectile;
@@ -455,7 +455,7 @@ public class CacheIO
 	    for (int i_28_ = 0; i_28_ < 256; i_28_++) {
 		if (Class20.anInt397 > 768)
 		    GroundItem.anIntArray2245[i_28_]
-			= JImage.method1011(BufferedFile.anIntArray338[i_28_],
+			= ImageImpl.method1011(BufferedFile.anIntArray338[i_28_],
 						  -Class20.anInt397 + 1024,
 						  Class23.anIntArray423[i_28_],
 						  (byte) -27);
@@ -464,7 +464,7 @@ public class CacheIO
 			= Class23.anIntArray423[i_28_];
 		else
 		    GroundItem.anIntArray2245[i_28_]
-			= JImage.method1011(Class23.anIntArray423[i_28_],
+			= ImageImpl.method1011(Class23.anIntArray423[i_28_],
 						  -Class20.anInt397 + 256,
 						  BufferedFile.anIntArray338[i_28_],
 						  (byte) 122);
@@ -481,13 +481,13 @@ public class CacheIO
 			    = GroundItem.anIntArray2247[i_30_];
 		    else
 			GroundItem.anIntArray2245[i_30_]
-			    = (JImage.method1011
+			    = (ImageImpl.method1011
 			       (GroundItem.anIntArray2247[i_30_],
 				-JCanvas.anInt24 + 256,
 				BufferedFile.anIntArray338[i_30_], (byte) -100));
 		} else
 		    GroundItem.anIntArray2245[i_30_]
-			= JImage.method1011(BufferedFile.anIntArray338[i_30_],
+			= ImageImpl.method1011(BufferedFile.anIntArray338[i_30_],
 						  -JCanvas.anInt24 + 1024,
 						  (GroundItem
 						   .anIntArray2247[i_30_]),

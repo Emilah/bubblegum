@@ -16,7 +16,7 @@ import com.jagex.io.FileLoader;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.graphics.IndexedColorSprite;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.config.Model;
 import com.jagex.utils.NameTable;
 import com.jagex.config.Widget;
@@ -119,13 +119,13 @@ public class StillGraphic extends Entity {
         if (update != 0) {
             int type = Class39_Sub5_Sub11.incomingBuffer.getBits(2);
             if (type == 0) {
-                ArchiveRequest.anIntArray1400[JImage.anInt1586++] = 2047;
+                ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++] = 2047;
             } else if (type == 1) {
                 int i_5_ = Class39_Sub5_Sub11.incomingBuffer.getBits(3);
                 Cache.localPlayer.queueStep(i_5_, false);
                 int doUpdate = Class39_Sub5_Sub11.incomingBuffer.getBits(1);
                 if (doUpdate == 1) {
-                    ArchiveRequest.anIntArray1400[JImage.anInt1586++] = 2047;
+                    ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++] = 2047;
                 }
             } else if (type == 2) {
                 int i_7_ = Class39_Sub5_Sub11.incomingBuffer.getBits(3);
@@ -134,13 +134,13 @@ public class StillGraphic extends Entity {
                 Cache.localPlayer.queueStep(i_8_, true);
                 int doUpdate = Class39_Sub5_Sub11.incomingBuffer.getBits(1);
                 if (doUpdate == 1) {
-                    ArchiveRequest.anIntArray1400[JImage.anInt1586++] = 2047;
+                    ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++] = 2047;
                 }
             } else if (type == 3) {
                 int positionX = Class39_Sub5_Sub11.incomingBuffer.getBits(7);
                 int doUpdate = Class39_Sub5_Sub11.incomingBuffer.getBits(1);
                 if (doUpdate == 1) {
-                    ArchiveRequest.anIntArray1400[JImage.anInt1586++] = 2047;
+                    ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++] = 2047;
                 }
                 NameTable.height = Class39_Sub5_Sub11.incomingBuffer.getBits(2);
                 int positionY = Class39_Sub5_Sub11.incomingBuffer.getBits(7);

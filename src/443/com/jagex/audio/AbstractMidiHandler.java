@@ -7,7 +7,7 @@ import com.jagex.config.ObjectDefinition;
 import com.jagex.config.ItemDefinition;
 import com.jagex.awt.JCanvas;
 import com.jagex.utils.Huffman;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.utils.JString;
 import com.jagex.world.map.TraversalMap;
 import com.jagex.utils.Queue;
@@ -48,7 +48,7 @@ public abstract class AbstractMidiHandler extends AudioHandler {
                 || (((TextureLoaderImpl.tileFlags[i_2_][i_3_][i_0_] & 0x10)
                 == 0)
                 && (PlayerApperance.method927(i_0_, i_3_, i_2_, (byte) 23)
-                == JImage.lastHeight))) {
+                == ImageImpl.lastHeight))) {
             if (i_2_ < TraversalMap.anInt518) {
                 TraversalMap.anInt518 = i_2_;
             }

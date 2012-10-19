@@ -5,7 +5,7 @@ import com.jagex.KeycodeConstants;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.utils.Huffman;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.world.entities.Projectile;
 import com.jagex.utils.JString;
@@ -450,7 +450,7 @@ public abstract class AbstractFileLoader {
                 if (type == 0) {
                     Class1.anIntArray40[TraversalMap.anInt515++] = i_57_;
                     class39_sub5_sub4_sub4_sub2.anInt2290 = Class2.logicCycle;
-                    ArchiveRequest.anIntArray1400[JImage.anInt1586++] = i_57_;
+                    ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++] = i_57_;
                 } else if (type == 1) {
                     Class1.anIntArray40[TraversalMap.anInt515++] = i_57_;
                     class39_sub5_sub4_sub4_sub2.anInt2290 = Class2.logicCycle;
@@ -458,7 +458,7 @@ public abstract class AbstractFileLoader {
                     class39_sub5_sub4_sub4_sub2.queueStep(i_60_, false);
                     int i_61_ = Class39_Sub5_Sub11.incomingBuffer.getBits(1);
                     if (i_61_ == 1) {
-                        ArchiveRequest.anIntArray1400[JImage.anInt1586++] = i_57_;
+                        ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++] = i_57_;
                     }
                 } else if (type == 2) {
                     Class1.anIntArray40[TraversalMap.anInt515++] = i_57_;
@@ -469,7 +469,7 @@ public abstract class AbstractFileLoader {
                     class39_sub5_sub4_sub4_sub2.queueStep(i_63_, true);
                     int i_64_ = Class39_Sub5_Sub11.incomingBuffer.getBits(1);
                     if (i_64_ == 1) {
-                        ArchiveRequest.anIntArray1400[JImage.anInt1586++] = i_57_;
+                        ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++] = i_57_;
                     }
                 } else if (type == 3) {
                     Class26.anIntArray496[Huffman.anInt749++] = i_57_;

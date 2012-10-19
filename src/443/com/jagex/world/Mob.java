@@ -18,7 +18,7 @@ import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.world.entities.Projectile;

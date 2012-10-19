@@ -11,7 +11,7 @@ import com.jagex.io.ArchiveRequest;
 import com.jagex.io.ArchiveWorker;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.utils.JString;
 import com.jagex.world.entities.Npc;
 import com.jagex.io.FrameBuffer;
@@ -94,7 +94,7 @@ public class Class53
 		    Entity.anIntArray1734[ArchiveWorker.anInt1210++]
 			= i_3_;
 		    npc.anInt2290 = Class2.logicCycle;
-		    ArchiveRequest.anIntArray1400[JImage.anInt1586++]
+		    ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++]
 			= i_3_;
 		} else if (i_5_ == 1) {
 		    Entity.anIntArray1734[ArchiveWorker.anInt1210++]
@@ -106,7 +106,7 @@ public class Class53
 		    int i_7_ = Class39_Sub5_Sub11.incomingBuffer
 				   .getBits(1);
 		    if (i_7_ == 1)
-			ArchiveRequest.anIntArray1400[JImage.anInt1586++]
+			ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++]
 			    = i_3_;
 		} else if (i_5_ == 2) {
 		    Entity.anIntArray1734[ArchiveWorker.anInt1210++]
@@ -121,7 +121,7 @@ public class Class53
 		    int i_10_ = Class39_Sub5_Sub11.incomingBuffer
 				    .getBits(1);
 		    if (i_10_ == 1)
-			ArchiveRequest.anIntArray1400[JImage.anInt1586++]
+			ArchiveRequest.anIntArray1400[ImageImpl.anInt1586++]
 			    = i_3_;
 		} else if (i_5_ == 3)
 		    Class26.anIntArray496[Huffman.anInt749++] = i_3_;

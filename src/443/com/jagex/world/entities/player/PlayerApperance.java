@@ -11,7 +11,7 @@ import com.jagex.io.FileLoader;
 import com.jagex.Client;
 import com.jagex.utils.NameTable;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.graphics.IndexedColorSprite;
 import com.jagex.world.entities.Projectile;
@@ -93,10 +93,10 @@ public class PlayerApperance
 		do {
 		    if (!bool) {
 			if (--i_2_ < 0)
-			    i_2_ = JImage.anInt1584 - 1;
+			    i_2_ = ImageImpl.anInt1584 - 1;
 		    } else {
 			i_2_++;
-			if (JImage.anInt1584 <= i_2_)
+			if (ImageImpl.anInt1584 <= i_2_)
 			    i_2_ = 0;
 		    }
 		    class39_sub5_sub6 = FileLoader.method172(i_2_, 3);
@@ -329,7 +329,7 @@ public class PlayerApperance
 	if (is == null) {
 	    is = new int[12];
 	    for (int i_28_ = 0; i_28_ < 7; i_28_++) {
-		for (int i_29_ = 0; i_29_ < JImage.anInt1584; i_29_++) {
+		for (int i_29_ = 0; i_29_ < ImageImpl.anInt1584; i_29_++) {
 		    Class39_Sub5_Sub6 class39_sub5_sub6
 			= FileLoader.method172(i_29_, 3);
 		    if (class39_sub5_sub6 != null

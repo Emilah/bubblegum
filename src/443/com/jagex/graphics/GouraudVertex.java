@@ -21,7 +21,7 @@ import com.jagex.io.BufferedFile;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.utils.SubNode;
 import com.jagex.utils.ISAAC;
@@ -217,7 +217,7 @@ public class GouraudVertex
 	    class39_sub5_sub10_sub3
 		= Class39_Sub5_Sub9.method599(BufferedFile.aClass3_348,
 					      Class30.aClass3_533, class9);
-	    JImage.aClass57_1576
+	    ImageImpl.aClass57_1576
 		= Queue.method994(component,
 				    class39_sub5_sub10_sub3.width,
 				    class39_sub5_sub10_sub3.height,

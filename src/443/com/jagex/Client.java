@@ -15,7 +15,7 @@ import com.jagex.graphics.DrawingArea;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.world.entities.StillGraphic;
 import com.jagex.world.entities.Projectile;
@@ -323,7 +323,7 @@ public class Client extends JApplet {
                         loginStage = 9;
                     } else {
                         if (response == 15 && state == 40) {
-                            JImage.method1017((byte) 74);
+                            ImageImpl.method1017((byte) 74);
                             return;
                         }
                         if (response == 23 && ArchiveRequest.loginAttempts < 1) {
@@ -406,12 +406,12 @@ public class Client extends JApplet {
     }
 
     public static void setMapLocation(int mSectorX, int mSectorY, int mPositionX, int mPositionY, int height) {
-        if (mSectorX != Class62_Sub2.anInt1597 || mSectorY != Class65.anInt1147 || height != JImage.lastHeight && PlayerApperance.isLowMemory) {
+        if (mSectorX != Class62_Sub2.anInt1597 || mSectorY != Class65.anInt1147 || height != ImageImpl.lastHeight && PlayerApperance.isLowMemory) {
             Class62_Sub2.anInt1597 = mSectorX;
             Class65.anInt1147 = mSectorY;
-            JImage.lastHeight = height;
+            ImageImpl.lastHeight = height;
             if (!PlayerApperance.isLowMemory) {
-                JImage.lastHeight = 0;
+                ImageImpl.lastHeight = 0;
             }
             setState(25);
             Class26.method294(false, NameTable.aClass3_190, null, 118);
@@ -674,7 +674,7 @@ public class Client extends JApplet {
         Class4.method100((byte) 121);
         JCanvas.method42(296);
         MsTimer.method943(false);
-        JImage.method1020(true);
+        ImageImpl.method1020(true);
         Class67.method1108((byte) -127);
         Filter.method1024();
         Class25.method286(i ^ ~0x1fbf);

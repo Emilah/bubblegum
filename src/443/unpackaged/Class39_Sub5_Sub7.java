@@ -16,7 +16,7 @@ import com.jagex.awt.JApplet;
 import com.jagex.utils.NameTable;
 import com.jagex.graphics.DrawingArea;
 import com.jagex.utils.HashTable;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.world.entities.Projectile;
 import com.jagex.utils.SubNode;
@@ -251,7 +251,7 @@ public class Class39_Sub5_Sub7 extends SubNode
 				       i_24_);
 	Class44.world.method393();
 	Class1.method48(false);
-	JImage.method1012(0);
+	ImageImpl.method1012(0);
 	((TextureLoaderImpl) TriangleRasterizer.textureLoader)
 	    .method1004(PlayerApperance.anInt856, false);
 	JCanvas.method39(-32024);

@@ -20,7 +20,7 @@ import com.jagex.awt.JApplet;
 import com.jagex.utils.NameTable;
 import com.jagex.utils.HashTable;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.world.entities.StillGraphic;
@@ -333,7 +333,7 @@ public class ClientScript extends SubNode
 				     & 0x10) == 0
 				    && (PlayerApperance.method927(i_38_, i_27_, i_13_,
 							  (byte) 23)
-					== JImage.lastHeight)))) {
+					== ImageImpl.lastHeight)))) {
 			    if (i_13_ < TraversalMap.anInt518)
 				TraversalMap.anInt518 = i_13_;
 			    int i_41_ = (Class39_Sub14.aByteArrayArrayArray1516

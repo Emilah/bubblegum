@@ -4,7 +4,7 @@ import com.jagex.config.Model;
 import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.utils.HashTable;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.world.entities.Projectile;
 import com.jagex.utils.SubNode;
 import com.jagex.utils.JString;
@@ -99,7 +99,7 @@ public class Class39_Sub5_Sub6 extends SubNode
 	if (i_5_ < -9)
 	    return Class39_Sub10.aClass3_1421;
 	if (i_5_ < -6)
-	    return JImage.aClass3_1579;
+	    return ImageImpl.aClass3_1579;
 	if (i_5_ < -3)
 	    return GroundItem.aClass3_2246;
 	if (i_5_ < 0)

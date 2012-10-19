@@ -20,7 +20,7 @@ import com.jagex.graphics.DrawingArea;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.graphics.DirectColorSprite;
 import com.jagex.world.entities.Projectile;
@@ -798,7 +798,7 @@ public class Widget extends SubNode {
 
     public static void method763(int i) {
         if (i == -4322) {
-            for (int i_37_ = 0; i_37_ < JImage.anInt1586; i_37_++) {
+            for (int i_37_ = 0; i_37_ < ImageImpl.anInt1586; i_37_++) {
                 int i_38_ = ArchiveRequest.anIntArray1400[i_37_];
                 Npc npc = (GroundItem.npcs[i_38_]);
                 int i_39_ = Class39_Sub5_Sub11.incomingBuffer.getUbyte();

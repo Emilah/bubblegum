@@ -55,7 +55,7 @@ import com.jagex.utils.Deque;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
 import com.jagex.utils.ISAAC;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.awt.listeners.MouseListenerImpl;
 import com.jagex.utils.JString;
 import com.jagex.utils.NameTable;
@@ -407,8 +407,8 @@ public class Buffer extends Node {
                                                     } else if (class3.beginsWith((JCanvas.aClass3_13))) {
                                                         i_37_ = 5;
                                                         Class66.chatMessageJstr = (Class66.chatMessageJstr.substring((JCanvas.aClass3_13.getLength())));
-                                                    } else if (class3.beginsWith((JImage.aClass3_1585))) {
-                                                        Class66.chatMessageJstr = (Class66.chatMessageJstr.substring((JImage.aClass3_1585.getLength())));
+                                                    } else if (class3.beginsWith((ImageImpl.aClass3_1585))) {
+                                                        Class66.chatMessageJstr = (Class66.chatMessageJstr.substring((ImageImpl.aClass3_1585.getLength())));
                                                         i_37_ = 6;
                                                     } else if (class3.beginsWith((Class39_Sub10.aClass3_1448))) {
                                                         i_37_ = 7;

@@ -25,7 +25,7 @@ import com.jagex.utils.Bzip2Entry;
 import com.jagex.io.BufferedFile;
 import com.jagex.utils.HashTable;
 import com.jagex.utils.Huffman;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.world.entities.Projectile;
 import com.jagex.utils.Node;

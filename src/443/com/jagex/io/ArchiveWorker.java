@@ -13,7 +13,7 @@ import com.jagex.io.CacheIO;
 import com.jagex.utils.Bzip2Entry;
 import com.jagex.graphics.BitmapFont;
 import com.jagex.utils.HashTable;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.graphics.AbstractImage;
 import com.jagex.utils.JString;
 import com.jagex.net.JSocket;
@@ -166,7 +166,7 @@ public class ArchiveWorker implements Runnable {
             class39_sub5_sub10_sub1.method636(Class39_Sub5_Sub9.aClass3_1803,
                     55, 28, 16777215, true);
             if (i_8_ == 0) {
-                class39_sub5_sub10_sub1.method636(JImage.aClass3_1574,
+                class39_sub5_sub10_sub1.method636(ImageImpl.aClass3_1574,
                         55, 41, 65280, true);
             }
             if (i_8_ == 1) {
@@ -184,7 +184,7 @@ public class ArchiveWorker implements Runnable {
             class39_sub5_sub10_sub1.method636(Class32.aClass3_577, 184, 28,
                     16777215, true);
             if (i_10_ == 0) {
-                class39_sub5_sub10_sub1.method636(JImage.aClass3_1574,
+                class39_sub5_sub10_sub1.method636(ImageImpl.aClass3_1574,
                         184, 41, 65280, true);
             }
             if (i_10_ == 1) {
@@ -198,7 +198,7 @@ public class ArchiveWorker implements Runnable {
             class39_sub5_sub10_sub1.method636(Bzip2Entry.aClass3_1049, 324, 28,
                     16777215, true);
             if (i == 0) {
-                class39_sub5_sub10_sub1.method636(JImage.aClass3_1574,
+                class39_sub5_sub10_sub1.method636(ImageImpl.aClass3_1574,
                         324, 41, 65280, true);
             }
             if (i == 1) {

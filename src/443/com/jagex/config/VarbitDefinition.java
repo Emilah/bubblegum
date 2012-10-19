@@ -8,7 +8,7 @@ import com.jagex.awt.listeners.KeyListenerImpl;
 import com.jagex.utils.NameTable;
 import com.jagex.io.BufferedFile;
 import com.jagex.world.entities.GroundItem;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.utils.SubNode;
 import com.jagex.utils.JString;
 import com.jagex.net.JSocket;
@@ -56,7 +56,7 @@ public class VarbitDefinition extends SubNode
 	    Graphics graphics = Class41.canvas.getGraphics();
 	    FrameBuffer.aClass57_2155.draw(graphics, 0, 4);
 	    TextureLoaderImpl.aClass57_1248.draw(graphics, 0, 357);
-	    JImage.aClass57_1576.draw(graphics, 722, 4);
+	    ImageImpl.aClass57_1576.draw(graphics, 722, 4);
 	    NameTable.aClass57_182.draw(graphics, 743, 205);
 	    Class43.aClass57_812.draw(graphics, 0, 0);
 	    Class63.aClass57_1122.draw(graphics, 516, 4);

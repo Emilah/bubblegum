@@ -7,7 +7,7 @@ import com.jagex.io.ArchiveRequest;
 import com.jagex.config.ObjectDefinition;
 import com.jagex.io.AbstractFileLoader;
 import com.jagex.awt.JApplet;
-import com.jagex.graphics.JImage;
+import com.jagex.graphics.ImageImpl;
 import com.jagex.utils.JString;
 import com.jagex.world.entities.Player;
 import com.jagex.world.map.TraversalMap;
@@ -93,14 +93,14 @@ public abstract class Timer
     public static void method935(int i, int i_10_) {
 	if (Class47.hasAudioHandler()) {
 	    if (!Class39_Sub5_Sub5.aBoolean1749)
-		JImage.method1014(i, (byte) 99);
+		ImageImpl.method1014(i, (byte) 99);
 	    else
 		Class65.anInt1143 = i;
 	}
     }
     
     public static void method936(byte i) {
-	for (int i_11_ = 0; JImage.anInt1586 > i_11_; i_11_++) {
+	for (int i_11_ = 0; ImageImpl.anInt1586 > i_11_; i_11_++) {
 	    int i_12_ = ArchiveRequest.anIntArray1400[i_11_];
 	    Player class39_sub5_sub4_sub4_sub2
 		= Class14.players[i_12_];
