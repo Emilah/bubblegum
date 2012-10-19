@@ -113,7 +113,7 @@ public class Queue {
             }
             if ((class39_sub5_sub4_sub4.anInt2316 != 0
                     || class39_sub5_sub4_sub4.anInt2300 != 0)
-                    && (class39_sub5_sub4_sub4.anInt2312 == 0
+                    && (class39_sub5_sub4_sub4.amountStepsQueued == 0
                     || class39_sub5_sub4_sub4.anInt2274 > 0)) {
                 int i = -((-Class65.anInt1145 + (class39_sub5_sub4_sub4.anInt2316
                         - Class65.anInt1145))

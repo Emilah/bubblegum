@@ -88,7 +88,7 @@ public class Class66
     public static void method1105
 	(int i, Mob class39_sub5_sub4_sub4) {
 	class39_sub5_sub4_sub4.anInt2303 = class39_sub5_sub4_sub4.anInt2317;
-	if (class39_sub5_sub4_sub4.anInt2312 == 0)
+	if (class39_sub5_sub4_sub4.amountStepsQueued == 0)
 	    class39_sub5_sub4_sub4.anInt2274 = 0;
 	else {
 	    if (class39_sub5_sub4_sub4.anInt2268 != -1
@@ -110,10 +110,10 @@ public class Class66
 	    int i_1_ = class39_sub5_sub4_sub4.fPositionY;
 	    int i_2_ = class39_sub5_sub4_sub4.fPositionX;
 	    int i_3_ = ((class39_sub5_sub4_sub4.queueY
-			 [class39_sub5_sub4_sub4.anInt2312 - 1]) * 128
+			 [class39_sub5_sub4_sub4.amountStepsQueued - 1]) * 128
 			+ class39_sub5_sub4_sub4.anInt2297 * 64);
 	    int i_4_ = ((class39_sub5_sub4_sub4.queueX
-			 [class39_sub5_sub4_sub4.anInt2312 - 1]) * 128
+			 [class39_sub5_sub4_sub4.amountStepsQueued - 1]) * 128
 			+ class39_sub5_sub4_sub4.anInt2297 * 64);
 	    if (i_4_ - i_1_ > 256 || i_4_ - i_1_ < -256 || -i_2_ + i_3_ > 256
 		|| -i_2_ + i_3_ < -256) {
@@ -159,20 +159,20 @@ public class Class66
 			i_6_ = class39_sub5_sub4_sub4.anInt2257;
 		} else
 		    i_6_ = class39_sub5_sub4_sub4.anInt2282;
-		if (class39_sub5_sub4_sub4.anInt2312 > 2)
+		if (class39_sub5_sub4_sub4.amountStepsQueued > 2)
 		    i_7_ = 6;
 		if (i_6_ == -1)
 		    i_6_ = class39_sub5_sub4_sub4.anInt2264;
 		class39_sub5_sub4_sub4.anInt2303 = i_6_;
-		if (class39_sub5_sub4_sub4.anInt2312 > 3)
+		if (class39_sub5_sub4_sub4.amountStepsQueued > 3)
 		    i_7_ = 8;
 		if (class39_sub5_sub4_sub4.anInt2274 > 0
-		    && class39_sub5_sub4_sub4.anInt2312 > 1) {
+		    && class39_sub5_sub4_sub4.amountStepsQueued > 1) {
 		    i_7_ = 8;
 		    class39_sub5_sub4_sub4.anInt2274--;
 		}
 		if (class39_sub5_sub4_sub4.queueRunning
-		    [class39_sub5_sub4_sub4.anInt2312 - 1])
+		    [class39_sub5_sub4_sub4.amountStepsQueued - 1])
 		    i_7_ <<= 1;
 		if (i_2_ < i_3_) {
 		    class39_sub5_sub4_sub4.fPositionX += i_7_;
@@ -200,7 +200,7 @@ public class Class66
 		}
 		if (class39_sub5_sub4_sub4.fPositionY == i_4_
 		    && i_3_ == class39_sub5_sub4_sub4.fPositionX) {
-		    class39_sub5_sub4_sub4.anInt2312--;
+		    class39_sub5_sub4_sub4.amountStepsQueued--;
 		    if (class39_sub5_sub4_sub4.anInt2254 > 0)
 			class39_sub5_sub4_sub4.anInt2254--;
 		}

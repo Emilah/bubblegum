@@ -854,7 +854,7 @@ public class Client extends JApplet {
             Client client = new Client();
             client.initialize(443, InetAddress.getLocalHost(), "runescape", 765, 503, 14, AbstractFileLoader.modeWhat + 32);
         } catch (Exception exception) {
-            ClassCheckRequest.method849(exception, 64, null);
+            ClassCheckRequest.reportError(exception, null);
         }
     }
 

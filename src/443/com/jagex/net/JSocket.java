@@ -124,7 +124,7 @@ public class JSocket implements Runnable {
             }
             buffer = null;
         } catch (Exception exception) {
-            ClassCheckRequest.method849(exception, 64, null);
+            ClassCheckRequest.reportError(exception, null);
         }
     }
 

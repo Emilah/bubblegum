@@ -832,7 +832,7 @@ public class Widget extends SubNode {
                         npc.anInt2305 = i_41_;
                         npc.anInt2311 = 0;
                         npc.anInt2291 = 0;
-                        npc.anInt2254 = npc.anInt2312;
+                        npc.anInt2254 = npc.amountStepsQueued;
                         npc.anInt2265 = 0;
                         npc.anInt2268 = i_40_;
                     }

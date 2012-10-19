@@ -51,7 +51,7 @@ public class AudioInputStream extends InputStream
 	    return i_0_;
 	} catch (Exception exception) {
 	    aBoolean27 = true;
-	    ClassCheckRequest.method849(exception, 64, null);
+	    ClassCheckRequest.reportError(exception, null);
 	    return -1;
 	}
     }

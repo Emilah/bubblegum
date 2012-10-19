@@ -177,7 +177,7 @@ public abstract class Class13_Sub1 extends Class13 implements Runnable
 		PlayerApperance.sleep(5L);
 	    }
 	} catch (Exception exception) {
-	    ClassCheckRequest.method849(exception, 64, null);
+	    ClassCheckRequest.reportError(exception, null);
 	}
     }
     

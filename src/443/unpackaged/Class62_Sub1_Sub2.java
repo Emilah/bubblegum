@@ -118,7 +118,7 @@ public class Class62_Sub1_Sub2 extends AbstractMidiHandler implements Runnable
 		PlayerApperance.sleep(100L);
 	    }
 	} catch (Exception exception) {
-	    ClassCheckRequest.method849(exception, 64, null);
+	    ClassCheckRequest.reportError(exception, null);
 	}
     }
     

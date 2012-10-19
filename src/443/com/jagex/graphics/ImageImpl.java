@@ -58,7 +58,7 @@ import com.jagex.script.ScriptState;
 public class ImageImpl extends AbstractImage
         implements ImageProducer, ImageObserver {
 
-    public ImageConsumer anImageConsumer1571;
+    public ImageConsumer imageConsumer;
     public static JString aClass3_1572 = JString.create("On");
     public static int lastHeight;
     public static JString aClass3_1574;
@@ -77,9 +77,7 @@ public class ImageImpl extends AbstractImage
 
     public static int method1011(int i, int i_0_, int i_1_, byte i_2_) {
         int i_3_ = -i_0_ + 256;
-        return (((i_0_ * (i_1_ & 0xff00ff) + (i & 0xff00ff) * i_3_ & ~0xff00ff)
-                + (i_0_ * (i_1_ & 0xff00) + i_3_ * (i & 0xff00) & 0xff0000))
-                >> 8);
+        return (((i_0_ * (i_1_ & 0xff00ff) + (i & 0xff00ff) * i_3_ & ~0xff00ff) + (i_0_ * (i_1_ & 0xff00) + i_3_ * (i & 0xff00) & 0xff0000)) >> 8);
     }
 
     public void requestTopDownLeftRightResend(ImageConsumer imageconsumer) {
@@ -110,7 +108,7 @@ public class ImageImpl extends AbstractImage
     }
 
     public synchronized void addConsumer(ImageConsumer imageconsumer) {
-        anImageConsumer1571 = imageconsumer;
+        imageConsumer = imageconsumer;
         imageconsumer.setDimensions(width, height);
         imageconsumer.setProperties(null);
         imageconsumer.setColorModel(colorModel);
@@ -140,15 +138,10 @@ public class ImageImpl extends AbstractImage
         return Barrier.method179((byte) 68);
     }
 
-    public synchronized void method1016(byte i) {
-        if (i != -66) {
-            anImageConsumer1571 = null;
-        }
-        if (anImageConsumer1571 != null) {
-            anImageConsumer1571.setPixels(0, 0, width, height,
-                    colorModel, buffer, 0,
-                    width);
-            anImageConsumer1571.imageComplete(2);
+    public synchronized void alertConsumer() {
+        if (imageConsumer != null) {
+            imageConsumer.setPixels(0, 0, width, height, colorModel, buffer, 0, width);
+            imageConsumer.imageComplete(2);
         }
     }
 
@@ -195,11 +188,11 @@ public class ImageImpl extends AbstractImage
         width = i;
         colorModel = new DirectColorModel(32, 16711680, 65280, 255);
         image = component.createImage(this);
-        method1016((byte) -66);
+        alertConsumer();
         component.prepareImage(image, this);
-        method1016((byte) -66);
+        alertConsumer();
         component.prepareImage(image, this);
-        method1016((byte) -66);
+        alertConsumer();
         component.prepareImage(image, this);
         this.method1006(10);
 
@@ -216,9 +209,9 @@ public class ImageImpl extends AbstractImage
         return container.itemAmts[slot];
     }
 
-    public void draw(Graphics graphics, int i_23_, int i_24_) {
-        method1016((byte) -66);
-        graphics.drawImage(image, i_23_, i_24_, this);
+    public void draw(Graphics graphics, int x, int y) {
+        alertConsumer();
+        graphics.drawImage(image, x, y, this);
     }
 
     public static void parsePopulateUpdate(byte i) {
@@ -264,7 +257,7 @@ public class ImageImpl extends AbstractImage
     }
 
     public synchronized boolean isConsumer(ImageConsumer imageconsumer) {
-        if (imageconsumer != anImageConsumer1571) {
+        if (imageconsumer != imageConsumer) {
             return false;
         }
         return true;
@@ -285,8 +278,8 @@ public class ImageImpl extends AbstractImage
     }
 
     public synchronized void removeConsumer(ImageConsumer imageconsumer) {
-        if (anImageConsumer1571 == imageconsumer) {
-            anImageConsumer1571 = null;
+        if (imageConsumer == imageconsumer) {
+            imageConsumer = null;
         }
     }
 

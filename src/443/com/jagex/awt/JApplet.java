@@ -151,7 +151,7 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
                 method30((byte) 90);
             }
         } catch (Exception exception) {
-            ClassCheckRequest.method849(exception, 64, null);
+            ClassCheckRequest.reportError(exception, null);
             displayErrorPage("crash");
         }
         method27((byte) 77);
@@ -195,7 +195,7 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
                 Class39_Sub5_Sub9.fileSignlink.requestThread(this, 1);
             }
         } catch (Exception exception) {
-            ClassCheckRequest.method849(exception, 64, null);
+            ClassCheckRequest.reportError(exception, null);
             displayErrorPage("crash");
         }
     }
@@ -264,7 +264,7 @@ public abstract class JApplet extends Applet implements Runnable, FocusListener,
             Cache.webSignlink = Class39_Sub5_Sub9.fileSignlink = new Signlink(true, null, inetaddress, fileStore, gameName, maximumIndexId);
             Class39_Sub5_Sub9.fileSignlink.requestThread(this, 1);
         } catch (Exception exception) {
-            ClassCheckRequest.method849(exception, 64, null);
+            ClassCheckRequest.reportError(exception, null);
         }
     }
 

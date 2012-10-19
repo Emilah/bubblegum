@@ -1461,7 +1461,7 @@ public class Bzip2Entry {
                 Class14.aBoolean245 = true;
                 return true;
             }
-            ClassCheckRequest.method849(null, 64, ("T1 - " + Class4.frameId + ","
+            ClassCheckRequest.reportError(null, ("T1 - " + Class4.frameId + ","
                     + FileLoader.anInt1283 + ","
                     + ScriptState.anInt448 + " - "
                     + Huffman.frameSize));
@@ -1481,7 +1481,7 @@ public class Bzip2Entry {
                     i_141_++) {
                 string += (Class39_Sub5_Sub11.incomingBuffer.payload[i_141_]) + ",";
             }
-            ClassCheckRequest.method849(exception, 64, string);
+            ClassCheckRequest.reportError(exception, string);
             ISAAC.logout();
         }
         return true;

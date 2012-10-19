@@ -85,25 +85,25 @@ public class ScriptExecutor {
                         }
                     } else {
                         int value = ((Integer) params[i_30_]).intValue();
-                        if (value == -2147483647) {
+                        if (value == 0x80000000) {
                             value = i_19_;
                         }
-                        if (value == -2147483646) {
+                        if (value == 0x80000001) {
                             value = i_21_;
                         }
-                        if (value == -2147483645) {
+                        if (value == 0x80000002) {
                             value = (class39_sub5_sub17_20_ == null ? -1 : class39_sub5_sub17_20_.id);
                         }
-                        if (value == -2147483644) {
+                        if (value == 0x80000003) {
                             value = i;
                         }
-                        if (value == -2147483643) {
+                        if (value == 0x80000004) {
                             value = (class39_sub5_sub17_20_ == null ? -1 : class39_sub5_sub17_20_.amountChildren);
                         }
-                        if (value == -2147483642) {
+                        if (value == 0x80000005) {
                             value = (class39_sub5_sub17 != null ? class39_sub5_sub17.id : -1);
                         }
-                        if (value == -2147483641) {
+                        if (value == 0x80000006) {
                             value = (class39_sub5_sub17 != null ? class39_sub5_sub17.amountChildren : -1);
                         }
                         intVariables[i_28_++] = value;
@@ -670,20 +670,20 @@ public class ScriptExecutor {
                                                         TextureLoaderImpl.closeOverlays();
                                                     }
                                                 } else {
-                                                    Widget class39_sub5_sub17_126_ = Class37.getWidget(intStack[--intStackPointer]);
+                                                    Widget widget = Class37.getWidget(intStack[--intStackPointer]);
                                                     if (opcode == 2600) {
-                                                        intStack[intStackPointer++] = (class39_sub5_sub17_126_.scrollX);
+                                                        intStack[intStackPointer++] = (widget.scrollX);
                                                     } else if (opcode == 2601) {
-                                                        intStack[intStackPointer++] = (class39_sub5_sub17_126_.scrollY);
+                                                        intStack[intStackPointer++] = (widget.scrollY);
                                                     } else if (opcode == 2602) {
-                                                        strStack[strStackPointer++] = (class39_sub5_sub17_126_.inactiveText);
+                                                        strStack[strStackPointer++] = (widget.inactiveText);
                                                     } else if (opcode == 2603) {
-                                                        intStack[intStackPointer++] = (class39_sub5_sub17_126_.anInt2020);
+                                                        intStack[intStackPointer++] = (widget.anInt2020);
                                                     } else {
                                                         if (opcode != 2604) {
                                                             break;
                                                         }
-                                                        intStack[intStackPointer++] = (class39_sub5_sub17_126_.anInt2095);
+                                                        intStack[intStackPointer++] = (widget.anInt2095);
                                                     }
                                                 }
                                             } else {
@@ -697,7 +697,7 @@ public class ScriptExecutor {
                                                 } else if (opcode == 2503) {
                                                     intStack[intStackPointer++] = (widget.height);
                                                 } else if (opcode == 2504) {
-                                                    intStack[intStackPointer++] = (!(widget.aBoolean2055) ? 0 : 1);
+                                                    intStack[intStackPointer++] = (!widget.aBoolean2055 ? 0 : 1);
                                                 } else {
                                                     if (opcode != 2505) {
                                                         break;
@@ -979,7 +979,7 @@ public class ScriptExecutor {
                     }
                 }
             } catch (Exception exception) {
-                ClassCheckRequest.method849(exception, 64, "CS2 - scr:" + currentClientScript.hash + " op:" + opcode);
+                ClassCheckRequest.reportError(exception, "CS2 - scr:" + currentClientScript.hash + " op:" + opcode);
             }
         }
     }

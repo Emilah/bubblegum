@@ -139,7 +139,7 @@ public class MsTimer extends Timer
 			   .anInt1826))) {
 	    class39_sub5_sub4_sub4_sub2.anInt2305 = i_12_;
 	    class39_sub5_sub4_sub4_sub2.anInt2254
-		= class39_sub5_sub4_sub4_sub2.anInt2312;
+		= class39_sub5_sub4_sub4_sub2.amountStepsQueued;
 	    class39_sub5_sub4_sub4_sub2.anInt2291 = 0;
 	    class39_sub5_sub4_sub4_sub2.anInt2265 = 0;
 	    class39_sub5_sub4_sub4_sub2.anInt2311 = 0;

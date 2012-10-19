@@ -121,7 +121,7 @@ public class ArchiveWorker implements Runnable {
                 }
             }
         } catch (Exception exception) {
-            ClassCheckRequest.method849(exception, 64, null);
+            ClassCheckRequest.reportError(exception, null);
         }
     }
 

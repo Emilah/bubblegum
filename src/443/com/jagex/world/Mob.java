@@ -145,7 +145,7 @@ public abstract class Mob extends Entity {
     public static JString aClass3_2309;
     public static JString useJstr;
     public int anInt2311;
-    public int anInt2312;
+    public int amountStepsQueued;
     public static int musicVolume;
     public int[] queueX;
     public static int anInt2315;
@@ -165,33 +165,32 @@ public abstract class Mob extends Entity {
         useJstr = null;
     }
 
-    public void setLocation(int i_1_, int i, boolean resetQueue) {
-        if (anInt2268 != -1
-                && AbstractMidiHandler.method1064(anInt2268, (byte) 54).anInt1837 == 1) {
+    public void setLocation(int localX, int localY, boolean resetQueue) {
+        if (anInt2268 != -1 && AbstractMidiHandler.method1064(anInt2268, (byte) 54).anInt1837 == 1) {
             anInt2268 = -1;
         }
         if (!resetQueue) {
-            int i_2_ = -queueX[0] + i_1_;
-            int i_3_ = -queueY[0] + i;
-            if (i_2_ >= -8 && i_2_ <= 8 && i_3_ >= -8 && i_3_ <= 8) {
-                if (anInt2312 < 9) {
-                    anInt2312++;
+            int diffX = localX - queueX[0];
+            int diffY = localY - queueY[0];
+            if (diffX >= -8 && diffX <= 8 && diffY >= -8 && diffY <= 8) {
+                if (amountStepsQueued < 9) {
+                    amountStepsQueued++;
                 }
-                for (int i_4_ = anInt2312; i_4_ > 0; i_4_--) {
+                for (int i_4_ = amountStepsQueued; i_4_ > 0; i_4_--) {
                     queueX[i_4_] = queueX[i_4_ - 1];
                     queueY[i_4_] = queueY[i_4_ - 1];
                     queueRunning[i_4_] = queueRunning[i_4_ - 1];
                 }
-                queueX[0] = i_1_;
+                queueX[0] = localX;
+                queueY[0] = localY;                
                 queueRunning[0] = false;
-                queueY[0] = i;
                 return;
             }
         }
-        queueX[0] = i_1_;
-        anInt2312 = 0;
+        queueX[0] = localX;
+        amountStepsQueued = 0;
         anInt2254 = 0;
-        queueY[0] = i;
+        queueY[0] = localY;
         anInt2274 = 0;
         fPositionY = queueX[0] * 128 + anInt2297 * 64;
         fPositionX = queueY[0] * 128 + anInt2297 * 64;
@@ -328,8 +327,7 @@ public abstract class Mob extends Entity {
     }
 
     public static int method512(int i, int i_13_) {
-        return (int) (Math.log((double) i_13_ * 0.00390625) * 868.5889638065036
-                + 0.5);
+        return (int) (Math.log((double) i_13_ * 0.00390625) * 868.5889638065036 + 0.5);
     }
 
     public void method513(int i, int i_14_, int i_15_, int i_16_) {
@@ -344,7 +342,7 @@ public abstract class Mob extends Entity {
     }
 
     public void method515(int i) {
-        anInt2312 = i;
+        amountStepsQueued = i;
         anInt2254 = 0;
     }
 
@@ -412,17 +410,16 @@ public abstract class Mob extends Entity {
             positionX--;
             positionY++;
         }
-        if (anInt2268 != -1
-                && AbstractMidiHandler.method1064(anInt2268, (byte) 54).anInt1837 == 1) {
+        if (anInt2268 != -1 && AbstractMidiHandler.method1064(anInt2268, (byte) 54).anInt1837 == 1) {
             anInt2268 = -1;
         }
-        if (anInt2312 < 9) {
-            anInt2312++;
+        if (amountStepsQueued < 9) {
+            amountStepsQueued++;
         }
         if (type == 1) {
             positionY++;
         }
-        for (int i = anInt2312; i > 0; i--) {
+        for (int i = amountStepsQueued; i > 0; i--) {
             queueX[i] = queueX[i - 1];
             queueY[i] = queueY[i - 1];
             queueRunning[i] = queueRunning[i - 1];
@@ -483,7 +480,7 @@ public abstract class Mob extends Entity {
         anInt2283 = 0;
         anInt2274 = 0;
         queueRunning = new boolean[10];
-        anInt2312 = 0;
+        amountStepsQueued = 0;
         anInt2305 = 0;
         anInt2300 = 0;
         queueX = new int[10];
